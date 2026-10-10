@@ -37,7 +37,7 @@ The end-to-end demo and tests are intended for local development with the projec
 
 **Workflow:** sensor/data quality checks → perception and multimodal evidence → 3D/temporal scene representation → uncertainty and unknown-case handling → reviewable plan or screening proposal → audit record.
 
-**Documentation:** [End-to-end verification](docs/E2E_VERIFICATION.md) · [Evaluation guide](docs/EVALUATION.md)
+**Documentation:** [End-to-end simulation workflow](docs/END_TO_END_SIMULATION.md) · [End-to-end verification](docs/E2E_VERIFICATION.md) · [Evaluation guide](docs/EVALUATION.md) · [Reproducible benchmark plan](docs/EVALUATION_BENCHMARK.md)
 
 ### Animated AI application demo
 
