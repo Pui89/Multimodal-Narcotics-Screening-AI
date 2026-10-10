@@ -3,6 +3,12 @@
 
 ## AI Application Overview
 
+### Animated Concept Preview
+
+![Multimodal Narcotics Screening AI animated concept demo](https://raw.githubusercontent.com/Pui89/Multimodal-Narcotics-Screening-AI/main/docs/images/multimodal-screening-ai-demo.svg)
+
+*Animated SVG concept preview. This illustrates a proposed workflow only; it is not a recorded 4D video, a live sensor feed, or evidence of validated real-world performance.*
+
 ![Multimodal Narcotics Screening AI application dashboard concept](docs/images/multimodal-ai-application-dashboard.svg)
 
 *Application UI concept: sensor health, multimodal evidence review, uncertainty, human-review queue and audit trail. Uses illustrative interface elements; it is not a validated narcotics detector.*
