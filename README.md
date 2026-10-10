@@ -3,6 +3,11 @@
 
 ## AI Application Overview
 
+![Multimodal Narcotics Screening AI application dashboard concept](docs/images/multimodal-ai-application-dashboard.svg)
+
+*Application UI concept: sensor health, multimodal evidence review, uncertainty, human-review queue and audit trail. Uses illustrative interface elements; it is not a validated narcotics detector.*
+
+
 Multimodal AI application concept for authorized screening support using sensor-quality checks, evidence fusion, open-set/UNKNOWN handling, uncertainty reporting, and mandatory human review.
 
 ![3D/4D concept visualization](docs/multimodal_narcotics_screening_robot_3d_4d_concept.svg)
