@@ -1,4 +1,34 @@
-# Multimodal Narcotics Screening Robot
+# Multimodal Narcotics Screening AI Application
+
+
+## AI Application Overview
+
+Multimodal AI application concept for authorized screening support using sensor-quality checks, evidence fusion, open-set/UNKNOWN handling, uncertainty reporting, and mandatory human review.
+
+![3D/4D concept visualization](docs/multimodal_narcotics_screening_robot_3d_4d_concept.svg)
+
+> **Status and evidence:** This repository documents a research/prototype workflow. The illustration is concept artwork, not a live demonstration or proof of field performance. Reported capability and performance must be supported by reproducible tests and benchmark results.
+
+### Quick start
+
+Clone the renamed repository and install the project dependencies:
+
+```bash
+git clone https://github.com/Pui89/Multimodal-Narcotics-Screening-AI.git
+cd Multimodal-Narcotics-Screening-AI
+python -m pip install --upgrade pip
+python -m pip install -e '.[dev]'
+python demo_end_to_end.py
+pytest -q
+```
+
+The end-to-end demo and tests are intended for local development with the project's documented inputs. Start with synthetic or recorded data; do not connect the prototype directly to physical actuators or use it as the sole basis for consequential decisions.
+
+**Workflow:** sensor/data quality checks → perception and multimodal evidence → 3D/temporal scene representation → uncertainty and unknown-case handling → reviewable plan or screening proposal → audit record.
+
+**Documentation:** [End-to-end verification](docs/E2E_VERIFICATION.md) · [Evaluation guide](docs/EVALUATION.md)
+
+**Animation status:** An animated GIF demo is not included in this README yet. Add one only after a reproducible simulation/demo recording has been generated and checked; concept artwork must not be presented as a working animation.
 
 
 ## PUI89 AI Robotics Platform
@@ -372,8 +402,8 @@ The recommended deployment path is to validate the screening pipeline with recor
 ### Clone and install
 
 ~~~bash
-git clone https://github.com/Pui89/multimodal-narcotics-screening-robot.git
-cd multimodal-narcotics-screening-robot
+git clone https://github.com/Pui89/Multimodal-Narcotics-Screening-AI.git
+cd Multimodal-Narcotics-Screening-AI
 
 python -m venv .venv
 source .venv/bin/activate
