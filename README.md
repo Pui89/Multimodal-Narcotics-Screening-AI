@@ -20,6 +20,17 @@ Multimodal AI application concept for authorized screening support using sensor-
 
 > **Status and evidence:** This repository documents a research/prototype workflow. The illustration is concept artwork, not a live demonstration or proof of field performance. Reported capability and performance must be supported by reproducible tests and benchmark results.
 
+### Platform scope: AI application + embodied robotics
+
+**This platform is designed to support both an AI application and an embodied robotic screening concept.** These are two connected layers of one research platform:
+
+- **AI application layer (runs on a computer):** review sensor inputs, fuse multimodal evidence, check sensor/data quality, report uncertainty and UNKNOWN cases, present findings for authorized human review, and maintain an auditable record.
+- **Embodied robotics layer (robot-facing architecture):** provide a path to connect approved sensing and inspection workflows to a simulated or physical mobile/inspection robot through interfaces such as ROS 2, with localization, inspection planning, obstacle/safety checks, operator oversight, and controlled integration boundaries.
+- **Shared pipeline:** sensor/data quality → multimodal evidence fusion → uncertainty/UNKNOWN handling → reviewable screening proposal → human decision → audit record.
+
+The AI application can be developed and evaluated on a computer without robot hardware. The embodied layer is an intended integration concept, **not proof of a validated narcotics detector, completed physical robot integration, or permission for autonomous enforcement or consequential action against a person.** Outputs must remain uncertain screening evidence for authorized human review; begin with synthetic/recorded data and simulation, and require independent evaluation and safety/privacy review before real-world use.
+
+
 ### Quick start
 
 Clone the renamed repository and install the project dependencies:
