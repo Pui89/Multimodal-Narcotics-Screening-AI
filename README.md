@@ -41,6 +41,12 @@ Potential, testable research use cases:
 
 **Image and cost note:** These images are hosted by Wikimedia Commons and the source pages identify them as CC0/public domain, so no paid image subscription is required to reuse them under those stated terms. External hosting availability is not guaranteed. Do not use these reference photos as labelled training or evaluation data without checking dataset suitability and provenance.
 
+### Thailand narcotics arrest and seizure reference (official source)
+
+For a **real Thai law-enforcement context**, see the [Royal Thai Government photo gallery for the major narcotics-trafficking arrest announcement on 12 May 2026](https://www.thaigov.go.th/th/media/gallery/view/29367). Also see the [Thai Government / Customs report on 2026 drug seizures](https://www.thaigov.go.th/th/news/165914), which reports that methamphetamine (“ice”) and heroin were among the leading substances seized in the first nine months of fiscal year 2026.
+
+**Copyright and evidence note:** These are official Thai case-report links, not open-licensed image files. I have linked to the original government pages rather than copying those photos into this repository because the pages do not clearly grant an open reuse licence. The Wikimedia Commons photos below are separate, openly licensed specimen/plant references; **they are not photographs of the Thai arrests or seizures**. This distinction avoids falsely presenting generic reference images as evidence from a particular case.
+
 ### Free, open-licensed reference images: ice, heroin and cannabis
 
 These real photographs are included as **visual reference examples** for a research interface and documentation. They are not a labelled dataset, do not prove chemical identity, and must not be described as model-training or evaluation evidence.
