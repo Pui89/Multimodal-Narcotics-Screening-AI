@@ -42,6 +42,25 @@ flowchart TD
 
 **Important limits:** ordinary RGB photos cannot reveal drugs hidden inside closed luggage, and a photo of a substance cannot reliably determine its chemical identity. Baggage screening requires a suitable authorized X-ray/CT system and data; chemical identity requires an authorized validated test or forensic procedure. This repository is a research prototype, not a validated airport detector.
 
+## Free reproducible testing and evaluation
+
+The repository includes API regression tests, evaluation-metric tests, a clearly labelled synthetic JSONL example, and a GitHub Actions workflow that runs on relevant pushes and pull requests. These checks use free/open-source Python tooling; hosted CI availability and quotas are controlled by GitHub.
+
+- [Regression tests](apps/pui89_app/test_main.py)
+- [Evaluation metrics tests](evaluation/test_metrics.py)
+- [Synthetic example and evaluation guide](evaluation/README.md)
+- [Automated regression workflow](.github/workflows/app-regression.yml)
+
+Run locally from the repository root:
+
+```bash
+python -m pip install "fastapi>=0.110,<1.0" "pydantic>=2.6,<3.0"
+python -m unittest apps.pui89_app.test_main evaluation.test_metrics -v
+python evaluation/run_evaluation.py evaluation/examples/synthetic_predictions.jsonl --output reports/synthetic-evaluation.json
+```
+
+The sample results are synthetic teaching data, not narcotics-detection performance. The API still uses manually entered feature values and heuristic rules, not a trained image detector.
+
 ## Interactive AI application example
 
 A local Streamlit dashboard is available to demonstrate the evidence-review workflow using manually entered sample values. You can toggle RGB/depth/thermal/LiDAR status, adjust timestamp alignment and illustrative anomaly/consistency scores, inspect `UNKNOWN` and human-review outcomes, and export a JSON report.
