@@ -9,6 +9,18 @@
 
 *Animated SVG concept preview. This illustrates a proposed workflow only; it is not a recorded 4D video, a live sensor feed, or evidence of validated real-world performance.*
 
+### Real-world reference photographs: narcotics screening
+
+![Photograph labelled Samples of drugs, from Wikimedia Commons](https://commons.wikimedia.org/wiki/Special:FilePath/Samples%20of%20drugs.jpg?width=1000)
+
+*Real photograph titled “Samples of drugs,” by Beendy234, shared under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). [View the original image and licence](https://commons.wikimedia.org/wiki/File:Samples_of_drugs.jpg). This is a visual reference only: appearance cannot establish a substance's chemical identity.*
+
+![Drug test kit with tablets, documented by U.S. Customs and Border Protection](https://commons.wikimedia.org/wiki/Special:FilePath/Drug%20test.jpg?width=1000)
+
+*Public-domain photograph from U.S. Customs and Border Protection showing a drug-test kit and seized tablets. [Source and licence details](https://commons.wikimedia.org/wiki/File:Drug_test.jpg). Included as an illustrative screening-workflow reference, not as a validated test result or evidence of this project's detection performance.*
+
+**Image and cost note:** These images are hosted by Wikimedia Commons and the source pages identify them as CC0/public domain, so no paid image subscription is required to reuse them under those stated terms. External hosting availability is not guaranteed. Do not use these reference photos as labelled training or evaluation data without checking dataset suitability and provenance.
+
 ![Multimodal Narcotics Screening AI application dashboard concept](docs/images/multimodal-ai-application-dashboard.svg)
 
 *Application UI concept: sensor health, multimodal evidence review, uncertainty, human-review queue and audit trail. Uses illustrative interface elements; it is not a validated narcotics detector.*
