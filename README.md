@@ -41,6 +41,30 @@ Potential, testable research use cases:
 
 **Image and cost note:** These images are hosted by Wikimedia Commons and the source pages identify them as CC0/public domain, so no paid image subscription is required to reuse them under those stated terms. External hosting availability is not guaranteed. Do not use these reference photos as labelled training or evaluation data without checking dataset suitability and provenance.
 
+### Free, open-licensed reference images: ice, heroin and cannabis
+
+These real photographs are included as **visual reference examples** for a research interface and documentation. They are not a labelled dataset, do not prove chemical identity, and must not be described as model-training or evaluation evidence.
+
+#### Crystal methamphetamine (“ice”)
+
+![Real photograph of crystal methamphetamine, shared under CC0 1.0](https://commons.wikimedia.org/wiki/Special:FilePath/Crystal%20methamphetamine%20%282%29.jpg?width=1000)
+
+*Photo: WikiLinuz, [Crystal methamphetamine (2).jpg](https://commons.wikimedia.org/wiki/File:Crystal_methamphetamine_(2).jpg), released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). The licence permits reuse without attribution, though attribution is provided here for provenance.*
+
+#### Heroin
+
+![Real photograph of heroin, licensed under Creative Commons BY-SA 4.0](https://commons.wikimedia.org/wiki/Special:FilePath/Heroin%20%28Drug%29.jpg?width=1000)
+
+*Photo: DMTrott, [Heroin (Drug).jpg](https://commons.wikimedia.org/wiki/File:Heroin_(Drug).jpg), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Credit the author, link the licence, note any changes, and share adaptations under the same or a compatible licence.*
+
+#### Cannabis plant
+
+![Real photograph of a cannabis plant, released into the public domain](https://commons.wikimedia.org/wiki/Special:FilePath/Marijuana%20plant.jpg?width=1000)
+
+*Photo: Jorge Barrios, [Marijuana plant.jpg](https://commons.wikimedia.org/wiki/File:Marijuana_plant.jpg), released into the [public domain](https://creativecommons.org/publicdomain/zero/1.0/).*
+
+**Cost and responsible-use note:** The cited source pages list these images as CC0/public domain or CC BY-SA 4.0, so no paid stock-photo subscription is required for reuse under those licence terms. Images are loaded from Wikimedia Commons; external hosting can change, and this does not guarantee that future cloud, API, storage or compute services will be free. Visual appearance alone cannot identify a substance reliably—use authorized, validated chemical testing for confirmation.
+
 ![Multimodal Narcotics Screening AI application dashboard concept](docs/images/multimodal-ai-application-dashboard.svg)
 
 *Application UI concept: sensor health, multimodal evidence review, uncertainty, human-review queue and audit trail. Uses illustrative interface elements; it is not a validated narcotics detector.*
