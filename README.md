@@ -130,9 +130,7 @@ flowchart TD
 
 ### Open-licensed reference photograph: narcotics screening
 
-![Photograph labelled Samples of drugs, from Wikimedia Commons](https://commons.wikimedia.org/wiki/Special:FilePath/Samples%20of%20drugs.jpg?width=1000)
 
-*Real photograph titled “Samples of drugs,” by Beendy234, shared under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). [View the original image and licence](https://commons.wikimedia.org/wiki/File:Samples_of_drugs.jpg). This is a visual reference only: appearance cannot establish a substance's chemical identity.*
 
 **Image and cost note:** The remaining reference photograph is hosted by Wikimedia Commons and its source page identifies it as CC0/public domain, so no paid image subscription is required to reuse it under those stated terms. External hosting availability is not guaranteed. Do not use this reference photo as labelled training or evaluation data without checking dataset suitability and provenance.
 
@@ -166,9 +164,7 @@ These real photographs are included as **visual reference examples** for a resea
 
 **Cost and responsible-use note:** The cited source pages list these images as CC0/public domain or CC BY-SA 4.0, so no paid stock-photo subscription is required for reuse under those licence terms. Images are loaded from Wikimedia Commons; external hosting can change, and this does not guarantee that future cloud, API, storage or compute services will be free. Visual appearance alone cannot identify a substance reliably—use authorized, validated chemical testing for confirmation.
 
-![Multimodal Narcotics Screening AI application dashboard concept](docs/images/multimodal-ai-application-dashboard.svg)
 
-*Application UI concept: sensor health, multimodal evidence review, uncertainty, human-review queue and audit trail. Uses illustrative interface elements; it is not a validated narcotics detector.*
 
 
 Multimodal AI application concept for authorized screening support using sensor-quality checks, evidence fusion, open-set/UNKNOWN handling, uncertainty reporting, and mandatory human review.
@@ -380,7 +376,6 @@ Use only lawful, authorized and proportionate screening. Minimize retained image
 
 ## 3D / 4D Robot Concept
 
-![3D/4D concept](docs/multimodal_narcotics_screening_robot_3d_4d_concept.svg)
 
 Realistic concept visualization of the mobile screening robot, sensor mast, screening target, multimodal sensor fusion and time-indexed 4D trajectory. The visualization is a design concept, not a claim of chemical identification capability.
 
