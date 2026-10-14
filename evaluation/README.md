@@ -11,6 +11,8 @@ python evaluation/run_evaluation.py evaluation/examples/synthetic_predictions.js
 python -m unittest evaluation.test_metrics -v
 ```
 
+A checked-in example output is available at [`reports/synthetic-evaluation.json`](../reports/synthetic-evaluation.json). Re-run the command above to regenerate it.
+
 The included file is **synthetic teaching data only**. It demonstrates the evaluation pipeline; it is not a narcotics dataset, model output, a representative sample, or a claim of screening performance. Do not cite its metrics as research results.
 
 ## Bring your own authorized results
