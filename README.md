@@ -9,6 +9,22 @@
 
 *Animated SVG concept preview. This illustrates a proposed workflow only; it is not a recorded 4D video, a live sensor feed, or evidence of validated real-world performance.*
 
+### Thailand airport case study: methamphetamine ("ice") and AI-robot potential
+
+**Real Thai airport incident (official source):** On 19 May 2025, Thai Customs reported a seizure of approximately **22 kg of methamphetamine (ice)** at Suvarnabhumi Airport. The official Thai Customs report includes photographs of the case: [view the original report and photographs](https://www.customs.go.th/cont_strc_simple_with_date.php?current_id=14232a32414a505f4d464a4e464a4e). The source website states that its content is copyright-protected, so this README links to the official photographs rather than copying or rehosting them. The photos are evidence of the reported incident, not open-licensed training data.
+
+A second official report describes an ice seizure at Phuket International Airport: [Thai Government report (24 February 2025)](https://www.thaigov.go.th/uploads/document/275/2025/02/pdf/Doc_20250225092418000000.pdf).
+
+**Could an AI robot help at a Thai airport? Yes—as a proposed screening-support tool, not as a replacement for customs officers, X-ray screening, chemical testing, or K-9 teams.** Thailand's official reporting describes airport interdiction operations that already use risk analysis, baggage X-ray screening, and trained detection dogs. The reports do **not** establish that this repository's AI robot has been deployed or validated at a Thai airport. See the [official Thai Customs/AOT/K-9 “Scent Enforcer” operation at Suvarnabhumi](https://www.thaigov.go.th/th/news/167149).
+
+Potential, testable research use cases:
+- **Baggage-image triage:** flag unusual shapes or packaging in authorized X-ray/CT screening images for a trained operator to review. This needs access to legally usable, appropriately labelled scanner data; ordinary RGB photos cannot see drugs hidden inside luggage.
+- **Mobile inspection support:** a supervised robot could carry approved cameras or sensors, report sensor health, and help operators document accessible parcels or inspection areas. It must not autonomously stop, search, accuse, or detain people.
+- **Evidence and uncertainty dashboard:** combine authorized scanner alerts, sensor-quality checks, timestamps, and operator notes; preserve UNKNOWN when evidence is insufficient and log the human decision.
+- **Evaluation before deployment:** compare the AI-assisted workflow with the existing process using authorized retrospective data or simulation. Measure detection recall, false alarms, missed cases, review time, robustness, privacy impact, and performance across packaging types. Require independent validation and airport/customs authorization before any field trial.
+
+**Important scientific limit:** a visible photograph—even of crystal-like material—cannot reliably prove that a substance is methamphetamine. Chemical identity requires an authorized validated test or forensic procedure. The repository is a research prototype; it has not demonstrated real-world drug identification or airport deployment.
+
 ### Real-world reference photographs: narcotics screening
 
 ![Photograph labelled Samples of drugs, from Wikimedia Commons](https://commons.wikimedia.org/wiki/Special:FilePath/Samples%20of%20drugs.jpg?width=1000)
