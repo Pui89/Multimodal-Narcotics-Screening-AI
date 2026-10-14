@@ -3,59 +3,46 @@
 
 ## AI Application Overview
 
-## How the AI application works
+## How the AI robot works
 
-This project is a **screening-support research prototype**. It organizes authorized sensor observations, checks their quality, combines evidence, communicates uncertainty, and sends cases to an authorized human reviewer. It does **not** chemically identify a substance from an ordinary photograph and is not a validated airport screening system.
+This section explains the proposed robot workflow using the concept illustrations and real, openly licensed reference photographs already linked in this README. The concept visuals show a design idea; they are not photographs of a deployed robot or evidence of validated narcotics-detection performance.
+
+### Robot workflow at a glance
 
 ```mermaid
 flowchart TD
-    A["Authorized inputs: RGB / depth / thermal / NIR / LiDAR"] --> B["Check sensor quality, timestamps and provenance"]
-    X["X-ray / CT baggage images, if legally available and authorized"] --> B
-    B --> C["Perception: detect objects, geometry and anomalies"]
-    C --> D["Fuse available evidence; record missing or conflicting signals"]
-    D --> E{"Is the evidence sufficient and in scope?"}
-    E -->|No / uncertain| F["Keep UNKNOWN or request more data"]
-    E -->|Potential concern| G["Create a reviewable screening hypothesis"]
+    A["Robot sensors: RGB / depth / LiDAR / optional thermal or NIR"] --> B["Sensor health, quality and timestamp checks"]
+    X["Authorized baggage X-ray / CT system, if available"] --> B
+    B --> C["Perception: objects, geometry and anomalies"]
+    C --> D["Fuse evidence and record missing or conflicting inputs"]
+    D --> E{"Evidence reliable and within scope?"}
+    E -->|No / unclear| F["Keep UNKNOWN; request more evidence"]
+    E -->|Potential concern| G["Create a screening hypothesis"]
     F --> H["Authorized human review"]
     G --> H
-    H --> I["Record reviewer decision and auditable evidence"]
-    I --> J["Evaluate errors and update the model only through controlled testing"]
+    H --> I["Audit record and reviewer outcome"]
+    B -. separate robot navigation .-> J["LiDAR / depth / IMU mapping and obstacle checks"]
+    J --> K["Deterministic safety controller"]
+    K --> L["Robot motion only within approved limits"]
 ```
 
-**In plain language**
+### What happens at each stage?
 
-1. **Collect:** use only authorized, relevant sensor data. RGB cameras see visible surfaces; they cannot reveal drugs hidden inside closed baggage. Baggage-image screening requires appropriate X-ray/CT systems and authorized data.
-2. **Check:** reject or flag poor-quality, missing, or unsynchronized inputs rather than pretending they are reliable.
-3. **Analyze and combine:** perception models may describe visible objects, geometry, or anomalies. Multiple sensor signals can be compared, but agreement still does not prove chemical identity.
-4. **Handle uncertainty:** if evidence is missing, unfamiliar, or contradictory, preserve `UNKNOWN` and request more data or human review.
-5. **Review and audit:** an authorized person makes the decision; the application records the evidence and review outcome. The prototype must not autonomously accuse, search, detain, or control enforcement actions.
+1. **Sense:** cameras and other configured sensors observe accessible objects and the surrounding environment. The robot may carry sensors, but each modality must actually be installed and integrated before it can be used.
+2. **Check sensor quality:** the software checks whether observations are usable, synchronized and correctly attributed. Missing or degraded inputs are recorded rather than silently treated as evidence.
+3. **Analyze:** computer-vision models can describe supported visual features, object geometry or anomalies. The application combines available signals and records disagreement.
+4. **Express uncertainty:** if evidence is insufficient or unfamiliar, the system returns `UNKNOWN` or requests more data. A visual pattern is not chemical proof.
+5. **Ask for human review:** an authorized officer evaluates the screening hypothesis and decides what, if anything, should happen next. The AI must not independently accuse, search, detain or make enforcement decisions.
+6. **Move safely:** robot navigation is a separate control path using configured mapping and obstacle sensors plus deterministic safety controls. A foundation model or screening result must not directly command motors.
+7. **Keep an audit trail:** record sensor provenance, model/software version, uncertainty, and the human review outcome according to the applicable privacy and evidence rules.
 
-### Concept and real-image references
+**Important limitation:** ordinary RGB photographs cannot reveal drugs hidden inside closed luggage, and a photo of a substance cannot reliably establish its chemical identity. Baggage X-ray/CT screening requires an appropriate authorized system and legally usable data. Chemical identity requires an authorized, validated test or forensic procedure.
 
-The animated SVG and dashboard below are **concept visualizations** of the proposed interface, not live footage or evidence of validated performance. The real photographs further down this README are openly licensed reference images with their own provenance and licence notes; they are **not** a validated training dataset and do not prove a Thai arrest or seizure.
+### Concept visuals and real reference photos
 
-
-### Animated Concept Preview
-
-![Multimodal Narcotics Screening AI animated concept demo](https://raw.githubusercontent.com/Pui89/Multimodal-Narcotics-Screening-AI/main/docs/images/multimodal-screening-ai-demo.svg)
-
-*Animated SVG concept preview. This illustrates a proposed workflow only; it is not a recorded 4D video, a live sensor feed, or evidence of validated real-world performance.*
-
-### Thailand airport case study: methamphetamine ("ice") and AI-robot potential
-
-**Real Thai airport incident (official source):** On 19 May 2025, Thai Customs reported a seizure of approximately **22 kg of methamphetamine (ice)** at Suvarnabhumi Airport. The official Thai Customs report includes photographs of the case: [view the original report and photographs](https://www.customs.go.th/cont_strc_simple_with_date.php?current_id=14232a32414a505f4d464a4e464a4e). The source website states that its content is copyright-protected, so this README links to the official photographs rather than copying or rehosting them. The photos are evidence of the reported incident, not open-licensed training data.
-
-A second official report describes an ice seizure at Phuket International Airport: [Thai Government report (24 February 2025)](https://www.thaigov.go.th/uploads/document/275/2025/02/pdf/Doc_20250225092418000000.pdf).
-
-**Could an AI robot help at a Thai airport? Yes—as a proposed screening-support tool, not as a replacement for customs officers, X-ray screening, chemical testing, or K-9 teams.** Thailand's official reporting describes airport interdiction operations that already use risk analysis, baggage X-ray screening, and trained detection dogs. The reports do **not** establish that this repository's AI robot has been deployed or validated at a Thai airport. See the [official Thai Customs/AOT/K-9 “Scent Enforcer” operation at Suvarnabhumi](https://www.thaigov.go.th/th/news/167149).
-
-Potential, testable research use cases:
-- **Baggage-image triage:** flag unusual shapes or packaging in authorized X-ray/CT screening images for a trained operator to review. This needs access to legally usable, appropriately labelled scanner data; ordinary RGB photos cannot see drugs hidden inside luggage.
-- **Mobile inspection support:** a supervised robot could carry approved cameras or sensors, report sensor health, and help operators document accessible parcels or inspection areas. It must not autonomously stop, search, accuse, or detain people.
-- **Evidence and uncertainty dashboard:** combine authorized scanner alerts, sensor-quality checks, timestamps, and operator notes; preserve UNKNOWN when evidence is insufficient and log the human decision.
-- **Evaluation before deployment:** compare the AI-assisted workflow with the existing process using authorized retrospective data or simulation. Measure detection recall, false alarms, missed cases, review time, robustness, privacy impact, and performance across packaging types. Require independent validation and airport/customs authorization before any field trial.
-
-**Important scientific limit:** a visible photograph—even of crystal-like material—cannot reliably prove that a substance is methamphetamine. Chemical identity requires an authorized validated test or forensic procedure. The repository is a research prototype; it has not demonstrated real-world drug identification or airport deployment.
+- The [animated robot/application concept](docs/images/multimodal-screening-ai-demo.svg), [dashboard concept](docs/images/multimodal-ai-application-dashboard.svg), and [3D/4D robot concept](docs/multimodal_narcotics_screening_robot_3d_4d_concept.svg) illustrate a proposed interface and system design, not real-time operation.
+- The real reference photos linked below have their own source and licence notes. They are included for visual context only, not as a validated training dataset, and must not be presented as photographs from a specific Thai arrest unless the original source confirms that provenance.
+- For Thai airport case context, this README links to official government/customs reports instead of rehosting photos where open reuse permission is not clear.
 
 ### Open-licensed reference photograph: narcotics screening
 
