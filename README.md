@@ -42,6 +42,32 @@ flowchart TD
 
 **Important limits:** ordinary RGB photos cannot reveal drugs hidden inside closed luggage, and a photo of a substance cannot reliably determine its chemical identity. Baggage screening requires a suitable authorized X-ray/CT system and data; chemical identity requires an authorized validated test or forensic procedure. This repository is a research prototype, not a validated airport detector.
 
+## Interactive AI application example
+
+A local Streamlit dashboard is available to demonstrate the evidence-review workflow using manually entered sample values. You can toggle RGB/depth/thermal/LiDAR status, adjust timestamp alignment and illustrative anomaly/consistency scores, inspect `UNKNOWN` and human-review outcomes, and export a JSON report.
+
+**Run from the repository root.** Install dependencies:
+
+```bash
+python -m pip install -r apps/pui89_app/requirements.txt
+```
+
+Terminal 1:
+```bash
+uvicorn apps.pui89_app.main:app --reload
+```
+
+Terminal 2:
+```bash
+streamlit run apps/pui89_app/web_demo.py
+```
+
+- [Dashboard source code](apps/pui89_app/web_demo.py)
+- [Application setup and API guide](apps/pui89_app/README.md)
+- [Interactive API documentation](http://127.0.0.1:8000/docs) after the API starts
+
+**Important:** this is a local prototype, not a hosted public demo. Uploaded images are preview-only; no trained vision model analyzes them. The output uses manually entered example features and heuristic rules. It cannot identify chemical substances, prove narcotics are present, authorize enforcement, or control a robot. Use validated procedures and authorized human review.
+
 ## How the AI robot works
 
 This section explains the proposed robot workflow using the concept illustrations and real, openly licensed reference photographs already linked in this README. The concept visuals show a design idea; they are not photographs of a deployed robot or evidence of validated narcotics-detection performance.
