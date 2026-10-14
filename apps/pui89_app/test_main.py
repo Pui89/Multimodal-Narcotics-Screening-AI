@@ -26,10 +26,6 @@ class ScreeningAppTests(unittest.TestCase):
         self.assertFalse(result["actuator_commands_sent"])
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
     def test_timestamp_skew_returns_unknown(self):
         result = screen(ScreenRequest(observation_id="skew", rgb_valid=True,
             depth_valid=True, timestamp_skew_ms=51, visual_anomaly_score=.2,
@@ -66,3 +62,7 @@ if __name__ == "__main__":
             ScreenRequest(observation_id="bad", rgb_valid=True, depth_valid=True,
                 timestamp_skew_ms=0, visual_anomaly_score=1.2,
                 temporal_consistency_score=.8, ood_score=.1)
+
+
+if __name__ == "__main__":
+    unittest.main()
