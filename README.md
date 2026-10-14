@@ -3,6 +3,38 @@
 
 ## AI Application Overview
 
+## How the AI application works
+
+This project is a **screening-support research prototype**. It organizes authorized sensor observations, checks their quality, combines evidence, communicates uncertainty, and sends cases to an authorized human reviewer. It does **not** chemically identify a substance from an ordinary photograph and is not a validated airport screening system.
+
+```mermaid
+flowchart TD
+    A["Authorized inputs: RGB / depth / thermal / NIR / LiDAR"] --> B["Check sensor quality, timestamps and provenance"]
+    X["X-ray / CT baggage images, if legally available and authorized"] --> B
+    B --> C["Perception: detect objects, geometry and anomalies"]
+    C --> D["Fuse available evidence; record missing or conflicting signals"]
+    D --> E{"Is the evidence sufficient and in scope?"}
+    E -->|No / uncertain| F["Keep UNKNOWN or request more data"]
+    E -->|Potential concern| G["Create a reviewable screening hypothesis"]
+    F --> H["Authorized human review"]
+    G --> H
+    H --> I["Record reviewer decision and auditable evidence"]
+    I --> J["Evaluate errors and update the model only through controlled testing"]
+```
+
+**In plain language**
+
+1. **Collect:** use only authorized, relevant sensor data. RGB cameras see visible surfaces; they cannot reveal drugs hidden inside closed baggage. Baggage-image screening requires appropriate X-ray/CT systems and authorized data.
+2. **Check:** reject or flag poor-quality, missing, or unsynchronized inputs rather than pretending they are reliable.
+3. **Analyze and combine:** perception models may describe visible objects, geometry, or anomalies. Multiple sensor signals can be compared, but agreement still does not prove chemical identity.
+4. **Handle uncertainty:** if evidence is missing, unfamiliar, or contradictory, preserve `UNKNOWN` and request more data or human review.
+5. **Review and audit:** an authorized person makes the decision; the application records the evidence and review outcome. The prototype must not autonomously accuse, search, detain, or control enforcement actions.
+
+### Concept and real-image references
+
+The animated SVG and dashboard below are **concept visualizations** of the proposed interface, not live footage or evidence of validated performance. The real photographs further down this README are openly licensed reference images with their own provenance and licence notes; they are **not** a validated training dataset and do not prove a Thai arrest or seizure.
+
+
 ### Animated Concept Preview
 
 ![Multimodal Narcotics Screening AI animated concept demo](https://raw.githubusercontent.com/Pui89/Multimodal-Narcotics-Screening-AI/main/docs/images/multimodal-screening-ai-demo.svg)
