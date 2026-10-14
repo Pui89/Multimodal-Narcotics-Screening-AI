@@ -1,17 +1,39 @@
 # PUI89 World-Model Multimodal Screening AI Application
 
-A conservative evidence-review service for authorized screening workflows. It fuses supplied sensor-quality and anomaly evidence into **screening hypotheses for human review**. It does not identify a chemical from images, prove narcotics are present, diagnose internal-body presence, or trigger enforcement actions.
+A conservative evidence-review service for authorized screening workflows. It fuses supplied sensor-quality and anomaly evidence into **screening hypotheses for human review**. It does not identify a chemical from images, prove narcotics are present, or trigger enforcement actions.
 
-## Run
+## Interactive web demo
+
+The Streamlit dashboard lets you explore an example screening review: toggle sensor availability, change timestamp alignment and illustrative spatial/temporal/anomaly scores, submit the values to the API, inspect uncertainty and missing-modality flags, and download a JSON report.
+
+### Run locally
+
+From the repository root, install dependencies:
+
 ```bash
-pip install -r apps/pui89_app/requirements.txt
+python -m pip install -r apps/pui89_app/requirements.txt
+```
+
+**Terminal 1 — start the API:**
+
+```bash
 uvicorn apps.pui89_app.main:app --reload
 ```
-Interactive API: `http://127.0.0.1:8000/docs`.
+
+**Terminal 2 — start the dashboard:**
+
+```bash
+streamlit run apps/pui89_app/web_demo.py
+```
+
+Open the local URL printed by Streamlit. API documentation is available at `http://127.0.0.1:8000/docs`.
+
+An optional uploaded image is **preview-only**. The dashboard does not run computer vision on the image or identify substances. Scores are manually selected demonstration inputs sent to the existing API.
 
 ## API
+
 - `GET /health` — service status.
-- `POST /screen` — modality-quality checks, world-state consistency and anomaly review.
+- `POST /screen` — modality-quality checks, consistency evidence and anomaly review.
 - `GET /metrics` — request counters, not model benchmark results.
 
 Example:
@@ -30,13 +52,14 @@ Example:
 }
 ```
 
-## World-model semantics
-The API uses the supplied temporal and spatial consistency values as evidence fields. It does not reconstruct a 3D/4D scene or run a trained anomaly model; connect validated perception/world-model adapters separately. Missing modalities are marked missing, never silently treated as negative evidence. High OOD, contradictions or insufficient inputs produce `UNKNOWN` / `HUMAN_REVIEW`.
+## World-model semantics and responsible use
 
-## Responsible use
-Screening outputs are hypotheses only, not proof of chemical identity or grounds for an enforcement decision. Require validated, lawful sensing, calibration, access control, evidence provenance and authorized human review. The service has no actuator authority.
+The API uses supplied temporal and spatial consistency values as evidence fields. It does not reconstruct a 3D/4D scene or run a trained anomaly model; validated perception/world-model adapters would need separate integration. Missing modalities are marked missing, never silently treated as negative evidence. High OOD, contradictions or insufficient inputs produce `UNKNOWN` / `HUMAN_REVIEW`.
+
+Screening outputs are hypotheses only, not proof of chemical identity or grounds for an enforcement decision. Require validated, lawful sensing, calibration, evidence provenance and authorized human review. The service has no actuator authority.
 
 ## Evaluation
+
 Use a legally authorized, representative and independently labeled dataset. Report per-class precision/recall, false-positive and false-negative rates, calibration error, abstention coverage, OOD detection, missing-modality robustness, end-to-end latency, memory and subgroup/error analysis where lawful and appropriate. Separate synthetic, lab and field results.
 
 ## Tests
