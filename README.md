@@ -3,6 +3,25 @@
 
 ## AI Application Overview
 
+## Thailand Flooding: Open Satellite-Image References
+
+These freely accessible NASA Earth-observation images provide a Thailand flooding case study for environmental monitoring and disaster-response context. They are reference imagery, **not narcotics-screening data** and not evidence that this repository has a flood-detection model.
+
+### Recent Thailand flooding — 2 October 2026
+
+![NASA satellite image of floodwaters in Thailand on 2 October 2026](https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/iotd/2026/floodwaters-overwhelm-thailand/thailandflooding_oli2_20261002_lrg.jpg)
+
+*Image credit: NASA Earth Observatory / Lauren Dauphin, using Landsat data from USGS. The NASA-created image is identified as public domain in the United States. [NASA source and context](https://science.nasa.gov/earth/earth-observatory/floodwaters-overwhelm-thailand/) · [Wikimedia Commons file and licence details](https://commons.wikimedia.org/wiki/File:Floodwaters_Overwhelm_Thailand_(1474475_-_2_20261002_lrg).jpg).*
+
+### Historic Bangkok airport flooding — 29 October 2011
+
+![NASA satellite image showing flooding around Don Mueang Airport in Bangkok in 2011](https://commons.wikimedia.org/wiki/Special:FilePath/Flood_Waters_Inundate_a_Bangkok_Airport.jpg?width=1200)
+
+*Image credit: NASA Earth Observatory; image acquired by the EO-1 Advanced Land Imager. The NASA-created image is identified as public domain in the United States. [NASA source and context](https://science.nasa.gov/earth/earth-observatory/flood-waters-inundate-a-bangkok-airport-76282/) · [Wikimedia Commons file and licence details](https://commons.wikimedia.org/wiki/File:Flood_Waters_Inundate_a_Bangkok_Airport.jpg).*
+
+**Reuse and cost:** These references do not require a paid stock-photo subscription. Images are loaded from NASA/Wikimedia-hosted URLs, so rendering depends on those external hosts. Public-domain status stated here follows the cited U.S. source/licence information; check applicable local rules if redistributing. No paid API or image subscription has been added.
+
+
 ### Animated Concept Preview
 
 ![Multimodal Narcotics Screening AI animated concept demo](https://raw.githubusercontent.com/Pui89/Multimodal-Narcotics-Screening-AI/main/docs/images/multimodal-screening-ai-demo.svg)
