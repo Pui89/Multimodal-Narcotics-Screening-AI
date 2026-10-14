@@ -25,21 +25,13 @@ Potential, testable research use cases:
 
 **Important scientific limit:** a visible photograph—even of crystal-like material—cannot reliably prove that a substance is methamphetamine. Chemical identity requires an authorized validated test or forensic procedure. The repository is a research prototype; it has not demonstrated real-world drug identification or airport deployment.
 
-### Real-world reference photographs: narcotics screening
+### Open-licensed reference photograph: narcotics screening
 
 ![Photograph labelled Samples of drugs, from Wikimedia Commons](https://commons.wikimedia.org/wiki/Special:FilePath/Samples%20of%20drugs.jpg?width=1000)
 
 *Real photograph titled “Samples of drugs,” by Beendy234, shared under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). [View the original image and licence](https://commons.wikimedia.org/wiki/File:Samples_of_drugs.jpg). This is a visual reference only: appearance cannot establish a substance's chemical identity.*
 
-![Drug test kit with tablets, documented by U.S. Customs and Border Protection](https://commons.wikimedia.org/wiki/Special:FilePath/Drug%20test.jpg?width=1000)
-
-*Public-domain photograph from U.S. Customs and Border Protection showing a drug-test kit and seized tablets. [Source and licence details](https://commons.wikimedia.org/wiki/File:Drug_test.jpg). Included as an illustrative screening-workflow reference, not as a validated test result or evidence of this project's detection performance.*
-
-![Real photograph of a Coast Guard drug seizure: seized narcotics being transferred by maritime law-enforcement personnel](https://commons.wikimedia.org/wiki/Special:FilePath/Coast%20Guard%20LEDET%20drug%20seizure%20120606-G-MZ900-143.jpg?width=1280)
-
-*Real-world law-enforcement photograph documenting a narcotics seizure and transfer, taken by U.S. Coast Guard personnel on 4 June 2012. The Wikimedia Commons source identifies it as public domain in the United States because it is a work by a U.S. federal government employee in official duties. [Original photograph, source and licence details](https://commons.wikimedia.org/wiki/File:Coast_Guard_LEDET_drug_seizure_120606-G-MZ900-143.jpg). Included as an operational-context visual reference only—not as model training data, a chemical test, or evidence of detection accuracy.*
-
-**Image and cost note:** These images are hosted by Wikimedia Commons and the source pages identify them as CC0/public domain, so no paid image subscription is required to reuse them under those stated terms. External hosting availability is not guaranteed. Do not use these reference photos as labelled training or evaluation data without checking dataset suitability and provenance.
+**Image and cost note:** The remaining reference photograph is hosted by Wikimedia Commons and its source page identifies it as CC0/public domain, so no paid image subscription is required to reuse it under those stated terms. External hosting availability is not guaranteed. Do not use this reference photo as labelled training or evaluation data without checking dataset suitability and provenance.
 
 ### Thailand narcotics arrest and seizure reference (official source)
 
