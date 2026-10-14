@@ -1,0 +1,6 @@
+{"dataset_type":"synthetic_demo_only","y_true":"review","y_pred":"review","confidence":0.8,"correct":true}
+{"dataset_type":"synthetic_demo_only","y_true":"clear","y_pred":"clear","confidence":0.7,"correct":true}
+{"dataset_type":"synthetic_demo_only","y_true":"review","y_pred":"clear","confidence":0.6,"correct":false}
+{"dataset_type":"synthetic_demo_only","y_true":"clear","y_pred":"review","confidence":0.55,"correct":false}
+{"dataset_type":"synthetic_demo_only","y_true":"review","y_pred":"review","confidence":0.75,"correct":true}
+{"dataset_type":"synthetic_demo_only","y_true":"clear","y_pred":"clear","confidence":0.9,"correct":true}
