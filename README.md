@@ -3,6 +3,45 @@
 
 ## AI Application Overview
 
+## How the AI application works
+
+The AI application is the software layer that receives authorized sensor observations, checks data quality, combines supported evidence, reports uncertainty, and helps an authorized person review a case. The application can be tested on a computer with recorded or simulated data; connecting a physical robot is a separate integration step.
+
+### Application workflow
+
+```mermaid
+flowchart TD
+    A["Authorized sensor inputs"] --> B["Quality and timestamp checks"]
+    B --> C["Perception: objects, geometry and anomalies"]
+    C --> D["Multimodal evidence fusion"]
+    D --> E{"Evidence sufficient?"}
+    E -->|No or conflicting| F["UNKNOWN / request more data"]
+    E -->|Possible concern| G["Screening hypothesis"]
+    F --> H["Authorized human review"]
+    G --> H
+    H --> I["Review outcome and audit record"]
+```
+
+1. **Input:** use only sensor data the project actually supports and that is authorized for the intended purpose. RGB, depth, thermal/NIR and LiDAR are possible modalities when appropriate hardware is connected. Authorized X-ray/CT baggage images are a separate input source when available.
+2. **Quality gate:** check sensor health, image quality, timestamps, calibration and missing modalities.
+3. **AI perception:** analyze supported visual features, object geometry or anomalies; do not infer facts that the sensors cannot observe.
+4. **Evidence fusion:** compare available modalities and record agreement, contradictions and missing data.
+5. **Uncertainty:** preserve `UNKNOWN` when evidence is insufficient or out of scope. A visual match is a screening hypothesis, not proof of chemical identity.
+6. **Human review:** an authorized reviewer makes the consequential decision and the application records the review outcome.
+7. **Evaluation:** test with documented, lawfully usable datasets and report false positives, missed cases, calibration and limitations before considering any field trial.
+
+### Concept image and real-image reference
+
+![Multimodal AI application dashboard concept](docs/images/multimodal-ai-application-dashboard.svg)
+
+*Concept dashboard showing a proposed review interface. It is illustrative artwork, not a live application screenshot or proof of detector performance.*
+
+![Open-licensed real reference photograph of drug samples](https://commons.wikimedia.org/wiki/Special:FilePath/Samples%20of%20drugs.jpg?width=900)
+
+*Real reference photograph from Wikimedia Commons: [Samples of drugs](https://commons.wikimedia.org/wiki/File:Samples_of_drugs.jpg), licensed CC0 1.0 according to its source page. It is used for documentation only, not as a validated training/evaluation dataset or evidence of any particular case.*
+
+**Important limits:** ordinary RGB photos cannot reveal drugs hidden inside closed luggage, and a photo of a substance cannot reliably determine its chemical identity. Baggage screening requires a suitable authorized X-ray/CT system and data; chemical identity requires an authorized validated test or forensic procedure. This repository is a research prototype, not a validated airport detector.
+
 ## How the AI robot works
 
 This section explains the proposed robot workflow using the concept illustrations and real, openly licensed reference photographs already linked in this README. The concept visuals show a design idea; they are not photographs of a deployed robot or evidence of validated narcotics-detection performance.
