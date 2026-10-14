@@ -66,3 +66,15 @@ Use a legally authorized, representative and independently labeled dataset. Repo
 ```bash
 python -m unittest discover -s apps/pui89_app -p 'test_*.py' -v
 ```
+
+
+## Free regression tests
+
+The API safety and input-validation tests use Python's built-in `unittest` framework. From the repository root, install the API dependencies and run:
+
+```bash
+python -m pip install "fastapi>=0.110,<1.0" "pydantic>=2.6,<3.0"
+python -m unittest apps.pui89_app.test_main -v
+```
+
+The tests check insufficient sensors, timestamp skew, spatial/temporal contradictions, unfamiliar inputs, schema bounds and the rule that screening outputs never authorize enforcement or send robot commands. These are software regression tests, not evidence of real-world detection accuracy.
