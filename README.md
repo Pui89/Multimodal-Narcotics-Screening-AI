@@ -835,3 +835,13 @@ This project includes an optional guide for adding local text-to-speech announce
 ## Robot Design Concept
 
 See the [low-cost robot design concept and staged safety plan](docs/ROBOT_DESIGN.md). This is a concept and prototype roadmap, not a claim of a tested or field-ready robot. The initial approach prioritizes local software, existing hardware, no paid hosted APIs, and human supervision.
+
+
+## New Robot Concept Design
+
+A separate visual concept and implementation outline is available here:
+
+- [Multimodal screening robot concept guide](docs/MULTIMODAL_SCREENING_ROBOT_CONCEPT.md)
+- ![PUI89 multimodal screening robot concept](docs/images/multimodal-narcotics-screening-robot-concept.svg)
+
+This is illustrative design artwork, not a deployed robot or evidence of validated screening performance. The workflow preserves uncertainty and requires authorized human review; it does not infer chemical identity from ordinary photographs or authorize enforcement.
