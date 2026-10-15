@@ -1,6 +1,12 @@
 # Multimodal Narcotics Screening AI Application
 
 
+## New Robot Concept Image
+
+![Multimodal Narcotics Screening AI robot concept](docs/images/multimodal-narcotics-screening-robot-realistic-concept.svg)
+
+Original project artwork showing a mobile inspection robot with RGB/depth/LiDAR sensors, luggage observation, a separate authorized X-ray/CT station, and an operator review console. **This is concept illustration—not a real photograph, deployed robot, chemical identification, or validated detector.** The system must preserve `UNKNOWN` when evidence is insufficient and require authorized human review.
+
 ## AI Application Overview
 
 ## How the AI application works
