@@ -845,3 +845,9 @@ A separate visual concept and implementation outline is available here:
 - ![PUI89 multimodal screening robot concept](docs/images/multimodal-narcotics-screening-robot-concept.svg)
 
 This is illustrative design artwork, not a deployed robot or evidence of validated screening performance. The workflow preserves uncertainty and requires authorized human review; it does not infer chemical identity from ordinary photographs or authorize enforcement.
+
+## Free AI Robot Concept Image
+
+![Free original multimodal narcotics screening AI robot concept](docs/images/narcotics-screening-ai-robot-free-concept.svg)
+
+This is original, project-created SVG concept artwork stored directly in this repository. It requires no stock-photo subscription or paid image API. You can view, download, and reuse the SVG under the repository's MIT License, subject to any applicable third-party asset terms elsewhere in the project. The drawing is illustrative only; it does not represent a built robot or a validated narcotics detector. Results must remain uncertain when evidence is insufficient, with authorized human review required.
