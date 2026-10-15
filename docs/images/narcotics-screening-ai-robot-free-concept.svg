@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Multimodal Narcotics Screening AI Robot — Free Concept Artwork</title>
+  <desc id="desc">Original vector concept illustration of a supervised mobile inspection robot at a controlled baggage screening checkpoint. It uses cameras and non-invasive sensor modules, displays an uncertainty-aware review status, and leaves decisions to an authorized human operator.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#081729"/><stop offset="1" stop-color="#153c54"/></linearGradient>
+    <linearGradient id="shell" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5f8fb"/><stop offset="1" stop-color="#b9cad7"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#50e1db"/><stop offset="1" stop-color="#167b99"/></linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#18384c"/><stop offset="1" stop-color="#294b5e"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity=".13" stroke="#9bd7e4" stroke-width="2"><path d="M0 140H1600M0 230H1600M0 320H1600M0 410H1600M0 500H1600M0 590H1600M0 680H1600"/><path d="M120 0V900M240 0V900M360 0V900M480 0V900M600 0V900M720 0V900M840 0V900M960 0V900M1080 0V900M1200 0V900M1320 0V900M1440 0V900"/></g>
+  <circle cx="1230" cy="165" r="190" fill="#2e8798" opacity=".13"/><circle cx="1230" cy="165" r="125" fill="none" stroke="#58c9d0" stroke-width="2" opacity=".25"/>
+  <text x="84" y="86" fill="#69e0dc" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4">OPEN CONCEPT • FREE ORIGINAL VECTOR ART</text>
+  <text x="80" y="145" fill="#ffffff" font-family="Arial, sans-serif" font-size="43" font-weight="700">MULTIMODAL SCREENING ROBOT</text>
+  <text x="83" y="185" fill="#b8d3df" font-family="Arial, sans-serif" font-size="22">Supervised checkpoint assistant · human-led decisions</text>
+  <!-- checkpoint backdrop -->
+  <path d="M0 685 L1600 595 V900H0Z" fill="url(#floor)"/>
+  <path d="M0 744 L1600 655" stroke="#4a7a8b" stroke-width="3" opacity=".55"/>
+  <path d="M0 817 L1600 729" stroke="#4a7a8b" stroke-width="3" opacity=".4"/>
+  <!-- distant checkpoint frame -->
+  <g opacity=".55" fill="none" stroke="#6c9dad" stroke-width="12">
+    <path d="M1010 300V615M1335 280V598M1010 300H1335"/>
+    <path d="M1042 332H1305V574H1042Z" stroke-width="3" stroke-dasharray="10 10"/>
+  </g>
+  <rect x="1050" y="350" width="245" height="180" rx="16" fill="#0b1d2d" stroke="#3c8295" stroke-width="3"/>
+  <text x="1172" y="385" fill="#a4dce5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700">CONTROLLED CHECKPOINT</text>
+  <rect x="1080" y="406" width="185" height="78" rx="8" fill="#173e51"/>
+  <path d="M1095 463L1122 438L1145 450L1174 421L1200 442L1222 427L1250 452" fill="none" stroke="#55d4d2" stroke-width="4"/>
+  <text x="1172" y="510" fill="#d3e8ee" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">SCAN ZONE</text>
+  <!-- luggage -->
+  <ellipse cx="1228" cy="694" rx="130" ry="24" fill="#020b13" opacity=".45" filter="url(#shadow)"/>
+  <rect x="1148" y="552" width="155" height="140" rx="20" fill="#c58b54" stroke="#f0c18b" stroke-width="4"/>
+  <path d="M1190 552V533Q1190 516 1207 516H1243Q1260 516 1260 533V552" fill="none" stroke="#e8bb86" stroke-width="9"/>
+  <path d="M1181 573V670M1270 573V670" stroke="#9b643a" stroke-width="5"/>
+  <rect x="1207" y="611" width="35" height="25" rx="5" fill="#8b5735"/>
+  <circle cx="1175" cy="697" r="10" fill="#142c3a"/><circle cx="1278" cy="697" r="10" fill="#142c3a"/>
+  <!-- robot shadow -->
+  <ellipse cx="670" cy="740" rx="250" ry="42" fill="#020b13" opacity=".5" filter="url(#shadow)"/>
+  <!-- wheels -->
+  <rect x="494" y="668" width="70" height="105" rx="30" fill="#0a1722" stroke="#4c7181" stroke-width="5"/>
+  <rect x="772" y="660" width="70" height="110" rx="30" fill="#0a1722" stroke="#4c7181" stroke-width="5"/>
+  <circle cx="529" cy="720" r="16" fill="#58d3d2"/><circle cx="807" cy="720" r="16" fill="#58d3d2"/>
+  <!-- body -->
+  <path d="M470 475Q470 440 507 430L805 430Q843 436 847 474L834 665Q832 692 804 697H509Q481 694 479 666Z" fill="url(#shell)" stroke="#eaf3f7" stroke-width="5"/>
+  <path d="M492 488Q492 462 521 459H793Q819 461 822 490L814 567H500Z" fill="#17374a"/>
+  <rect x="515" y="480" width="280" height="76" rx="12" fill="#0a1f30" stroke="#4a8a9d" stroke-width="2"/>
+  <text x="655" y="507" fill="#9bbecb" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">SCREENING STATUS</text>
+  <rect x="536" y="519" width="238" height="25" rx="12" fill="#d5a653"/>
+  <text x="655" y="537" fill="#172c3a" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700">HUMAN REVIEW REQUIRED</text>
+  <rect x="512" y="584" width="96" height="48" rx="9" fill="#d5e4ec" stroke="#8ca9b9" stroke-width="2"/>
+  <rect x="626" y="584" width="96" height="48" rx="9" fill="#d5e4ec" stroke="#8ca9b9" stroke-width="2"/>
+  <rect x="740" y="584" width="62" height="48" rx="9" fill="#d5e4ec" stroke="#8ca9b9" stroke-width="2"/>
+  <circle cx="560" cy="608" r="10" fill="#2b8198"/><path d="M548 622Q560 608 572 622" fill="none" stroke="#2b8198" stroke-width="4"/>
+  <path d="M650 600H699M650 609H699M650 618H685" stroke="#2b8198" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="770" cy="608" r="12" fill="none" stroke="#2b8198" stroke-width="4"/><path d="M770 596V608L779 614" fill="none" stroke="#2b8198" stroke-width="3"/>
+  <path d="M490 652H818" stroke="#65d9d5" stroke-width="7" stroke-linecap="round"/>
+  <!-- mast -->
+  <rect x="638" y="288" width="34" height="148" rx="12" fill="#aabdc9" stroke="#eaf3f7" stroke-width="4"/>
+  <rect x="607" y="260" width="96" height="55" rx="16" fill="url(#shell)" stroke="#edf5f8" stroke-width="4"/>
+  <rect x="620" y="272" width="70" height="30" rx="10" fill="url(#glass)"/>
+  <circle cx="641" cy="287" r="9" fill="#062335" stroke="#8ff5ef" stroke-width="3"/>
+  <circle cx="670" cy="287" r="6" fill="#e0ffff"/>
+  <path d="M654 260V230H750" fill="none" stroke="#86a9b9" stroke-width="5" stroke-linecap="round"/>
+  <rect x="735" y="207" width="96" height="44" rx="13" fill="#193f53" stroke="#5fd4d3" stroke-width="3"/>
+  <circle cx="758" cy="229" r="8" fill="#66ded9"/><path d="M779 220H815M779 229H815M779 238H805" stroke="#b8e5ea" stroke-width="3" stroke-linecap="round"/>
+  <!-- sensor callout lines -->
+  <path d="M695 282L854 245H952" fill="none" stroke="#6fe0da" stroke-width="2.5" stroke-dasharray="7 7"/>
+  <circle cx="695" cy="282" r="5" fill="#6fe0da"/>
+  <rect x="948" y="216" width="240" height="58" rx="12" fill="#102d40" stroke="#36788c" stroke-width="2"/>
+  <text x="968" y="240" fill="#6fe0da" font-family="Arial, sans-serif" font-size="14" font-weight="700">VISION + SENSOR INPUTS</text>
+  <text x="968" y="259" fill="#d0e4eb" font-family="Arial, sans-serif" font-size="13">No single sensor decides</text>
+  <!-- operator station -->
+  <g transform="translate(1350 435)">
+    <ellipse cx="80" cy="270" rx="112" ry="22" fill="#020b13" opacity=".35"/>
+    <rect x="15" y="108" width="150" height="92" rx="10" fill="#203f51" stroke="#6b9baa" stroke-width="3"/>
+    <rect x="27" y="120" width="126" height="66" rx="4" fill="#0b1f30"/>
+    <path d="M39 166L61 149L78 158L101 133L122 150L141 137" fill="none" stroke="#54d4d1" stroke-width="3"/>
+    <path d="M80 200V238M45 238H115" stroke="#7799a8" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="83" cy="41" r="32" fill="#c68c6c"/>
+    <path d="M52 40Q48 5 81 5Q115 6 115 39L104 29L64 31Z" fill="#263b4b"/>
+    <path d="M49 81Q82 59 117 81L143 130H24Z" fill="#3b8396"/>
+    <path d="M56 91L83 120L110 91" fill="none" stroke="#d6edf1" stroke-width="4"/>
+  </g>
+  <path d="M1050 585H1375" stroke="#78cdd1" stroke-width="2.5" stroke-dasharray="8 8" opacity=".75"/>
+  <text x="84" y="824" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="700">ASSISTIVE TECHNOLOGY — NOT AN AUTONOMOUS ENFORCEMENT SYSTEM</text>
+  <text x="84" y="861" fill="#b7d1dc" font-family="Arial, sans-serif" font-size="18">Illustrative concept only · uncertain results stay UNKNOWN · authorized human review required</text>
+</svg>
