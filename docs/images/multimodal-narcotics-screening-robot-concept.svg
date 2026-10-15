@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+<title id="title">PUI89 Multimodal Narcotics Screening AI — Robot Concept</title>
+<desc id="desc">Illustrative design concept showing an inspection robot, baggage screening area, sensor inputs, an evidence dashboard, and mandatory human review.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset="1" stop-color="#122e48"/></linearGradient>
+  <linearGradient id="robot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e7f2f7"/><stop offset="1" stop-color="#8faab9"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000814" flood-opacity=".35"/></filter>
+  <style>
+    .heading{font:700 34px Arial,sans-serif;fill:#f3f8fc}.sub{font:400 17px Arial,sans-serif;fill:#a9c3d4}
+    .label{font:700 16px Arial,sans-serif;fill:#e8f5fc}.small{font:400 13px Arial,sans-serif;fill:#aac3d3}
+    .tiny{font:400 11px Arial,sans-serif;fill:#9db8c9}.green{fill:#8be0bd}.amber{fill:#ffc66d}
+    .line{fill:none;stroke:#42d7e8;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .panel{fill:#102a40;stroke:#294b62;stroke-width:1.5}.pill{fill:#153e53;stroke:#2e7185;stroke-width:1}
+  </style>
+</defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<circle cx="1410" cy="130" r="240" fill="#1b5266" opacity=".13"/><circle cx="130" cy="850" r="260" fill="#1b5266" opacity=".12"/>
+<text x="64" y="66" class="sub" letter-spacing="3">PUI89 • RESEARCH CONCEPT</text>
+<text x="64" y="112" class="heading" font-size="39">MULTIMODAL NARCOTICS SCREENING AI</text>
+<text x="64" y="146" class="sub">Mobile inspection concept • Evidence-aware AI • Human-supervised workflow</text>
+<rect x="1250" y="60" width="285" height="40" rx="20" class="pill"/>
+<circle cx="1275" cy="80" r="6" fill="#ffc66d"/><text x="1290" y="85" class="small">ILLUSTRATIVE — NOT DEPLOYED</text>
+<rect x="55" y="180" width="900" height="520" rx="22" class="panel"/>
+<text x="82" y="220" class="label">01 / ROBOT + INSPECTION ZONE</text><text x="82" y="245" class="small">Concept layout for an authorized checkpoint</text>
+<path d="M85 605 L900 605 L930 662 L60 662 Z" fill="#17364b"/><path d="M110 625 H865" stroke="#2c596d" stroke-width="2" stroke-dasharray="12 10"/>
+<path d="M610 350 V290 Q610 270 632 270 H817 Q840 270 840 292 V350" fill="none" stroke="#52758a" stroke-width="16" opacity=".8"/>
+<path d="M630 350 V300 Q630 292 641 292 H808 Q820 292 820 302 V350" fill="none" stroke="#42d7e8" stroke-width="2" opacity=".8"/>
+<rect x="651" y="310" width="150" height="13" rx="6" fill="#1c5266"/><text x="726" y="336" text-anchor="middle" class="tiny">AUTHORIZED SCREENING</text>
+<rect x="575" y="432" width="305" height="28" rx="7" fill="#6f8797"/><rect x="590" y="460" width="275" height="84" rx="8" fill="#314c60"/>
+<g fill="#7892a3"><circle cx="615" cy="473" r="7"/><circle cx="650" cy="473" r="7"/><circle cx="685" cy="473" r="7"/><circle cx="720" cy="473" r="7"/><circle cx="755" cy="473" r="7"/><circle cx="790" cy="473" r="7"/><circle cx="825" cy="473" r="7"/></g>
+<g filter="url(#shadow)"><rect x="670" y="365" width="133" height="82" rx="12" fill="#c08b55" stroke="#e5b57c" stroke-width="2"/><path d="M708 365 V351 Q708 342 718 342 H753 Q763 342 763 351 V365" fill="none" stroke="#e5b57c" stroke-width="7"/><path d="M712 374 V437 M759 374 V437" stroke="#95663d" stroke-width="3" opacity=".8"/><rect x="728" y="399" width="15" height="10" rx="2" fill="#f2d5a7"/></g>
+<g filter="url(#shadow)">
+<rect x="180" y="526" width="275" height="76" rx="24" fill="#1a3143" stroke="#67879a" stroke-width="3"/><rect x="198" y="540" width="239" height="48" rx="16" fill="url(#robot)"/>
+<rect x="213" y="550" width="50" height="26" rx="6" fill="#16384e"/><circle cx="225" cy="563" r="5" fill="#42d7e8"/><circle cx="243" cy="563" r="5" fill="#42d7e8"/><rect x="280" y="550" width="116" height="26" rx="7" fill="#b7cbd4"/>
+<circle cx="222" cy="602" r="20" fill="#0b1724" stroke="#7895a7" stroke-width="5"/><circle cx="405" cy="602" r="20" fill="#0b1724" stroke="#7895a7" stroke-width="5"/>
+<rect x="296" y="365" width="30" height="164" rx="8" fill="#b5c9d3" stroke="#e5f1f5" stroke-width="2"/><rect x="280" y="349" width="64" height="48" rx="10" fill="url(#robot)" stroke="#dcecf3" stroke-width="2"/>
+<rect x="289" y="359" width="47" height="24" rx="6" fill="#112b3d"/><circle cx="303" cy="371" r="8" fill="#42d7e8"/><circle cx="303" cy="371" r="4" fill="#0d4055"/><rect x="319" y="364" width="11" height="14" rx="3" fill="#7ba4b7"/>
+<rect x="291" y="330" width="41" height="17" rx="7" fill="#263f52" stroke="#8aa8b8" stroke-width="2"/><path d="M312 329 V312 M294 318 Q312 302 330 318" fill="none" stroke="#42d7e8" stroke-width="2"/>
+<path d="M312 330 V288" stroke="#a8c2cf" stroke-width="7"/><rect x="273" y="266" width="79" height="32" rx="9" fill="#dbe9ef" stroke="#fff" stroke-width="2"/><rect x="282" y="274" width="61" height="16" rx="5" fill="#122c3e"/><circle cx="294" cy="282" r="5" fill="#42d7e8"/><circle cx="310" cy="282" r="5" fill="#76a8ff"/><circle cx="327" cy="282" r="5" fill="#ffc66d"/>
+</g>
+<path d="M351 282 L440 260 L470 290" class="line" opacity=".75"/><path d="M345 292 L455 330 L515 330" class="line" opacity=".55" stroke-dasharray="6 7"/><path d="M345 375 L515 395 L578 395" class="line" opacity=".55" stroke-dasharray="6 7"/>
+<rect x="80" y="280" width="150" height="78" rx="12" fill="#0b2031" stroke="#2e6176"/><text x="98" y="306" class="label">Sensor mast</text><text x="98" y="328" class="small">RGB / depth</text><text x="98" y="346" class="small">LiDAR (optional)</text><path d="M230 320 L267 292" class="line"/>
+<rect x="465" y="510" width="110" height="55" rx="10" fill="#0b2031" stroke="#2e6176"/><text x="520" y="532" text-anchor="middle" class="small">Baggage</text><text x="520" y="549" text-anchor="middle" class="small">handoff zone</text><path d="M575 537 L602 507" class="line"/>
+<text x="82" y="643" class="small">Low-speed mobility • obstacle sensing • physical emergency stop</text>
+<rect x="980" y="180" width="565" height="520" rx="22" class="panel"/><text x="1008" y="220" class="label">02 / OPERATOR DASHBOARD</text><text x="1008" y="245" class="small">Evidence summary — sample UI, not live data</text>
+<rect x="1007" y="265" width="510" height="56" rx="10" fill="#0b1f30" stroke="#294e63"/><circle cx="1032" cy="293" r="7" fill="#8be0bd"/><text x="1050" y="289" class="small">Sensor health</text><text x="1050" y="307" class="tiny">Example inputs received</text><rect x="1360" y="281" width="136" height="25" rx="12" fill="#174c43"/><text x="1428" y="298" text-anchor="middle" class="small green">CHECK COMPLETE</text>
+<text x="1010" y="353" class="small">INPUT STATUS</text>
+<rect x="1008" y="365" width="242" height="52" rx="9" fill="#0b1f30" stroke="#294e63"/><circle cx="1028" cy="391" r="5" fill="#42d7e8"/><text x="1042" y="387" class="label">RGB camera</text><text x="1042" y="404" class="tiny">Illustrative visual input</text>
+<rect x="1265" y="365" width="252" height="52" rx="9" fill="#0b1f30" stroke="#294e63"/><circle cx="1285" cy="391" r="5" fill="#42d7e8"/><text x="1299" y="387" class="label">Depth / geometry</text><text x="1299" y="404" class="tiny">Optional configured sensor</text>
+<rect x="1008" y="427" width="242" height="52" rx="9" fill="#0b1f30" stroke="#294e63"/><circle cx="1028" cy="453" r="5" fill="#ffc66d"/><text x="1042" y="449" class="label">Thermal / NIR</text><text x="1042" y="466" class="tiny">Optional — not assumed</text>
+<rect x="1265" y="427" width="252" height="52" rx="9" fill="#0b1f30" stroke="#294e63"/><circle cx="1285" cy="453" r="5" fill="#ffc66d"/><text x="1299" y="449" class="label">X-ray / CT</text><text x="1299" y="466" class="tiny">Separate authorized system</text>
+<rect x="1008" y="493" width="509" height="76" rx="10" fill="#31291b" stroke="#87673a"/><text x="1028" y="518" class="label amber">SCREENING STATUS: UNKNOWN / REVIEW</text><text x="1028" y="540" class="small">Insufficient evidence is not a positive finding.</text><text x="1028" y="557" class="tiny">No chemical identity inferred from appearance.</text>
+<rect x="1008" y="583" width="509" height="84" rx="10" fill="#123a35" stroke="#337a69"/><text x="1028" y="609" class="label green">HUMAN REVIEW REQUIRED</text><text x="1028" y="632" class="small">Authorized operator checks evidence and context.</text><text x="1028" y="651" class="small">AI has no authority to accuse or enforce.</text>
+<rect x="55" y="725" width="1490" height="195" rx="22" class="panel"/><text x="82" y="765" class="label">03 / SAFETY-FIRST WORKFLOW</text><text x="82" y="790" class="small">Each stage records missing inputs and uncertainty; robot motion stays on a separate safety-controlled path.</text>
+<rect x="82" y="817" width="180" height="67" rx="11" fill="#123b50" stroke="#2e7185"/><text x="172" y="844" text-anchor="middle" class="label">Sense</text><text x="172" y="865" text-anchor="middle" class="tiny">Authorized data</text><path d="M265 850 H294 M288 844 L296 850 L288 856" class="line"/>
+<rect x="300" y="817" width="180" height="67" rx="11" fill="#123b50" stroke="#2e7185"/><text x="390" y="844" text-anchor="middle" class="label">Quality gate</text><text x="390" y="865" text-anchor="middle" class="tiny">Health / timestamps</text><path d="M483 850 H512 M506 844 L514 850 L506 856" class="line"/>
+<rect x="518" y="817" width="180" height="67" rx="11" fill="#123b50" stroke="#2e7185"/><text x="608" y="844" text-anchor="middle" class="label">Evidence fusion</text><text x="608" y="865" text-anchor="middle" class="tiny">Agreement / conflict</text><path d="M701 850 H730 M724 844 L732 850 L724 856" class="line"/>
+<rect x="736" y="817" width="180" height="67" rx="11" fill="#3a301d" stroke="#8c6b3b"/><text x="826" y="844" text-anchor="middle" class="label amber">Uncertainty</text><text x="826" y="865" text-anchor="middle" class="tiny">UNKNOWN if unclear</text><path d="M919 850 H948 M942 844 L950 850 L942 856" class="line"/>
+<rect x="954" y="817" width="180" height="67" rx="11" fill="#123b50" stroke="#2e7185"/><text x="1044" y="844" text-anchor="middle" class="label">Human review</text><text x="1044" y="865" text-anchor="middle" class="tiny">Authorized decision</text><path d="M1137 850 H1166 M1160 844 L1168 850 L1160 856" class="line"/>
+<rect x="1172" y="817" width="180" height="67" rx="11" fill="#123b50" stroke="#2e7185"/><text x="1262" y="844" text-anchor="middle" class="label">Audit record</text><text x="1262" y="865" text-anchor="middle" class="tiny">Provenance / outcome</text>
+<rect x="1370" y="817" width="145" height="67" rx="11" fill="#16372f" stroke="#3a806b"/><text x="1442" y="842" text-anchor="middle" class="label green">Safe motion</text><text x="1442" y="862" text-anchor="middle" class="tiny">Separate control</text>
+<text x="64" y="962" class="tiny">CONCEPT ONLY • Sensor options depend on installed hardware • Not a validated detector • No autonomous enforcement • Use lawful data and validated procedures</text><text x="1535" y="962" text-anchor="end" class="tiny">PUI89 / MULTIMODAL SCREENING AI</text>
+</svg>
