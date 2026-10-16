@@ -169,11 +169,11 @@ These real photographs are included as **visual reference examples** for a resea
 
 *Photo: DMTrott, [Heroin (Drug).jpg](https://commons.wikimedia.org/wiki/File:Heroin_(Drug).jpg), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Credit the author, link the licence, note any changes, and share adaptations under the same or a compatible licence.*
 
-#### Cannabis plant
+#### Real Thai cannabis-smuggling arrest and seizure report
 
-![Real photograph of a cannabis plant, released into the public domain](https://commons.wikimedia.org/wiki/Special:FilePath/Marijuana%20plant.jpg?width=1000)
+![News photograph of Thai officials inspecting luggage during a reported cannabis-smuggling arrest at Koh Samui Airport](https://www.khaosodenglish.com/wp-content/uploads/2025/03/4more-british-cannabis1-696x522.jpg)
 
-*Photo: Jorge Barrios, [Marijuana plant.jpg](https://commons.wikimedia.org/wiki/File:Marijuana_plant.jpg), released into the [public domain](https://creativecommons.org/publicdomain/zero/1.0/).*
+*Photo credit: Khaosod English, [“Cannabis Worth Millions Seized as Four More Britons Arrested at Samui” (16 March 2025)](https://www.khaosodenglish.com/news/2025/03/16/cannabis-worth-millions-seized-as-four-more-britons-arrested-at-samui/). The article reports that Thai authorities inspected luggage and seized packaged dried cannabis during an arrest operation. This is a third-party news photograph, not an open-licensed asset; it is embedded from the publisher for reference, and reuse rights remain with the copyright holder. The image is for project documentation only, not a training label or proof of AI detection performance.
 
 **Cost and responsible-use note:** The cited source pages list these images as CC0/public domain or CC BY-SA 4.0, so no paid stock-photo subscription is required for reuse under those licence terms. Images are loaded from Wikimedia Commons; external hosting can change, and this does not guarantee that future cloud, API, storage or compute services will be free. Visual appearance alone cannot identify a substance reliably—use authorized, validated chemical testing for confirmation.
 
