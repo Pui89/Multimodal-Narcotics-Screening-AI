@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+<title id="title">Multimodal Narcotics Screening AI — proposed robot workflow</title>
+<desc id="desc">Four-step concept illustration: mobile robot patrols a baggage area, approved screening station examines baggage, AI records uncertainty and flags a review, and an authorized officer makes the decision. Not a real robot recording or validated detector.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1728"/><stop offset="1" stop-color="#172b45"/></linearGradient>
+  <linearGradient id="robot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9f1f8"/><stop offset="1" stop-color="#9eb2c7"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#65d6c4"/></marker>
+  <style>
+  .h{font:700 30px Arial,sans-serif;fill:#f4f7fb}.sub{font:18px Arial,sans-serif;fill:#c9d6e5}.card{fill:#f7fafc;stroke:#c7d4e2;stroke-width:2}.ct{font:700 20px Arial,sans-serif;fill:#15263a}.tx{font:16px Arial,sans-serif;fill:#30465e}.small{font:15px Arial,sans-serif;fill:#dce6f0}.label{font:700 15px Arial,sans-serif;fill:#8ee6d9}
+  </style>
+</defs>
+<rect width="1400" height="820" rx="28" fill="url(#bg)"/>
+<text x="56" y="66" class="h">Multimodal Narcotics Screening AI — proposed robot-assisted workflow</text>
+<text x="56" y="102" class="sub">Robot handles repetitive observation and data routing; trained staff retain authority and final decisions.</text>
+<g transform="translate(48 145)">
+  <rect class="card" width="305" height="490" rx="18"/>
+  <circle cx="34" cy="34" r="20" fill="#147d78"/><text x="34" y="41" text-anchor="middle" font="700 20px Arial" fill="#fff">1</text>
+  <text x="66" y="41" class="ct">Patrol &amp; observe</text>
+  <rect x="32" y="100" width="240" height="10" rx="5" fill="#6d8297"/><rect x="44" y="110" width="14" height="30" fill="#6d8297"/><rect x="245" y="110" width="14" height="30" fill="#6d8297"/>
+  <g transform="translate(91 150)">
+    <circle cx="29" cy="126" r="20" fill="#24394e"/><circle cx="145" cy="126" r="20" fill="#24394e"/>
+    <rect x="17" y="44" width="140" height="78" rx="20" fill="url(#robot)" stroke="#6d8297" stroke-width="3"/>
+    <rect x="43" y="17" width="89" height="31" rx="8" fill="#cbd8e5" stroke="#6d8297" stroke-width="3"/>
+    <rect x="65" y="24" width="46" height="13" rx="6" fill="#147d78"/><circle cx="87" cy="30" r="4" fill="#e7fffb"/>
+    <rect x="39" y="65" width="94" height="24" rx="5" fill="#1a3046"/><circle cx="59" cy="77" r="6" fill="#65d6c4"/><circle cx="82" cy="77" r="6" fill="#65d6c4"/><circle cx="105" cy="77" r="6" fill="#65d6c4"/>
+    <path d="M-8 147 H173" stroke="#147d78" stroke-width="4" stroke-dasharray="10 8" fill="none" marker-end="url(#arrow)"/>
+  </g>
+  <text x="24" y="355" class="tx">Mobile platform maps its route,</text><text x="24" y="380" class="tx">checks obstacles and records</text><text x="24" y="405" class="tx">visible observations.</text>
+  <text x="24" y="454" class="label">Proposed integration</text>
+</g>
+<path d="M360 390 H383" stroke="#65d6c4" stroke-width="5" marker-end="url(#arrow)"/>
+<g transform="translate(390 145)">
+  <rect class="card" width="305" height="490" rx="18"/>
+  <circle cx="34" cy="34" r="20" fill="#147d78"/><text x="34" y="41" text-anchor="middle" font="700 20px Arial" fill="#fff">2</text>
+  <text x="66" y="41" class="ct">Screen baggage</text>
+  <rect x="27" y="126" width="251" height="40" rx="8" fill="#6d8297"/><path d="M39 146 H267" stroke="#dfe8f1" stroke-width="3" stroke-dasharray="12 9"/>
+  <rect x="85" y="81" width="122" height="49" rx="8" fill="#c9d7e5" stroke="#6d8297" stroke-width="3"/><path d="M96 91 L196 119 M196 91 L96 119" stroke="#147d78" stroke-width="3" opacity=".8"/>
+  <rect x="112" y="100" width="70" height="42" rx="5" fill="#bd8a57" stroke="#80562e" stroke-width="3"/><path d="M112 112 H182 M147 100 V142" stroke="#80562e" stroke-width="3"/>
+  <rect x="42" y="185" width="220" height="84" rx="12" fill="#e3ebf3" stroke="#b8c8d8" stroke-width="2"/>
+  <text x="152" y="214" text-anchor="middle" class="tx">Approved X-ray / CT</text><text x="152" y="238" text-anchor="middle" class="tx">system, if integrated</text>
+  <text x="24" y="325" class="tx">Use only authorized, compatible</text><text x="24" y="350" class="tx">screening data. RGB cameras</text><text x="24" y="375" class="tx">cannot see through closed bags.</text>
+  <text x="24" y="454" class="label">Not included by default</text>
+</g>
+<path d="M702 390 H725" stroke="#65d6c4" stroke-width="5" marker-end="url(#arrow)"/>
+<g transform="translate(732 145)">
+  <rect class="card" width="305" height="490" rx="18"/>
+  <circle cx="34" cy="34" r="20" fill="#147d78"/><text x="34" y="41" text-anchor="middle" font="700 20px Arial" fill="#fff">3</text>
+  <text x="66" y="41" class="ct">AI triage</text>
+  <rect x="27" y="86" width="251" height="190" rx="12" fill="#12283e" stroke="#68839d" stroke-width="3"/>
+  <rect x="46" y="105" width="92" height="61" rx="6" fill="#28445e"/><rect x="157" y="105" width="101" height="12" rx="5" fill="#65d6c4"/><rect x="157" y="127" width="76" height="8" rx="4" fill="#91a9c1"/><rect x="157" y="143" width="88" height="8" rx="4" fill="#91a9c1"/>
+  <rect x="46" y="180" width="212" height="72" rx="7" fill="#1b3c54"/><text x="59" y="208" font="700 17px Arial" fill="#8ee6d9">STATUS: UNKNOWN</text><text x="59" y="232" font="14px Arial" fill="#e4edf5">Human review required</text>
+  <text x="24" y="325" class="tx">Combine only validated inputs,</text><text x="24" y="350" class="tx">record missing evidence and</text><text x="24" y="375" class="tx">surface uncertainty—not guilt.</text>
+  <text x="24" y="454" class="label">Prototype UI is illustrative</text>
+</g>
+<path d="M1044 390 H1067" stroke="#65d6c4" stroke-width="5" marker-end="url(#arrow)"/>
+<g transform="translate(1074 145)">
+  <rect class="card" width="278" height="490" rx="18"/>
+  <circle cx="34" cy="34" r="20" fill="#147d78"/><text x="34" y="41" text-anchor="middle" font="700 20px Arial" fill="#fff">4</text>
+  <text x="66" y="41" class="ct">Officer decides</text>
+  <rect x="32" y="92" width="214" height="135" rx="12" fill="#dce6f0" stroke="#aabdd0" stroke-width="2"/>
+  <rect x="49" y="108" width="180" height="98" rx="6" fill="#18334c"/><rect x="64" y="123" width="70" height="57" rx="4" fill="#36536c"/><rect x="145" y="125" width="68" height="9" rx="4" fill="#65d6c4"/><rect x="145" y="143" width="53" height="7" rx="3" fill="#91a9c1"/><rect x="145" y="158" width="61" height="7" rx="3" fill="#91a9c1"/>
+  <path d="M139 228 V244 H106 V258 H174 V244 H139" fill="#9eb2c7" stroke="#6d8297" stroke-width="2"/>
+  <circle cx="137" cy="300" r="25" fill="#d0a27c"/><path d="M105 333 Q137 311 169 333 L183 392 H91 Z" fill="#2c536f"/><path d="M115 333 L137 357 L159 333" fill="#e8f0f6"/>
+  <text x="20" y="425" class="tx">Authorized staff verify evidence,</text><text x="20" y="450" class="tx">apply procedures and decide</text><text x="20" y="475" class="tx">next steps.</text>
+</g>
+<rect x="48" y="666" width="1304" height="94" rx="14" fill="#263f57" stroke="#58738d" stroke-width="2"/>
+<text x="70" y="704" font="700 21px Arial" fill="#fff">STATUS: CONCEPT ONLY</text>
+<text x="70" y="736" class="small">This graphic is an original design illustration—not a photograph, live video, real robot demo, or validated narcotics detector.</text>
+</svg>
