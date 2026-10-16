@@ -177,41 +177,6 @@ These real photographs are included as **visual reference examples** for a resea
 
 *Photo: Scrinterlocked, [Dried Cannabis Flowers.jpg](https://commons.wikimedia.org/wiki/File:Dried_Cannabis_Flowers.jpg), licensed under [Creative Commons Attribution-ShareAlike 3.0 (CC BY-SA 3.0)](https://creativecommons.org/licenses/by-sa/3.0/). This is a real reference photograph of dried cannabis flowers, not a photograph of a Thai arrest or seizure. It is included for visual documentation only—not as a labelled training dataset, proof of chemical identity, or evidence of AI detection performance.*
 
-## Real Robot Reference, Movement Diagram, and Working Videos
-
-This section separates **real-world reference footage** from this repository's **proposed robot design**. The videos below show existing robots or real airport screening operations; they do **not** show a deployed Pui89 narcotics-screening robot.
-
-### Proposed robot movement — step-by-step image
-
-![Four-step movement concept for a robot-assisted airport screening workflow](docs/images/multimodal-screening-robot-movement-sequence.svg)
-
-*Original concept diagram: patrol and observe → use an authorized baggage-screening station if integrated → AI records evidence and uncertainty → an authorized officer reviews. This is an illustration, not a real robot photograph, recorded movement, or validated simulation.*
-
-### Real working videos and references
-
-1. **[Airport police patrol robot trial at Singapore Changi — CNA](https://www.channelnewsasia.com/singapore/changi-airport-police-robot-ride-hailing-autonomous-htx-5243321)** — real airport patrol robot reference. It demonstrates patrol/support use, **not narcotics detection**.
-2. **[Japanese airport trials robot baggage handler — ABC News video](https://abcnews.com/video/132487884/)** — real robot movement while assisting baggage-handling workers. It demonstrates material handling, **not narcotics detection**.
-3. **[CBP K9 detects narcotics at Chicago O’Hare — official public-domain video](https://www.dvidshub.net/video/608288/cbp-k9-detects-narcotics-chicago-ohare)** — real airport narcotics-screening workflow using a trained dog and officers, **not a robot**. It is useful as a reference for how an alert is followed by a human inspection.
-4. **[Airport inspection robots — ISEE Robotics](https://iseerobotics.com/industries/airports)** — real-world examples of mobile robots inspecting airport areas and recording observations. This is a vendor reference, not evidence of narcotics identification.
-
-### How this robot could reduce repetitive or hazardous worker tasks
-
-The practical goal is **robot-assisted screening, not replacing an entire customs or airport-security team**:
-
-- **Routine patrol:** a mobile platform follows an approved route, avoids obstacles, and records time-stamped observations so staff do not need to walk every routine route as often.
-- **Baggage workflow:** a robot could transport or position a bag for inspection, or relay a bag identifier to an existing authorized X-ray/CT station. It must not claim that RGB images can see inside closed luggage.
-- **AI assistance:** software checks sensor/data quality, combines only supported inputs, and flags cases for review. A visual similarity score is not chemical identification.
-- **Human decision:** an authorized officer checks the screening evidence and decides the next step. The robot/AI must not independently accuse, search, detain, or make enforcement decisions.
-- **Safe fallback:** if sensors disagree, data are missing, or the case is outside the validated scope, report `UNKNOWN` and request human review.
-
-### Current implementation versus future work
-
-**Implemented in this repository:** a local software prototype and illustrative dashboard using manually entered example features/heuristic rules, regression tests, evaluation-metric tests, and synthetic example data.
-
-**Not demonstrated yet:** a physical mobile robot, autonomous movement, live sensor integration, connection to an airport X-ray/CT system, chemical identification, a validated narcotics detector, or measured field performance. Synthetic test outputs are not real-world detection results.
-
-**Proposed research:** begin with a free local simulation and recorded/authorized sample data; measure navigation reliability separately from screening-model performance; document false positives, missed cases, uncertainty, and human-review outcomes; only consider a physical trial after safety, legal, privacy, and technical approvals. Do not connect the prototype to real enforcement decisions without independent validation.
-
 
 ## Airport Terminal Crowd Monitoring: Moving Robot, People Flow, and Operator Screen
 
@@ -219,11 +184,6 @@ This proposed extension focuses on a busy terminal where many passengers walk in
 
 ![Concept: mobile airport patrol robot moving among passengers, with an operator screen showing aggregate people count, flow direction and a crowd-density alert](docs/images/airport-terminal-crowd-robot-concept.svg)
 
-### Real robot movement video and references
-
-- **[Official Singapore Police Force: GIBSON robot at Changi Airport (2025)](https://www.police.gov.sg/Media-Hub/Police-Life/2025/07/GIBSON-The-Robotic-Platform-Transforming-Policing-at-Changi-Airport)** — official article with video clips of a real airport patrol robot operating autonomously and supporting officers. It demonstrates robot patrol and mobility, not this project's crowd analytics or narcotics detection.
-- **[Official Singapore Police Force: patrol robots at Changi Airport Terminal 4 (2023)](https://www.police.gov.sg/media-hub/news/2023/20230615_operationalisation_of_patrol_robots_at_changi_airport_terminal_4)** — describes real patrol robots used to augment officers and provide additional situational awareness.
-- **[NVIDIA video analytics documentation: occupancy and movement analytics](https://docs.nvidia.com/mms/text/Video_Analytics_Insights_toc.html)** — technical reference for counting people in zones, tracking movement, and producing occupancy/crowd-density analytics. It is a reference implementation/documentation, not a video of the Pui89 project.
 
 ### What the terminal screen could show
 
