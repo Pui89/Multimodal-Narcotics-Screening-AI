@@ -211,3 +211,43 @@ The practical goal is **robot-assisted screening, not replacing an entire custom
 **Not demonstrated yet:** a physical mobile robot, autonomous movement, live sensor integration, connection to an airport X-ray/CT system, chemical identification, a validated narcotics detector, or measured field performance. Synthetic test outputs are not real-world detection results.
 
 **Proposed research:** begin with a free local simulation and recorded/authorized sample data; measure navigation reliability separately from screening-model performance; document false positives, missed cases, uncertainty, and human-review outcomes; only consider a physical trial after safety, legal, privacy, and technical approvals. Do not connect the prototype to real enforcement decisions without independent validation.
+
+
+## Airport Terminal Crowd Monitoring: Moving Robot, People Flow, and Operator Screen
+
+This proposed extension focuses on a busy terminal where many passengers walk in different directions. The robot's useful role would be to **support routine patrol and show aggregate crowd-flow information to staff**—not to identify or rank individual passengers. The illustration below is an original concept, not a photograph of a real Pui89 robot or a live system.
+
+![Concept: mobile airport patrol robot moving among passengers, with an operator screen showing aggregate people count, flow direction and a crowd-density alert](docs/images/airport-terminal-crowd-robot-concept.svg)
+
+### Real robot movement video and references
+
+- **[Official Singapore Police Force: GIBSON robot at Changi Airport (2025)](https://www.police.gov.sg/Media-Hub/Police-Life/2025/07/GIBSON-The-Robotic-Platform-Transforming-Policing-at-Changi-Airport)** — official article with video clips of a real airport patrol robot operating autonomously and supporting officers. It demonstrates robot patrol and mobility, not this project's crowd analytics or narcotics detection.
+- **[Official Singapore Police Force: patrol robots at Changi Airport Terminal 4 (2023)](https://www.police.gov.sg/media-hub/news/2023/20230615_operationalisation_of_patrol_robots_at_changi_airport_terminal_4)** — describes real patrol robots used to augment officers and provide additional situational awareness.
+- **[NVIDIA video analytics documentation: occupancy and movement analytics](https://docs.nvidia.com/mms/text/Video_Analytics_Insights_toc.html)** — technical reference for counting people in zones, tracking movement, and producing occupancy/crowd-density analytics. It is a reference implementation/documentation, not a video of the Pui89 project.
+
+### What the terminal screen could show
+
+A local operator dashboard could display:
+- **People count by zone** and approximate flow direction, using a camera or depth sensor that the airport has authorized for this purpose.
+- **Crowd-density / queue alerts** when an aggregate count exceeds a site-configured threshold.
+- **Robot status**: current patrol zone, obstacle/sensor health, battery, and whether remote assistance is needed.
+- **Review queue**: time-stamped events for a trained operator to verify before taking action.
+
+**Privacy by design:** the proposed screen should show aggregate counts, zone heatmaps and flow arrows—not facial recognition, identity matching, emotion inference, or automatic suspicious-person scores. Any real camera processing would need airport authorization, privacy/security review, access controls, and a documented retention policy. If possible, process video locally and store only the minimum event metadata required.
+
+### How it could reduce routine worker workload
+
+1. The robot follows an approved route and uses obstacle sensing to move among walking passengers; in crowded or uncertain situations it slows, stops, or requests remote assistance.
+2. A connected, authorized sensor produces aggregate counts and flow estimates for defined terminal zones.
+3. The screen alerts staff to congestion, blocked walkways, or a sensor/robot fault.
+4. Staff use the alert to decide whether to redirect a queue, make an announcement, or dispatch help.
+
+This can reduce repetitive walking and manual observation, but it **does not safely replace airport police, security, customs, or terminal staff**. People are unpredictable; human staff remain responsible for context, emergencies, accessibility needs and consequential decisions.
+
+### Implementation status — be precise
+
+**Implemented now:** the repository's local screening dashboard prototype, manual example-feature inputs, heuristic rules, regression tests and synthetic evaluation examples described above.
+
+**Concept only / not implemented yet:** autonomous terminal navigation, live camera or depth-sensor input, real-time crowd counting/tracking, a live crowd-monitoring screen, connection to airport CCTV, and a physical robot. The illustration's count (“42”) is an example label, not a measured result. The external videos show other organizations' robots, not this project.
+
+**Suggested free local next step:** create a simulation-only corridor/terminal scene with moving pedestrian agents, a robot route, obstacle stops and a dashboard fed by simulated counts. Label every output as simulated. Only after that should authorized, privacy-reviewed recorded video be evaluated offline; do not test on public CCTV or deploy in a real terminal without explicit authorization.
