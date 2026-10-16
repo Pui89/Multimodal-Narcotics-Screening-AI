@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+<title id="title">Airport terminal crowd-flow support robot concept</title>
+<desc id="desc">Concept illustration of a mobile airport patrol robot moving among walking passengers. Its display shows anonymous crowd counts, flow arrows and congestion zones, not facial identities. A human operator monitors alerts.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaf3fb"/><stop offset="1" stop-color="#f7f9fc"/></linearGradient>
+  <linearGradient id="bot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#334155"/><stop offset="1" stop-color="#111827"/></linearGradient>
+  <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1685d1"/></marker>
+</defs>
+<rect width="1200" height="660" rx="24" fill="url(#bg)"/>
+<text x="38" y="48" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172b4d">AIRPORT TERMINAL · ROBOT-ASSISTED CROWD AWARENESS</text>
+<text x="38" y="78" font-family="Arial,sans-serif" font-size="16" fill="#475569">Concept illustration — not a real Pui89 robot, live camera feed, or validated system</text>
+<!-- terminal windows -->
+<rect x="35" y="105" width="1130" height="340" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+<path d="M55 135 H1145 M55 145 H1145" stroke="#dbeafe" stroke-width="4"/>
+<g fill="#dbeafe" stroke="#94a3b8" stroke-width="2"><rect x="65" y="160" width="210" height="105" rx="5"/><rect x="295" y="160" width="210" height="105" rx="5"/><rect x="525" y="160" width="210" height="105" rx="5"/><rect x="755" y="160" width="210" height="105" rx="5"/></g>
+<g stroke="#94a3b8" stroke-width="2"><path d="M170 160 V265 M400 160 V265 M630 160 V265 M860 160 V265"/></g>
+<!-- walking people -->
+<g stroke="#334155" stroke-width="7" stroke-linecap="round" fill="none">
+<g transform="translate(125 290)"><circle cx="0" cy="0" r="11" fill="#f4c7a1" stroke="none"/><path d="M0 15 V55 M0 25 L-17 42 M0 25 L17 39 M0 55 L-12 82 M0 55 L14 82"/></g>
+<g transform="translate(235 315)"><circle cx="0" cy="0" r="11" fill="#c58b65" stroke="none"/><path d="M0 15 V55 M0 25 L-17 42 M0 25 L17 39 M0 55 L-12 82 M0 55 L14 82"/></g>
+<g transform="translate(355 286)"><circle cx="0" cy="0" r="11" fill="#f4c7a1" stroke="none"/><path d="M0 15 V55 M0 25 L-17 42 M0 25 L17 39 M0 55 L-12 82 M0 55 L14 82"/></g>
+<g transform="translate(465 320)"><circle cx="0" cy="0" r="11" fill="#9a684d" stroke="none"/><path d="M0 15 V55 M0 25 L-17 42 M0 25 L17 39 M0 55 L-12 82 M0 55 L14 82"/></g>
+<g transform="translate(590 290)"><circle cx="0" cy="0" r="11" fill="#e7b58d" stroke="none"/><path d="M0 15 V55 M0 25 L-17 42 M0 25 L17 39 M0 55 L-12 82 M0 55 L14 82"/></g>
+<g transform="translate(720 315)"><circle cx="0" cy="0" r="11" fill="#c58b65" stroke="none"/><path d="M0 15 V55 M0 25 L-17 42 M0 25 L17 39 M0 55 L-12 82 M0 55 L14 82"/></g>
+<g transform="translate(850 290)"><circle cx="0" cy="0" r="11" fill="#f4c7a1" stroke="none"/><path d="M0 15 V55 M0 25 L-17 42 M0 25 L17 39 M0 55 L-12 82 M0 55 L14 82"/></g>
+</g>
+<!-- anonymous zones and flow -->
+<ellipse cx="405" cy="350" rx="150" ry="60" fill="#f59e0b" opacity=".14" stroke="#d97706" stroke-dasharray="8 7" stroke-width="2"/>
+<text x="340" y="418" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#92400e">DENSITY ZONE</text>
+<path d="M80 400 C220 430 340 420 485 400" fill="none" stroke="#1685d1" stroke-width="4" stroke-dasharray="9 8" marker-end="url(#arrow)"/>
+<path d="M520 400 C660 430 800 420 930 395" fill="none" stroke="#1685d1" stroke-width="4" stroke-dasharray="9 8" marker-end="url(#arrow)"/>
+<!-- robot -->
+<g transform="translate(930 290)">
+<rect x="-48" y="12" width="96" height="96" rx="20" fill="url(#bot)"/>
+<rect x="-35" y="-24" width="70" height="44" rx="10" fill="#64748b" stroke="#0f172a" stroke-width="3"/>
+<rect x="-27" y="-16" width="54" height="26" rx="5" fill="#7dd3fc"/>
+<circle cx="-12" cy="-3" r="4" fill="#075985"/><circle cx="12" cy="-3" r="4" fill="#075985"/>
+<rect x="-33" y="35" width="66" height="42" rx="5" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+<path d="M-23 64 L-10 52 L0 58 L16 43 L25 49" fill="none" stroke="#0284c7" stroke-width="3"/>
+<circle cx="-29" cy="109" r="13" fill="#111827"/><circle cx="29" cy="109" r="13" fill="#111827"/>
+<path d="M-38 -25 L-38 -44 M38 -25 L38 -44" stroke="#334155" stroke-width="5"/><circle cx="-38" cy="-47" r="7" fill="#0ea5e9"/><circle cx="38" cy="-47" r="7" fill="#0ea5e9"/>
+</g>
+<text x="880" y="435" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#172b4d">MOBILE PATROL ROBOT</text>
+<!-- dashboard panel -->
+<rect x="35" y="465" width="700" height="155" rx="16" fill="#0f172a"/>
+<text x="58" y="496" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#f8fafc">OPERATOR DISPLAY · ANONYMOUS CROWD METRICS</text>
+<rect x="58" y="512" width="190" height="82" rx="8" fill="#1e293b" stroke="#334155"/>
+<text x="74" y="536" font-family="Arial,sans-serif" font-size="13" fill="#cbd5e1">PEOPLE COUNT</text><text x="74" y="573" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#7dd3fc">EXAMPLE: 42</text>
+<rect x="264" y="512" width="205" height="82" rx="8" fill="#1e293b" stroke="#334155"/>
+<text x="280" y="536" font-family="Arial,sans-serif" font-size="13" fill="#cbd5e1">FLOW DIRECTION</text><path d="M285 565 H435" stroke="#38bdf8" stroke-width="5" marker-end="url(#arrow)"/><text x="280" y="585" font-family="Arial,sans-serif" font-size="12" fill="#cbd5e1">Aggregate arrows only</text>
+<rect x="485" y="512" width="225" height="82" rx="8" fill="#1e293b" stroke="#334155"/>
+<text x="501" y="536" font-family="Arial,sans-serif" font-size="13" fill="#cbd5e1">ZONE ALERT</text><rect x="501" y="548" width="190" height="28" rx="6" fill="#854d0e"/><text x="514" y="567" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#fef3c7">REVIEW CROWDING</text>
+<!-- guardrails -->
+<rect x="755" y="465" width="410" height="155" rx="16" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="778" y="496" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#172b4d">PRIVACY & SAFETY GUARDRAILS</text>
+<g font-family="Arial,sans-serif" font-size="15" fill="#334155"><text x="780" y="527">✓ Count / flow / density, not identity</text><text x="780" y="553">✓ No face recognition or person ranking</text><text x="780" y="579">✓ Human staff handle alerts and decisions</text><text x="780" y="605">✓ Stop or remote-assist if navigation is unsure</text></g>
+</svg>
