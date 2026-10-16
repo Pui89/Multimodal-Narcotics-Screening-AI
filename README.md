@@ -169,8 +169,10 @@ These real photographs are included as **visual reference examples** for a resea
 
 *Photo: DMTrott, [Heroin (Drug).jpg](https://commons.wikimedia.org/wiki/File:Heroin_(Drug).jpg), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Credit the author, link the licence, note any changes, and share adaptations under the same or a compatible licence.*
 
-#### Real photograph of dried cannabis flowers
+#### Real airport cannabis-seizure photograph
 
-![Real photograph of dried cannabis flowers in a sealed packet](https://commons.wikimedia.org/wiki/Special:FilePath/Dried%20Cannabis%20Flowers.jpg?width=1000)
+![Photograph of vacuum-sealed cannabis packages seized by customs at Phuket International Airport](https://cassette.sphdigital.com.sg/image/straitstimes/7c7c9bb353cb780fdcd9dd9289a38362dd5b59a930b589f79f488aa319276a78)
+
+*Photo credit: Thai Customs Department/Facebook, published by [The Straits Times in its report on a Phuket airport cannabis seizure](https://www.straitstimes.com/asia/se-asia/russian-man-arrested-with-17-6kg-of-cannabis-at-phuket-airport). The report says customs officers found vacuum-sealed packs of cannabis flowers and cannabis resin in suitcases at Phuket International Airport in July 2026. This is a real seizure-reference image, not an open-licensed image; it is linked from the publisher's image host for project documentation. Please check permission before redistributing or republishing the image elsewhere. It is not a labelled training dataset or proof of AI detection performance.
 
 *Photo: Scrinterlocked, [Dried Cannabis Flowers.jpg](https://commons.wikimedia.org/wiki/File:Dried_Cannabis_Flowers.jpg), licensed under [Creative Commons Attribution-ShareAlike 3.0 (CC BY-SA 3.0)](https://creativecommons.org/licenses/by-sa/3.0/). This is a real reference photograph of dried cannabis flowers, not a photograph of a Thai arrest or seizure. It is included for visual documentation only—not as a labelled training dataset, proof of chemical identity, or evidence of AI detection performance.*
