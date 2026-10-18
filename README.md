@@ -249,3 +249,10 @@ No real-dataset performance metrics are claimed by this documentation update. Th
 **Buyer position:** suitable now for research collaboration, evaluation tooling and feasibility studies with an authorized data partner. Do not market it as a validated narcotics detector or autonomous enforcement robot. Commercial release requires intended-use definition, legal/regulatory review, independent validation, privacy/security controls, authorized human review, auditability and customer-agreed acceptance criteria.
 
 See the [validation and commercial roadmap](docs/VALIDATION_AND_COMMERCIAL_ROADMAP.md).
+
+
+## Automated evaluation safeguards
+
+The automated regression workflow runs API safety tests, metric tests, evaluation-runner input-validation tests, and a synthetic-report smoke check on pushes and pull requests affecting the application or evaluation code. The runner validates labels and confidence, rejects contradictory correctness flags, and treats `review` as the default positive class when present. See [evaluation instructions](evaluation/README.md) and the [workflow](.github/workflows/app-regression.yml).
+
+The synthetic report is only a pipeline check. No real-data screening benchmark or trained image detector is claimed by these tests.
