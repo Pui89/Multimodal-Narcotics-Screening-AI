@@ -46,6 +46,10 @@ def evaluate(rows: list[dict], positive_label: str | None = None) -> dict:
         missing = {"y_true", "y_pred", "confidence"} - row.keys()
         if missing:
             raise ValueError(f"record {index} missing required fields: {', '.join(sorted(missing))}")
+        if not isinstance(row["y_true"], str) or not row["y_true"].strip():
+            raise ValueError(f"record {index} y_true must be a non-empty string")
+        if not isinstance(row["y_pred"], str) or not row["y_pred"].strip():
+            raise ValueError(f"record {index} y_pred must be a non-empty string")
         score = float(row["confidence"])
         if not math.isfinite(score) or not 0.0 <= score <= 1.0:
             raise ValueError(f"record {index} confidence must be finite and between 0 and 1")
