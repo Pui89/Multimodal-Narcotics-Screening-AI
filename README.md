@@ -1,5 +1,12 @@
 # Multimodal Narcotics Screening AI Application
 
+## Robot concept illustration
+
+![Multimodal Narcotics Screening AI robot concept](docs/images/multimodal-screening-robot-concept-2026.svg)
+
+*Original concept artwork—not a validated narcotics detector or proof of substance identity.*
+
+
 > **Complete-system architecture and acceptance gates:** [COMPLETE_SYSTEM_BLUEPRINT.md](docs/COMPLETE_SYSTEM_BLUEPRINT.md). This is a build-and-validation plan, not a claim of validated narcotics identification.
 > **Current validation matrix:** [VALIDATION_MATRIX.md](docs/VALIDATION_MATRIX.md) — implementation evidence, automated checks, and remaining unvalidated capabilities.
 
