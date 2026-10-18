@@ -27,3 +27,17 @@ Each JSONL line should contain:
 Use lawful, appropriately licensed data with provenance and a clear train/validation/test split. Report class definitions, dataset version, annotation process, model/software version, thresholds, hardware, and limitations. For safety-relevant screening, include per-class precision/recall, false-positive and false-negative counts, unknown/abstention coverage, missing-sensor robustness, calibration, latency, and subgroup/error analysis where lawful and appropriate.
 
 **Important:** the current Streamlit/API demo uses manually entered features and heuristic rules. Evaluating the sample file does not evaluate that API or a trained detector unless the records genuinely come from the evaluated system and the stated reference labels. Never publish invented benchmark values.
+
+
+## Input validation and positive-class convention
+
+The runner now rejects empty input, malformed JSON lines, missing required fields, non-finite or out-of-range confidence scores, non-boolean `correct` flags, and any `correct` value that contradicts `y_true == y_pred`. Calibration correctness is derived from the labels, not trusted from a hand-entered flag.
+
+For this screening project, `review` is the default positive class when it appears in the labels. You can explicitly select a class with:
+
+```bash
+python evaluation/run_evaluation.py path/to/real_test_predictions.jsonl --positive-label review --output reports/real-test-v1.json
+python -m unittest apps.pui89_app.test_main evaluation.test_metrics evaluation.test_runner -v
+```
+
+Precision, recall and F1 in this compact report are for the selected positive class, not a substitute for per-class reporting. For real screening evaluation, also publish the confusion matrix and metrics for every class. The synthetic report remains a pipeline smoke test only.
