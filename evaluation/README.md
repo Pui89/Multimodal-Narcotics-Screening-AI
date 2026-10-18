@@ -8,7 +8,7 @@ From the repository root:
 
 ```bash
 python evaluation/run_evaluation.py evaluation/examples/synthetic_predictions.jsonl --output reports/synthetic-evaluation.json
-python -m unittest evaluation.test_metrics -v
+python -m unittest evaluation.test_metrics evaluation.test_runner -v
 ```
 
 A checked-in example output is available at [`reports/synthetic-evaluation.json`](../reports/synthetic-evaluation.json). Re-run the command above to regenerate it.
@@ -28,10 +28,9 @@ Use lawful, appropriately licensed data with provenance and a clear train/valida
 
 **Important:** the current Streamlit/API demo uses manually entered features and heuristic rules. Evaluating the sample file does not evaluate that API or a trained detector unless the records genuinely come from the evaluated system and the stated reference labels. Never publish invented benchmark values.
 
-
 ## Input validation and positive-class convention
 
-The runner now rejects empty input, malformed JSON lines, missing required fields, non-finite or out-of-range confidence scores, non-boolean `correct` flags, and any `correct` value that contradicts `y_true == y_pred`. Calibration correctness is derived from the labels, not trusted from a hand-entered flag.
+The runner rejects empty input, malformed JSON lines, missing required fields, non-finite or out-of-range confidence scores, non-boolean `correct` flags, and any `correct` value that contradicts `y_true == y_pred`. Calibration correctness is derived from the labels, not trusted from a hand-entered flag. The lower-level metric functions also reject empty labels, non-finite confidence, invalid bin counts, and non-boolean correctness values.
 
 For this screening project, `review` is the default positive class when it appears in the labels. You can explicitly select a class with:
 
