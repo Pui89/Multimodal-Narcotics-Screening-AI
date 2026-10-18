@@ -1,5 +1,6 @@
 """Small, dependency-free metrics for documented classification evaluations."""
 from dataclasses import dataclass
+import math
 from typing import Sequence
 
 
@@ -18,9 +19,13 @@ def classification_metrics(
 ) -> ClassificationMetrics:
     if len(y_true) != len(y_pred) or not y_true:
         raise ValueError("inputs must be non-empty and equal length")
+    if any(not isinstance(label, str) or not label.strip() for label in (*y_true, *y_pred)):
+        raise ValueError("labels must be non-empty strings")
     accuracy = sum(a == b for a, b in zip(y_true, y_pred)) / len(y_true)
     if positive_label is None:
         positive_label = sorted(set(y_true) | set(y_pred))[0]
+    if not isinstance(positive_label, str) or not positive_label.strip():
+        raise ValueError("positive_label must be a non-empty string")
     tp = sum(a == positive_label and b == positive_label for a, b in zip(y_true, y_pred))
     fp = sum(a != positive_label and b == positive_label for a, b in zip(y_true, y_pred))
     fn = sum(a == positive_label and b != positive_label for a, b in zip(y_true, y_pred))
@@ -37,19 +42,30 @@ def expected_calibration_error(
 ) -> float:
     if len(confidences) != len(correct) or not confidences:
         raise ValueError("inputs must be non-empty and equal length")
-    if bins < 1:
+    if not isinstance(bins, int) or isinstance(bins, bool) or bins < 1:
         raise ValueError("bins must be a positive integer")
-    if any(not 0.0 <= float(c) <= 1.0 for c in confidences):
-        raise ValueError("confidences must be between 0 and 1")
-    total, error = len(confidences), 0.0
+    normalized = []
+    for confidence in confidences:
+        if isinstance(confidence, bool):
+            raise ValueError("confidences must be finite numbers between 0 and 1")
+        try:
+            score = float(confidence)
+        except (TypeError, ValueError) as exc:
+            raise ValueError("confidences must be finite numbers between 0 and 1") from exc
+        if not math.isfinite(score) or not 0.0 <= score <= 1.0:
+            raise ValueError("confidences must be finite numbers between 0 and 1")
+        normalized.append(score)
+    if any(not isinstance(value, bool) for value in correct):
+        raise ValueError("correct values must be booleans")
+    total, error = len(normalized), 0.0
     for i in range(bins):
         lo, hi = i / bins, (i + 1) / bins
         members = [
-            j for j, c in enumerate(confidences)
-            if lo <= c < hi or (i == bins - 1 and c == hi)
+            j for j, score in enumerate(normalized)
+            if lo <= score < hi or (i == bins - 1 and score == hi)
         ]
         if members:
-            avg_conf = sum(confidences[j] for j in members) / len(members)
-            avg_acc = sum(bool(correct[j]) for j in members) / len(members)
+            avg_conf = sum(normalized[j] for j in members) / len(members)
+            avg_acc = sum(correct[j] for j in members) / len(members)
             error += len(members) / total * abs(avg_conf - avg_acc)
     return error
