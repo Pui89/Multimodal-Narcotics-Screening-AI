@@ -5,6 +5,7 @@ on:
     paths:
       - "apps/pui89_app/**"
       - "evaluation/**"
+      - "tests/**"
       - "tools/**"
       - "scripts/**"
       - ".github/workflows/app-regression.yml"
@@ -38,6 +39,8 @@ jobs:
         run: python -m py_compile tools/audit_dataset_manifest.py tools/dataset_inventory.py tools/group_split_manifest.py
       - name: Run API regression and evaluation metric tests
         run: python -m unittest apps.pui89_app.test_main evaluation.test_metrics evaluation.test_runner -v
+      - name: Run dataset provenance, split-leakage and path-safety tests
+        run: python -m unittest discover -s tests -p "test_dataset_tools.py" -v
       - name: Smoke-test the synthetic evaluation runner
         run: |
           python evaluation/run_evaluation.py evaluation/examples/synthetic_predictions.jsonl --output /tmp/synthetic-evaluation.json
