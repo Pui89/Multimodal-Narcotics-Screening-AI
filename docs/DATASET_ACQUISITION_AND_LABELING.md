@@ -17,6 +17,14 @@ Last reviewed: 18 October 2026
 | [Seized ecstasy pills image dataset (Zenodo, DOI 10.5281/zenodo.4124562)](https://zenodo.org/records/4124562) | Potential forensic-research image source | Record describes 602 high-resolution JPG images of seized ecstasy pills. This is a small, narrow forensic collection, not a representative screening benchmark; image appearance does not establish chemical composition. | The licence was not reliably verified in this review. **Do not download for training or redistribute until the Zenodo record's explicit licence and terms are confirmed.** |
 | [ePillID benchmark](https://github.com/usuyama/ePillID-benchmark) | Fine-grained prescription-pill image retrieval research | Prescription-pill identity, not illicit-substance detection. | Review the repository and underlying NIH Pillbox data terms before use; do not infer a licence from code availability alone. |
 
+### Verified public download entry points
+
+- [C3PI sample archive (493 MB)](https://data.lhncbc.nlm.nih.gov/public/Pills/sampleData.zip) — start here rather than downloading the full archive. The Data.gov record lists ODbL metadata and describes the collection as prescription-pill images for research and development. Check the source terms/attribution before using or redistributing images.
+- [C3PI training images index](https://data.lhncbc.nlm.nih.gov/public/Pills/index.html) — described by NLM as 133,000 consumer-grade prescription-pill images.
+- [C3PI reference images (6.8 GB)](https://data.lhncbc.nlm.nih.gov/public/Pills/rximage.zip) — larger controlled-light reference set; do not download until the sample and licence review are complete.
+
+These are **prescription-pill** data, not illicit-narcotics ground truth. The seized-ecstasy Zenodo record remains excluded until its explicit dataset licence is verified. No narcotics training dataset is approved by this documentation update.
+
 ## Recommended local workflow
 
 1. Begin with a small sample or source metadata, not a multi-gigabyte download. Confirm the dataset's own licence, citation, intended-use conditions and whether redistribution/derivative labels are permitted.
