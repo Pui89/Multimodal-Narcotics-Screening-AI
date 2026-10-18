@@ -5,11 +5,15 @@ on:
     paths:
       - "apps/pui89_app/**"
       - "evaluation/**"
+      - "tools/**"
+      - "scripts/**"
       - ".github/workflows/app-regression.yml"
   pull_request:
     paths:
       - "apps/pui89_app/**"
       - "evaluation/**"
+      - "tools/**"
+      - "scripts/**"
       - ".github/workflows/app-regression.yml"
   workflow_dispatch:
 
@@ -30,6 +34,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install minimal API dependencies
         run: python -m pip install "fastapi>=0.110,<1.0" "pydantic>=2.6,<3.0"
+      - name: Syntax-check local dataset tooling
+        run: python -m py_compile tools/audit_dataset_manifest.py tools/dataset_inventory.py tools/group_split_manifest.py
       - name: Run API regression and evaluation metric tests
         run: python -m unittest apps.pui89_app.test_main evaluation.test_metrics evaluation.test_runner -v
       - name: Smoke-test the synthetic evaluation runner
