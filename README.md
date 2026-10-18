@@ -21,6 +21,16 @@ This repository's recommended local model, intended tasks, licence checks, setup
 
 [Detailed project status, checks, next steps and future plan](docs/PROJECT_STATUS_2026-10-18.md)
 
+## Latest status update — 18 October 2026
+
+- **Successful:** Python CI passed on 3.10/3.11/3.12; local API/dashboard and synthetic evaluation checks are present.
+- **Continuing:** define the lawful task; check provenance/licences and labels; expand tests for missing/conflicting modalities, uncertainty, calibration and abstention to UNKNOWN/human review.
+- **Next:** secure lawful, expert-reviewed data; prevent duplicate leakage; compare single-modality baselines with fusion only when suitable aligned data exist; report false positives/negatives and calibration.
+- **Future:** test distribution shifts, sensor failure, privacy and auditability before any independently reviewed pilot.
+- **Corrections:** synthetic test scores are not screening accuracy; pharmaceutical pill imagery is not proof of illicit-narcotics detection; images alone cannot confirm chemical identity. AI must not independently trigger enforcement action. Free/local-first.
+
+
+
 ## Project status overview — updated 18 October 2026
 
 **Current stage: screening workflow prototype and evaluation-pipeline testing. Not a validated narcotics detector.**
