@@ -13,6 +13,7 @@ class EvaluationRunnerTests(unittest.TestCase):
         self.assertAlmostEqual(result["accuracy"], 0.5)
         self.assertAlmostEqual(result["precision"], 0.5)
         self.assertAlmostEqual(result["recall"], 1.0)
+        self.assertEqual(result["positive_label"], "review")
 
     def test_rejects_correct_flag_that_contradicts_labels(self):
         with self.assertRaisesRegex(ValueError, "contradicts"):
