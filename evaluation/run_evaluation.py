@@ -34,7 +34,7 @@ def load_jsonl(path: Path) -> list[dict]:
     return rows
 
 
-def evaluate(rows: list[dict]) -> dict:
+def evaluate(rows: list[dict], positive_label: str | None = None) -> dict:
     if not rows:
         raise ValueError("at least one prediction record is required")
 
@@ -59,8 +59,13 @@ def evaluate(rows: list[dict]) -> dict:
         confidence.append(score)
         correct.append(actual_correct)
 
-    metrics = classification_metrics(y_true, y_pred)
+    if positive_label is None:
+        positive_label = "review" if "review" in set(y_true) | set(y_pred) else sorted(set(y_true) | set(y_pred))[0]
+    if positive_label not in set(y_true) | set(y_pred):
+        raise ValueError(f"positive label {positive_label!r} does not occur in labels")
+    metrics = classification_metrics(y_true, y_pred, positive_label=positive_label)
     return {
+        "positive_label": positive_label,
         "n": len(rows),
         "accuracy": metrics.accuracy,
         "precision": metrics.precision,
@@ -74,8 +79,9 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("input", type=Path)
     parser.add_argument("--output", type=Path, default=Path("reports/evaluation.json"))
+    parser.add_argument("--positive-label", help="Label treated as positive; defaults to review when present, otherwise the alphabetically first label.")
     args = parser.parse_args()
-    result = evaluate(load_jsonl(args.input))
+    result = evaluate(load_jsonl(args.input), positive_label=args.positive_label)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))
