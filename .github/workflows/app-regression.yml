@@ -33,4 +33,6 @@ jobs:
       - name: Run API regression and evaluation metric tests
         run: python -m unittest apps.pui89_app.test_main evaluation.test_metrics evaluation.test_runner -v
       - name: Smoke-test the synthetic evaluation runner
-        run: python evaluation/run_evaluation.py evaluation/examples/synthetic_predictions.jsonl --output /tmp/synthetic-evaluation.json
+        run: |
+          python evaluation/run_evaluation.py evaluation/examples/synthetic_predictions.jsonl --output /tmp/synthetic-evaluation.json
+          python -c "import json; r=json.load(open('/tmp/synthetic-evaluation.json')); assert r['n']==6 and r['positive_label']=='review' and abs(r['accuracy']-2/3)<1e-9; print('synthetic pipeline smoke check passed; not a real-world benchmark')"
