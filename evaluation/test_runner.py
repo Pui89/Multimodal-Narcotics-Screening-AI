@@ -27,6 +27,14 @@ class EvaluationRunnerTests(unittest.TestCase):
             with self.subTest(confidence=confidence), self.assertRaisesRegex(ValueError, "confidence"):
                 evaluate([{"y_true": "a", "y_pred": "a", "confidence": confidence}])
 
+    def test_rejects_empty_or_non_string_labels(self):
+        for row in (
+            {"y_true": "", "y_pred": "review", "confidence": 0.5},
+            {"y_true": "review", "y_pred": 2, "confidence": 0.5},
+        ):
+            with self.subTest(row=row), self.assertRaisesRegex(ValueError, "y_true|y_pred"):
+                evaluate([row])
+
     def test_rejects_missing_fields_and_empty_input(self):
         with self.assertRaisesRegex(ValueError, "required fields"):
             evaluate([{"y_true": "a", "confidence": 0.5}])
