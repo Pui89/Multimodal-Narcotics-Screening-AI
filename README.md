@@ -23,7 +23,7 @@ This repository's recommended local model, intended tasks, licence checks, setup
 
 ## Latest status update — 18 October 2026
 
-- **Successful:** Python CI passed on 3.10/3.11/3.12; local API/dashboard and synthetic evaluation checks are present.
+- **Successful:** Python CI passed on 3.10/3.11/3.12 in [run 39096448541](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/39096448541); local API/dashboard and synthetic evaluation checks are present. This does not establish narcotics-identification accuracy or chemical identity.
 - **Continuing:** define the lawful task; check provenance/licences and labels; expand tests for missing/conflicting modalities, uncertainty, calibration and abstention to UNKNOWN/human review.
 - **Next:** secure lawful, expert-reviewed data; prevent duplicate leakage; compare single-modality baselines with fusion only when suitable aligned data exist; report false positives/negatives and calibration.
 - **Future:** test distribution shifts, sensor failure, privacy and auditability before any independently reviewed pilot.
