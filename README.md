@@ -211,3 +211,41 @@ This can reduce repetitive walking and manual observation, but it **does not saf
 **Concept only / not implemented yet:** autonomous terminal navigation, live camera or depth-sensor input, real-time crowd counting/tracking, a live crowd-monitoring screen, connection to airport CCTV, and a physical robot. The illustration's count (“42”) is an example label, not a measured result. The external videos show other organizations' robots, not this project.
 
 **Suggested free local next step:** create a simulation-only corridor/terminal scene with moving pedestrian agents, a robot route, obstacle stops and a dashboard fed by simulated counts. Label every output as simulated. Only after that should authorized, privacy-reviewed recorded video be evaluated offline; do not test on public CCTV or deploy in a real terminal without explicit authorization.
+
+
+---
+
+## Validation status, labelling, training and measured results
+
+**Evidence status:** this repository has a local review-oriented API/dashboard, metric utilities and a synthetic JSONL evaluation example. The dashboard uses manually entered example features; uploaded images are preview-only and no trained vision model analyses them. The synthetic example tests evaluation plumbing, not narcotics-screening performance. No validated chemical identification, baggage X-ray/CT detector or deployed screening robot is established here.
+
+| Workstream | Current evidence | Status / next step |
+|---|---|---|
+| Application/API | Local review dashboard with illustrative rules | Prototype; run a clean-install smoke test |
+| Evaluation code | Classification and calibration metrics plus JSONL runner | Utility code; test with genuine model predictions |
+| Labelled data | No verified task-specific benchmark established here | Secure lawful data access and expert-reviewed labels |
+| Training | No verified trained checkpoint established here | Define one bounded modality/task and train a licensed baseline |
+| Real-data evaluation | No real held-out metrics established here | Report per-class errors, calibration, abstention and latency |
+| Robotics | Concept architecture and separate navigation/safety design | Physical integration and safety not validated |
+| Commercial readiness | Research/feasibility prototype | Not ready to sell as a validated detector |
+
+### Data and labelling protocol
+
+1. Define the task and modality. Ordinary RGB photos cannot reveal contents inside closed baggage or reliably establish chemical identity. Baggage screening requires appropriate authorized X-ray/CT equipment and legally usable data; chemical identity requires an authorized validated analytical procedure.
+2. Use only lawfully usable data. Record source, permission/licence, modality, acquisition conditions, dataset version and annotation protocol. Apply privacy, access-control and retention requirements to sensitive data.
+3. Label only what the evidence supports. Use an approved review/clear/unknown protocol where appropriate; record ambiguous cases and expert adjudication. Never label chemical identity from appearance alone.
+4. Split by item, session, site or source to prevent near-duplicate leakage. Freeze the final test split.
+5. Train a local baseline and record commit, dataset checksum, split counts, annotation version, seed, configuration, hardware, package versions, elapsed time and checkpoint checksum.
+6. Generate genuine model predictions on the frozen test set and evaluate with the existing JSONL runner. Each row must contain adjudicated y_true, actual model y_pred and meaningful confidence from 0 to 1.
+7. Report per-class precision/recall/F1, confusion matrix, false-positive/false-negative counts, calibration, abstention or UNKNOWN coverage, robustness by acquisition condition, latency, hardware and failure analysis.
+8. Keep screening separate from enforcement and robot motion. Model output is a review hypothesis, never proof of a substance or grounds for autonomous enforcement. Require authorized human review and a separate deterministic robot safety controller.
+
+Example command: python evaluation/run_evaluation.py path/to/real_test_predictions.jsonl --output reports/real-test-v1.json
+
+### Honest results and release gate
+
+No real-dataset performance metrics are claimed by this documentation update. The checked-in synthetic example must not be cited as real model performance. Publish results only with dataset provenance, annotation/adjudication policy, frozen split counts, model/checkpoint checksum, exact reproduction command and error analysis.
+
+**Buyer position:** suitable now for research collaboration, evaluation tooling and feasibility studies with an authorized data partner. Do not market it as a validated narcotics detector or autonomous enforcement robot. Commercial release requires intended-use definition, legal/regulatory review, independent validation, privacy/security controls, authorized human review, auditability and customer-agreed acceptance criteria.
+
+See the [validation and commercial roadmap](docs/VALIDATION_AND_COMMERCIAL_ROADMAP.md).
