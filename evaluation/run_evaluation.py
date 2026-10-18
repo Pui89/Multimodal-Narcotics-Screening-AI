@@ -1,37 +1,71 @@
 """Reproducible JSONL evaluation runner.
 
-Input records require: y_true, y_pred, confidence, correct.
-No benchmark values are embedded in the repository.
+Input records require y_true, y_pred and confidence. The reported correctness
+used for calibration is derived from y_true/y_pred to prevent contradictory
+hand-entered correctness flags from silently changing calibration metrics.
 """
 from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 
-from metrics import classification_metrics, expected_calibration_error
+try:
+    from .metrics import classification_metrics, expected_calibration_error
+except ImportError:  # Support direct execution: python evaluation/run_evaluation.py
+    from metrics import classification_metrics, expected_calibration_error
 
 
 def load_jsonl(path: Path) -> list[dict]:
     rows = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            rows.append(json.loads(line))
+    for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        if not line.strip():
+            continue
+        try:
+            row = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"invalid JSON on line {line_number}: {exc.msg}") from exc
+        if not isinstance(row, dict):
+            raise ValueError(f"line {line_number} must contain a JSON object")
+        rows.append(row)
+    if not rows:
+        raise ValueError("input contains no prediction records")
     return rows
 
 
 def evaluate(rows: list[dict]) -> dict:
-    y_true = [r["y_true"] for r in rows]
-    y_pred = [r["y_pred"] for r in rows]
-    confidence = [float(r["confidence"]) for r in rows]
-    correct = [bool(r.get("correct", a == b)) for r, a, b in zip(rows, y_true, y_pred)]
-    m = classification_metrics(y_true, y_pred)
+    if not rows:
+        raise ValueError("at least one prediction record is required")
+
+    y_true = []
+    y_pred = []
+    confidence = []
+    correct = []
+    for index, row in enumerate(rows, start=1):
+        missing = {"y_true", "y_pred", "confidence"} - row.keys()
+        if missing:
+            raise ValueError(f"record {index} missing required fields: {', '.join(sorted(missing))}")
+        score = float(row["confidence"])
+        if not math.isfinite(score) or not 0.0 <= score <= 1.0:
+            raise ValueError(f"record {index} confidence must be finite and between 0 and 1")
+        if "correct" in row and not isinstance(row["correct"], bool):
+            raise ValueError(f"record {index} optional correct field must be a boolean")
+        actual_correct = row["y_true"] == row["y_pred"]
+        if "correct" in row and row["correct"] != actual_correct:
+            raise ValueError(f"record {index} correct flag contradicts y_true/y_pred")
+        y_true.append(str(row["y_true"]))
+        y_pred.append(str(row["y_pred"]))
+        confidence.append(score)
+        correct.append(actual_correct)
+
+    metrics = classification_metrics(y_true, y_pred)
     return {
         "n": len(rows),
-        "accuracy": m.accuracy,
-        "precision": m.precision,
-        "recall": m.recall,
-        "f1": m.f1,
+        "accuracy": metrics.accuracy,
+        "precision": metrics.precision,
+        "recall": metrics.recall,
+        "f1": metrics.f1,
         "ece": expected_calibration_error(confidence, correct),
     }
 
