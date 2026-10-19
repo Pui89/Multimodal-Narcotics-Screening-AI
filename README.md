@@ -6,7 +6,6 @@
 
 *Original concept artwork—not a validated narcotics detector or proof of substance identity.*
 
-
 > **Complete-system architecture and acceptance gates:** [COMPLETE_SYSTEM_BLUEPRINT.md](docs/COMPLETE_SYSTEM_BLUEPRINT.md). This is a build-and-validation plan, not a claim of validated narcotics identification.
 > **Current validation matrix:** [VALIDATION_MATRIX.md](docs/VALIDATION_MATRIX.md) — implementation evidence, automated checks, and remaining unvalidated capabilities.
 
@@ -18,12 +17,7 @@ This repository's recommended local model, intended tasks, licence checks, setup
 
 **Free dataset and labelling workflow:** see [dataset sources, licence checks, annotation and training plan](docs/DATASET_ACQUISITION_AND_LABELING.md), the [Windows opt-in dataset helper](scripts/prepare_free_datasets.ps1), the [image inventory/manifest generator](tools/dataset_inventory.py), the [manifest template](data/manifest.template.csv), the [group-aware train/validation/test splitter](tools/group_split_manifest.py), and the [local manifest audit tool](tools/audit_dataset_manifest.py). Downloads require local user confirmation; no images are automatically considered licensed or correctly labelled. Keep datasets and weights out of Git.
 
-
 [Detailed project status, checks, next steps and future plan](docs/PROJECT_STATUS_2026-10-18.md)
-
-## Product brief
-
-See [docs/PRODUCT_BRIEF.md](docs/PRODUCT_BRIEF.md) for a concise description of the problem, current evidence, intended audiences, demonstration plan and milestones for potential partners or award applications.
 
 ## Latest status update — 19 October 2026
 
@@ -44,8 +38,6 @@ See [docs/PRODUCT_BRIEF.md](docs/PRODUCT_BRIEF.md) for a concise description of 
 - **Future:** test distribution shifts, sensor failure, privacy and auditability before any independently reviewed pilot.
 - **Corrections:** synthetic test scores are not screening accuracy; pharmaceutical pill imagery is not proof of illicit-narcotics detection; images alone cannot confirm chemical identity. AI must not independently trigger enforcement action. Free/local-first.
 
-
-
 ## Project status overview — updated 18 October 2026
 
 **Current stage: screening workflow prototype and evaluation-pipeline testing. Not a validated narcotics detector.**
@@ -59,7 +51,7 @@ See [docs/PRODUCT_BRIEF.md](docs/PRODUCT_BRIEF.md) for a concise description of 
 | **Next** | (1) Define a lawful, narrowly scoped intended use; (2) obtain appropriately authorized/licensed data; (3) document labels and independent splits; (4) evaluate a baseline and report per-class precision/recall, confusion matrix, false-positive/false-negative rates, abstention and calibration; (5) perform privacy, bias, security and human-review testing. |
 | **Future** | Compare modalities only where real sensor data and lawful access exist; test distribution shifts and sensor failures; conduct independent expert review and controlled pilot evaluation before any operational claim. |
 
-**Evidence boundary:** successful CI proves that the automated software checks passed—not that narcotics can be identified accurately. The application must present uncertain results as uncertain, require authorized human review, and never treat an AI score as proof of a substance's identity. See the [validation and commercial roadmap](docs/VALIDATION_AND_COMMERCIAL_ROADMAP.md), [evaluation guide](evaluation/README.md), and [GitHub Actions](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions).
+**Evidence boundary:** successful CI proves that the automated software checks passed—not that narcotics can be identified accurately. The application must present uncertain results as uncertain, require authorized human review, and never treat an AI score as proof of a substance's identity. See the [evaluation guide](evaluation/README.md) and [GitHub Actions](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions).
 
 ---
 
@@ -198,8 +190,6 @@ flowchart TD
 
 ### Open-licensed reference photograph: narcotics screening
 
-
-
 **Image and cost note:** The remaining reference photograph is hosted by Wikimedia Commons and its source page identifies it as CC0/public domain, so no paid image subscription is required to reuse it under those stated terms. External hosting availability is not guaranteed. Do not use this reference photo as labelled training or evaluation data without checking dataset suitability and provenance.
 
 ### Thailand narcotics arrest and seizure reference (official source)
@@ -232,13 +222,11 @@ These real photographs are included as **visual reference examples** for a resea
 
 *Photo: Scrinterlocked, [Dried Cannabis Flowers.jpg](https://commons.wikimedia.org/wiki/File:Dried_Cannabis_Flowers.jpg), licensed under [Creative Commons Attribution-ShareAlike 3.0 (CC BY-SA 3.0)](https://creativecommons.org/licenses/by-sa/3.0/). This is a real reference photograph of dried cannabis flowers, not a photograph of a Thai arrest or seizure. It is included for visual documentation only—not as a labelled training dataset, proof of chemical identity, or evidence of AI detection performance.*
 
-
 ## Airport Terminal Crowd Monitoring: Moving Robot, People Flow, and Operator Screen
 
 This proposed extension focuses on a busy terminal where many passengers walk in different directions. The robot's useful role would be to **support routine patrol and show aggregate crowd-flow information to staff**—not to identify or rank individual passengers. The illustration below is an original concept, not a photograph of a real Pui89 robot or a live system.
 
 ![Concept: mobile airport patrol robot moving among passengers, with an operator screen showing aggregate people count, flow direction and a crowd-density alert](docs/images/airport-terminal-crowd-robot-concept.svg)
-
 
 ### What the terminal screen could show
 
@@ -267,7 +255,6 @@ This can reduce repetitive walking and manual observation, but it **does not saf
 
 **Suggested free local next step:** create a simulation-only corridor/terminal scene with moving pedestrian agents, a robot route, obstacle stops and a dashboard fed by simulated counts. Label every output as simulated. Only after that should authorized, privacy-reviewed recorded video be evaluated offline; do not test on public CCTV or deploy in a real terminal without explicit authorization.
 
-
 ---
 
 ## Validation status, labelling, training and measured results
@@ -282,7 +269,6 @@ This can reduce repetitive walking and manual observation, but it **does not saf
 | Training | No verified trained checkpoint established here | Define one bounded modality/task and train a licensed baseline |
 | Real-data evaluation | No real held-out metrics established here | Report per-class errors, calibration, abstention and latency |
 | Robotics | Concept architecture and separate navigation/safety design | Physical integration and safety not validated |
-| Commercial readiness | Research/feasibility prototype | Not ready to sell as a validated detector |
 
 ### Data and labelling protocol
 
@@ -301,10 +287,7 @@ Example command: python evaluation/run_evaluation.py path/to/real_test_predictio
 
 No real-dataset performance metrics are claimed by this documentation update. The checked-in synthetic example must not be cited as real model performance. Publish results only with dataset provenance, annotation/adjudication policy, frozen split counts, model/checkpoint checksum, exact reproduction command and error analysis.
 
-**Buyer position:** suitable now for research collaboration, evaluation tooling and feasibility studies with an authorized data partner. Do not market it as a validated narcotics detector or autonomous enforcement robot. Commercial release requires intended-use definition, legal/regulatory review, independent validation, privacy/security controls, authorized human review, auditability and customer-agreed acceptance criteria.
-
-See the [validation and commercial roadmap](docs/VALIDATION_AND_COMMERCIAL_ROADMAP.md).
-
+**Evidence boundary:** successful CI proves that the automated software checks passed—not that narcotics can be identified accurately. The application must present uncertain results as uncertain, require authorized human review, and never treat an AI score as proof of a substance's identity. See the [evaluation guide](evaluation/README.md) and [GitHub Actions](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions).
 
 ## Automated evaluation safeguards
 
