@@ -19,6 +19,8 @@ This repository's recommended local model, intended tasks, licence checks, setup
 
 [Detailed project status, checks, next steps and future plan](docs/PROJECT_STATUS_2026-10-18.md)
 
+[Product brief and release gates](docs/PRODUCT_BRIEF.md)
+
 ## Latest status update — 19 October 2026
 
 - **Current status: screening workflow prototype; not a validated narcotics detector.** The previously linked CI run and synthetic evaluation tests verify software behavior only. Synthetic scores are not real screening-accuracy results.
