@@ -216,7 +216,7 @@ These real photographs are included as **visual reference examples** for a resea
 
 #### Real airport cannabis-seizure photograph
 
-![Photograph of vacuum-sealed cannabis packages seized by customs at Phuket International Airport](https://cassette.sphdigital.com.sg/image/straitstimes/7c7c9bb353cb780fdcd9dd9289a38362dd5b59a930b589f79f488aa319276a78)
+**Publisher-hosted reference (not embedded in this repository):** [View the original Straits Times report](https://www.straitstimes.com/asia/se-asia/russian-man-arrested-with-17-6kg-of-cannabis-at-phuket-airport).
 
 *Photo credit: Thai Customs Department/Facebook, published by [The Straits Times in its report on a Phuket airport cannabis seizure](https://www.straitstimes.com/asia/se-asia/russian-man-arrested-with-17-6kg-of-cannabis-at-phuket-airport). The report says customs officers found vacuum-sealed packs of cannabis flowers and cannabis resin in suitcases at Phuket International Airport in July 2026. This is a real seizure-reference image, not an open-licensed image; it is linked from the publisher's image host for project documentation. Please check permission before redistributing or republishing the image elsewhere. It is not a labelled training dataset or proof of AI detection performance.
 
