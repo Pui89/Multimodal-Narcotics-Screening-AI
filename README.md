@@ -21,8 +21,6 @@ This repository's recommended local model, intended tasks, licence checks, setup
 
 ## Latest status update — 19 October 2026
 
-## Latest status update — 19 October 2026
-
 - **Current status: screening workflow prototype; not a validated narcotics detector.** The previously linked CI run and synthetic evaluation tests verify software behavior only. Synthetic scores are not real screening-accuracy results.
 - **Data readiness:** obtain lawful, authorised, appropriately licensed and expert-reviewed data before model evaluation. Record provenance and annotation rules, prevent duplicate/source leakage across splits, and document which modalities are genuinely available and aligned.
 - **Next checks:** test missing, stale and conflicting modalities; verify confidence calibration and the ability to abstain as `UNKNOWN`; compare single-modality baselines with multimodal fusion only when suitable aligned real data exist; report false positives, false negatives, calibration and failure cases.
