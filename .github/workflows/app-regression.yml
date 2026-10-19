@@ -8,6 +8,8 @@ on:
       - "tests/**"
       - "tools/**"
       - "scripts/**"
+      - "docs/**"
+      - "README.md"
       - ".github/workflows/app-regression.yml"
   pull_request:
     paths:
@@ -16,6 +18,8 @@ on:
       - "tests/**"
       - "tools/**"
       - "scripts/**"
+      - "docs/**"
+      - "README.md"
       - ".github/workflows/app-regression.yml"
   workflow_dispatch:
 
