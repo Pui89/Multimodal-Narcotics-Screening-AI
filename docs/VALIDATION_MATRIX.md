@@ -1,6 +1,10 @@
 # Validation Matrix — Multimodal Narcotics Screening AI
 
-Last reviewed: 18 October 2026. The current repository is a screening workflow prototype, not a validated narcotics detector or chemical analyser.
+Last reviewed: 20 October 2026. The current repository is a screening workflow prototype, not a validated narcotics detector or chemical analyser.
+
+## Latest automated evidence
+
+The latest main-branch CI run [39276822504](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/39276822504) passed regression jobs on Python 3.10, 3.11 and 3.12. The workflow checked API/evaluation tests, dataset provenance and split/path-safety safeguards, and a synthetic evaluation smoke test. Synthetic tests are not evidence of real narcotics-screening accuracy.
 
 | Capability | Repository evidence | Current status | What is still required |
 |---|---|---|---|
