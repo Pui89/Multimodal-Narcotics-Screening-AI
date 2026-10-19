@@ -21,6 +21,10 @@ This repository's recommended local model, intended tasks, licence checks, setup
 
 [Product brief and release gates](docs/PRODUCT_BRIEF.md)
 
+## Latest automated CI verification — 20 October 2026
+
+The latest local-first regression workflow passed on the current main-branch change in [run 39276822504](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/39276822504). It checks API/evaluation software, dataset-manifest safeguards, and the synthetic evaluation pipeline. Synthetic test results are not real screening benchmarks and do **not** establish narcotics identification or chemical identity.
+
 ## Latest status update — 19 October 2026
 
 - **Current status: screening workflow prototype; not a validated narcotics detector.** The previously linked CI run and synthetic evaluation tests verify software behavior only. Synthetic scores are not real screening-accuracy results.
