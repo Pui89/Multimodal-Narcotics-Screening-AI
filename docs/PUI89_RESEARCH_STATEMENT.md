@@ -37,8 +37,7 @@ Safety engineering should be treated as a separate verification discipline. ISO 
 
 AI risk management should cover design, development, deployment and test/evaluation. NIST AI RMF provides a voluntary framework for trustworthy AI risk management, and NIST released a critical-infrastructure profile concept note in April 2026. citeturn0search0turn0search6
 
-## PhD, competition and company value
+## PhD research and company value
 The same evidence package supports three goals:
 - **PhD:** publishable research questions and reproducible experiments;
-- **competitions:** measurable autonomous missions and robust failure recovery;
 - **company:** field-tested products, customer KPIs, reusable software and fleet data.
