@@ -18,6 +18,19 @@ The latest main-branch CI run [39276822504](https://github.com/Pui89/Multimodal-
 | X-ray/CT/thermal or robotic sensors | Architecture interfaces only unless separately implemented and tested | **Not validated** | Actual supported sensor, calibrated data, validated modality-specific model and integration tests |
 | Operational screening decisions | Human-review workflow is the intended boundary | **No autonomous enforcement decision** | Qualified operator review, privacy controls, documented intended-use and error analysis |
 
+## Immediate zero-cost next actions
+
+Work in this order and keep screening hypotheses separate from substance identification or enforcement decisions.
+
+1. **Define the narrow task:** document intended use, authorised operator, prohibited use, permitted data sources and what the system is not allowed to infer.
+2. **Verify data provenance:** audit every dataset's licence/permission, source, label meaning, ground-truth basis and hashes. Prescription-pill images are not proof of illicit-narcotics detection; ordinary RGB images cannot establish chemical identity.
+3. **Prevent leakage:** group by physical item, source, subject or capture session as appropriate; detect duplicates and near-duplicates before splitting. Keep sensitive or unlicensed data out of Git.
+4. **Test safe abstention:** missing, conflicting, low-quality or out-of-distribution inputs must yield `UNKNOWN`/`HUMAN_REVIEW`, not an automatic positive or negative finding.
+5. **Evaluate only on appropriate held-out data:** report per-class precision/recall, confusion matrix, false positives/negatives, calibration, abstention rate, latency and failure cases. Mark experiments **NOT RUN** until actually executed.
+6. **No-cost boundary:** run existing local tests and tools first. Do not enable paid APIs, cloud GPUs, hosted inference or subscriptions. If a future step may incur a charge, stop and ask first.
+
+**Next milestone:** a lawful, independently reviewed evaluation set and a reproducible baseline report—not a claim of validated narcotics identification.
+
 ## Evaluation and governance rules
 
 - Treat model confidence as a score unless calibration has been measured.
