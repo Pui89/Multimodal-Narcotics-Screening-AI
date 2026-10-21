@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Report whether the local ROS 2 / Nav2 / Gazebo / Open3D stack is discoverable.
 
 Run inside a shell where the chosen ROS 2 distribution has been sourced.
@@ -62,7 +61,7 @@ def main() -> int:
             import open3d
             print(f"OK       Open3D Python import (version {open3d.__version__})")
             results.append(True)
-        except Exception as exc:
+        except (ImportError, OSError, RuntimeError) as exc:
             print(f"MISSING  Open3D import failed: {exc}")
             results.append(False)
     else:
