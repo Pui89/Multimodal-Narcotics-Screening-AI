@@ -8,7 +8,6 @@ PUI89 welcomes open-source contributions, multimodal evaluation expertise, autho
 
 - **Support and sponsorship brief:** [ways to collaborate with PUI89](https://github.com/Pui89/Pui89.github.io/blob/main/SUPPORT_AND_SPONSORSHIP.md)
 - **Project website:** [PUI89 AI Robotics](https://pui89.github.io/)
-- **Contribute code or report an issue:** [GitHub Issues](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/issues)
 
 Any data or testing proposal must be authorised, privacy-reviewed, and legally appropriate. Outputs are decision-support research only; images alone cannot establish chemical identity, and AI must not independently trigger enforcement action.
 
