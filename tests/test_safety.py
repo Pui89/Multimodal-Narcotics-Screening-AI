@@ -53,3 +53,18 @@ def test_invalid_obstacle_threshold_rejected_at_configuration(value):
 
 def test_non_navigation_state_fails_closed():
     assert not SafetyGate().allow_motion(None)
+
+
+def test_extremely_large_numeric_state_values_fail_closed():
+    huge = 10**1000
+    gate = SafetyGate()
+    assert not gate.allow_motion(NavigationState(huge, 2.0))
+    assert not gate.allow_motion(NavigationState(0.95, huge))
+
+
+def test_extremely_large_numeric_thresholds_are_rejected():
+    huge = 10**1000
+    with pytest.raises(ValueError, match="min_localization_confidence"):
+        SafetyGate(min_localization_confidence=huge)
+    with pytest.raises(ValueError, match="min_obstacle_distance_m"):
+        SafetyGate(min_obstacle_distance_m=huge)

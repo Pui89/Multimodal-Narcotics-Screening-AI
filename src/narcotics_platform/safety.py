@@ -4,6 +4,14 @@ from dataclasses import dataclass
 import math
 
 
+def _is_finite_number(value: int | float) -> bool:
+    """Return False for values that cannot be safely checked for finiteness."""
+    try:
+        return math.isfinite(value)
+    except (OverflowError, TypeError, ValueError):
+        return False
+
+
 @dataclass(frozen=True)
 class NavigationState:
     localization_confidence: float
@@ -23,14 +31,14 @@ class SafetyGate:
         if (
             isinstance(min_localization_confidence, bool)
             or not isinstance(min_localization_confidence, (int, float))
-            or not math.isfinite(min_localization_confidence)
+            or not _is_finite_number(min_localization_confidence)
             or not 0.0 <= min_localization_confidence <= 1.0
         ):
             raise ValueError("min_localization_confidence must be a finite number in [0, 1]")
         if (
             isinstance(min_obstacle_distance_m, bool)
             or not isinstance(min_obstacle_distance_m, (int, float))
-            or not math.isfinite(min_obstacle_distance_m)
+            or not _is_finite_number(min_obstacle_distance_m)
             or min_obstacle_distance_m < 0.0
         ):
             raise ValueError("min_obstacle_distance_m must be a finite non-negative number")
@@ -53,14 +61,14 @@ class SafetyGate:
         if (
             isinstance(confidence, bool)
             or not isinstance(confidence, (int, float))
-            or not math.isfinite(confidence)
+            or not _is_finite_number(confidence)
             or not 0.0 <= confidence <= 1.0
         ):
             return False
         if (
             isinstance(distance, bool)
             or not isinstance(distance, (int, float))
-            or not math.isfinite(distance)
+            or not _is_finite_number(distance)
             or distance < 0.0
         ):
             return False
