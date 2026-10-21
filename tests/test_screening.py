@@ -2,7 +2,8 @@ from narcotics_platform.screening import ScreeningPipeline
 
 def test_empty_is_unknown():
     r = ScreeningPipeline().screen([])
-    assert r.state == 'UNKNOWN' and r.requires_human_review
+    assert r.state == 'ABSTAIN' and r.requires_human_review
+    assert r.abstained
 
 def test_unknown_label_stays_unknown():
     r = ScreeningPipeline().screen([{'label': 'unseen_substance', 'confidence': 0.95}])
