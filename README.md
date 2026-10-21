@@ -1,5 +1,7 @@
 # Multimodal Narcotics Screening AI
 
+> **Product quality standard:** [benchmark protocol and fair comparison criteria](docs/PRODUCT_BENCHMARK_STANDARD.md). Appearance alone cannot establish chemical identity; no validated identification claim is made.
+
 ## Latest engineering update — 21 October 2026
 
 - **Safety input validation:** [PR #14](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/pull/14) is merged. The software gate rejects malformed thresholds and invalid navigation inputs rather than treating ambiguous values as safe.
