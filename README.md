@@ -20,13 +20,13 @@
 > **Current validation matrix:** [VALIDATION_MATRIX.md](docs/VALIDATION_MATRIX.md) — implementation evidence, automated checks, and remaining unvalidated capabilities.
 > **Engineering assurance plan:** [ENGINEERING_ASSURANCE_PLAN.md](docs/ENGINEERING_ASSURANCE_PLAN.md) — project requirements, hazard log, verification/validation gates, and evidence rules.
 
-## Free local Hugging Face model plan
+## Local Hugging Face model plan
 
 This repository's recommended local model, intended tasks, licence checks, setup notes, and no-surprise-billing rules are documented in **[HUGGINGFACE_LOCAL_MODELS.md](docs/HUGGINGFACE_LOCAL_MODELS.md)**.
 
 **Cost boundary:** the plan uses downloaded local weights only; it does not require paid Hugging Face inference, cloud GPUs, paid notebooks, or a subscription. Model integration and performance must be verified by running tests locally.
 
-**Free dataset and labelling workflow:** see [dataset sources, licence checks, annotation and training plan](docs/DATASET_ACQUISITION_AND_LABELING.md), the [Windows opt-in dataset helper](scripts/prepare_free_datasets.ps1), the [image inventory/manifest generator](tools/dataset_inventory.py), the [manifest template](data/manifest.template.csv), the [group-aware train/validation/test splitter](tools/group_split_manifest.py), and the [local manifest audit tool](tools/audit_dataset_manifest.py). Downloads require local user confirmation; no images are automatically considered licensed or correctly labelled. Keep datasets and weights out of Git.
+**Dataset and labelling workflow:** see [dataset sources, licence checks, annotation and training plan](docs/DATASET_ACQUISITION_AND_LABELING.md), the [Windows opt-in dataset helper](scripts/prepare_free_datasets.ps1), the [image inventory/manifest generator](tools/dataset_inventory.py), the [manifest template](data/manifest.template.csv), the [group-aware train/validation/test splitter](tools/group_split_manifest.py), and the [local manifest audit tool](tools/audit_dataset_manifest.py). Downloads require local user confirmation; no images are automatically considered licensed or correctly labelled. Keep datasets and weights out of Git.
 
 [Detailed project status, checks, next steps and future plan](docs/PROJECT_STATUS_2026-10-18.md)
 
@@ -43,7 +43,7 @@ The latest local-first regression workflow passed on the current main-branch cha
 - **Next checks:** test missing, stale and conflicting modalities; verify confidence calibration and the ability to abstain as `UNKNOWN`; compare single-modality baselines with multimodal fusion only when suitable aligned real data exist; report false positives, false negatives, calibration and failure cases.
 - **Not yet demonstrated:** a trained model validated on a representative independent dataset, reliable chemical identification, validated multimodal sensor fusion, or a validated physical screening robot. Ordinary RGB images cannot establish chemical identity or reveal contents hidden inside closed luggage.
 - **Human review and rights:** any screening output is a hypothesis for an authorised reviewer, not proof of a substance or grounds for automatic enforcement. Preserve privacy, auditability and documented review.
-- **Cost boundary:** remain free/local-first where feasible; local model plans do not mean that model integration or accuracy has already been verified.
+- **Cost boundary:** remain cost-conscious and local-first where feasible; local model plans do not mean that model integration or accuracy has already been verified.
 
 ## Previous status update — 18 October 2026
 
@@ -51,7 +51,7 @@ The latest local-first regression workflow passed on the current main-branch cha
 - **Continuing:** define the lawful task; check provenance/licences and labels; expand tests for missing/conflicting modalities, uncertainty, calibration and abstention to UNKNOWN/human review.
 - **Next:** secure lawful, expert-reviewed data; prevent duplicate leakage; compare single-modality baselines with fusion only when suitable aligned data exist; report false positives/negatives and calibration.
 - **Future:** test distribution shifts, sensor failure, privacy and auditability before any independently reviewed pilot.
-- **Corrections:** synthetic test scores are not screening accuracy; pharmaceutical pill imagery is not proof of illicit-narcotics detection; images alone cannot confirm chemical identity. AI must not independently trigger enforcement action. Free/local-first.
+- **Corrections:** synthetic test scores are not screening accuracy; pharmaceutical pill imagery is not proof of illicit-narcotics detection; images alone cannot confirm chemical identity. AI must not independently trigger enforcement action. Open-source-first.
 
 ## Project status overview — updated 18 October 2026
 
@@ -117,9 +117,9 @@ flowchart TD
 
 **Important limits:** ordinary RGB photos cannot reveal drugs hidden inside closed luggage, and a photo of a substance cannot reliably determine its chemical identity. Baggage screening requires a suitable authorized X-ray/CT system and data; chemical identity requires an authorized validated test or forensic procedure. This repository is a research prototype, not a validated airport detector.
 
-## Free reproducible testing and evaluation
+## Reproducible testing and evaluation
 
-The repository includes API regression tests, evaluation-metric tests, a clearly labelled synthetic JSONL example, and a GitHub Actions workflow that runs on relevant pushes and pull requests. These checks use free/open-source Python tooling; hosted CI availability and quotas are controlled by GitHub.
+The repository includes API regression tests, evaluation-metric tests, a clearly labelled synthetic JSONL example, and a GitHub Actions workflow that runs on relevant pushes and pull requests. These checks use open-source Python tooling; hosted CI availability and quotas are controlled by GitHub.
 
 - [Regression tests](apps/pui89_app/test_main.py)
 - [Evaluation metrics tests](evaluation/test_metrics.py)
@@ -213,7 +213,7 @@ For a **real Thai law-enforcement context**, see the [Royal Thai Government phot
 
 **Copyright and evidence note:** These are official Thai case-report links, not open-licensed image files. I have linked to the original government pages rather than copying those photos into this repository because the pages do not clearly grant an open reuse licence. The Wikimedia Commons photos below are separate, openly licensed specimen/plant references; **they are not photographs of the Thai arrests or seizures**. This distinction avoids falsely presenting generic reference images as evidence from a particular case.
 
-### Free, open-licensed reference images: ice, heroin and cannabis
+### Open-licensed reference images: ice, heroin and cannabis
 
 These real photographs are included as **visual reference examples** for a research interface and documentation. They are not a labelled dataset, do not prove chemical identity, and must not be described as model-training or evaluation evidence.
 
@@ -268,7 +268,7 @@ This can reduce repetitive walking and manual observation, but it **does not saf
 
 **Concept only / not implemented yet:** autonomous terminal navigation, live camera or depth-sensor input, real-time crowd counting/tracking, a live crowd-monitoring screen, connection to airport CCTV, and a physical robot. The illustration's count (“42”) is an example label, not a measured result. The external videos show other organizations' robots, not this project.
 
-**Suggested free local next step:** create a simulation-only corridor/terminal scene with moving pedestrian agents, a robot route, obstacle stops and a dashboard fed by simulated counts. Label every output as simulated. Only after that should authorized, privacy-reviewed recorded video be evaluated offline; do not test on public CCTV or deploy in a real terminal without explicit authorization.
+**Suggested local next step:** create a simulation-only corridor/terminal scene with moving pedestrian agents, a robot route, obstacle stops and a dashboard fed by simulated counts. Label every output as simulated. Only after that should authorized, privacy-reviewed recorded video be evaluated offline; do not test on public CCTV or deploy in a real terminal without explicit authorization.
 
 ---
 
