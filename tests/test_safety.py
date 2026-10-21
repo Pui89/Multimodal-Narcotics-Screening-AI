@@ -68,3 +68,18 @@ def test_extremely_large_numeric_thresholds_are_rejected():
         SafetyGate(min_localization_confidence=huge)
     with pytest.raises(ValueError, match="min_obstacle_distance_m"):
         SafetyGate(min_obstacle_distance_m=huge)
+
+
+@pytest.mark.parametrize(
+    "confidence, distance, expected",
+    [
+        pytest.param(0.70, 0.50, True, id="both-exact-thresholds"),
+        pytest.param(math.nextafter(0.70, 0.0), 0.50, False, id="confidence-just-below-threshold"),
+        pytest.param(0.70, math.nextafter(0.50, 0.0), False, id="distance-just-below-threshold"),
+        pytest.param(1.0, 0.50, True, id="confidence-upper-bound"),
+        pytest.param(0.70, 0.0, False, id="zero-distance-with-positive-minimum"),
+    ],
+)
+def test_motion_gate_threshold_boundaries(confidence, distance, expected):
+    """Make inclusive thresholds and near-boundary blocking behavior explicit."""
+    assert SafetyGate().allow_motion(NavigationState(confidence, distance)) is expected
