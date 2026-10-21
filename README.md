@@ -1,4 +1,12 @@
-# Multimodal Narcotics Screening AI Application
+# Multimodal Narcotics Screening AI
+
+## Latest engineering update — 21 October 2026
+
+- **Safety input validation:** [PR #14](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/pull/14) is merged. The software gate rejects malformed thresholds and invalid navigation inputs rather than treating ambiguous values as safe.
+- **Automated checks:** the two GitHub Actions workflows for the PR passed before merge.
+- **Evidence boundary:** these checks establish software input-validation behavior only. They do not validate a narcotics detector, prove chemical identity, or establish physical robot safety. Real held-out data and authorized expert-reviewed labels are still needed before reporting detector performance.
+
+ Application
 
 ## Robot concept illustration
 
