@@ -1,5 +1,7 @@
 from dataclasses import dataclass
+import math
 from typing import Iterable
+
 
 @dataclass(frozen=True)
 class ModalityEvidence:
@@ -10,8 +12,19 @@ class ModalityEvidence:
     source_id: str | None = None
 
     def __post_init__(self) -> None:
-        if not 0.0 <= self.confidence <= 1.0 or not 0.0 <= self.quality <= 1.0:
-            raise ValueError("confidence and quality must be between 0 and 1")
+        for name, value in (("confidence", self.confidence), ("quality", self.quality)):
+            if (
+                isinstance(value, bool)
+                or not isinstance(value, (int, float))
+                or not math.isfinite(value)
+                or not 0.0 <= value <= 1.0
+            ):
+                raise ValueError(f"{name} must be a finite number between 0 and 1")
+        if not isinstance(self.modality, str) or not self.modality.strip():
+            raise ValueError("modality must be a non-empty string")
+        if not isinstance(self.label, str) or not self.label.strip():
+            raise ValueError("label must be a non-empty string")
+
 
 @dataclass(frozen=True)
 class FusionResult:
@@ -22,11 +35,14 @@ class FusionResult:
     contradiction: bool
     evidence_count: int
 
+
 class MultimodalFusion:
     """Deterministic baseline fusion; a learned fusion model can replace it without changing the API."""
+
     def fuse(self, evidence: Iterable[ModalityEvidence]) -> FusionResult:
         items = tuple(evidence)
-        if not items: return FusionResult("unknown_substance", 0.0, 0.0, (), False, 0)
+        if not items:
+            return FusionResult("unknown_substance", 0.0, 0.0, (), False, 0)
         scores: dict[str, float] = {}
         modality_labels: dict[str, set[str]] = {}
         for item in items:
