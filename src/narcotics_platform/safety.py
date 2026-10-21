@@ -1,4 +1,8 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
+import math
+
 
 @dataclass(frozen=True)
 class NavigationState:
@@ -7,10 +11,61 @@ class NavigationState:
     human_in_exclusion_zone: bool = False
     emergency_stop: bool = False
 
+
 class SafetyGate:
-    def __init__(self, min_localization_confidence: float = 0.70, min_obstacle_distance_m: float = 0.50) -> None:
-        self.min_localization_confidence = min_localization_confidence
-        self.min_obstacle_distance_m = min_obstacle_distance_m
+    """Fail-closed software motion gate; this is not a certified safety controller."""
+
+    def __init__(
+        self,
+        min_localization_confidence: float = 0.70,
+        min_obstacle_distance_m: float = 0.50,
+    ) -> None:
+        if (
+            isinstance(min_localization_confidence, bool)
+            or not isinstance(min_localization_confidence, (int, float))
+            or not math.isfinite(min_localization_confidence)
+            or not 0.0 <= min_localization_confidence <= 1.0
+        ):
+            raise ValueError("min_localization_confidence must be a finite number in [0, 1]")
+        if (
+            isinstance(min_obstacle_distance_m, bool)
+            or not isinstance(min_obstacle_distance_m, (int, float))
+            or not math.isfinite(min_obstacle_distance_m)
+            or min_obstacle_distance_m < 0.0
+        ):
+            raise ValueError("min_obstacle_distance_m must be a finite non-negative number")
+        self.min_localization_confidence = float(min_localization_confidence)
+        self.min_obstacle_distance_m = float(min_obstacle_distance_m)
 
     def allow_motion(self, state: NavigationState) -> bool:
-        return (not state.emergency_stop and not state.human_in_exclusion_zone and state.localization_confidence >= self.min_localization_confidence and state.obstacle_distance_m >= self.min_obstacle_distance_m)
+        """Return False for malformed, non-finite, or unsafe navigation state."""
+        if not isinstance(state, NavigationState):
+            return False
+        if not isinstance(state.emergency_stop, bool):
+            return False
+        if not isinstance(state.human_in_exclusion_zone, bool):
+            return False
+        if state.emergency_stop or state.human_in_exclusion_zone:
+            return False
+
+        confidence = state.localization_confidence
+        distance = state.obstacle_distance_m
+        if (
+            isinstance(confidence, bool)
+            or not isinstance(confidence, (int, float))
+            or not math.isfinite(confidence)
+            or not 0.0 <= confidence <= 1.0
+        ):
+            return False
+        if (
+            isinstance(distance, bool)
+            or not isinstance(distance, (int, float))
+            or not math.isfinite(distance)
+            or distance < 0.0
+        ):
+            return False
+
+        return (
+            confidence >= self.min_localization_confidence
+            and distance >= self.min_obstacle_distance_m
+        )
