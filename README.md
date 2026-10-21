@@ -2,6 +2,16 @@
 
 > **Product quality standard:** [benchmark protocol and fair comparison criteria](docs/PRODUCT_BENCHMARK_STANDARD.md). Appearance alone cannot establish chemical identity; no validated identification claim is made.
 
+## Support, sponsorship and open-source collaboration
+
+PUI89 welcomes open-source contributions, multimodal evaluation expertise, authorised data-governance guidance, independent technical review, and scoped research or sponsorship discussions.
+
+- **Support and sponsorship brief:** [ways to collaborate with PUI89](https://github.com/Pui89/Pui89.github.io/blob/main/SUPPORT_AND_SPONSORSHIP.md)
+- **Project website:** [PUI89 AI Robotics](https://pui89.github.io/)
+- **Contribute code or report an issue:** [GitHub Issues](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/issues)
+
+Any data or testing proposal must be authorised, privacy-reviewed, and legally appropriate. Outputs are decision-support research only; images alone cannot establish chemical identity, and AI must not independently trigger enforcement action.
+
 ## Latest engineering update — 21 October 2026
 
 - **Safety input validation:** [PR #14](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/pull/14) is merged. The software gate rejects malformed thresholds and invalid navigation inputs rather than treating ambiguous values as safe.
