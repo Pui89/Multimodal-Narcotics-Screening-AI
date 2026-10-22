@@ -1,6 +1,16 @@
 # Multimodal Narcotics Screening AI
 
 
+## Fail-safe operating modes (screening workflow design)
+
+The screening application and proposed robotic system should use three modes: **AI operation**, **limited safe operation**, and **manual recovery**. The system must never treat an AI output as proof that a person is guilty or that a substance has a specific chemical identity based only on appearance.
+
+- **AI operation:** models may flag items for further review, with uncertainty and supporting evidence shown to a trained human reviewer.
+- **Limited safe operation:** if a model, camera, sensor, or data source fails, stop automated classification and preserve only safe functions such as status display and diagnostic logging. Do not generate new screening conclusions from missing or unreliable inputs.
+- **Manual recovery:** an operator takes over, checks the equipment and data, and resumes only after the fault is resolved.
+
+**Status and limitation:** these are software/product design requirements, not a claim that a trained detector or validated physical screening robot exists. Preserve privacy, auditability, human review, and applicable legal procedures.
+
 ## Project status — 22 October 2026
 
 **Current stage:** local-first rule-based screening workflow and software regression testing; not a trained narcotics detector or chemical-identification system.
