@@ -27,6 +27,21 @@ Thai PBS World reported that Thai anti-narcotics police arrested two foreign nat
 - **Relevance to this project:** this case can inform discussion of authorised screening workflows, evidence provenance, and human review. It is **not** a model-training example or a validated benchmark item; no case-specific image or verified ground-truth dataset is included here.
 - **Important limitation:** photos of cannabis or hashish cannot establish chemical identity. Any future evaluation would require lawfully obtained, appropriately licensed data and expert-confirmed labels, with independent test splits and false-positive/false-negative reporting. AI output must remain decision support for authorised human reviewers and must not independently trigger enforcement action.
 
+
+## Potential future screening categories — not yet implemented
+
+The categories below are possible future research scopes, not current model capabilities or confirmed training labels:
+
+- **Dried cannabis** — dried plant material.
+- **Hashish / cannabis resin** — a resin-derived cannabis product; keep it distinct from dried plant material in any annotation scheme.
+- **Methamphetamine**
+- **Cocaine**
+- **Heroin**
+
+**Implementation and evidence status:** these are proposed categories only. The repository does not claim that a trained model can detect or identify these substances. Do not label photographs as confirmed substances based on appearance alone. Any future dataset must be lawfully obtained, appropriately licensed, provenance-documented, and labelled using suitable analytical evidence and qualified expert review. Evaluate each class on independent held-out data and report false positives, false negatives, uncertainty, and human-review outcomes before making performance claims.
+
+**Image policy:** prefer linking to the original official or reputable source unless image reuse permission is confirmed. Clearly distinguish illustrative case photographs from model-training data and benchmark samples.
+
 ## Robot concept illustration
 
 ![Multimodal Narcotics Screening AI robot concept](docs/images/multimodal-screening-robot-concept-2026.svg)
