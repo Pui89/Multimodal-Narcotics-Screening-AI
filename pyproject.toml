@@ -13,5 +13,5 @@ dependencies = []
 dev = ['pytest>=8']
 
 [tool.pytest.ini_options]
-pythonpath = ['src']
+pythonpath = ['src', 'apps']
 testpaths = ['tests']
