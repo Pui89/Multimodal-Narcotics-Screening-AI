@@ -1,5 +1,16 @@
 # Multimodal Narcotics Screening AI
 
+
+## Project status — 22 October 2026
+
+**Current stage:** local-first rule-based screening workflow and software regression testing; not a trained narcotics detector or chemical-identification system.
+
+- **Verified CI:** the latest Python tests, agent unit tests, multimodal regression checks, and local-app regression checks completed successfully. [Latest regression-check run](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/39729390362) · [Latest local-app regression run](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/39729390278).
+- **Implemented:** workflow checks for authorization, modality-record completeness, conflicting inputs, and human review.
+- **Next milestone:** define one narrow, authorised task; document lawful data sources and ground-truth provenance; test missing/conflicting/uncertain inputs; and evaluate false positives, false negatives, and expert-review outcomes on independent expert-reviewed data.
+- **Limits:** images alone cannot establish chemical identity or criminality. No validated narcotics-detection claim is made, and AI output must not independently trigger enforcement action.
+
+
 ## Free decision-support agent (current scope)
 
 **Additional cost for this rule-based agent: $0.** It uses the repository's Python code and supplied inputs; it does not require a paid AI API, cloud service, or model download. Local Python/test tooling and GitHub usage remain subject to their own terms and limits.
