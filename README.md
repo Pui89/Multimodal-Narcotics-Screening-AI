@@ -229,4 +229,6 @@ The checker verifies repository structure, scans Python source syntax, discovers
 
 **Project focus:** dataset provenance/licences, annotation integrity, multimodal input checks, false-positive/false-negative evaluation and human review.
 
+**Focused regression tests:** [Dataset tooling tests](tests/test_dataset_tools.py). Checks that inventory does not invent labels/licence approval, unreviewed data is rejected, source groups stay within one split, and manifest audits catch split leakage.
+
 **Evidence boundary:** a syntax scan is not a full test run; passing tests do not establish field performance or safety. Report only verified outcomes and keep proposed features separate from demonstrated results.
