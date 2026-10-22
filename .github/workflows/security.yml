@@ -1,12 +1,30 @@
 name: Security Checks
 on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.py"
+      - "pyproject.toml"
+      - ".github/workflows/**"
+      - "SECURITY.md"
+  pull_request:
+    paths:
+      - "**/*.py"
+      - "pyproject.toml"
+      - ".github/workflows/**"
+      - "SECURITY.md"
+  schedule:
+    - cron: "51 4 * * 1"
   workflow_dispatch:
 
 permissions:
   contents: read
+  security-events: write
+
 jobs:
   secret-patterns:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v6
       - name: Scan for obvious credential patterns
@@ -14,5 +32,29 @@ jobs:
         run: |
           set -euo pipefail
           if grep -RInE --exclude-dir=.git --exclude='*.svg' '(BEGIN (RSA|EC|OPENSSH|DSA) PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})' .; then
+            echo "Potential secret material detected."
             exit 1
           fi
+
+  python-security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install lightweight static security tool
+        run: python -m pip install --disable-pip-version-check bandit
+      - name: Static security analysis
+        run: bandit -r src -ll
+
+  codeql:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: github/codeql-action/init@v4
+        with:
+          languages: python, actions
+      - uses: github/codeql-action/analyze@v4
