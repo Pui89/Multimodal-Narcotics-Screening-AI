@@ -188,3 +188,16 @@ The latest local-first regression workflow passed on the current main-branch cha
 ## Decision-support agent (rule-based prototype)
 
 A local, standard-library-only agent module is available in [`agents/project_agent.py`](agents/project_agent.py), with focused tests in [`tests/test_project_agent.py`](tests/test_project_agent.py) and integration notes in [`docs/AGENT_GUIDE.md`](docs/AGENT_GUIDE.md). It produces reviewable recommendations from supplied observations; it does not run a perception model, call a hosted API, or issue actuator commands. These rules and tests are not evidence of trained-model accuracy or real-world validation.
+
+
+## Automation roadmap (free-first)
+
+The GitHub Actions workflow runs on relevant changes, manual dispatch, and a weekly schedule. Each test run writes test counts to the workflow summary; inspect the run logs if a report is missing.
+
+**Next automated milestones**
+1. Keep software tests reproducible and exercise missing, conflicting, malformed, and uncertain modality inputs.
+2. Check dataset manifests for source provenance, hashes, review status, and split leakage before any evaluation.
+3. Generate a human-review queue for unresolved records and produce transparent error summaries without exposing sensitive case details.
+4. Only when authorised, expert-reviewed ground truth exists, calculate false-positive and false-negative metrics on an independent test set.
+
+**Decision gate:** appearance alone cannot establish a substance's chemical identity or a person's guilt. Automation must not approve labels, identify a chemical with unsupported certainty, or trigger enforcement action on its own.
