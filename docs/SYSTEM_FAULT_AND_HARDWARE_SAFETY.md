@@ -40,3 +40,20 @@ For each fault, document how it is detected, the safe output state, operator not
 ## Current project boundary
 
 This repository provides workflow and software design guidance; it does not establish a trained chemical detector, validated physical screening robot, or certified safety system. AI outputs require authorised human review and must not be treated as proof of chemical identity or guilt.
+
+## Security, intrusion, and physical-threat scenarios
+
+These are design requirements for the software and any future screening equipment—not a claim that all controls exist today.
+
+| Threat or incident | Required response to design |
+|---|---|
+| Stolen credentials or unauthorised access | Apply least privilege and MFA where supported; revoke access/tokens; rotate exposed credentials; review audit logs. |
+| Malware, ransomware, destructive virus, or compromised model/update | Isolate affected workstation/equipment; stop automated classification; preserve logs and case integrity; restore from known-good backups after security review. |
+| Tampered evidence, spoofed sensor input, or altered model/configuration | Verify file hashes/signatures and model/configuration versions where available; quarantine untrusted inputs; require authorised review before resuming. |
+| Data theft or privacy breach | Restrict access, minimise retained personal data, secure backups, follow incident-reporting duties and applicable law, and avoid exposing sensitive records in logs. |
+| Physical theft, tampering, vandalism, or attempted robbery | Secure the equipment and records; alert authorised site security; do not confront or pursue a suspect; inspect and re-authorise equipment before use. |
+| Threatening person, gunshot, or suspected armed attack | Do not approach or confront the threat. If safe, stop machinery and follow the site's shelter/evacuation procedure; contact emergency services. Screening equipment must not be used as a weapon. |
+| Fire, electrical damage, or deliberate sabotage | Keep people clear, isolate power only if safe, follow site emergency procedures, and require qualified inspection before restarting. |
+| Untrusted network or unavailable database | Pause any operation requiring unavailable authorisation or audit records; do not bypass access controls or fabricate a screening result. |
+
+**Do not infer guilt or chemical identity from appearance alone, and do not use the system to target, pursue, restrain, or harm people.** Threat response belongs to trained people and established emergency procedures.
