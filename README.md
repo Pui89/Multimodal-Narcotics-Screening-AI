@@ -1,5 +1,19 @@
 # Multimodal Narcotics Screening AI
 
+## Free decision-support agent (current scope)
+
+**Additional cost for this rule-based agent: $0.** It uses the repository's Python code and supplied inputs; it does not require a paid AI API, cloud service, or model download. Local Python/test tooling and GitHub usage remain subject to their own terms and limits.
+
+**What it does:** Checks supplied modality records, authorisation, conflicting inputs, and human review. It does not identify chemicals or infer criminality from appearance.
+
+```text
+Authorised case inputs → completeness and conflict checks → human review → documented decision
+```
+
+- **Run guide:** [Agent guide](docs/AGENT_GUIDE.md)
+- **Important limitation:** this is a rule-based decision-support prototype, not proof of real-world performance. Hardware, optional third-party services, or future model training may have separate costs.
+
+
 > **Product quality standard:** [benchmark protocol and fair comparison criteria](docs/PRODUCT_BENCHMARK_STANDARD.md). This workflow prototype is **not validated** for narcotics detection or chemical identification. Appearance alone cannot establish chemical identity; no validated identification claim is made.
 
 > **Next research milestone — controlled evaluation:** define one narrow, authorised screening task and its ground-truth source; document which modalities are genuinely available; test missing, conflicting, and uncertain inputs; and report false positives, false negatives, and human-review outcomes on independent, expert-reviewed data. Until such data and validation exist, the dashboard remains a manually populated workflow prototype—not a trained narcotics detector or chemical-identification system. See the [validation matrix](docs/VALIDATION_MATRIX.md).
