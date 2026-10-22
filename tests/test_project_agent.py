@@ -20,3 +20,7 @@ def test_no_chemical_identity_claim():
 
 def test_empty_modalities_requests_data():
     assert run_agent({"authorised_context": True}).status == "NEED_DATA"
+
+
+def test_blank_modality_name_is_rejected():
+    assert run_agent({"authorised_context": True, "modalities": ["   "]}).status == "NEED_DATA"
