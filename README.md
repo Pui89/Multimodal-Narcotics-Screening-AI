@@ -11,6 +11,8 @@ The screening application and proposed robotic system should use three modes: **
 
 **Status and limitation:** these are software/product design requirements, not a claim that a trained detector or validated physical screening robot exists. Preserve privacy, auditability, human review, and applicable legal procedures.
 
+- [System fault, hardware, electrical, and recovery playbook](docs/SYSTEM_FAULT_AND_HARDWARE_SAFETY.md)
+
 ## Project status — 22 October 2026
 
 **Current stage:** local-first rule-based screening workflow and software regression testing; not a trained narcotics detector or chemical-identification system.
