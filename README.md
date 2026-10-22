@@ -28,6 +28,31 @@ Thai PBS World reported that Thai anti-narcotics police arrested two foreign nat
 - **Important limitation:** photos of cannabis or hashish cannot establish chemical identity. Any future evaluation would require lawfully obtained, appropriately licensed data and expert-confirmed labels, with independent test splits and false-positive/false-negative reporting. AI output must remain decision support for authorised human reviewers and must not independently trigger enforcement action.
 
 
+
+## Real-world screening case references
+
+These publicly reported Thailand cases provide context for research into screening, secondary inspection, evidence provenance, and confirmatory testing. They are **case references only**—not model-training samples, benchmark records, or evidence that this prototype can detect the substances described.
+
+### Case 1 — Phuket Airport: reported methamphetamine seizure (February 2025)
+
+*The Nation Thailand* reported that airport X-ray screening flagged a suitcase for further inspection; authorities then reported finding concealed packages and confirming methamphetamine through chemical testing.
+
+- **Source and report photographs:** [The Nation Thailand — Phuket airport seizure report](https://www.nationthailand.com/news/general/40046654)
+- **Research relevance:** illustrates a layered workflow in which an initial screening alert is followed by inspection and confirmatory testing.
+
+### Case 2 — Phuket Airport: reported heroin seizure (July 2025)
+
+Thailand's Tourist Police reported that an X-ray prompted further luggage inspection and that suspected heroin was found concealed in product packaging.
+
+- **Source and report photographs:** [Tourist Police Bureau — case report](https://www.touristpolice.go.th/post/tpbnews2025071801)
+- **Research relevance:** illustrates secondary inspection after an initial screening alert. Refer to the authority's wording when describing the substance and case status.
+
+### Photograph, licensing, and evidence rules
+
+The reports above link to their original pages, where case photographs may be available. **No third-party photograph is embedded or copied into this repository in this section**, because reuse permission and the exact image provenance have not been independently verified. Check the source's licence or obtain permission before reproducing an image; otherwise link to the source page and credit it.
+
+These reports do not validate this project's software. A photograph alone cannot confirm chemical identity, and an X-ray screening alert is not equivalent to chemical identification. Any future AI evaluation requires lawful and appropriately licensed data, documented provenance, suitable ground truth, independent held-out testing, false-positive/false-negative reporting, and authorised human review. AI output must not independently trigger enforcement action.
+
 ## Potential future screening categories — not yet implemented
 
 The categories below are possible future research scopes, not current model capabilities or confirmed training labels:
