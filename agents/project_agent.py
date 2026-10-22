@@ -40,7 +40,7 @@ def run_agent(observation: dict[str, Any]) -> AgentDecision:
         return AgentDecision("multimodal-screening", "HOLD", "VERIFY_AUTHORITY_AND_PROCEDURE",
                              ("Authorised screening context has not been confirmed.",))
     modalities = observation.get("modalities", [])
-    if not isinstance(modalities, list) or any(not isinstance(item, str) for item in modalities):
+    if not isinstance(modalities, list) or any(not isinstance(item, str) or not item.strip() for item in modalities):
         return AgentDecision("multimodal-screening", "NEED_DATA", "CHECK_MODALITY_RECORD",
                              ("modalities must be a list of modality names.",))
     if not modalities:
