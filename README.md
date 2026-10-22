@@ -18,6 +18,19 @@ Authorised case inputs → completeness and conflict checks → human review →
 
 > **Next research milestone — controlled evaluation:** define one narrow, authorised screening task and its ground-truth source; document which modalities are genuinely available; test missing, conflicting, and uncertain inputs; and report false positives, false negatives, and human-review outcomes on independent, expert-reviewed data. Until such data and validation exist, the dashboard remains a manually populated workflow prototype—not a trained narcotics detector or chemical-identification system. See the [validation matrix](docs/VALIDATION_MATRIX.md).
 
+
+## Run the agent tests
+
+Run the focused, lightweight unit tests locally with Python 3.10 or newer:
+
+```bash
+python -m pip install pytest
+python -m py_compile agents/project_agent.py tests/test_project_agent.py
+python -m pytest -q tests/test_project_agent.py
+```
+
+A dedicated [GitHub Actions workflow](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/workflows/agent-tests.yml) is configured to run the agent tests on Python 3.10, 3.11, and 3.12 when relevant files change. Check the Actions page for the actual run status; adding this workflow does not itself mean the tests have passed.
+
 ## Support, sponsorship and open-source collaboration
 
 PUI89 welcomes open-source contributions, multimodal evaluation expertise, authorised data-governance guidance, independent technical review, and scoped research or sponsorship discussions.
