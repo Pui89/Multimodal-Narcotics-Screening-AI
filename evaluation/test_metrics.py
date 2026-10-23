@@ -42,6 +42,16 @@ class MetricsTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "booleans"):
             expected_calibration_error([0.5], [1])
 
+    def test_positive_label_must_be_non_empty_string(self):
+        for positive_label in ("", "   ", None, 1):
+            with self.subTest(positive_label=positive_label), self.assertRaises(ValueError):
+                classification_metrics(["clear"], ["clear"], positive_label=positive_label)
+
+    def test_ece_assigns_confidence_one_to_final_bin(self):
+        # A confidence of exactly 1.0 belongs in the last bin and is not dropped.
+        self.assertAlmostEqual(expected_calibration_error([1.0], [True], bins=10), 0.0)
+        self.assertAlmostEqual(expected_calibration_error([1.0], [False], bins=10), 1.0)
+
     def test_calibration_error_is_bounded(self):
         score = expected_calibration_error([0.9, 0.9, 0.1, 0.1], [False, False, True, True])
         self.assertGreaterEqual(score, 0.0)
