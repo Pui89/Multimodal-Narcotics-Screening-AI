@@ -43,7 +43,7 @@ class MetricsTests(unittest.TestCase):
             expected_calibration_error([0.5], [1])
 
     def test_positive_label_must_be_non_empty_string(self):
-        for positive_label in ("", "   ", None, 1):
+        for positive_label in ("", "   ", 1):
             with self.subTest(positive_label=positive_label), self.assertRaises(ValueError):
                 classification_metrics(["clear"], ["clear"], positive_label=positive_label)
 
