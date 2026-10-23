@@ -242,3 +242,15 @@ The checker verifies repository structure, scans Python source syntax, discovers
 - [Supervisor implementation](pui89_autonomy/supervisor.py) · [unit tests](tests/test_autonomy_supervisor.py)
 
 The supervisor evaluates supplied status values and recommends an advisory mode: autonomous candidate, safe hold, manual recovery, or stopped. It does not acquire sensor data or command hardware. An autonomous-candidate result is not a safety certification; physical systems require independent safety controls and validation.
+
+## Free-first AI engineering stack
+
+Keep the screening workflow local-first, auditable, and dependent on authorised human review.
+
+- **Data and modality checks:** Python utilities and OpenCV where appropriate; do not infer chemical identity from appearance alone.
+- **Automation:** Python scripts and GitHub Actions for repeatable tests and reports, subject to applicable GitHub quotas.
+- **Testing and observability:** pytest, Ruff where configured, structured audit records that minimise sensitive data, and reproducible evaluation reports.
+- **Agent workflow:** use the current rule-based workflow first. Add LangGraph or another agent framework only if a concrete, reviewable multi-step requirement justifies it.
+- **Retrieval:** search local documentation and policies first; consider a local vector index only if a measured retrieval need exists.
+
+**Cost, privacy, and evidence guardrails:** no paid API, cloud GPU, subscription, or hosted inference is required by this plan. Ask before introducing costs. Review every model/weight licence and data-use permission. Synthetic workflow tests are not real screening benchmarks; outputs must not independently identify a substance, infer guilt, or trigger enforcement.
