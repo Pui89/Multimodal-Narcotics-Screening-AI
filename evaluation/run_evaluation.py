@@ -50,7 +50,15 @@ def evaluate(rows: list[dict], positive_label: str | None = None) -> dict:
             raise ValueError(f"record {index} y_true must be a non-empty string")
         if not isinstance(row["y_pred"], str) or not row["y_pred"].strip():
             raise ValueError(f"record {index} y_pred must be a non-empty string")
-        score = float(row["confidence"])
+        raw_score = row["confidence"]
+        if isinstance(raw_score, bool) or not isinstance(raw_score, (int, float)):
+            raise ValueError(f"record {index} confidence must be a JSON number between 0 and 1")
+        try:
+            score = float(raw_score)
+        except (OverflowError, ValueError) as exc:
+            raise ValueError(
+                f"record {index} confidence must be finite and between 0 and 1"
+            ) from exc
         if not math.isfinite(score) or not 0.0 <= score <= 1.0:
             raise ValueError(f"record {index} confidence must be finite and between 0 and 1")
         if "correct" in row and not isinstance(row["correct"], bool):
