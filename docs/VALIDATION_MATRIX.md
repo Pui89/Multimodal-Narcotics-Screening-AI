@@ -54,3 +54,19 @@
 | [NIST AI RMF 1.0 (2023)](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10) | Govern, map, measure and manage AI risk | Human review boundary, data provenance and evaluation planning | Voluntary framework; no certification or conformity claim |
 
 Selected practices are **NASA-inspired**, not NASA-certified/compliant. Formal conformity is not claimed.
+
+
+## Internal weighted scorecard — evidence-gated, not a certification
+
+Proposed internal weights only: AI/model performance 25, end-to-end task success 25, safety/fault handling 20, repeatability/reproducibility 15, runtime/resources 10, documentation/evidence 5. No numeric category points are assigned yet because representative lawful labels and a predeclared category-level scoring rubric are not sufficient. **N/A is not zero.**
+
+| Category | Weight | Score | Evidence and confidence in status | Missing evidence / next action |
+|---|---:|---|---|---|
+| AI/model performance | 25 | N/A | The six-record synthetic pipeline smoke result (accuracy/precision/recall/F1 0.6667; ECE 0.3333) tests metric plumbing only, not real substance screening. No lawful expert-reviewed real evaluation set is documented. High confidence. | Define one authorised task, acquire data only with appropriate permission, obtain expert-reviewed labels and freeze a held-out split. |
+| End-to-end task success | 25 | N/A | Software workflow and human-review routing tests exist; no validated sensor-to-review physical screening outcome or real operational success rate is documented. High confidence. | Test a documented end-to-end workflow on authorised labelled data and record human-review outcomes and error cases. |
+| Safety/fault handling | 20 | N/A (system-level) | Input validation and human-review boundaries have software evidence; no validated chemical identification, physical screening robot, or real-world enforcement decision is supported. High confidence. | Expand missing/noisy/conflicting-modality and non-finite fault tests; keep every consequential result routed to authorised human review. |
+| Repeatability/reproducibility | 15 | N/A | Multi-version CI and synthetic evaluation tests completed on review branches; no independent clean-environment run on a frozen real dataset is recorded. Medium confidence. | Record exact command, versions, seed, dataset/model hashes and repeat-run differences. |
+| Runtime/resources | 10 | N/A | No real-modality throughput, latency, memory, or degraded-sensor runtime benchmark is documented. High confidence. | Measure per-modality and fusion paths on a named local hardware profile. |
+| Documentation/evidence | 5 | N/A | The matrix records provenance, privacy, calibration and human-review gaps; the evidence matrix remains on an open PR branch. Medium-high confidence. | Review/merge through normal PR review and update only when real evidence changes. |
+
+**Verified-row coverage:** 4/10 requirements marked Verified in this matrix branch (40.0%). This is a status-coverage indicator, not a readiness score; several verified rows cover synthetic pipeline, documented human-review boundaries or code-scan scope only. No real substance-identification or wrongdoing claim is supported.
