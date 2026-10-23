@@ -7,6 +7,20 @@
 *Illustrative design concept only. This image is not evidence of a built, tested, validated, or operational system. Capabilities shown remain proposed unless separately documented and verified.*
 
 
+## Project at a glance
+
+| Topic | Current position |
+|---|---|
+| Project type | Multimodal sensor-processing and screening-workflow research prototype |
+| Available software | Local dashboard/API and rule-based decision support, input validation, evaluation utilities, and regression tests |
+| Sensor integration | The software can represent and review multiple modality inputs; validated real-sensor fusion is not established |
+| Screening performance | No representative independent real-data benchmark establishes reliable narcotics detection or chemical identification |
+| Safety and privacy boundary | Outputs are screening signals for authorised human review, never proof of substance identity or wrongdoing; no automatic enforcement decision |
+| Development approach | Local-first, privacy-conscious, and free/open-source where practical |
+| Immediate focus | Use lawful, appropriately licensed and expert-reviewed data; test missing/conflicting/noisy inputs; measure false positives, false negatives, calibration and human-review routing |
+
+**Explore:** [Complete-system blueprint](docs/COMPLETE_SYSTEM_BLUEPRINT.md) · [Validation matrix](docs/VALIDATION_MATRIX.md) · [Evaluation guide](docs/EVALUATION.md) · [Automated tests](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions)
+
 ## Local fault-monitoring software (initial implementation)
 
 A small, dependency-light Python module accepts explicit fault reports, suggests conservative responses, and keeps a bounded in-memory event log. It includes automated unit tests and a GitHub Actions test workflow. It is not an antivirus, intrusion detector, gunshot detector, or physical safety controller; hardware shutdown, persistent audit storage, alerts, and real-world threat detection require separate implementations and validation.
