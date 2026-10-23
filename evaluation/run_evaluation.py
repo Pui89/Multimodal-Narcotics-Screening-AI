@@ -3,6 +3,7 @@
 Input records require y_true, y_pred and confidence. The reported correctness
 used for calibration is derived from y_true/y_pred to prevent contradictory
 hand-entered correctness flags from silently changing calibration metrics.
+Duplicate JSON keys are rejected so parsers cannot silently overwrite evidence.
 """
 from __future__ import annotations
 
@@ -17,15 +18,31 @@ except ImportError:  # Support direct execution: python evaluation/run_evaluatio
     from metrics import classification_metrics, expected_calibration_error
 
 
+class _DuplicateJSONKeyError(ValueError):
+    """Raised when a JSON object repeats a key."""
+
+
+def _reject_duplicate_keys(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    """Build an object while rejecting duplicate keys at every nesting level."""
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            raise _DuplicateJSONKeyError(f"duplicate object key {key!r}")
+        result[key] = value
+    return result
+
+
 def load_jsonl(path: Path) -> list[dict]:
     rows = []
     for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
         if not line.strip():
             continue
         try:
-            row = json.loads(line)
+            row = json.loads(line, object_pairs_hook=_reject_duplicate_keys)
         except json.JSONDecodeError as exc:
             raise ValueError(f"invalid JSON on line {line_number}: {exc.msg}") from exc
+        except _DuplicateJSONKeyError as exc:
+            raise ValueError(f"duplicate JSON key on line {line_number}: {exc}") from exc
         if not isinstance(row, dict):
             raise ValueError(f"line {line_number} must contain a JSON object")
         rows.append(row)
