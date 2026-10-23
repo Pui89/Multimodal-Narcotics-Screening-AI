@@ -27,6 +27,11 @@ class EvaluationRunnerTests(unittest.TestCase):
             with self.subTest(confidence=confidence), self.assertRaisesRegex(ValueError, "confidence"):
                 evaluate([{"y_true": "a", "y_pred": "a", "confidence": confidence}])
 
+    def test_rejects_non_numeric_or_boolean_confidence(self):
+        for confidence in (True, False, "0.9", None, [], {}):
+            with self.subTest(confidence=confidence), self.assertRaisesRegex(ValueError, "confidence"):
+                evaluate([{"y_true": "a", "y_pred": "a", "confidence": confidence}])
+
     def test_rejects_empty_or_non_string_labels(self):
         for row in (
             {"y_true": "", "y_pred": "review", "confidence": 0.5},
