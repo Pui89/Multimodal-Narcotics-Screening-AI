@@ -1,4 +1,6 @@
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from evaluation.run_evaluation import evaluate, load_jsonl
 
@@ -45,6 +47,26 @@ class EvaluationRunnerTests(unittest.TestCase):
             evaluate([{"y_true": "a", "confidence": 0.5}])
         with self.assertRaisesRegex(ValueError, "at least one"):
             evaluate([])
+
+    def test_load_jsonl_rejects_duplicate_keys_with_line_number(self):
+        with TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "predictions.jsonl"
+            path.write_text(
+                '{"y_true":"review","y_pred":"clear","confidence":0.1,"confidence":0.99}\n',
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "duplicate JSON key on line 1"):
+                load_jsonl(path)
+
+    def test_load_jsonl_rejects_duplicate_nested_keys(self):
+        with TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "predictions.jsonl"
+            path.write_text(
+                '{"y_true":"review","y_pred":"clear","confidence":0.8,"metadata":{"source":"A","source":"B"}}\n',
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "duplicate JSON key on line 1"):
+                load_jsonl(path)
 
 
 if __name__ == "__main__":
