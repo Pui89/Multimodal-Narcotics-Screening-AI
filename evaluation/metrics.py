@@ -50,7 +50,7 @@ def expected_calibration_error(
             raise ValueError("confidences must be finite numbers between 0 and 1")
         try:
             score = float(confidence)
-        except (TypeError, ValueError) as exc:
+        except (OverflowError, TypeError, ValueError) as exc:
             raise ValueError("confidences must be finite numbers between 0 and 1") from exc
         if not math.isfinite(score) or not 0.0 <= score <= 1.0:
             raise ValueError("confidences must be finite numbers between 0 and 1")
