@@ -31,7 +31,7 @@
 | Reference | Year / principle | Applicability | Comparability |
 |---|---|---|---|
 | [NIST AI Risk Management Framework 1.0](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10) | 2023; voluntary, use-case-agnostic framework for managing AI risks and trustworthiness | Organises intended-use definition, risk measurement, monitoring and human oversight | Process guidance, not a narcotics-screening benchmark or certification |
-| [UNODC field-testing guidance](https://www.unodc.org/pdf/publications/st-nar-13-rev1.pdf) | Guidance states rapid field tests are presumptive and positive/doubtful results require laboratory analysis | Supports a strict distinction between screening signal and confirmed chemical identity | Not an AI model comparison; older guidance, so confirm current jurisdictional/laboratory procedures before operational use |
+| [UNODC Drug and Precursor Field Test Kits guidance](https://www.unodc.org/documents/scientific/Brochure_Lab_Drug_kits.pdf) | Guidance states rapid field tests are presumptive and positive/doubtful results require laboratory analysis | Supports a strict distinction between screening signal and confirmed chemical identity | Not an AI model comparison; confirm current jurisdictional/laboratory procedures before operational use |
 
 ## Maturity gate and next step
 
