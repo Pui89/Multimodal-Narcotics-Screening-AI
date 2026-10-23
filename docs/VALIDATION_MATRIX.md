@@ -1,40 +1,56 @@
-# Validation Matrix — Multimodal Narcotics Screening AI
+# Engineering Requirements and Evidence Matrix — Multimodal Narcotics Screening AI
 
-Last reviewed: 20 October 2026. The current repository is a screening workflow prototype, not a validated narcotics detector or chemical analyser.
+**Last reviewed:** 2026-10-23  
+**Default-branch baseline inspected:** df8f815389018c8eaf3dfcf86a26163111369761  
+**Scope:** local-first screening workflow and research evaluation tools. Model output is a screening signal for authorised human review, never proof of substance identity or wrongdoing.
 
-## Latest automated evidence
+## Evidence and status rules
 
-The latest main-branch CI run [39276822504](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/39276822504) passed regression jobs on Python 3.10, 3.11 and 3.12. The workflow checked API/evaluation tests, dataset provenance and split/path-safety safeguards, and a synthetic evaluation smoke test. Synthetic tests are not evidence of real narcotics-screening accuracy.
+- **Verified** means the named software check completed successfully within its stated scope.
+- **Failed** means a check ran and did not meet its criterion.
+- **Not measured** means the required evidence is unavailable; do not infer a pass.
+- Synthetic fixtures test pipeline behavior only. They are not real narcotics samples and cannot establish model accuracy, chemical identity or legal wrongdoing.
 
-| Capability | Repository evidence | Current status | What is still required |
+## Requirements and evidence matrix
+
+| ID | Requirement / metric | Test method | Dataset / scenario | Baseline / reference | Current measured result | Sample count | Pass criterion and rationale | Evidence URL / artifact | Status | Next action |
+|---|---|---|---|---|---|---:|---|---|---|---|
+| DATA-01 | Every sample has lawful provenance, licence/permission, label basis and privacy review | Audit source, manifest, licence, attribution and hashes; qualified reviewer confirms labels | Only authorised, appropriately licensed data | No sample is accepted based only on public availability or a filename | Manifest template and audit tools exist; no validated real-narcotics evaluation set is documented | Real approved evaluation samples: 0 documented | Each item must have documented permission, expert-reviewed ground truth and traceable provenance before use | [Validation matrix](VALIDATION_MATRIX.md); [manifest template](../data/manifest.template.csv); [dataset tools](../tools/) | **Not measured** | Define an authorised narrow task and audit the exact dataset terms |
+| DATA-02 | Evaluation splits prevent physical-item/source/session leakage | Run group-aware splitting, exact-hash/path audits and manual near-duplicate review | Lawfully acquired, reviewed data | No known item/source/session leakage across train/validation/test | Split/audit tools and regression tests exist; no real held-out split is documented | Real held-out samples: 0 documented | Freeze splits before tuning; keep all views of the same item in one partition | [Group splitter](../tools/group_split_manifest.py); [manifest audit](../tools/audit_dataset_manifest.py) | **Not measured** | Create a versioned manifest after DATA-01 passes |
+| EVAL-01 | Evaluation harness computes metrics from labels and rejects malformed confidence input | Run JSONL evaluation tests and synthetic smoke test | Six hand-authored synthetic prediction records | Hand-authored expected labels; this is a pipeline baseline only | Synthetic output: accuracy 0.6667, precision 0.6667, recall 0.6667, F1 0.6667, ECE 0.3333; not real-world performance | 6 synthetic records | Results must be reproducible from the input file and explicitly labelled synthetic; real performance requires independent held-out data | [Synthetic predictions](../evaluation/examples/synthetic_predictions.jsonl); [synthetic report](../reports/synthetic-evaluation.json); [current evaluation PR](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/pull/22) | **Verified** — synthetic pipeline only | Re-run after the confidence-schema PR checks complete; do not publish these values as screening accuracy |
+| MOD-01 | Each available modality is evaluated independently before fusion | Per-modality confusion matrix and metrics using lawful labelled examples | Image, depth, thermal, X-ray or other modalities only where genuinely available and authorised | Simple baseline per modality; identical held-out split where comparison is valid | No trained modality-specific model or representative sensor dataset is established | Real samples per modality: 0 documented | Report class support, precision/recall/F1, false positives/negatives and unavailable modalities separately | [Evaluation guide](EVALUATION.md); [benchmark standard](PRODUCT_BENCHMARK_STANDARD.md) | **Not measured** | Inventory actual sensors/data and define one narrow, lawful task |
+| FUS-01 | Fusion abstains on missing, stale, noisy or contradictory modalities | Fault-injection tests and controlled modality ablations; later evaluate on representative data | Missing modality, NaN/Inf, timestamp skew, disagreement, low quality and unknown input | Single-modality baseline and explicit UNKNOWN/HUMAN_REVIEW route | Software input/evaluation regression checks pass; real cross-modal behavior has not been evaluated | Real fusion trials: 0 documented | No automatic positive/negative conclusion when required evidence is missing or contradictory | [Current evaluation PR](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/pull/22); [evaluation guide](EVALUATION.md) | **Not measured** — real fusion | Add explicit missing/noisy-modality fixtures, then evaluate with authorized real data |
+| CAL-01 | Confidence calibration is assessed on held-out, representative labels | Reliability diagram, ECE/Brier score and confidence intervals where sample size supports them | Independent expert-reviewed set | Compare each modality and fusion using the same held-out records | ECE is 0.3333 on six synthetic examples only; no real calibration claim | 6 synthetic records; real calibration samples: 0 | Calibration is not claimed from synthetic or tiny samples; report uncertainty and subgroup support | [Synthetic report](../reports/synthetic-evaluation.json); [metrics implementation](../evaluation/metrics.py) | **Not measured** — real calibration | Predefine calibration protocol and collect a lawful independent test set |
+| HUMAN-01 | Every consequential result is routed to authorised human review; no automatic accusation/enforcement | Workflow tests, audit completeness checks and usability review with authorised operators | Synthetic workflow fixtures first; later supervised authorised study | Human review is mandatory; model output is not proof | The README and workflow tests describe a review boundary; no operator study or real deployment is documented | Real operator trials: 0 | Unknown/low-confidence/conflicting results must route to review; record reviewer decision without treating it as ground truth automatically | [README](../README.md); [evaluation guide](EVALUATION.md) | **Verified** — documented/software boundary only | Test real UI states, privacy/access controls and audit trails before any authorised pilot |
+| PRIV-01 | Sensitive data and credentials are not exposed; access and retention are appropriate | Local secret-pattern/CodeQL scans, path-safety tests and deployment review | Repository fixtures; no private dataset is committed as evaluation evidence | No secret values in logs; no unauthorised data access; retention policy defined before deployment | Main security checks and current PR #22 security checks completed successfully; repository-level scanning only | Repository scan; real deployment samples: 0 | Resolve findings; do not infer privacy compliance from a clean code scan | [Main security workflow](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/39925337952); [PR #22 security checks](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/39930665317) | **Verified** — code-scan scope only | Review deployment access, retention, legal authority and audit logging separately |
+| PERF-01 | Runtime, memory, throughput and failure rate are reproducible | Benchmark the same frozen input/configuration on identified hardware; record versions and resource telemetry | Named local hardware and held-out dataset | Simple baseline and per-modality/fusion comparison | No model runtime/resource benchmark is documented | Measured model runs: 0 | Report sample count, hardware and all failures; do not extrapolate from a synthetic pipeline or CI runner | [Benchmark standard](PRODUCT_BENCHMARK_STANDARD.md); [evaluation guide](EVALUATION.md) | **Not measured** | Run only after a model, lawful test set and repeatable command exist |
+| DOC-01 | Public claims match code, dataset status and evaluation evidence | Review README, validation matrix, model/data cards and workflow filters | Repository at baseline commit above | Separate implemented, tested, synthetic, evaluated, conceptual and planned capabilities | README says real narcotics identification is unvalidated; synthetic evaluation is labelled synthetic | N/A | No claim of validated drug identification or wrongdoing without authorised, independently reviewed evidence | [README](../README.md); [validation matrix](VALIDATION_MATRIX.md) | **Verified** — documentation review only | Refresh status after current HEAD/CI checks; keep public language evidence-bound |
+
+## External references — context only, not a project score
+
+| Reference | Year / principle | Applicability | Comparability |
 |---|---|---|---|
-| Local API/dashboard workflow | `apps/pui89_app/` | Software prototype; API regression tests passed in CI | Test the intended deployment environment and access controls |
-| Synthetic evaluation pipeline | `evaluation/` | Reproducible synthetic tests passed in CI; synthetic scores are not real-world performance | Independently labelled, task-appropriate test set and pre-registered evaluation |
-| Dataset provenance and image inventory | `tools/`, `data/manifest.template.csv` | Local tools; regression tests passed in CI | Verify source rights, metadata, labels and item-level provenance |
-| Group-aware data splitting | `tools/group_split_manifest.py` | Rejects unapproved licences and unverified labels; regression tests passed in CI | Establish groups by physical item/source/capture session; prevent duplicates across splits |
-| Prescription-pill image workflow | C3PI source guidance | Possible proxy task only after licence/terms review | Define narrow pill-image task; do not describe it as illicit-drug detection |
-| Real narcotics classification | No validated real-narcotics checkpoint or benchmark established | **Not validated** | Authorised dataset, qualified ground truth and independent evaluation |
-| Chemical identification | No chemical sensor/confirmatory analysis in this repository | **Not implemented/validated** | Appropriate laboratory or authorised confirmatory method; image appearance is insufficient |
-| X-ray/CT/thermal or robotic sensors | Architecture interfaces only unless separately implemented and tested | **Not validated** | Actual supported sensor, calibrated data, validated modality-specific model and integration tests |
-| Operational screening decisions | Human-review workflow is the intended boundary | **No autonomous enforcement decision** | Qualified operator review, privacy controls, documented intended-use and error analysis |
+| [NIST AI Risk Management Framework 1.0](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10) | 2023; voluntary, use-case-agnostic framework for managing AI risks and trustworthiness | Organises intended-use definition, risk measurement, monitoring and human oversight | Process guidance, not a narcotics-screening benchmark or certification |
+| [UNODC field-testing guidance](https://www.unodc.org/pdf/publications/st-nar-13-rev1.pdf) | Guidance states rapid field tests are presumptive and positive/doubtful results require laboratory analysis | Supports a strict distinction between screening signal and confirmed chemical identity | Not an AI model comparison; older guidance, so confirm current jurisdictional/laboratory procedures before operational use |
 
-## Immediate zero-cost next actions
+## Maturity gate and next step
 
-Work in this order and keep screening hypotheses separate from substance identification or enforcement decisions.
+**Current maturity:** tested software/evaluation pipeline prototype. The synthetic harness and selected regressions pass; no real narcotics detection or chemical identification has been validated.
 
-1. **Define the narrow task:** document intended use, authorised operator, prohibited use, permitted data sources and what the system is not allowed to infer.
-2. **Verify data provenance:** audit every dataset's licence/permission, source, label meaning, ground-truth basis and hashes. Prescription-pill images are not proof of illicit-narcotics detection; ordinary RGB images cannot establish chemical identity.
-3. **Prevent leakage:** group by physical item, source, subject or capture session as appropriate; detect duplicates and near-duplicates before splitting. Keep sensitive or unlicensed data out of Git.
-4. **Test safe abstention:** missing, conflicting, low-quality or out-of-distribution inputs must yield `UNKNOWN`/`HUMAN_REVIEW`, not an automatic positive or negative finding.
-5. **Evaluate only on appropriate held-out data:** report per-class precision/recall, confusion matrix, false positives/negatives, calibration, abstention rate, latency and failure cases. Mark experiments **NOT RUN** until actually executed.
-6. **No-cost boundary:** run existing local tests and tools first. Do not enable paid APIs, cloud GPUs, hosted inference or subscriptions. If a future step may incur a charge, stop and ask first.
+**Strongest verified capability:** local JSONL metric calculation, input validation, provenance/split tooling and regression/security checks.
 
-**Next milestone:** a lawful, independently reviewed evaluation set and a reproducible baseline report—not a claim of validated narcotics identification.
+**Largest performance gap:** no authorised, expert-reviewed, independent real-data set and no trained modality/fusion model result.
 
-## Evaluation and governance rules
+**Highest safety risk:** a screening score being misinterpreted as proof of substance identity or wrongdoing.
 
-- Treat model confidence as a score unless calibration has been measured.
-- Missing, conflicting or out-of-distribution input should lead to UNKNOWN/REVIEW, not an automatic positive decision.
-- Do not claim substance identity from an ordinary image.
-- Use only authorised datasets and record source, licence/permission, ground-truth basis, reviewer, split and hashes.
-- Synthetic pipeline accuracy must never be presented as accuracy on real narcotics.
+**Next gate:** define one authorised narrow task, audit lawful data and ground truth, freeze a leakage-safe split, then evaluate simple modality baselines and human-review routing with false-positive/false-negative reporting.
+
+## Standards applicability (self-assessment only)
+
+| Source / version | Selected principle | Implementation/evidence | Gap / status |
+|---|---|---|---|
+| [NASA Systems Engineering Handbook, NASA/SP-2016-6105 Rev 2 (2016)](https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20170001761.pdf) | Requirements traceability, risk management, verification versus validation | This matrix, evaluation protocol and workflow tests | Selected practices only; no formal compliance claimed |
+| [NASA Software Engineering Handbook (current online edition)](https://swehb.nasa.gov/) | Off-nominal tests, configuration control, verification planning and objective evidence | Regression tests, local evaluation harness and security checks | Partial; no independent IV&V |
+| [NIST AI RMF 1.0 (2023)](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10) | Govern, map, measure and manage AI risk | Human review boundary, data provenance and evaluation planning | Voluntary framework; no certification or conformity claim |
+
+Selected practices are **NASA-inspired**, not NASA-certified/compliant. Formal conformity is not claimed.
