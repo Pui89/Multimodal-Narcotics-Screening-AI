@@ -31,6 +31,12 @@ class ClassificationMetricsEdgeCaseTests(unittest.TestCase):
         self.assertEqual(result.recall, 0.0)
         self.assertEqual(result.f1, 0.0)
 
+    def test_calibration_rejects_integer_too_large_to_convert_to_float(self):
+        from evaluation.metrics import expected_calibration_error
+
+        with self.assertRaisesRegex(ValueError, "finite numbers between 0 and 1"):
+            expected_calibration_error([10**10000], [True])
+
     def test_default_positive_label_is_deterministic(self):
         result = classification_metrics(["z", "a"], ["z", "a"])
         self.assertEqual(result.accuracy, 1.0)
