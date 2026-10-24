@@ -29,13 +29,17 @@ class MotionDecision:
     reasons: tuple[str, ...]
 
 
+def _finite_number(value: object) -> bool:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return False
+    try:
+        return math.isfinite(value)
+    except (OverflowError, TypeError, ValueError):
+        return False
+
+
 def _finite_nonnegative(value: object) -> bool:
-    return (
-        isinstance(value, (int, float))
-        and not isinstance(value, bool)
-        and math.isfinite(value)
-        and value >= 0
-    )
+    return _finite_number(value) and value >= 0
 
 
 def decide_motion(observation: MotionObservation) -> MotionDecision:
@@ -52,9 +56,7 @@ def decide_motion(observation: MotionObservation) -> MotionDecision:
             o.pedestrian_distance_m is not None
             and not _finite_nonnegative(o.pedestrian_distance_m)
         )
-        or isinstance(o.localization_confidence, bool)
-        or not isinstance(o.localization_confidence, (int, float))
-        or not math.isfinite(o.localization_confidence)
+        or not _finite_number(o.localization_confidence)
         or not 0.0 <= o.localization_confidence <= 1.0
         or not isinstance(o.obstacle_sensor_healthy, bool)
         or not isinstance(o.communications_healthy, bool)
