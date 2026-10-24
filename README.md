@@ -22,6 +22,12 @@
 - **What may be inside the body:** this mobile robot must not claim to detect narcotics inside a person's body. That is not a capability established by this concept. Any medical or specialised screening is outside the robot's role and must follow applicable law and qualified professional procedures.
 - **How an alert is handled:** a sensor anomaly is only a reason for an authorised human operator to follow an approved secondary-screening procedure. It is not proof that a person is carrying narcotics. No covert tracking, automatic accusation, detention, or enforcement decision based on an AI score.
 
+## Interactive robot movement demo
+
+Open the [PUI89 quadruped screening robot simulation](docs/demos/quadruped-screening-robot-simulation.html) to view a lightweight, browser-based concept animation with four-leg walking, synthetic airport passengers, adjustable patrol speed and crowd density, an illustrative scan overlay, and a simulated alert that pauses for human review.
+
+> **Simulation only:** The animation uses synthetic graphics. Chemical screening is conceptual and unvalidated; this demo does not detect real narcotics, identify people, screen under clothing, or establish substance identity. Alerts require authorized human review.
+
 ### Recommended advanced improvements and development roadmap
 
 The following are proposed improvements, not claims that the capabilities already exist.
