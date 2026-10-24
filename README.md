@@ -410,3 +410,22 @@ Keep the screening workflow local-first, auditable, and dependent on authorised 
 - **Retrieval:** search local documentation and policies first; consider a local vector index only if a measured retrieval need exists.
 
 **Cost, privacy, and evidence guardrails:** no paid API, cloud GPU, subscription, or hosted inference is required by this plan. Ask before introducing costs. Review every model/weight licence and data-use permission. Synthetic workflow tests are not real screening benchmarks; outputs must not independently identify a substance, infer guilt, or trigger enforcement.
+
+
+## PUI89 Sentinel — AI robot upgrade roadmap
+
+This is a staged engineering plan. It does not mean a validated narcotics detector or physical robot already exists.
+
+### Upgrade sequence
+
+1. **Separate sensor roles:** RGB cameras support visible-object/container inspection; depth supports geometry; approved specialist screening equipment supplies its own sensor output; chemical-trace sensors are a separate future integration. Never imply ordinary RGB can see through clothing or identify a substance chemically.
+2. **Build a modality contract:** each observation carries sensor identity, timestamp, calibration/version, quality, out-of-distribution score, missing-data status and provenance. Reject duplicate, stale, malformed or out-of-range records.
+3. **Calibrate uncertainty and abstention:** treat DINOv2 anomaly scores as generic image-level outlier signals, not narcotics probabilities. Use held-out, lawful, representative data before selecting thresholds; send uncertain or conflicting signals to human review.
+4. **Robot safety supervisor:** enforce low-speed navigation, obstacle/person separation, restricted-zone boundaries, communication-loss stop, sensor-fault stop, manual takeover and emergency stop. No covert following or autonomous physical contact.
+5. **Human-reviewed case workflow:** record evidence source, model/version, modality quality, disagreement, reviewer outcome and audit integrity. A screening alert is not proof and must not automatically authorize search, seizure, detention or enforcement.
+6. **Privacy-by-design:** minimize video retention, restrict access, redact unnecessary personal data, define deletion windows and audit access. Do not add face recognition or identity profiling.
+7. **Evaluation gate:** use synthetic/unit tests first, then lawful de-identified test data. Report false-positive/false-negative rates, sensitivity, specificity, calibration, abstention, latency and sensor-failure behavior with confidence intervals. Mark unavailable modalities and unrun tests explicitly.
+
+### Deployment boundary
+
+Keep the system as an object/container inspection and human-review aid. Use only approved specialist screening equipment under applicable law and trained supervision. No chemical detection, concealed-object detection, field operation or physical robot capability should be claimed until the relevant hardware, data, permissions and independent validation exist. Keep development local-first and free-first.
