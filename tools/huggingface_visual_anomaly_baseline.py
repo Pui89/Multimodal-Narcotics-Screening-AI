@@ -117,7 +117,7 @@ def main() -> int:
     print(rendered)
     if args.json_out:
         args.json_out.parent.mkdir(parents=True, exist_ok=True)
-        args.json_out.write_text(rendered + "\\n", encoding="utf-8")
+        args.json_out.write_text(rendered + "\n", encoding="utf-8")
     return 0
 
 
