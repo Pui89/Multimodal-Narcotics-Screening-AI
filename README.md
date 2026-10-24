@@ -22,11 +22,15 @@
 - **What may be inside the body:** this mobile robot must not claim to detect narcotics inside a person's body. That is not a capability established by this concept. Any medical or specialised screening is outside the robot's role and must follow applicable law and qualified professional procedures.
 - **How an alert is handled:** a sensor anomaly is only a reason for an authorised human operator to follow an approved secondary-screening procedure. It is not proof that a person is carrying narcotics. No covert tracking, automatic accusation, detention, or enforcement decision based on an AI score.
 
-## Interactive robot movement demo
+## Video concept and interactive 3D-style simulation
 
-Open the [PUI89 quadruped screening robot simulation](docs/demos/quadruped-screening-robot-simulation.html) to view a lightweight, browser-based concept animation with four-leg walking, synthetic airport passengers, adjustable patrol speed and crowd density, an illustrative scan overlay, and a simulated alert that pauses for human review.
+**Step 1 — Video concept:** read the [PUI89 robot video storyboard](docs/demos/quadruped-screening-robot-video-storyboard.md). It defines a 60–75 second film with an airport establishing shot, four-leg walking, adaptive speed, pedestrian yielding, illustrative sensing, an inconclusive simulated alert, and authorised human review. **This is a storyboard, not a rendered video file.**
 
-> **Simulation only:** The animation uses synthetic graphics. Chemical screening is conceptual and unvalidated; this demo does not detect real narcotics, identify people, screen under clothing, or establish substance identity. Alerts require authorized human review.
+**Step 2 — Interactive simulation:** open or download the [interactive airport robot concept](docs/demos/quadruped-screening-robot-3d-concept.html). It animates a synthetic terminal scene with a four-leg walking gait, passenger density and patrol-speed controls, a toggleable illustrative scan overlay, and a simulated sensor anomaly that pauses the robot for human review. It runs in a modern browser without a paid API or cloud GPU; the scene is a lightweight 2D canvas perspective animation, **not a true 3D physics simulator**.
+
+The [earlier lightweight movement demo](docs/demos/quadruped-screening-robot-simulation.html) is also available.
+
+> **Concept only — not validated:** all people and sensor effects are synthetic. Chemical detection is conceptual and unvalidated; these demos do not detect real narcotics, identify people, screen under clothing, or detect substances inside the body. An alert is inconclusive and must be reviewed by authorised personnel under an approved procedure. No facial recognition, demographic profiling, automatic accusation, detention, or enforcement decision is demonstrated.
 
 ### Recommended advanced improvements and development roadmap
 
