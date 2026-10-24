@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PUI89 Quadruped Robot Simulation</title>
+<style>
+body{margin:0;background:#071421;color:#e8f5ff;font:15px system-ui}header{padding:16px 22px;background:#102438;border-bottom:1px solid #31516b}h1{margin:0;font-size:24px}p{color:#adc6d9}main{display:grid;grid-template-columns:1fr 280px;gap:12px;padding:12px}canvas{width:100%;height:70vh;display:block;border:1px solid #31516b;border-radius:12px;background:linear-gradient(#0b2134,#172b3b)}aside{background:#102438;border:1px solid #31516b;border-radius:12px;padding:14px}button,input{width:100%;margin:6px 0;padding:9px;box-sizing:border-box}button{background:#124966;color:white;border:1px solid #3989aa;border-radius:7px;cursor:pointer}.warn{font-size:12px;color:#ffd18a;line-height:1.5}@media(max-width:800px){main{grid-template-columns:1fr}canvas{height:55vh}}
+</style></head><body><header><h1>PUI89 · Quadruped Screening Robot</h1><p>Animated 3D-style concept demo · synthetic airport scene</p></header><main><canvas id="scene" aria-label="Animated robot walking among synthetic passengers"></canvas><aside><h3>Simulation controls</h3><button id="run">Pause patrol</button><label>Patrol speed <output id="sv">1.0×</output><input id="speed" type="range" min=".3" max="1.8" step=".1" value="1"></label><label>Passenger density <output id="pv">Medium</output><input id="crowd" type="range" min="1" max="3" step="1" value="2"></label><button id="scan">Toggle scan overlay</button><button id="alert">Simulate alert for human review</button><p id="status">Patrol active · yielding around synthetic pedestrians.</p><p class="warn"><b>Concept only:</b> this canvas demo illustrates motion and a scan overlay. It does not detect real narcotics, identify people, screen under clothing, or validate a chemical sensor. Alerts are synthetic and require human review.</p></aside></main>
+<script>
+const c=document.getElementById('scene'),ctx=c.getContext('2d');let running=true,scan=true,alert=false,t=0,speed=1,crowd=2,last=0;
+function resize(){const d=devicePixelRatio||1;c.width=c.clientWidth*d;c.height=c.clientHeight*d;ctx.setTransform(d,0,0,d,0,0)}new ResizeObserver(resize).observe(c);resize();
+document.getElementById('run').onclick=()=>{running=!running;document.getElementById('run').textContent=running?'Pause patrol':'Resume patrol'};
+document.getElementById('speed').oninput=e=>{speed=+e.target.value;document.getElementById('sv').value=speed.toFixed(1)+'×'};
+document.getElementById('crowd').oninput=e=>{crowd=+e.target.value;document.getElementById('pv').value=['','Low','Medium','High'][crowd]};
+document.getElementById('scan').onclick=()=>scan=!scan;
+document.getElementById('alert').onclick=()=>{alert=!alert;if(alert)running=false;document.getElementById('status').textContent=alert?'SIMULATED ALERT — patrol paused for authorized human review.':'Patrol active · yielding around synthetic pedestrians.';document.getElementById('status').style.color=alert?'#ff9a8c':'#a9e6c7';document.getElementById('run').textContent=running?'Pause patrol':'Resume patrol'};
+function person(x,y,k){ctx.fillStyle=['#86b5d3','#d6ad76','#8fc6ac','#b7a0c8'][k%4];ctx.fillRect(x-9,y-30,18,30);ctx.fillStyle='#c99776';ctx.beginPath();ctx.arc(x,y-39,8,0,7);ctx.fill();ctx.strokeStyle='#526b80';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x-4,y);ctx.lineTo(x-6,y+19);ctx.moveTo(x+4,y);ctx.lineTo(x+7,y+19);ctx.stroke()}
+function draw(now){requestAnimationFrame(draw);let dt=Math.min((now-last)/1000||0,.05);last=now;if(running&&!alert)t+=dt*speed;const w=c.clientWidth,h=c.clientHeight;ctx.clearRect(0,0,w,h);
+// terminal perspective
+const vanx=w*.52,vany=h*.18;ctx.fillStyle='#172b3b';ctx.fillRect(0,0,w,h);ctx.strokeStyle='#34556b';ctx.lineWidth=1;
+for(let i=0;i<11;i++){let y=h*.35+i*i*h*.006;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}
+for(let i=-7;i<=7;i++){ctx.beginPath();ctx.moveTo(vanx,vany);ctx.lineTo(w/2+i*w*.09,h);ctx.stroke()}
+ctx.fillStyle='#7bbbd8';ctx.fillRect(w*.07,h*.13,w*.86,5);ctx.fillStyle='#173b53';ctx.fillRect(w*.09,h*.06,w*.82,h*.07);ctx.fillStyle='#ffe19a';ctx.font='bold 14px system-ui';ctx.fillText('GATES  B1 — B16   →',w*.12,h*.105);
+for(let i=0;i<(crowd===1?5:crowd===2?9:14);i++){let side=i%2?-1:1;let x=w*.5+side*(w*.12+(i%5)*w*.055)+Math.sin(t*.35+i)*8;let y=h*.42+(i%5)*h*.09;person(x,y,i)}
+// robot moves in patrol loop
+let rx=w*.5+Math.sin(t*.35)*w*.14, ry=h*.65+Math.sin(t*1.8)*3, scale=Math.max(.65,Math.min(1.2,h/520));
+ctx.save();ctx.translate(rx,ry);ctx.scale(scale,scale);
+if(scan){ctx.fillStyle='rgba(48,207,255,.13)';ctx.beginPath();ctx.moveTo(0,-45);ctx.lineTo(-115,-150);ctx.lineTo(115,-150);ctx.closePath();ctx.fill();ctx.strokeStyle='rgba(48,207,255,.6)';ctx.beginPath();ctx.ellipse(0,8,85+(t%1)*24,20,0,0,Math.PI*2);ctx.stroke()}
+ctx.fillStyle='#dce8f2';ctx.strokeStyle='#182c40';ctx.lineWidth=10;
+ctx.fillRect(-43,-43,86,34);ctx.fillStyle='#182c40';ctx.fillRect(-28,-48,56,9);ctx.fillStyle='#42d9ff';ctx.fillRect(-8,-60,16,10);
+for(let i=0;i<4;i++){let x=i%2?-34:34,z=i<2?-1:1,ph=t*8+(i===0||i===3?0:Math.PI),stride=Math.sin(ph)*12,knee=Math.max(0,Math.sin(ph+1))*9;ctx.strokeStyle='#d9e5ef';ctx.lineWidth=9;ctx.beginPath();ctx.moveTo(x,-20);ctx.lineTo(x+stride,-3);ctx.lineTo(x+stride+knee,22);ctx.stroke();ctx.fillStyle='#37d7ff';ctx.beginPath();ctx.arc(x,-20,5,0,7);ctx.fill()}
+ctx.fillStyle='#54dfff';ctx.beginPath();ctx.arc(0,-63,7,0,7);ctx.fill();ctx.restore();
+ctx.fillStyle='#e9f5ff';ctx.font='12px system-ui';ctx.fillText('PUI89 QUADRUPED · CONCEPT ANIMATION',12,h-14);
+if(alert){ctx.fillStyle='rgba(70,15,25,.88)';ctx.fillRect(12,12,Math.min(w-24,330),48);ctx.fillStyle='#ffb1ad';ctx.font='bold 13px system-ui';ctx.fillText('SIMULATED ALERT — HUMAN REVIEW',22,31);ctx.font='12px system-ui';ctx.fillText('No substance or person has been identified.',22,48)}
+}requestAnimationFrame(draw);
+</script></body></html>
