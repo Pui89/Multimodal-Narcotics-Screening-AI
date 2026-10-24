@@ -9,17 +9,24 @@
 
 ### What the robot is intended to do
 
-- **Walk and navigate:** quadruped legs, onboard obstacle sensing, a low-speed patrol mode, geofenced routes, and an emergency stop. It should yield to people, never chase or physically block them, and return to a safe stop if localisation or obstacle sensing becomes unreliable.
+- **Move efficiently and safely:** quadruped legs, onboard obstacle sensing, adaptive speed, geofenced routes, and an emergency stop. The robot may move faster only in a validated, clear area; it must slow near people, yield to pedestrians, never chase or physically block anyone, and stop safely if localisation or obstacle sensing becomes unreliable. Speed is limited by stability, braking distance, floor conditions, and validated hardware.
 - **Screen beyond bags:** support an authorised workflow for people moving through a terminal, carry-on items, and the surrounding air. The robot does not touch, restrain, follow covertly, or make a judgement about a person.
-- **Use multiple sensing modalities:** visible/low-light cameras and depth sensing for navigation; an optional, separately validated chemical-vapour or trace-residue sensor module for screening. Cameras can support scene understanding but **cannot identify narcotics**. A dog-like form does not give the robot a biological sense of smell: chemical detection requires suitable hardware, calibration, controlled sampling, and independent validation.
+- **Use distinct sensing systems for distinct jobs:** lidar/depth sensing maps obstacles and estimates distance; RGB/low-light cameras support permitted scene understanding; an optional, separately validated chemical-vapour or trace-residue sensor may screen air or approved samples. These systems do not reveal narcotics hidden inside a person. A dog-like form does not provide a biological sense of smell: chemical detection requires suitable hardware, calibration, controlled sampling, and independent validation.
 - **Alert a trained human:** show sensor status, confidence/uncertainty, and the reason for a screening alert. An alert means *check this result using an approved procedure*—not “this person has narcotics.” Only authorised staff decide whether a lawful secondary inspection is appropriate.
 - **Protect people and data:** minimise and time-limit video retention, avoid face recognition and demographic profiling, log operator access, use encrypted communications, and provide visible notice and an accessible human review route. Do not autonomously accuse, detain, search, or report a person based on an AI score.
+
+### Range, concealed items, and screening limits
+
+- **What is far away:** lidar, radar, and cameras can support navigation, distance measurement, and detection of visible objects within their tested range. They cannot identify narcotics at a distance.
+- **What is concealed under clothing:** only an appropriately approved screening system designed for that purpose—such as a certified millimetre-wave body scanner in a lawful, staffed screening checkpoint—may be considered. It is a separate subsystem with its own safety, privacy, regulatory, and performance validation; ordinary robot cameras and lidar cannot do this.
+- **What may be inside the body:** this mobile robot must not claim to detect narcotics inside a person's body. That is not a capability established by this concept. Any medical or specialised screening is outside the robot's role and must follow applicable law and qualified professional procedures.
+- **How an alert is handled:** a sensor anomaly is only a reason for an authorised human operator to follow an approved secondary-screening procedure. It is not proof that a person is carrying narcotics. No covert tracking, automatic accusation, detention, or enforcement decision based on an AI score.
 
 ### Proposed physical architecture
 
 | Subsystem | Proposed implementation | Evidence status |
 |---|---|---|
-| Mobility | Commercial quadruped base or a small research quadruped; low-speed indoor gait | Design proposal; no robot built or tested is claimed |
+| Mobility | Commercial quadruped base or a small research quadruped; speed limited by validated safe operating zones | Design proposal; no robot built or tested is claimed |
 | Navigation | 3D lidar/depth camera, IMU, wheel/leg odometry where available, mapping and obstacle avoidance | To be integrated and tested |
 | Scene sensing | RGB camera and depth sensor aimed at the environment, not used to infer guilt | Hardware and privacy review required |
 | Chemical screening | Replaceable, validated vapour/trace sensor selected with qualified screening specialists | Not selected or validated; no chemical detection claim |
