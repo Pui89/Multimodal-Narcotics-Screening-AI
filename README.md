@@ -340,6 +340,18 @@ The checker verifies repository structure, scans Python source syntax, discovers
 **Failure and security response:** see [failure and security response matrix](docs/FAILURE_AND_SECURITY_RESPONSE.md). This records design requirements and evidence boundaries; it does not claim every response is implemented or validated.
 
 
+## Adaptive motion policy — software prototype
+
+- [Motion policy implementation](src/narcotics_platform/motion_policy.py) · [automated scenario tests](tests/test_motion_policy.py)
+
+The deterministic policy caps requested speed, slows near obstacles and pedestrians, and commands a software-level safe stop for an emergency-stop request, low localisation confidence, sensor/communications faults, or malformed inputs. Thresholds are illustrative starting values, **not validated operating limits**. This module is not connected to the browser animation or any physical robot, does not calculate physics-based braking distance, and is not a certified safety controller.
+
+Run its focused tests when the project dependencies are installed:
+
+```bat
+python -m pytest tests/test_motion_policy.py -q
+```
+
 ## Autonomous systems (software-level supervisor)
 
 - [Autonomous system architecture, project-specific inputs, tests, and safety limits](docs/AUTONOMOUS_SYSTEMS.md)
