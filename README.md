@@ -1,6 +1,18 @@
 # Multimodal Narcotics Screening AI
 
 
+## Current verified status — 25 October 2026
+
+**Stage:** local visual experiments, concept/simulation work and software regression testing. This repository does not demonstrate a validated physical screening robot or validated narcotics detector.
+
+- **SAM 3 segmentation:** the optional local smoke-test script and guide are merged ([PR #35](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/pull/35)). No SAM 3 inference result has been verified yet. Model weights are downloaded only when the script is run; check compatibility, access terms, disk space and GPU memory first.
+- **Automated checks for the SAM 3 change:** Python tests, security checks, Ruff helper review and local-first app regression checks completed successfully for the change's pull-request commit. These checks do not establish screening accuracy.
+- **Open review:** the shared fault-monitor contract remains a draft proposal in [PR #34](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/pull/34); it is not merged into the default branch.
+- **Next:** run one local visible-item segmentation smoke test; assess whether masks align with packages, bags or containers; then define licensed test data and a human-reviewed evaluation protocol for each proposed sensor modality.
+- **Critical limit:** ordinary RGB imagery and generic segmentation cannot prove concealed narcotics or chemical composition. Any future alert requires validated, appropriate sensing and lawful human review; no automatic accusation or enforcement decision is supported.
+
+
+
 ## Mobile quadruped screening robot — people, carry-on items, and ambient-air sampling
 
 ![Engineering concept of a dog-inspired mobile screening robot patrolling an airport terminal beside walking passengers.](docs/images/quadruped-screening-robot.svg)
