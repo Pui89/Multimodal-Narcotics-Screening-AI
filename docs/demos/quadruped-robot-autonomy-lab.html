@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PUI89 Autonomy Lab — Quadruped Digital Twin</title>
+<style>
+:root{color-scheme:dark;--bg:#07111c;--panel:rgba(8,21,35,.93);--line:#29445a;--cyan:#58e1e8;--muted:#9db4c7;--green:#77edb4;--amber:#ffd078;--red:#ff7373}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#e8f4ff;font:13px/1.4 system-ui,Segoe UI,sans-serif}#scene{position:fixed;inset:0}canvas{display:block}
+header{position:fixed;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;gap:12px;z-index:2;pointer-events:none}.glass{background:var(--panel);border:1px solid var(--line);box-shadow:0 10px 34px #0005;backdrop-filter:blur(12px);border-radius:13px}.brand{padding:12px 15px}.tag{font-size:10px;letter-spacing:.2em;color:var(--cyan);font-weight:800}.brand h1{font-size:17px;margin:4px 0}.brand p{font-size:10px;color:var(--muted);margin:0}.state{padding:12px;font-size:10px;letter-spacing:.08em;color:var(--green);align-self:flex-start}
+aside{position:fixed;right:14px;top:102px;bottom:100px;width:300px;overflow:auto;z-index:2;padding:15px}.section{color:var(--cyan);font-size:10px;letter-spacing:.14em;font-weight:800;margin:2px 0 10px;text-transform:uppercase}.row{display:flex;justify-content:space-between;gap:8px;margin:8px 0;color:var(--muted);font-size:11px}.row strong{color:#eff8ff;font-variant-numeric:tabular-nums}label{display:flex;justify-content:space-between;margin:12px 0 4px;font-size:11px}input[type=range]{width:100%;accent-color:var(--cyan)}button{border:1px solid #35566d;border-radius:8px;background:#132c40;color:#edf8ff;padding:9px 8px;font-size:10px;font-weight:750;cursor:pointer}button:hover{border-color:var(--cyan)}button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.primary{background:#124652}.danger{background:#472629;border-color:#88494c}.good{color:var(--green)!important}.warn{color:var(--amber)!important}.bad{color:var(--red)!important}.divider{height:1px;background:var(--line);margin:14px 0}.log{height:94px;overflow:auto;background:#050d15;border:1px solid #1d3549;border-radius:8px;padding:8px;font:10px/1.55 ui-monospace,monospace;color:#9dc2d8}.log div{border-bottom:1px solid #132638;padding:2px 0}.bottom{position:fixed;z-index:2;left:14px;bottom:14px;width:min(490px,calc(100vw - 342px));padding:12px 14px;font-size:10px;color:var(--muted)}.bottom strong{color:var(--amber)}footer{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:2;font-size:9px;letter-spacing:.12em;color:#bbd1e2;white-space:nowrap;pointer-events:none}
+@media(max-width:760px){aside{top:auto;bottom:106px;right:8px;width:235px;max-height:55vh;padding:10px}.brand{padding:9px}.brand h1{font-size:13px}.brand p{display:none}.state{font-size:9px;padding:9px}.bottom{left:8px;bottom:8px;width:calc(100vw - 255px);padding:9px;font-size:9px}footer{display:none}.row{margin:5px 0}}
+</style>
+</head>
+<body>
+<div id="scene"></div>
+<header><div class="glass brand"><div class="tag">PUI89 · AUTONOMY LAB</div><h1>QUADRUPED ROBOT DIGITAL TWIN</h1><p>Procedural gait · predictive yielding · fault injection · repeatable scenarios</p></div><div id="sys" class="glass state">● READY · SYNTHETIC ENVIRONMENT</div></header>
+<aside class="glass">
+<div class="section">Live telemetry</div>
+<div class="row"><span>Control state</span><strong id="mode">AUTONOMY DEMO</strong></div>
+<div class="row"><span>Commanded speed</span><strong id="speed">0.0 m/s</strong></div>
+<div class="row"><span>Closest person</span><strong id="near">—</strong></div>
+<div class="row"><span>Navigation</span><strong id="nav">PATH CLEAR</strong></div>
+<div class="row"><span>Gait phase</span><strong id="gait">STAND</strong></div>
+<div class="divider"></div><div class="section">Environment controls</div>
+<label for="density">Passenger count <strong id="densityval">10</strong></label><input id="density" type="range" min="3" max="22" value="10">
+<label for="maxspeed">Speed cap <strong id="speedval">1.2 m/s</strong></label><input id="maxspeed" type="range" min="3" max="16" value="12">
+<div class="grid" style="margin-top:10px"><button id="overlay" class="primary">Toggle lidar overlay</button><button id="pause">Pause / resume</button><button id="scenario">Run safety scenario</button><button id="reset">Reset all</button></div>
+<div class="divider"></div><div class="section">Fault injection · simulation only</div>
+<div class="grid"><button id="lidarfault" class="danger">Lidar dropout</button><button id="commfault" class="danger">Link loss</button><button id="estop" class="danger">Emergency stop</button><button id="clearfault">Clear fault</button></div>
+<div class="row"><span>Safety supervisor</span><strong id="safety" class="good">NOMINAL</strong></div>
+<div class="divider"></div><div class="section">Event log</div><div id="log" class="log" aria-live="polite"></div>
+<p style="font-size:10px;color:var(--muted);margin:10px 0 0">Drag to orbit · scroll to zoom. The controller is deterministic demo logic, not a trained model or certified robot controller.</p>
+</aside>
+<div class="glass bottom"><strong>RESEARCH CONCEPT — NOT PHYSICAL VALIDATION.</strong> People and sensors are synthetic. Chemical screening is not implemented. The demo does not identify substances or people, and cannot establish real-world safety or detection performance.</div>
+<footer>FREE-FIRST WEBGL · PROCEDURAL QUADRUPED · SIMULATED SAFETY TESTS ONLY</footer>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js';
+import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/controls/OrbitControls.js';
+const $=id=>document.getElementById(id),root=$('scene');
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x081522);scene.fog=new THREE.Fog(0x081522,30,75);
+const camera=new THREE.PerspectiveCamera(47,innerWidth/innerHeight,.1,140);camera.position.set(10,9,15);
+const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.6));renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;root.appendChild(renderer.domElement);
+const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,1,0);controls.enableDamping=true;controls.maxPolarAngle=1.48;controls.minDistance=5;controls.maxDistance=34;
+scene.add(new THREE.HemisphereLight(0xb9e1ff,0x263342,2));const sun=new THREE.DirectionalLight(0xfff0d9,3);sun.position.set(8,15,5);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);scene.add(sun);
+const material=(c,m=0,r=.5,e=0)=>new THREE.MeshStandardMaterial({color:c,metalness:m,roughness:r,emissive:c,emissiveIntensity:e});
+const floor=material(0x142536,.1,.8),structure=material(0x294154,.35,.42),glass=new THREE.MeshPhysicalMaterial({color:0x42869b,transparent:true,opacity:.22,roughness:.18,metalness:.2}),ivory=material(0xcbd8e3,.32,.34),black=material(0x17222d,.7,.3),cyan=material(0x55e2e9,.25,.22,1),amber=material(0xffb84d,.25,.25,.8),skin=[material(0xc08a69),material(0xe1b99b),material(0x82533e)],shirts=[material(0x355c7d),material(0x73517d),material(0x3f7164),material(0xa25d3e),material(0x5b6574),material(0x9caabd)];
+function cube(parent,x,y,z,a,b,c,mat,cast=true){const o=new THREE.Mesh(new THREE.BoxGeometry(a,b,c),mat);o.position.set(x,y,z);o.castShadow=cast;o.receiveShadow=true;parent.add(o);return o}
+function cyl(parent,x,y,z,r1,r2,h,mat,seg=12){const o=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,seg),mat);o.position.set(x,y,z);o.castShadow=true;parent.add(o);return o}
+cube(scene,0,-.2,0,44,.35,34,floor,false);for(let x=-21;x<=21;x+=2)cube(scene,x,-.018,0,.015,.01,33,structure,false);for(let z=-16;z<=16;z+=2)cube(scene,0,-.017,z,43,.01,.015,structure,false);
+for(const side of [-1,1]){cube(scene,0,3.4,side*15.7,42,6.8,.18,glass,false);for(let x=-20;x<=20;x+=5)cube(scene,x,3.3,side*15.5,.1,6.4,.2,ivory,false);cube(scene,0,6.9,side*15.5,42,.16,.6,structure,false)}
+for(let x=-18;x<=18;x+=6){cyl(scene,x,4.7,-10,.12,.12,9,ivory,10);cube(scene,x,8.9,-10,3.8,.08,.2,cyan,false);cube(scene,x,8.5,-10,2.2,.45,.1,black,false)}
+for(let x of [-8,8])for(let z=-9;z<=9;z+=5){cube(scene,x,.5,z,2.3,1,.65,structure);cube(scene,x,.97,z,.7,.05,.68,cyan,false)}
+function person(i){const g=new THREE.Group(),sm=skin[i%skin.length],shirt=shirts[(i*3)%shirts.length];cyl(g,0,1.17,0,.24,.3,.8,shirt);const h=new THREE.Mesh(new THREE.SphereGeometry(.18,12,10),sm);h.position.y=1.81;g.add(h);const hair=new THREE.Mesh(new THREE.SphereGeometry(.185,12,8,0,Math.PI*2,0,Math.PI*.48),black);hair.position.y=1.88;g.add(hair);const arms=[],legs=[];for(const s of [-1,1]){const a=cyl(g,s*.34,1.16,0,.07,.09,.6,shirt,8);arms.push(a);const l=cyl(g,s*.12,.43,0,.075,.1,.66,black,8);legs.push(l);cube(g,s*.12,.07,.06,.17,.12,.3,ivory,false)}cube(g,.32,1.08,.1,.25,.35,.14,black);g.userData={phase:i*1.73,arms,legs};scene.add(g);return g}
+let crowd=[];function buildCrowd(n){crowd.forEach(p=>scene.remove(p));crowd=[];for(let i=0;i<n;i++){const p=person(i);p.position.set(((i*11)%35)-17,0,((i*7)%25)-12);p.userData.home=p.position.clone();p.userData.speed=.12+(i%4)*.04;crowd.push(p)}}buildCrowd(10);
+// Detailed robot shell, sensor mast, four two-link legs with foot trajectory.
+const bot=new THREE.Group();scene.add(bot);const body=new THREE.Group();bot.add(body);
+cube(body,0,.95,0,1.42,.4,.83,black);cube(body,0,1.19,0,1.16,.13,.65,ivory);cube(body,0,1.28,0,.7,.07,.43,cyan);cube(body,0,1.43,-.08,.53,.2,.4,structure);
+const sensor=new THREE.Group();sensor.position.set(0,1.38,.48);body.add(sensor);cube(sensor,0,.07,.14,.57,.34,.4,ivory);cube(sensor,0,.04,.36,.35,.14,.055,black);for(const s of [-1,1]){const eye=new THREE.Mesh(new THREE.SphereGeometry(.05,12,8),cyan);eye.position.set(s*.115,.07,.4);sensor.add(eye)}cyl(sensor,0,.29,.08,.12,.12,.08,cyan,18);
+const legs=[];for(const sx of [-1,1])for(const sz of [-1,1]){const hip=new THREE.Group();hip.position.set(sx*.53,.94,sz*.27);body.add(hip);cyl(hip,0,-.18,0,.12,.14,.38,ivory);const knee=new THREE.Group();knee.position.set(sx*.025,-.36,0);hip.add(knee);cyl(knee,0,-.18,0,.07,.085,.37,black);const ankle=new THREE.Group();ankle.position.set(0,-.36,.015);knee.add(ankle);const foot=new THREE.Mesh(new THREE.SphereGeometry(.095,12,8),black);foot.position.y=-.04;ankle.add(foot);cube(ankle,0,-.08,.035,.15,.035,.18,cyan,false);legs.push({hip,knee,ankle,sx,sz,phase:(sx===sz?0:Math.PI),footWorld:new THREE.Vector3()})}
+bot.position.set(-2,0,5);bot.rotation.y=Math.PI;
+const baseRing=new THREE.Mesh(new THREE.TorusGeometry(1.15,.02,8,64),cyan);baseRing.rotation.x=Math.PI/2;baseRing.position.y=.025;bot.add(baseRing);
+const lidarViz=new THREE.Group();bot.add(lidarViz);const lidarMat=new THREE.LineBasicMaterial({color:0x51e4ef,transparent:true,opacity:.48});for(let i=0;i<32;i++){const a=i/32*Math.PI*2;const geo=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,1.5,0),new THREE.Vector3(Math.cos(a)*4,.06,Math.sin(a)*4)]);lidarViz.add(new THREE.Line(geo,lidarMat))}lidarViz.visible=false;
+const obstacleMeshes=[];for(let i=0;i<5;i++){const m=new THREE.Mesh(new THREE.SphereGeometry(.12,8,6),amber);m.visible=false;scene.add(m);obstacleMeshes.push(m)}
+let paused=false,fault='',overlay=false,clock=0,speed=0,nearest=99,scenario=false,eventCount=0;
+function log(msg){const el=document.createElement('div');el.textContent=new Date().toLocaleTimeString()+'  '+msg;$('log').prepend(el);while($('log').children.length>14)$('log').lastChild.remove()}
+function safety(state,mode){$('safety').textContent=state;$('safety').className=state==='NOMINAL'?'good':'bad';$('mode').textContent=mode;$('sys').textContent='● '+state+' · SIMULATION';$('sys').style.color=state==='NOMINAL'?'var(--green)':'var(--red)'}
+function faultSet(f){fault=f;paused=!!f;if(f){speed=0;safety(f==='ESTOP'?'EMERGENCY STOP':'SAFE HOLD',f==='ESTOP'?'ESTOP LATCHED':'FAULT · SAFE HOLD');$('nav').textContent='MOTION INHIBITED';log('FAULT INJECTED: '+f+' — motion inhibited')}else{safety('NOMINAL','AUTONOMY DEMO');$('nav').textContent='REASSESSING';log('Fault cleared by operator; supervised restart permitted')}}
+$('overlay').onclick=()=>{overlay=!overlay;lidarViz.visible=overlay;$('overlay').textContent=overlay?'Hide lidar overlay':'Toggle lidar overlay';log('Illustrative lidar rays '+(overlay?'enabled':'hidden'))};
+$('pause').onclick=()=>{if(fault){log('Resume blocked: clear fault first');return}paused=!paused;log(paused?'Operator paused robot':'Operator resumed supervised demo')};
+$('lidarfault').onclick=()=>faultSet('LIDAR DROPOUT');$('commfault').onclick=()=>faultSet('COMMUNICATION LOSS');$('estop').onclick=()=>faultSet('ESTOP');
+$('clearfault').onclick=()=>{if(!fault){log('No active fault');return}faultSet('');paused=true;log('Robot remains paused pending operator resume')};
+$('density').oninput=e=>{$('densityval').textContent=e.target.value;buildCrowd(+e.target.value);log('Passenger density changed to '+e.target.value)};
+$('maxspeed').oninput=e=>$('speedval').textContent=(+e.target.value/10).toFixed(1)+' m/s';
+$('reset').onclick=()=>{fault='';paused=false;speed=0;eventCount=0;bot.position.set(-2,0,5);bot.rotation.y=Math.PI;buildCrowd(+$('density').value);safety('NOMINAL','AUTONOMY DEMO');log('Scenario reset')};
+$('scenario').onclick=()=>{scenario=true;log('Safety scenario started: pedestrian crossing, yield, stop, resume');};
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function angleLerp(a,b,t){let d=((b-a+Math.PI*3)%(Math.PI*2))-Math.PI;return a+d*t}
+function animate(){requestAnimationFrame(animate);const dt=Math.min(new THREE.Clock().getDelta(),.04);clock+=dt;nearest=99;
+const robotXZ=new THREE.Vector3(bot.position.x,0,bot.position.z);let goalSpeed=+$('maxspeed').value/10,avoid=new THREE.Vector3(),nearestP=null;
+for(const p of crowd){const u=p.userData;u.phase+=dt*2.5;const home=u.home;p.position.x=home.x+Math.sin(clock*.32+u.phase)*.8;p.position.z=home.z+Math.cos(clock*.24+u.phase)*.7;const walk=Math.sin(u.phase*2.5)*.34;u.legs.forEach((l,i)=>l.rotation.z=walk*(i?1:-1));u.arms.forEach((a,i)=>a.rotation.x=Math.sin(u.phase*2.5+i*Math.PI)*.18);
+const d=p.position.distanceTo(robotXZ);if(d<nearest){nearest=d;nearestP=p}if(d<4.2&&d>.05){const v=robotXZ.clone().sub(p.position);v.y=0;avoid.add(v.normalize().multiplyScalar((4.2-d)/4.2));goalSpeed=Math.min(goalSpeed,d<2.2?0:.38+(d-2.2)*.18)}}
+if(scenario&&clock%14<.08){log('Scenario checkpoint: pedestrian clearance '+nearest.toFixed(1)+' m');scenario=false}
+let desiredHeading=Math.atan2(1-bot.position.x,-2-bot.position.z);
+if(avoid.length()>.08){desiredHeading=Math.atan2(avoid.x,avoid.z);$('nav').textContent=nearest<2.2?'STOP · CLOSE OBSTACLE':'YIELD · PREDICTIVE AVOID';}else $('nav').textContent='PATH CLEAR';
+if(fault){goalSpeed=0;$('nav').textContent='MOTION INHIBITED'}else if(paused)goalSpeed=0;
+speed=THREE.MathUtils.damp(speed,goalSpeed,3.0,dt);
+if(!fault&&!paused){bot.rotation.y=angleLerp(bot.rotation.y,desiredHeading,Math.min(1,dt*1.8));const forward=new THREE.Vector3(Math.sin(bot.rotation.y),0,Math.cos(bot.rotation.y));bot.position.add(forward.multiplyScalar(speed*dt));if(bot.position.x>15)bot.position.x=-15;if(bot.position.x< -15)bot.position.x=15;if(bot.position.z>11)bot.position.z=-11;if(bot.position.z< -11)bot.position.z=11}
+const phase=clock*7.5*Math.max(speed,.03);for(const l of legs){const swing=Math.sin(phase+l.phase),lift=Math.max(0,Math.cos(phase+l.phase))*.13*Math.min(1,speed*1.4);l.hip.rotation.x=swing*.42*Math.min(1,speed*1.2);l.knee.rotation.x=(.2+Math.max(0,-swing)*.62)*Math.min(1,speed*1.2);l.ankle.position.y=-.36+lift}
+body.position.y=.025+Math.abs(Math.sin(phase*2))*.035*Math.min(1,speed);body.rotation.z=THREE.MathUtils.damp(body.rotation.z,clamp(avoid.x*.08,-.08,.08),2,dt);baseRing.material=fault?amber:cyan;baseRing.rotation.z+=dt*.3;sensor.rotation.y=Math.sin(clock*.6)*.12;
+$('speed').textContent=speed.toFixed(2)+' m/s';$('near').textContent=nearest===99?'—':nearest.toFixed(2)+' m';$('gait').textContent=speed<.05?'STAND':speed<.35?'CREEP':'WALK';$('near').className=nearest<2?'bad':nearest<4?'warn':'';
+obstacleMeshes.forEach((m,i)=>{const p=crowd[i*2];if(p){m.position.set(p.position.x,.15,p.position.z);m.visible=overlay}});
+controls.update();renderer.render(scene,camera)}
+const timer=new THREE.Clock();animate();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+log('Digital twin initialised. Synthetic scene only.');
+</script>
+</body></html>
