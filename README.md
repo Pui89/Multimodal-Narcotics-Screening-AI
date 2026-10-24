@@ -36,12 +36,6 @@
 **Current status:** this is a proposed product architecture and concept illustration. The repository's existing software workflow and automated tests do not establish that a physical quadruped exists, that a chemical sensor is integrated, or that narcotics can be reliably detected from a person or their surroundings. Do not use the system for covert surveillance or as the sole basis for enforcement.
 
 
-## Multimodal Narcotics Screening AI — Concept visualization
-
-![Concept illustration of a multimodal screening station with imaging arch, sensor array, conveyor and human-review display.](docs/images/multimodal-screening-concept.svg)
-
-*Illustrative design concept only. This image is not evidence of a built, tested, validated, or operational system. Capabilities shown remain proposed unless separately documented and verified.*
-
 
 ## Project at a glance
 
