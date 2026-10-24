@@ -22,6 +22,49 @@
 - **What may be inside the body:** this mobile robot must not claim to detect narcotics inside a person's body. That is not a capability established by this concept. Any medical or specialised screening is outside the robot's role and must follow applicable law and qualified professional procedures.
 - **How an alert is handled:** a sensor anomaly is only a reason for an authorised human operator to follow an approved secondary-screening procedure. It is not proof that a person is carrying narcotics. No covert tracking, automatic accusation, detention, or enforcement decision based on an AI score.
 
+### Recommended advanced improvements and development roadmap
+
+The following are proposed improvements, not claims that the capabilities already exist.
+
+#### Priority engineering improvements
+
+1. **360-degree spatial awareness:** combine lidar, depth sensing, inertial measurements, and mapping for obstacle distance and navigation. Detect sensor disagreement and stop safely when the robot cannot estimate its surroundings reliably.
+2. **Dynamic pedestrian safety:** adapt speed to available space, yield to people, maintain a safe separation, and test sudden obstacles, crowded corridors, and emergency stops in simulation. Faster movement is permitted only within validated safe operating limits.
+3. **Self-monitoring and fault recovery:** monitor battery, motor temperature, localization, sensor health, and communications. On a critical fault, stop safely, report the fault, and request human assistance.
+4. **Modular chemical-sensor interface:** define a replaceable interface for an appropriately selected vapour or trace-residue sensor. Track calibration, environmental conditions, sensor health, false alarms, and missed detections. No sensor is selected or validated yet.
+5. **Privacy-preserving operation:** prefer local processing where practical, minimise video retention, use access controls and audit logs, and avoid facial recognition or demographic profiling. Screening must be lawful, transparent, and supervised by trained staff.
+6. **Digital twin and simulation:** create a simulated terminal with synthetic walking pedestrians, luggage, obstacles, restricted zones, and sensor-failure scenarios. Test safety before any physical deployment.
+7. **Cooperative fleet (later phase):** explore multiple robots sharing authorised zone maps and coordinating patrol routes, with collision avoidance, communications-loss handling, and human supervision.
+8. **Automated verification and evidence:** publish repeatable test results for navigation success, stopping distance, pedestrian yielding, recovery from faults, energy use, latency, false alarms, and missed detections. Label every result as simulated or physically measured.
+
+#### Advanced capabilities to explore later
+
+- **Event-triggered sensing:** collect only the data required for an authorised screening step, rather than continuously collecting unnecessary personal data.
+- **Uncertainty-aware AI:** allow an explicit “inconclusive — human review required” result rather than forcing a positive or negative decision.
+- **Local edge computing:** keep time-critical navigation and safety functions operational without relying on a cloud connection.
+- **Safe return and recovery:** test blocked-route, low-battery, and lost-communications behaviours, including safe stopping and requesting assistance.
+- **Maintenance monitoring:** use logged component-health measurements to plan maintenance; do not claim predictive accuracy until evaluated.
+- **Accessible operator controls:** provide clear status indicators and a reliable manual stop, pause, and handover workflow.
+
+#### Concealed-item and chemical-screening boundaries
+
+- Cameras, lidar, and ordinary depth sensors support visible-scene understanding and navigation; they **cannot identify narcotics at a distance or see through clothing**.
+- A suitable, approved body-scanning system for concealed objects under clothing would be a separate regulated subsystem, requiring its own legal, privacy, safety, and performance review. It cannot by itself establish that an object is narcotics.
+- This concept does **not** claim to detect drugs inside a person's body. That is outside the established capabilities of this mobile robot.
+- Any sensor anomaly is a screening lead for an authorised, trained human to assess under approved procedures—not proof of wrongdoing. No covert following, automatic accusation, detention, or enforcement decision based solely on an AI score.
+
+#### Implementation phases
+
+| Phase | Deliverable | Cost approach |
+|---|---|---|
+| 1 | Architecture, requirements, sensor interfaces, and safety criteria | Free-first design |
+| 2 | Local quadruped/robot simulation with synthetic pedestrians and obstacles | Free local tools where feasible |
+| 3 | Automated navigation, pedestrian-yielding, fault, and emergency-stop tests | Free local tools where feasible |
+| 4 | Chemical-sensor interface specification and controlled evaluation plan | Design first; no hardware purchase yet |
+| 5 | Physical prototype and authorised pilot after cost, safety, and privacy review | Requires separate approval and budget |
+
+**First implementation milestone:** build and test a local simulation featuring adaptive speed, pedestrian avoidance, safe stopping, fault handling, and repeatable automated tests. No simulation result should be presented as evidence of physical robot performance or reliable narcotics detection.
+
 ### Proposed physical architecture
 
 | Subsystem | Proposed implementation | Evidence status |
