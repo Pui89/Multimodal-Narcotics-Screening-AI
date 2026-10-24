@@ -1,43 +1,39 @@
-# Real Screening Dataset Plan
+# Free and Open-Licence Screening Image Plan
 
-**Status: source discovery and licensing review only. No dataset has been approved for training yet.**
+**Status: source review only. No image set is approved or downloaded for training yet.**
 
-This project must use real, provenance-tracked images and labels for evaluation. Do not treat concept art, generated images, unverified web images, or ordinary RGB photographs as evidence that a concealed substance is narcotics.
+PUI89 requires **zero-cost data** and, for future commercial flexibility, sources whose actual image-level terms permit commercial reuse. A page being publicly accessible or a dataset card saying “free” is not enough. Do not pay for data, subscribe, or start a gated download without approval.
 
-## Dataset sources to review
+## Sources and decision
 
-| Source | What it provides | Intended use in this project | Important limitation |
-|---|---|---|---|
-| [SIXray dataset repository](https://github.com/MeioJane/SIXray) | Real baggage X-ray screening images for prohibited-item research | Candidate source for generic X-ray screening research after checking the repository's access and licence terms | Its commonly described classes are prohibited objects, not confirmed narcotics. Do not label an image as a drug-positive case without a trustworthy ground-truth record. |
-| [CargoX dataset and paper](https://osf.io/7hd3v/), [open-access paper](https://doi.org/10.1371/journal.pone.0272961) | Cargo-domain X-ray data described in a peer-reviewed study | Candidate for cargo-X-ray domain research after checking the dataset page's actual licence, access conditions, and data card | The paper's open-access licence does not automatically establish the dataset files' reuse licence. The dataset description includes synthetic cargo scans, so record whether each image is real or synthetic. |
-| [Xray-PI dataset](https://github.com/LPAIS/Xray-PI) | X-ray images with masks/annotations for seven prohibited-item classes and normal images | Academic-only exploratory benchmark if its access conditions are met | The repository states that images and annotations are for academic use only and disallows commercial use. **Do not use for a commercial product unless the rights holder grants written permission.** Its listed classes are not narcotics classes. |
-| [UNODC Individual Drug Seizure data](https://dmpone.unodc.org/downloadIDS) | Structured records about reported drug-seizure events, not a labelled image dataset | Background statistics and terminology only; cite UNODC where reused | This is not an image source and must not be converted into image labels. Public data can be reused with attribution under the stated terms, but coverage is incomplete. |
+| Source | What it contains | Decision for this project |
+|---|---|---|
+| [Open Images V7](https://storage.googleapis.com/openimages/web/factsfigures_v7.html) | General photographs and annotations; image licences are listed per image, commonly CC BY 2.0, while annotations are CC BY 4.0 | **Conditional use for visible-object experiments only.** Select only images with verified image-level licence and preserve attribution, source URL and ID. It is not a narcotics or concealed-object dataset. |
+| [STCray on Hugging Face](https://huggingface.co/datasets/Naoufel555/STCray-Dataset) | 46,642 baggage X-ray image-caption pairs for security-threat categories | **Not approved yet.** Files are gated and require accepting access conditions; do not download until the actual terms and any commercial-use restrictions are reviewed. The listed categories do not establish narcotics labels. |
+| [SIXray](https://github.com/MeioJane/SIXray) | Real baggage X-ray images with labels for guns, knives, wrenches, pliers, scissors and hammers | **Exclude from commercial-use data.** The source explicitly restricts use to academic purposes and prohibits commercial use unless permission is separately granted. |
+| [Xray-PI](https://github.com/LPAIS/Xray-PI) | Baggage X-ray images labelled for prohibited objects | **Exclude from commercial-use data.** The source states academic use only and no commercial use. |
+| [CargoX paper and data page](https://osf.io/7hd3v/) | Research data described for cargo X-ray experiments | **Not approved yet.** Verify the data files' own licence and real-versus-synthetic status; the paper's open-access licence does not automatically license dataset images. |
 
-## Dataset acceptance checklist
+## Rules before an image can be used
 
-Before any image enters training, validation, or test:
+- [ ] Zero cost to access and download; no paid account, subscription, or API.
+- [ ] Verify the **actual image-level or dataset-level licence** and confirm commercial reuse is allowed if the data may support a product.
+- [ ] Keep a manifest: source, image ID, original URL, author/attribution, licence, download date, file hash, and any restrictions.
+- [ ] Separate RGB photos, baggage X-rays, cargo X-rays, and chemical-sensor readings. Never treat them as equivalent.
+- [ ] Record whether each image is real-world, staged, or synthetic.
+- [ ] Use only reliable labels. A photo of a package or a suspicious-looking object is not a confirmed narcotics-positive sample.
+- [ ] Remove duplicates before making group-aware train/validation/test splits. Preserve official splits where appropriate.
+- [ ] Keep personal or identifiable data out unless lawful, necessary and authorised.
+- [ ] Do not redistribute downloaded image files unless the licence permits redistribution.
 
-- [ ] Record the source URL, download date, dataset version, original filename or stable ID, and file hash.
-- [ ] Record the exact licence or written permission, including commercial-use and redistribution terms. If unclear, quarantine the data.
-- [ ] Record modality: RGB photo, baggage X-ray, cargo X-ray, chemical-sensor measurement, or other. Never mix these as if they were interchangeable.
-- [ ] Record whether the image is real, simulated, or synthetic.
-- [ ] Record the label's evidence source and annotation method. Distinguish *visible object*, *suspected prohibited item*, and *chemically confirmed substance*.
-- [ ] Keep personal data and identifiable people out unless collection and use are lawful, necessary, and authorised. Prefer de-identified item-only scans.
-- [ ] Detect duplicate and near-duplicate images before splitting.
-- [ ] Split by original scan/session/source/subject as appropriate, not by random near-identical image crops, to reduce leakage.
-- [ ] Keep the final test set untouched until model selection is finished.
-- [ ] Publish dataset counts, class balance, exclusions, and licence notes without redistributing source files unless permitted.
+## Training and testing plan
 
-## Initial train / validation / test protocol
+Use a 70% / 15% / 15% train/validation/test split only after a sufficiently sized, correctly labelled dataset is approved. Group by source, scan session, or original item to reduce leakage; preserve an untouched test set.
 
-Use **70% train / 15% validation / 15% test only after** provenance, labels, duplicates, and grouping have been checked. The split must be group-aware; if a source provides an official split, preserve it and document any changes. Do not force a split when a dataset is too small or lacks reliable labels.
+Report metrics separately for each valid task: precision, recall, mAP where suitable annotations exist, false-positive rates, and uncertainty. Generic image and X-ray datasets can support **visible-object or prohibited-item research only**. They do not validate narcotics identification.
 
-Track separate evaluations for each modality and task:
-- Generic visible-object detection: precision, recall, mAP (when bounding-box labels exist), and false-positive review.
-- X-ray prohibited-item detection: class-specific precision/recall and performance on cluttered/occluded scans.
-- Chemical or trace sensing: evaluate calibrated sensor measurements against documented reference standards and an approved protocol; images alone cannot establish chemical identity.
-- Human workflow: report uncertainty and operator review outcomes. A model alert is not proof of narcotics or grounds for an accusation.
+## Narcotics-specific evidence gap
 
-## Current project boundary
+No openly licensed, commercially reusable, real image dataset with verified narcotics-specific ground truth has been approved in this project yet. Do not relabel generic X-ray images as narcotics, infer chemical identity from ordinary photographs, or claim drug-detection performance without an appropriate validated source. A future chemical-identification track needs lawful, properly labelled sensor/reference data and a validated measurement protocol.
 
-At present, the repository has no verified narcotics-labelled image dataset approved for model training. Generic X-ray data can support a separate prohibited-object baseline only where the terms permit it. It cannot validate narcotics identification, concealed-drug detection, or a real-world screening robot. Do not claim model accuracy until a reproducible evaluation has been run on an appropriate, held-out dataset.
+**Free-first rule:** do not download large datasets or model weights automatically. Check licence, access terms, dataset size, available disk space, and the user's local hardware before starting.
