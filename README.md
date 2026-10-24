@@ -13,7 +13,7 @@ The proposed system is a four-legged, dog-inspired mobile platform designed to m
 
 ## Optional local visual anomaly baseline
 
-A separate exploratory tool compares a local image with a reference set using Hugging Face DINOv2 image embeddings and reports an image-level distance score. It is a generic visual outlier baseline, **not a narcotics detector**, concealed-item detector, chemical identifier, or validated anomaly model. See [the anomaly baseline guide](docs/HUGGINGFACE_VISUAL_ANOMALY.md) and [the script](tools/huggingface_visual_anomaly_baseline.py).
+A separate exploratory tool compares a local image with a reference set using Hugging Face DINOv2 image embeddings and reports an image-level distance score. It is a generic visual outlier baseline, **not a concealed-object detector**, narcotics detector, or chemical identifier. Ordinary RGB images cannot reveal objects hidden under clothing. See [the anomaly baseline guide](docs/HUGGINGFACE_VISUAL_ANOMALY.md), [the staged concealed-object roadmap](docs/CONCEALED_OBJECT_SCREENING_ROADMAP.md), and [the script](tools/huggingface_visual_anomaly_baseline.py).
 
 ## Optional local Hugging Face visible-item experiment
 
