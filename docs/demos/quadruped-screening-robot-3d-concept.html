@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PUI89 Quadruped Airport Simulation — 3D Concept</title>
+<style>
+:root{color-scheme:dark;--bg:#07111c;--panel:#101e2d;--line:#284458;--teal:#55e5d0;--muted:#a9bdcc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#eaf4fb;font:14px/1.45 system-ui,Segoe UI,sans-serif}
+header{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+h1{font-size:19px;margin:0 0 4px}p{margin:0;color:var(--muted)}.tag{font-size:11px;letter-spacing:.08em;color:var(--teal);border:1px solid #246c70;padding:5px 8px;border-radius:5px}
+main{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:14px;padding:14px;max-width:1500px;margin:auto}
+#viewport{position:relative;min-height:540px;background:linear-gradient(#132d40,#0a1723);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+canvas{display:block;width:100%;height:100%;position:absolute;inset:0}
+.hud{position:absolute;left:14px;top:12px;background:#07111cdd;border:1px solid #2c5265;border-radius:7px;padding:10px 12px;max-width:260px;pointer-events:none}
+.hud strong{color:var(--teal);display:block;font-size:11px;letter-spacing:.08em}.hud span{color:#eaf4fb;font-size:12px}
+#alert{margin-top:8px;color:#ffd58c}.side{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;height:max-content}
+h2{font-size:14px;margin:0 0 12px}label{display:block;margin:14px 0 6px;color:#d5e5ef}input[type=range]{width:100%;accent-color:var(--teal)}button{width:100%;padding:10px;margin-top:9px;background:#17364a;color:#eaf4fb;border:1px solid #3d7188;border-radius:6px;font-weight:600;cursor:pointer}button:hover{background:#204b61}.primary{background:#155e5b;border-color:#39a99d}.note{font-size:12px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}.pill{display:inline-block;padding:3px 7px;border-radius:4px;background:#19364a;color:#bfece8;font-size:11px;margin:3px 3px 0 0}
+footer{max-width:1500px;margin:0 auto;padding:0 16px 18px;color:#a9bdcc;font-size:12px}
+@media(max-width:850px){main{grid-template-columns:1fr}#viewport{min-height:440px}}
+</style>
+</head>
+<body>
+<header><div><h1>PUI89 · Dog-like Quadruped Screening Robot</h1><p>Interactive 3D-style airport movement concept · synthetic scene</p></div><div class="tag">CONCEPT ONLY — NOT VALIDATED</div></header>
+<main>
+<section id="viewport" aria-label="Animated synthetic airport scene">
+<canvas id="scene"></canvas>
+<div class="hud"><strong>TERMINAL SIMULATION / LOCAL MODE</strong><span id="status">PATROL · WALKING GAIT</span><br><span id="range">Obstacle clearance: simulated</span><br><span id="alert">No active alert</span></div>
+</section>
+<aside class="side">
+<h2>Simulation controls</h2>
+<label for="speed">Patrol speed <b id="speedVal">1.0×</b></label><input id="speed" type="range" min=".4" max="1.8" value="1" step=".1">
+<label for="crowd">Passenger density <b id="crowdVal">5</b></label><input id="crowd" type="range" min="2" max="9" value="5" step="1">
+<button id="scan" class="primary">Toggle illustrative scan overlay</button>
+<button id="alertBtn">Trigger simulated sensor anomaly</button>
+<button id="review">Human review: acknowledge event</button>
+<button id="reset">Reset simulation</button>
+<div class="note"><b>Safety behaviour shown</b><br><span class="pill">Adaptive speed</span><span class="pill">Yield / stop</span><span class="pill">Four-leg gait</span><span class="pill">Human review</span><p style="margin-top:10px">The robot slows or pauses when synthetic pedestrians are close. The scan arc is only a visual placeholder; it does not measure chemicals or identify substances.</p></div>
+</aside>
+</main>
+<footer><b>Important:</b> this is a browser animation, not a physics-validated robotics simulator or rendered video. No real narcotics detection is performed. Chemical sensing is conceptual and unvalidated. No facial recognition, demographic profiling, under-clothing imaging, or body-internal detection is shown. An alert is inconclusive and requires an authorised human to follow an approved procedure.</footer>
+<script>
+(()=> {
+const canvas=document.getElementById('scene'),ctx=canvas.getContext('2d');
+const speed=document.getElementById('speed'),crowd=document.getElementById('crowd');
+const status=document.getElementById('status'),alertText=document.getElementById('alert'),range=document.getElementById('range');
+let w=800,h=540,t=0,scan=false,alertOn=false,reviewed=false,robotX=.47,people=[];
+function resize(){const r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);w=r.width;h=r.height;canvas.width=w*d;canvas.height=h*d;ctx.setTransform(d,0,0,d,0,0);makePeople()}
+function makePeople(){people=Array.from({length:+crowd.value},(_,i)=>({x:((i*0.173+.08)%1),y:.49+(i%4)*.095,phase:i*1.7,scale:.55+(i%4)*.12,dir:i%2?1:-1}))}
+function line(x1,y1,x2,y2,color,width=1){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}
+function poly(points,fill,stroke){ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.stroke()}}
+function text(s,x,y,size=12,color='#c9dce8'){ctx.fillStyle=color;ctx.font=size+'px system-ui';ctx.fillText(s,x,y)}
+function drawAirport(){
+ const g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,'#16374c');g.addColorStop(.55,'#122a3b');g.addColorStop(1,'#09141f');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
+ // distant glass wall and window bays
+ poly([[0,h*.12],[w,h*.12],[w,h*.54],[0,h*.54]],'#153348','#31536a');
+ for(let i=0;i<10;i++){let x=i*w/10;line(x,h*.13,x,h*.49,'#31536a',1);ctx.fillStyle=i%2?'#1b4258':'#21465b';ctx.fillRect(x+3,h*.17,w/10-7,h*.28)}
+ // terminal signs
+ ctx.fillStyle='#071723';ctx.fillRect(w*.08,h*.19,w*.2,30);text('GATES  ·  DEPARTURES',w*.1,h*.21+9,11,'#8be5dc');
+ ctx.fillStyle='#071723';ctx.fillRect(w*.72,h*.18,w*.17,30);text('SECURITY ZONE',w*.74,h*.2+9,11,'#8be5dc');
+ // perspective floor
+ poly([[0,h*.51],[w,h*.51],[w,h],[0,h]],'#172c3b','#365267');
+ for(let i=0;i<12;i++){let y=h*.52+Math.pow(i/11,1.8)*h*.48;line(0,y,w,y,'#284355',1)}
+ for(let i=-5;i<=5;i++){line(w*.5,h*.51,w*.5+i*w*.14,h,'#284355',1)}
+ // guide route
+ ctx.setLineDash([8,7]);line(w*.12,h*.82,w*.9,h*.82,'#398c91',2);ctx.setLineDash([]);
+}
+function drawPerson(p){
+ const x=p.x*w,y=p.y*h,s=p.scale*(.7+p.y*.65),walk=Math.sin(t*2+p.phase)*3*s;
+ // shadow
+ ctx.fillStyle='#06101a88';ctx.beginPath();ctx.ellipse(x,y+25*s,13*s,4*s,0,0,Math.PI*2);ctx.fill();
+ // legs, torso, head
+ line(x-4*s,y+9*s,x-5*s+walk,y+24*s,'#b5c9d4',3*s);line(x+4*s,y+9*s,x+5*s-walk,y+24*s,'#b5c9d4',3*s);
+ ctx.fillStyle=['#526d80','#9c785e','#547c78','#6d668d'][Math.floor(p.phase)%4];ctx.fillRect(x-7*s,y-7*s,14*s,18*s);
+ ctx.fillStyle='#c3a58d';ctx.beginPath();ctx.arc(x,y-13*s,5*s,0,Math.PI*2);ctx.fill();
+ line(x-6*s,y-2*s,x-12*s,y+8*s,'#b5c9d4',2*s);line(x+6*s,y-2*s,x+12*s,y+7*s,'#b5c9d4',2*s);
+}
+function drawRobot(x,y,scale){
+ const s=scale,phase=t*9*(+speed.value);
+ // shadow
+ ctx.fillStyle='#02080dbb';ctx.beginPath();ctx.ellipse(x,y+23*s,34*s,9*s,0,0,Math.PI*2);ctx.fill();
+ // body in 3/4 perspective
+ poly([[x-29*s,y-14*s],[x+17*s,y-18*s],[x+31*s,y-7*s],[x-14*s,y-2*s]],'#334a5a','#7d9aa9');
+ poly([[x-29*s,y-14*s],[x-14*s,y-2*s],[x-14*s,y+8*s],[x-29*s,y-3*s]],'#172b3b','#668494');
+ poly([[x-14*s,y-2*s],[x+31*s,y-7*s],[x+29*s,y+4*s],[x-14*s,y+9*s]],'#243b4c','#668494');
+ // sensor head
+ poly([[x+9*s,y-20*s],[x+24*s,y-24*s],[x+31*s,y-18*s],[x+16*s,y-13*s]],'#102432','#5a899a');
+ ctx.fillStyle='#55e5d0';ctx.fillRect(x+19*s,y-22*s,5*s,2*s);
+ // four articulated legs, alternating gait
+ const legs=[[-22,-4,Math.sin(phase)*7],[ -8,4,Math.sin(phase+Math.PI)*7],[13,-5,Math.sin(phase+Math.PI)*7],[24,3,Math.sin(phase)*7]];
+ legs.forEach((a,i)=>{const lx=x+a[0]*s,ly=y+a[1]*s;const swing=a[2]*s;line(lx,ly,lx-3*s+swing*.45,ly+10*s,'#92a9b6',4*s);line(lx-3*s+swing*.45,ly+10*s,lx-5*s+swing,ly+22*s,'#d1e0e8',3*s);ctx.fillStyle='#55e5d0';ctx.fillRect(lx-8*s+swing,ly+20*s,8*s,3*s)});
+ if(scan){ctx.strokeStyle='#55e5d0a8';ctx.lineWidth=2;ctx.beginPath();ctx.arc(x+15*s,y-12*s,48*s,-.9,.65);ctx.stroke();ctx.beginPath();ctx.ellipse(x+25*s,y+3*s,54*s,22*s,-.1,0,Math.PI*2);ctx.stroke();text('ILLUSTRATIVE SCAN',x+33*s,y-42*s,10,'#75f0dc')}
+ if(alertOn&&!reviewed){ctx.strokeStyle='#ffc76d';ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,y-3*s,43*s,0,Math.PI*2);ctx.stroke()}
+}
+function frame(){
+ t+=.016;drawAirport();
+ // update synthetic pedestrians; adapt robot speed if a person is near its route
+ people.forEach(p=>{p.x+=Math.sin(t*.5+p.phase)*.00035*p.dir;p.x=(p.x+1)%1;drawPerson(p)});
+ const rx=w*robotX,ry=h*.76,scale=Math.min(w/900,1.05);
+ const nearest=people.reduce((m,p)=>Math.min(m,Math.hypot((p.x*w-rx)/w,(p.y*h-ry)/h)),9);
+ const yielding=nearest<.19;status.textContent=alertOn&&!reviewed?'STOP · HUMAN REVIEW REQUIRED':yielding?'YIELD · REDUCED SPEED':'PATROL · WALKING GAIT';
+ range.textContent=yielding?'Pedestrian nearby — slowing / yielding':'Obstacle clearance: simulated';
+ if(alertOn&&!reviewed)alertText.textContent='INCONCLUSIVE SENSOR ANOMALY — review required';
+ else if(reviewed)alertText.textContent='Human review acknowledged — follow approved procedure';
+ else alertText.textContent='No active alert';
+ drawRobot(rx,ry,scale);
+ if(!yielding&&!(alertOn&&!reviewed))robotX+=.00016*(+speed.value);if(robotX>.79)robotX=.25;
+ requestAnimationFrame(frame)
+}
+speed.addEventListener('input',()=>document.getElementById('speedVal').textContent=speed.value+'×');
+crowd.addEventListener('input',()=>{document.getElementById('crowdVal').textContent=crowd.value;makePeople()});
+document.getElementById('scan').onclick=()=>{scan=!scan;document.getElementById('scan').textContent=scan?'Hide illustrative scan overlay':'Toggle illustrative scan overlay'};
+document.getElementById('alertBtn').onclick=()=>{alertOn=true;reviewed=false;robotX=Math.min(robotX,.7)};
+document.getElementById('review').onclick=()=>{if(alertOn){reviewed=true;alertText.textContent='Human review acknowledged — follow approved procedure';status.textContent='PAUSED · OPERATOR REVIEW'}};
+document.getElementById('reset').onclick=()=>{alertOn=false;reviewed=false;scan=false;robotX=.47;document.getElementById('scan').textContent='Toggle illustrative scan overlay'};
+new ResizeObserver(resize).observe(document.getElementById('viewport'));resize();frame();
+})();
+</script>
+</body></html>
