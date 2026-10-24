@@ -1,5 +1,41 @@
 # Multimodal Narcotics Screening AI
 
+
+## Mobile quadruped screening robot — people, carry-on items, and ambient-air sampling
+
+![Engineering concept of a dog-inspired mobile screening robot patrolling an airport terminal beside walking passengers.](docs/images/quadruped-screening-robot.svg)
+
+**Concept only — not a built or validated robot.** The proposed system is a four-legged, dog-inspired mobile platform designed to move through an authorised terminal screening zone rather than remain fixed at a baggage conveyor. It can navigate around people who are walking, pause at a safe distance, observe permitted screening zones, and sample ambient air near a person or item when an authorised operator requests a secondary check.
+
+### What the robot is intended to do
+
+- **Walk and navigate:** quadruped legs, onboard obstacle sensing, a low-speed patrol mode, geofenced routes, and an emergency stop. It should yield to people, never chase or physically block them, and return to a safe stop if localisation or obstacle sensing becomes unreliable.
+- **Screen beyond bags:** support an authorised workflow for people moving through a terminal, carry-on items, and the surrounding air. The robot does not touch, restrain, follow covertly, or make a judgement about a person.
+- **Use multiple sensing modalities:** visible/low-light cameras and depth sensing for navigation; an optional, separately validated chemical-vapour or trace-residue sensor module for screening. Cameras can support scene understanding but **cannot identify narcotics**. A dog-like form does not give the robot a biological sense of smell: chemical detection requires suitable hardware, calibration, controlled sampling, and independent validation.
+- **Alert a trained human:** show sensor status, confidence/uncertainty, and the reason for a screening alert. An alert means *check this result using an approved procedure*—not “this person has narcotics.” Only authorised staff decide whether a lawful secondary inspection is appropriate.
+- **Protect people and data:** minimise and time-limit video retention, avoid face recognition and demographic profiling, log operator access, use encrypted communications, and provide visible notice and an accessible human review route. Do not autonomously accuse, detain, search, or report a person based on an AI score.
+
+### Proposed physical architecture
+
+| Subsystem | Proposed implementation | Evidence status |
+|---|---|---|
+| Mobility | Commercial quadruped base or a small research quadruped; low-speed indoor gait | Design proposal; no robot built or tested is claimed |
+| Navigation | 3D lidar/depth camera, IMU, wheel/leg odometry where available, mapping and obstacle avoidance | To be integrated and tested |
+| Scene sensing | RGB camera and depth sensor aimed at the environment, not used to infer guilt | Hardware and privacy review required |
+| Chemical screening | Replaceable, validated vapour/trace sensor selected with qualified screening specialists | Not selected or validated; no chemical detection claim |
+| Compute and communications | Local edge computer, encrypted operator link, physical emergency stop, battery and thermal monitoring | Proposed |
+| Human interface | Alert review, sensor health, audit log, uncertainty display, manual override | Software workflow prototype is separate from physical integration |
+
+### Safe development sequence
+
+1. Build a **non-enforcement mobility demonstrator** in a simulated terminal, with walking-person obstacles represented by synthetic agents.
+2. Verify stopping distance, pedestrian yielding, stability, battery/thermal behaviour, emergency stop, communication-loss handling, and privacy controls.
+3. Bench-test a selected chemical sensor only with lawful, controlled reference materials and qualified facilities; document detection limits, environmental interference, false alarms, and missed detections.
+4. Run an authorised, independently reviewed pilot with clear notice, trained operators, and a manual secondary-screening process. Publish measured results and limitations before making performance claims.
+
+**Current status:** this is a proposed product architecture and concept illustration. The repository's existing software workflow and automated tests do not establish that a physical quadruped exists, that a chemical sensor is integrated, or that narcotics can be reliably detected from a person or their surroundings. Do not use the system for covert surveillance or as the sole basis for enforcement.
+
+
 ## Multimodal Narcotics Screening AI — Concept visualization
 
 ![Concept illustration of a multimodal screening station with imaging arch, sensor array, conveyor and human-review display.](docs/images/multimodal-screening-concept.svg)
