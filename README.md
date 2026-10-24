@@ -7,7 +7,13 @@
 
 [View the complementary multimodal screening-system concept illustration](docs/images/multimodal-screening-robot-concept-2026.svg).
 
-**Concept only — not a built or validated robot.** The proposed system is a four-legged, dog-inspired mobile platform designed to move through an authorised terminal screening zone rather than remain fixed at a baggage conveyor. It can navigate around people who are walking, pause at a safe distance, observe permitted screening zones, and sample ambient air near a person or item when an authorised operator requests a secondary check.
+**Concept only — not a built or validated robot.**
+
+The proposed system is a four-legged, dog-inspired mobile platform designed to move through an authorised terminal screening zone rather than remain fixed at a baggage conveyor. It can navigate around people who are walking, pause at a safe distance, observe permitted screening zones, and sample ambient air near a person or item when an authorised operator requests a secondary check.
+
+## Optional local Hugging Face visible-item experiment
+
+Try open-vocabulary detection of generic visible items on a local image with [`tools/huggingface_local_vision_demo.py`](tools/huggingface_local_vision_demo.py). Read [`docs/HUGGINGFACE_LOCAL_VISION.md`](docs/HUGGINGFACE_LOCAL_VISION.md) first. This demo does not identify narcotics, infer chemical composition, score people, or make enforcement decisions.
 
 ### What the robot is intended to do
 
