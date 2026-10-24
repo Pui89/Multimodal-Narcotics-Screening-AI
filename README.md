@@ -1,4 +1,20 @@
-# Multimodal Narcotics Screening AI
+# Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
+
+**Robot product name: PUI89 Sentinel**
+
+A research-and-development project exploring how computer vision, suitable inspection imagery, validated sensor outputs, and robotic assistance could support lawful, human-reviewed security screening.
+
+## Project at a glance
+
+- **Project topic:** Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection.
+- **Robot name:** PUI89 Sentinel — a proposed mobile inspection assistant, not a built or validated robot.
+- **AI role:** Analyse permitted inputs, identify visible patterns or sensor anomalies, communicate uncertainty, and help trained staff decide what needs further inspection.
+- **Possible modalities:** RGB imagery and, when suitable licensed data and equipment are available, X-ray imagery and validated chemical-sensor outputs. Each modality needs its own evaluation.
+- **Safety rule:** An AI alert is not proof of narcotics. No autonomous accusation, detention, search, or enforcement decision; consequential actions require authorised human review and applicable lawful procedures.
+- **Development approach:** Free-first and local-first where feasible; document model licenses, data provenance, limitations, and reproducible tests.
+- **Evidence status:** Exploratory software and concepts only. No validated narcotics-detection performance or physical-robot capability is claimed.
+
+---
 
 
 ## Current verified status — 25 October 2026
