@@ -75,7 +75,7 @@ $('reset').onclick=()=>{fault='';paused=false;speed=0;eventCount=0;bot.position.
 $('scenario').onclick=()=>{scenario=true;log('Safety scenario started: pedestrian crossing, yield, stop, resume');};
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function angleLerp(a,b,t){let d=((b-a+Math.PI*3)%(Math.PI*2))-Math.PI;return a+d*t}
-function animate(){requestAnimationFrame(animate);const dt=Math.min(new THREE.Clock().getDelta(),.04);clock+=dt;nearest=99;
+function animate(){requestAnimationFrame(animate);const dt=Math.min(timer.getDelta(),.04);clock+=dt;nearest=99;
 const robotXZ=new THREE.Vector3(bot.position.x,0,bot.position.z);let goalSpeed=+$('maxspeed').value/10,avoid=new THREE.Vector3(),nearestP=null;
 for(const p of crowd){const u=p.userData;u.phase+=dt*2.5;const home=u.home;p.position.x=home.x+Math.sin(clock*.32+u.phase)*.8;p.position.z=home.z+Math.cos(clock*.24+u.phase)*.7;const walk=Math.sin(u.phase*2.5)*.34;u.legs.forEach((l,i)=>l.rotation.z=walk*(i?1:-1));u.arms.forEach((a,i)=>a.rotation.x=Math.sin(u.phase*2.5+i*Math.PI)*.18);
 const d=p.position.distanceTo(robotXZ);if(d<nearest){nearest=d;nearestP=p}if(d<4.2&&d>.05){const v=robotXZ.clone().sub(p.position);v.y=0;avoid.add(v.normalize().multiplyScalar((4.2-d)/4.2));goalSpeed=Math.min(goalSpeed,d<2.2?0:.38+(d-2.2)*.18)}}
