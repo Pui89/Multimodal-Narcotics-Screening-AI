@@ -5,6 +5,8 @@
 
 ![Engineering concept of a dog-inspired mobile screening robot patrolling an airport terminal beside walking passengers.](docs/images/quadruped-screening-robot.svg)
 
+[View the complementary multimodal screening-system concept illustration](docs/images/multimodal-screening-robot-concept-2026.svg).
+
 **Concept only — not a built or validated robot.** The proposed system is a four-legged, dog-inspired mobile platform designed to move through an authorised terminal screening zone rather than remain fixed at a baggage conveyor. It can navigate around people who are walking, pause at a safe distance, observe permitted screening zones, and sample ambient air near a person or item when an authorised operator requests a secondary check.
 
 ### What the robot is intended to do
