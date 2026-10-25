@@ -438,3 +438,7 @@ Keep the system as an object/container inspection and human-review aid. Use only
 - Model-agnostic input/output validation: [llm_interfaces.py](pui89_autonomy/llm_interfaces.py)
 - The scaffold uses only the Python standard library. It does not download models, call paid APIs, identify substances, or control a vehicle.
 
+## Development roadmap
+
+Track the five shared free-first development tasks in [docs/DEVELOPMENT_ROADMAP.md](docs/DEVELOPMENT_ROADMAP.md). Screening priority: document lawful data provenance and modality limitations, evaluate calibration on held-out data, and route conflicting or uncertain results to human review. AI outputs are not proof of substance identity or guilt.
+
