@@ -429,3 +429,12 @@ This is a staged engineering plan. It does not mean a validated narcotics detect
 ### Deployment boundary
 
 Keep the system as an object/container inspection and human-review aid. Use only approved specialist screening equipment under applicable law and trained supervision. No chemical detection, concealed-object detection, field operation or physical robot capability should be claimed until the relevant hardware, data, permissions and independent validation exist. Keep development local-first and free-first.
+
+## Vision-language and action-planning architecture
+
+**Planned next layer — not yet a connected model:** a vision-language model (VLM) may summarize inspection imagery; an action-planning LLM may propose a structured inspection checklist. Validated evidence, uncertainty handling, human review and the existing autonomy supervisor remain independent.
+
+- Design and safety contract: [Physical AI Stack](docs/PHYSICAL_AI_STACK.md)
+- Model-agnostic input/output validation: [llm_interfaces.py](pui89_autonomy/llm_interfaces.py)
+- The scaffold uses only the Python standard library. It does not download models, call paid APIs, identify substances, or control a vehicle.
+
