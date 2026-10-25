@@ -5,6 +5,10 @@
 - Free offline evidence-provenance validation and human-review routing: `scripts/free_first_project_tools.py`; tests: `tests/test_free_first_project_tools.py`. Outputs do not identify substances or establish guilt.
 - Dependency-free precision, recall, F1 and confusion counts support later evaluation; no substance-identification or enforcement claims are implied.
 
+- Offline state tracker: `pui89_autonomy/world_state.py` records time-stamped observations, stale data and conflicts.
+- Experiment report helper: `pui89_autonomy/experiment_report.py` summarizes supplied metrics, dataset hash, code version and measured latency.
+- Unit tests: `tests/test_world_state.py` and `tests/test_experiment_report.py`.
+
 ## Frontier AI technology and free-first upgrade plan
 
 Current gaps, recent technology directions, no-recurring-cost adoption gates, and project-specific next steps: [Frontier technology gap and free-first plan](docs/FRONTIER_TECHNOLOGY_GAP_AND_FREE_PLAN.md). No large model or simulator is installed automatically; verify licences, download size, hardware fit and costs first.
