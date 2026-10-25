@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "project_id": "multimodal-narcotics-screening-ai",
+  "confidence_threshold": 0.65,
+  "action_if_ready": "REQUEST_HUMAN_REVIEW",
+  "project_limit": "Triage labels only; an image does not prove chemical identity and no simulated output authorizes accusation, search, detention, seizure or enforcement.",
+  "scenarios": [
+    {
+      "id": "valid_inputs_review",
+      "seed": 301,
+      "steps": [
+        {
+          "state": {
+            "sensors_ok": true,
+            "comms_ok": true,
+            "target_visible": true,
+            "confidence": 0.9,
+            "human_review_required": true,
+            "operator_approved": true
+          },
+          "expected_action": "REQUEST_HUMAN_REVIEW"
+        }
+      ]
+    },
+    {
+      "id": "conflicting_modalities",
+      "seed": 302,
+      "steps": [
+        {
+          "state": {
+            "modalities_conflict": true,
+            "confidence": 0.98
+          },
+          "expected_action": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "required_modality_missing",
+      "seed": 303,
+      "steps": [
+        {
+          "state": {
+            "missing_required_modality": true,
+            "confidence": 0.9
+          },
+          "expected_action": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "stale_sensor",
+      "seed": 304,
+      "steps": [
+        {
+          "state": {
+            "sensor_data_fresh": false,
+            "confidence": 0.9
+          },
+          "expected_action": "SAFE_HOLD"
+        }
+      ]
+    },
+    {
+      "id": "uncertain_input",
+      "seed": 305,
+      "steps": [
+        {
+          "state": {
+            "confidence": 0.3,
+            "human_review_required": true
+          },
+          "expected_action": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "communications_lost",
+      "seed": 306,
+      "steps": [
+        {
+          "state": {
+            "comms_ok": false,
+            "confidence": 0.95
+          },
+          "expected_action": "SAFE_HOLD"
+        }
+      ]
+    }
+  ]
+}
