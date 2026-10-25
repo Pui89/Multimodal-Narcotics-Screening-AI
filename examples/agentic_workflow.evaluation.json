@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "screening-agent-baseline-synthetic-v1",
+  "synthetic_only": true,
+  "scenarios": [
+    {
+      "scenario_id": "sensor-integrity-failure",
+      "expected_decision_status": "STOP",
+      "observation": {
+        "sensor_ok": false,
+        "authorised_context": true,
+        "modalities": [
+          "rgb_image"
+        ]
+      }
+    },
+    {
+      "scenario_id": "authority-not-confirmed",
+      "expected_decision_status": "HOLD",
+      "observation": {
+        "sensor_ok": true,
+        "modalities": [
+          "rgb_image"
+        ]
+      }
+    },
+    {
+      "scenario_id": "invalid-modality-record",
+      "expected_decision_status": "NEED_DATA",
+      "observation": {
+        "authorised_context": true,
+        "modalities": "rgb_image"
+      }
+    },
+    {
+      "scenario_id": "empty-modality-record",
+      "expected_decision_status": "NEED_DATA",
+      "observation": {
+        "authorised_context": true,
+        "modalities": []
+      }
+    },
+    {
+      "scenario_id": "conflicting-inputs-to-human",
+      "expected_decision_status": "REVIEW_REQUIRED",
+      "observation": {
+        "authorised_context": true,
+        "sensor_ok": true,
+        "modalities": [
+          "rgb_image",
+          "visible_text_ocr"
+        ],
+        "conflicting_inputs": true,
+        "human_reviewed": false
+      }
+    },
+    {
+      "scenario_id": "not-yet-reviewed",
+      "expected_decision_status": "REVIEW_REQUIRED",
+      "observation": {
+        "authorised_context": true,
+        "sensor_ok": true,
+        "modalities": [
+          "rgb_image"
+        ],
+        "conflicting_inputs": false,
+        "human_reviewed": false
+      }
+    },
+    {
+      "scenario_id": "human-review-recorded-no-identification-claim",
+      "expected_decision_status": "REVIEW_RECORDED",
+      "observation": {
+        "authorised_context": true,
+        "sensor_ok": true,
+        "modalities": [
+          "rgb_image"
+        ],
+        "conflicting_inputs": false,
+        "human_reviewed": true
+      }
+    }
+  ]
+}
