@@ -1,0 +1,11 @@
+{
+  "scenario_id": "SYNTHETIC-CHECK-ONLY-SCREENING-001",
+  "authorised_context": true,
+  "sensor_ok": true,
+  "modalities": [
+    "rgb_image",
+    "visible_text_ocr"
+  ],
+  "conflicting_inputs": true,
+  "human_reviewed": false
+}
