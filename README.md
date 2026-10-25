@@ -3,6 +3,7 @@
 ## Free-first offline engineering tools
 
 - Free offline evidence-provenance validation and human-review routing: `scripts/free_first_project_tools.py`; tests: `tests/test_free_first_project_tools.py`. Outputs do not identify substances or establish guilt.
+- Dependency-free precision, recall, F1 and confusion counts support later evaluation; no substance-identification or enforcement claims are implied.
 
 ## Frontier AI technology and free-first upgrade plan
 
