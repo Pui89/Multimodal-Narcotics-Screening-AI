@@ -7,7 +7,6 @@
 - **Model-optional agentic workflow:** `agents/agentic_workflow.py` sequences input validation, the existing decision agent, a policy gate and an evidence-hash report; it requires human review and never runs actions.
 - **Run the local agentic workflow:** `python -m tools.run_agentic_workflow --input examples/agentic_workflow.synthetic.json` — standard-library only; synthetic inputs, review output, no model download or actuator control.
 - **Synthetic agent evaluation:** `python -m tools.evaluate_agentic_workflow` runs the labelled synthetic suite; the protocol documents measured decision-workflow latency and limitations. No model, network, third-party package or hardware action is used.
-- **Run the local agentic workflow:** `python -m tools.run_agentic_workflow --input examples/agentic_workflow.synthetic.json` — standard-library only; synthetic inputs, review output, no model download or actuator control.
 - **Phased autonomy lab:** [test and simulation guide](docs/PUI89_AUTONOMY_LAB.md); runner: `tools/pui89_autonomy_lab.py`; project scenarios: `simulation/scenarios.json`. Includes logged world-state snapshots, safe-hold/UNKNOWN mock VLA gates, reproducible JSON/CSV reports and an offline model-resource preflight. No model is downloaded or installed automatically; no hardware is controlled.
 
 - Free offline evidence-provenance validation and human-review routing: `scripts/free_first_project_tools.py`; tests: `tests/test_free_first_project_tools.py`. Outputs do not identify substances or establish guilt.
@@ -40,9 +39,11 @@ A research-and-development project exploring how computer vision, suitable inspe
 ---
 
 
-## Current verified status — 25 October 2026
+## Current verified status — 26 October 2026
 
 **Stage:** local visual experiments, concept/simulation work and software regression testing. This repository does not demonstrate a validated physical screening robot or validated narcotics detector.
+
+- **Synthetic evaluation — 26 October 2026:** the labelled synthetic suite reports 7/7 scenarios passed, and adversarial workflow regression tests are merged. This does not establish narcotics-detection accuracy, identify a substance, establish guilt, or justify enforcement; consequential decisions remain with authorised human reviewers.
 
 - **SAM 3 segmentation:** the optional local smoke-test script and guide are merged ([PR #35](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/pull/35)). No SAM 3 inference result has been verified yet. Model weights are downloaded only when the script is run; check compatibility, access terms, disk space and GPU memory first.
 - **Automated checks for the SAM 3 change:** Python tests, security checks, Ruff helper review and local-first app regression checks completed successfully for the change's pull-request commit. These checks do not establish screening accuracy.
