@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "project": "Multimodal Narcotics Screening AI",
+  "policy": "Optional only. This registry does not request installation or download. The local probe performs no network access.",
+  "resources": [
+    {
+      "id": "opencv",
+      "name": "OpenCV Python",
+      "check": "python_module",
+      "module": "cv2",
+      "distributions": [
+        "opencv-python",
+        "opencv-contrib-python",
+        "opencv-python-headless"
+      ],
+      "priority": "high",
+      "purpose": "Local image decoding, quality checks and review overlays.",
+      "license_note": "OpenCV 4.5.0+ is Apache-2.0; verify release and bundled dependencies.",
+      "official_url": "https://opencv.org/license/",
+      "limitation": "Visual features do not establish chemical identity."
+    },
+    {
+      "id": "cvat-community",
+      "name": "CVAT Community",
+      "check": "manual",
+      "priority": "high",
+      "purpose": "Optional self-hosted image annotation and independent review.",
+      "license_note": "Community core MIT; review FFmpeg and third-party asset/dependency licences.",
+      "official_url": "https://github.com/cvat-ai/cvat",
+      "limitation": "Manual status only; the probe does not determine whether a CVAT service is installed or running."
+    },
+    {
+      "id": "tesseract",
+      "name": "Tesseract OCR engine",
+      "check": "command",
+      "command": "tesseract",
+      "priority": "medium",
+      "purpose": "Extract optional visible printed text into an untrusted metadata field.",
+      "license_note": "Apache-2.0 engine; review language data/package details.",
+      "official_url": "https://tesseract-ocr.github.io/tessdoc/",
+      "limitation": "OCR is not chemical identification and must not trigger enforcement."
+    },
+    {
+      "id": "openvino",
+      "name": "OpenVINO",
+      "check": "python_module",
+      "module": "openvino",
+      "distributions": [
+        "openvino"
+      ],
+      "priority": "future",
+      "purpose": "Optional CPU-inference comparison after a model baseline exists.",
+      "license_note": "Apache-2.0 toolkit; model weights have separate terms.",
+      "official_url": "https://github.com/openvinotoolkit/openvino",
+      "limitation": "A performance gain is not assumed; benchmark on target hardware."
+    },
+    {
+      "id": "open3d",
+      "name": "Open3D",
+      "check": "python_module",
+      "module": "open3d",
+      "distributions": [
+        "open3d"
+      ],
+      "priority": "future",
+      "purpose": "Optional 3D sensor inspection if point-cloud inputs are added.",
+      "license_note": "MIT; review exact release/dependencies.",
+      "official_url": "https://www.open3d.org/",
+      "limitation": "Not a narcotics identification method."
+    }
+  ]
+}
