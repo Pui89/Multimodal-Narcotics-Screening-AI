@@ -12,6 +12,8 @@
 - Experiment report helper: `pui89_autonomy/experiment_report.py` summarizes supplied metrics, dataset hash, code version and measured latency.
 - Unit tests: `tests/test_world_state.py` and `tests/test_experiment_report.py`.
 
+- **Full robotics stack integration:** [ROS 2 Jazzy, Gazebo Harmonic, Nav2, optional autopilot choice, and offline SmolVLM test](docs/PUI89_FULL_ROBOTICS_STACK_INTEGRATION.md). Starter worlds and source scaffolding are provided; the robotics stack is not installed or hardware-validated.
+
 ## Frontier AI technology and free-first upgrade plan
 
 Current gaps, recent technology directions, no-recurring-cost adoption gates, and project-specific next steps: [Frontier technology gap and free-first plan](docs/FRONTIER_TECHNOLOGY_GAP_AND_FREE_PLAN.md). No large model or simulator is installed automatically; verify licences, download size, hardware fit and costs first.
