@@ -22,6 +22,11 @@ class FreeFirstTests(unittest.TestCase):
     def test_automated_enforcement_is_rejected(self):
         self.assertTrue(any("prohibited" in e for e in validate_evidence_record({**BASE,"automated_enforcement":True})))
 
+    def test_malformed_review_status_does_not_crash(self):
+        record={**BASE,"review_status":[]}
+        self.assertTrue(validate_evidence_record(record))
+        self.assertEqual(route_evidence(record),"review_required")
+
     def test_reviewed_record_can_pass_workflow_validation(self):
         record={**BASE,"review_status":"reviewed"}
         self.assertEqual(validate_evidence_record(record),[])
