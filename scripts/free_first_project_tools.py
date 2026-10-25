@@ -49,7 +49,7 @@ def validate_evidence_record(record: Mapping[str, Any]) -> list[str]:
         if not required_nonempty_text(record.get(key)):
             errors.append(f"{key} must be supplied and non-empty")
     status = record.get("review_status")
-    if status not in ALLOWED_REVIEW_STATUSES:
+    if not isinstance(status, str) or status not in ALLOWED_REVIEW_STATUSES:
         errors.append("review_status is not an allowed workflow status")
     confidence = record.get("confidence")
     if confidence is not None and not finite_unit_interval(confidence):
@@ -83,8 +83,8 @@ def binary_classification_metrics(y_true: Iterable[int | bool], y_pred: Iterable
     truth, predicted = list(y_true), list(y_pred)
     if not truth or len(truth) != len(predicted):
         raise ValueError("y_true and y_pred must be non-empty and have equal lengths")
-    if any(v not in (0, 1, False, True) for v in truth + predicted):
-        raise ValueError("labels must contain only binary 0/1 values")
+    if any(not isinstance(v, bool) and (not isinstance(v, int) or v not in (0, 1)) for v in truth + predicted):
+        raise ValueError("labels must contain only integer 0/1 values or booleans")
     truth = [int(v) for v in truth]
     predicted = [int(v) for v in predicted]
     tp = sum(t == 1 and p == 1 for t, p in zip(truth, predicted))
