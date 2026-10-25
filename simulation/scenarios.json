@@ -86,6 +86,34 @@
           "expected_action": "SAFE_HOLD"
         }
       ]
+    },
+    {
+      "id": "sensor_fault_and_human_review_recovery",
+      "seed": 307,
+      "steps": [
+        {
+          "state": {
+            "sensors_ok": true,
+            "sensor_data_fresh": true,
+            "comms_ok": true,
+            "confidence": 0.9,
+            "human_review_required": true
+          },
+          "expected_action": "REQUEST_HUMAN_REVIEW"
+        },
+        {
+          "state": {
+            "sensor_data_fresh": false
+          },
+          "expected_action": "SAFE_HOLD"
+        },
+        {
+          "state": {
+            "sensor_data_fresh": true
+          },
+          "expected_action": "REQUEST_HUMAN_REVIEW"
+        }
+      ]
     }
   ]
 }
