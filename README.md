@@ -1,5 +1,9 @@
 # Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
 
+## Frontier AI technology and free-first upgrade plan
+
+Current gaps, recent technology directions, no-recurring-cost adoption gates, and project-specific next steps: [Frontier technology gap and free-first plan](docs/FRONTIER_TECHNOLOGY_GAP_AND_FREE_PLAN.md). No large model or simulator is installed automatically; verify licences, download size, hardware fit and costs first.
+
 **Robot product name: PUI89 Sentinel**
 
 A research-and-development project exploring how computer vision, suitable inspection imagery, validated sensor outputs, and robotic assistance could support lawful, human-reviewed security screening.
