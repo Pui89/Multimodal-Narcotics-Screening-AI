@@ -465,3 +465,12 @@ Keep the system as an object/container inspection and human-review aid. Use only
 
 Track the five shared free-first development tasks in [docs/DEVELOPMENT_ROADMAP.md](docs/DEVELOPMENT_ROADMAP.md). Screening priority: document lawful data provenance and modality limitations, evaluate calibration on held-out data, and route conflicting or uncertain results to human review. AI outputs are not proof of substance identity or guilt.
 
+## Engineering update — 26 October 2026
+
+**Current gate: validate each modality and its uncertainty before any operational claim.** This project is a screening and inspection concept, not a validated narcotics detector or deployed robot.
+
+- Keep RGB imagery, depth/geometry, approved specialist screening equipment and any future chemical-trace sensor as distinct evidence sources; ordinary RGB imagery alone does not establish chemical identity or reliably reveal concealed substances.
+- Use lawful, documented and appropriately de-identified data. Record sensor provenance, calibration, quality, missing/stale inputs, model version and reviewer decisions.
+- Before any performance claim, evaluate on held-out data and report false-positive/false-negative rates, sensitivity, specificity, calibration, abstention, latency and sensor-failure behavior. Mark unavailable tests **NOT RUN**.
+- Route uncertain or conflicting signals to trained human review. An alert is not proof and must not automatically trigger search, seizure, detention or enforcement.
+- Free-first execution: use local tests and standard-library scaffolding first; do not automatically download weights, call paid APIs or launch cloud compute.
