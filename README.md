@@ -51,11 +51,11 @@ These photographs are **illustrative references only**, not verified training sa
 
 ### 1. Cannabis and cannabis-derived materials
 
-![Public-domain reference photograph of cannabis herb](https://commons.wikimedia.org/wiki/Special:FilePath/Marijuana.jpg?width=700)
+![Public-domain reference photograph of cannabis herb](https://commons.wikimedia.org/wiki/Special:FilePath/Psychoactive_Drugs.jpg?width=700)
 
 - Cannabis herb, hashish/resin, and oils or extracts are distinct appearances and should not be treated as one visually uniform class.
 - Synthetic cannabinoids (sometimes sold under names such as “Spice”) are chemically diverse and **cannot be reliably identified from an ordinary photograph**.
-- Image source starting points: [CDC PHIL cannabis reference (public domain)](https://wwwn.cdc.gov/phil/Details.aspx?pid=16349) · [CDC PHIL hashish reference (public domain)](https://wwwn.cdc.gov/phil/Details.aspx?pid=13349).
+- Image source starting points: [Psychoactive Drugs collage — Wikimedia Commons, CC BY-SA 2.5](https://commons.wikimedia.org/wiki/File:Psychoactive_Drugs.jpg) · [CDC PHIL cannabis reference (public domain)](https://wwwn.cdc.gov/phil/Details.aspx?pid=16349) · [CDC PHIL hashish reference (public domain)](https://wwwn.cdc.gov/phil/Details.aspx?pid=13349).
 
 ### 2. Amphetamine-type stimulants
 
@@ -87,7 +87,7 @@ Image credit: [Heroin reference — U.S. Drug Enforcement Administration / Wikim
 
 ### 5. Other substances and unidentified materials
 
-![Public-domain reference photograph of hashish](https://commons.wikimedia.org/wiki/Special:FilePath/Hashish.jpg?width=700)
+![Public-domain reference photograph of hashish](https://commons.wikimedia.org/wiki/Special:FilePath/Psychoactive_Drugs.jpg?width=700)
 
 The wider research taxonomy may include ketamine, LSD and other hallucinogens, diverted medicines (including benzodiazepines), new psychoactive substances, and unknown powders or tablets. These are **candidate research categories**, not currently supported detection classes. Use validated analytical methods and authorised expert review where chemical identity matters.
 
