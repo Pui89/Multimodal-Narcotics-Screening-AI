@@ -1,5 +1,11 @@
 # Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
 
+## Real-world baggage-screening reference photograph
+
+![Baggage screening equipment and monitoring station at Suvarnabhumi Airport in Bangkok](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/VTBS-luggage_screening.JPG/960px-VTBS-luggage_screening.JPG)
+
+*Real photograph of general luggage-screening equipment at Suvarnabhumi Airport, Bangkok, taken by Mattes on 31 January 2007. The creator released the image into the public domain; see the [Wikimedia Commons source and licence record](https://commons.wikimedia.org/wiki/File:VTBS-luggage_screening.JPG). This is an example of screening infrastructure only—not a narcotics detection image, not a Pui89 robot, and not evidence that the project can identify substances. Substance identification requires appropriate sensor data, validated procedures, and human/legal oversight.*
+
 ## Free-first offline engineering tools
 
 - **Free robotics stack selection:** [open-source systems, licence notes and adoption gates](docs/FREE_ROBOTICS_STACK_ADOPTION.md). These are recommendations only; no robotics packages or model weights are installed or downloaded by this PR.
