@@ -45,6 +45,63 @@ A research-and-development project exploring how computer vision, suitable inspe
 
 ---
 
+## Real-world substance reference images — research scope
+
+These photographs are **illustrative references only**, not verified training samples and not evidence that an item contains a particular substance. Appearance varies by purity, processing, packaging, lighting and camera; many harmless materials look similar. A camera-only model must not label a substance as confirmed. Any future dataset requires source/licence records, expert review, and a separate evaluation protocol for each sensing modality.
+
+### 1. Cannabis and cannabis-derived materials
+
+![Public-domain reference photograph of cannabis herb](https://commons.wikimedia.org/wiki/Special:FilePath/Marijuana.jpg?width=700)
+
+- Cannabis herb, hashish/resin, and oils or extracts are distinct appearances and should not be treated as one visually uniform class.
+- Synthetic cannabinoids (sometimes sold under names such as “Spice”) are chemically diverse and **cannot be reliably identified from an ordinary photograph**.
+- Image source starting points: [CDC PHIL cannabis reference (public domain)](https://wwwn.cdc.gov/phil/Details.aspx?pid=16349) · [CDC PHIL hashish reference (public domain)](https://wwwn.cdc.gov/phil/Details.aspx?pid=13349).
+
+### 2. Amphetamine-type stimulants
+
+![Public-domain reference photograph of crystal methamphetamine](https://commons.wikimedia.org/wiki/Special:FilePath/M%C3%A9thamph%C3%A9tamine_pure.jpg?width=700)
+
+![Yaba tablet reference photograph, CC BY 2.0](https://commons.wikimedia.org/wiki/Special:FilePath/Yaba_Tablet_%28Pill%29.jpg?width=700)
+
+Research categories may include amphetamine, methamphetamine (including crystal forms), yaba tablets, and MDMA/ecstasy. A tablet’s colour, logo, or shape does not establish its ingredients.
+
+Image credits: [Crystal methamphetamine — U.S. Department of Justice / Wikimedia Commons, public domain in the U.S.](https://commons.wikimedia.org/wiki/File:M%C3%A9thamph%C3%A9tamine_pure.jpg) · [Yaba tablets — Labib Ittihadul / Wikimedia Commons, CC BY 2.0](https://commons.wikimedia.org/wiki/File:Yaba_Tablet_(Pill).jpg).
+
+### 3. Cocaine
+
+![Public-domain reference photograph of cocaine powder](https://commons.wikimedia.org/wiki/Special:FilePath/CocaineHydrochloridePowder_cropped.jpg?width=700)
+
+![Public-domain reference photograph of crack cocaine](https://commons.wikimedia.org/wiki/Special:FilePath/Rocks_of_crack_cocaine.jpg?width=700)
+
+Powder and crack cocaine are separate reference appearances, but visual similarity alone cannot confirm chemical identity.
+
+Image credits: [Cocaine powder — U.S. Drug Enforcement Administration / Wikimedia Commons, public domain in the U.S.](https://commons.wikimedia.org/wiki/File:CocaineHydrochloridePowder_cropped.jpg) · [Crack cocaine — DEA / Wikimedia Commons, public domain in the U.S.](https://commons.wikimedia.org/wiki/File:Rocks_of_crack_cocaine.jpg).
+
+### 4. Opioids and opiates
+
+![Public-domain reference photograph of heroin](https://commons.wikimedia.org/wiki/Special:FilePath/Heroin1.jpg?width=700)
+
+Research scope may include heroin, opium, fentanyl and other opioids. These substances may have very different forms, and dangerous synthetic opioids may be present in mixtures or counterfeit tablets. **Never infer fentanyl or another opioid from a photograph alone.**
+
+Image credit: [Heroin reference — U.S. Drug Enforcement Administration / Wikimedia Commons, public domain in the U.S.](https://commons.wikimedia.org/wiki/File:Heroin1.jpg).
+
+### 5. Other substances and unidentified materials
+
+![Public-domain reference photograph of hashish](https://commons.wikimedia.org/wiki/Special:FilePath/Hashish.jpg?width=700)
+
+The wider research taxonomy may include ketamine, LSD and other hallucinogens, diverted medicines (including benzodiazepines), new psychoactive substances, and unknown powders or tablets. These are **candidate research categories**, not currently supported detection classes. Use validated analytical methods and authorised expert review where chemical identity matters.
+
+Reference source: [U.S. Drug Enforcement Administration — drug image gallery](https://www.dea.gov/galleries/drug-images/other-drugs). Individual images must be checked for their own licence and attribution before reuse in datasets or redistributed materials.
+
+### Image and dataset integrity rules
+
+- Reference images help communicate the project scope; they do **not** automatically become training data.
+- Before any image enters a dataset, record its original source page, creator, exact licence, attribution requirements, retrieval date, file hash, and reviewer decision.
+- Keep classes such as “unknown powder/tablet” separate from confirmed substance labels; do not infer a label from packaging or appearance alone.
+- Any future X-ray, trace-residue, or chemical-vapour data needs its own lawful source, calibrated equipment, ground truth, and independent test split.
+- No validated narcotics-detection performance or physical-robot capability is claimed by this repository.
+
+---
 
 ## Current verified status — 26 October 2026
 
