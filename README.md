@@ -1,5 +1,9 @@
 # Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
 
+## One-command local verification
+
+Run `python tools/pui89_master_verify.py` for a free, standard-library-only Python syntax scan and inventory of this project's key verification tools. Add `--report verification-report.json` to save a JSON report. Use `--pytest` only when you want to run the full installed test suite; it installs nothing. The helper does not download models, call hosted APIs, change datasets, or control hardware. Tool presence is not proof that a gate passed, and software checks do not establish real-world performance.
+
 ![PUI89 Sentinel dog-inspired quadruped mobile screening robot concept moving through a terminal with walking passengers](docs/images/quadruped-screening-robot.svg)
 
 *PUI89 Sentinel — proposed mobile robot-dog concept, not a built or validated robot. The intended design is a four-legged, mobile inspection assistant that can patrol authorised areas, move around obstacles, yield to pedestrians, and support human-reviewed screening of permitted items and sensor readings. It is not just a fixed baggage scanner. Concealed-item and chemical-screening capabilities require separate suitable sensors, lawful procedures, and independent validation.*
