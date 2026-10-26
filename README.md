@@ -4,6 +4,19 @@
 
 Run `python tools/pui89_master_verify.py` for a free, standard-library-only Python syntax scan and inventory of this project's key verification tools. Add `--report verification-report.json` to save a JSON report. Use `--pytest` only when you want to run the full installed test suite; it installs nothing. The helper does not download models, call hosted APIs, change datasets, or control hardware. Tool presence is not proof that a gate passed, and software checks do not establish real-world performance.
 
+## Free-first build policy and next upgrade
+
+**Default rule: local, evidence-aware and human-reviewed.** No paid API, cloud GPU, hosted inference, or automatic model/data download is required for the current workflow.
+
+- **Gate 1 — free checks:** run `python tools/pui89_master_verify.py`, standard-library tests and synthetic evaluation first. Synthetic results verify workflow logic only, not substance detection.
+- **Gate 2 — evidence before inference:** validate provenance, modality quality, timestamps, uncertainty and reviewer records. Do not treat ordinary RGB imagery or an AI score as chemical identification or proof of narcotics.
+- **Gate 3 — optional model preflight:** before downloading any model weights or installing a sensor stack, check licence/access terms, disk/RAM/VRAM, offline operation and data-handling restrictions. No large model or simulator is downloaded automatically.
+- **Gate 4 — human control:** route uncertain, conflicting or out-of-distribution cases to authorised human review. AI must not independently accuse, detain, search or make enforcement decisions.
+- **Reproducibility:** record the command, commit, input/evidence hashes, test result, failures and limits. Ask before any paid or recurring-cost choice.
+
+**Next action:** strengthen synthetic modality-quality and disagreement tests, then document a lawful, licensed, independently reviewed evaluation dataset before attempting any substance-screening performance claim.
+
+
 ![PUI89 Sentinel dog-inspired quadruped mobile screening robot concept moving through a terminal with walking passengers](docs/images/quadruped-screening-robot.svg)
 
 *PUI89 Sentinel — proposed mobile robot-dog concept, not a built or validated robot. The intended design is a four-legged, mobile inspection assistant that can patrol authorised areas, move around obstacles, yield to pedestrians, and support human-reviewed screening of permitted items and sensor readings. It is not just a fixed baggage scanner. Concealed-item and chemical-screening capabilities require separate suitable sensors, lawful procedures, and independent validation.*
