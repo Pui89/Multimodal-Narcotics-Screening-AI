@@ -1,10 +1,10 @@
 # Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
 
-## Real-world baggage-screening reference photograph
+![PUI89 Sentinel dog-inspired quadruped mobile screening robot concept moving through a terminal with walking passengers](docs/images/quadruped-screening-robot.svg)
 
-![Baggage screening equipment and monitoring station at Suvarnabhumi Airport in Bangkok](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/VTBS-luggage_screening.JPG/960px-VTBS-luggage_screening.JPG)
+*PUI89 Sentinel — proposed mobile robot-dog concept, not a built or validated robot. The intended design is a four-legged, mobile inspection assistant that can patrol authorised areas, move around obstacles, yield to pedestrians, and support human-reviewed screening of permitted items and sensor readings. It is not just a fixed baggage scanner. Concealed-item and chemical-screening capabilities require separate suitable sensors, lawful procedures, and independent validation.*
 
-*Real photograph of general luggage-screening equipment at Suvarnabhumi Airport, Bangkok, taken by Mattes on 31 January 2007. The creator released the image into the public domain; see the [Wikimedia Commons source and licence record](https://commons.wikimedia.org/wiki/File:VTBS-luggage_screening.JPG). This is an example of screening infrastructure only—not a narcotics detection image, not a Pui89 robot, and not evidence that the project can identify substances. Substance identification requires appropriate sensor data, validated procedures, and human/legal oversight.*
+**Design direction:** mobile quadruped + spatial awareness + optional modular screening sensors + human operator oversight. Movement speed must be limited by validated safety performance, and the robot must slow or stop near people.
 
 ## Free-first offline engineering tools
 
@@ -62,9 +62,7 @@ A research-and-development project exploring how computer vision, suitable inspe
 
 ## Mobile quadruped screening robot — people, carry-on items, and ambient-air sampling
 
-![Engineering concept of a dog-inspired mobile screening robot patrolling an airport terminal beside walking passengers.](docs/images/quadruped-screening-robot.svg)
-
-[View the complementary multimodal screening-system concept illustration](docs/images/multimodal-screening-robot-concept-2026.svg).
+[View the main quadruped robot concept illustration](docs/images/quadruped-screening-robot.svg) · [View the complementary multimodal screening-system concept illustration](docs/images/multimodal-screening-robot-concept-2026.svg).
 
 **Concept only — not a built or validated robot.**
 
