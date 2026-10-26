@@ -51,6 +51,10 @@ def validate_evidence_record(record: Mapping[str, Any]) -> list[str]:
     status = record.get("review_status")
     if not isinstance(status, str) or status not in ALLOWED_REVIEW_STATUSES:
         errors.append("review_status is not an allowed workflow status")
+    if status == "reviewed":
+        for key in ("reviewer_reference", "reviewed_at"):
+            if not required_nonempty_text(record.get(key)):
+                errors.append(f"{key} is required when review_status is reviewed")
     confidence = record.get("confidence")
     if confidence is not None and not finite_unit_interval(confidence):
         errors.append("confidence must be finite and within [0, 1]")

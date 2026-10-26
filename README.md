@@ -10,6 +10,7 @@
 - **Phased autonomy lab:** [test and simulation guide](docs/PUI89_AUTONOMY_LAB.md); runner: `tools/pui89_autonomy_lab.py`; project scenarios: `simulation/scenarios.json`. Includes logged world-state snapshots, safe-hold/UNKNOWN mock VLA gates, reproducible JSON/CSV reports and an offline model-resource preflight. No model is downloaded or installed automatically; no hardware is controlled.
 
 - Free offline evidence-provenance validation and human-review routing: `scripts/free_first_project_tools.py`; tests: `tests/test_free_first_project_tools.py`. Outputs do not identify substances or establish guilt.
+- **Review audit trail:** records cannot enter the `reviewed` workflow state unless a non-empty `reviewer_reference` and `reviewed_at` timestamp are recorded; see `validate_evidence_record` and its tests. These fields document workflow provenance, not the truth of a screening result.
 - Dependency-free precision, recall, F1 and confusion counts support later evaluation; no substance-identification or enforcement claims are implied.
 
 - Offline state tracker: `pui89_autonomy/world_state.py` records time-stamped observations, stale data and conflicts.

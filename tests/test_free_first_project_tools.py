@@ -27,8 +27,13 @@ class FreeFirstTests(unittest.TestCase):
         self.assertTrue(validate_evidence_record(record))
         self.assertEqual(route_evidence(record),"review_required")
 
-    def test_reviewed_record_can_pass_workflow_validation(self):
-        record={**BASE,"review_status":"reviewed"}
+    def test_reviewed_record_requires_review_provenance(self):
+        missing_reviewer={**BASE,"review_status":"reviewed"}
+        self.assertTrue(any("reviewer_reference" in e for e in validate_evidence_record(missing_reviewer)))
+        self.assertEqual(route_evidence(missing_reviewer),"review_required")
+
+        record={**BASE,"review_status":"reviewed","reviewer_reference":"reviewer-role-01",
+                "reviewed_at":"2026-10-26T10:00:00Z"}
         self.assertEqual(validate_evidence_record(record),[])
         self.assertEqual(route_evidence(record),"reviewed")
 
