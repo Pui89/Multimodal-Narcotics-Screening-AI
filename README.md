@@ -131,6 +131,15 @@ Research scope may include ketamine, LSD and other hallucinogens, diverted medic
 
 Image credit: [Psychoactive Drugs collage — Wikimedia Commons, CC BY-SA 2.5](https://commons.wikimedia.org/wiki/File:Psychoactive_Drugs.jpg). Further reference source: [U.S. Drug Enforcement Administration — drug image gallery](https://www.dea.gov/galleries/drug-images/other-drugs); check each image’s licence and attribution before reuse.
 
+### Ketamine — candidate research category
+
+Ketamine is included in the project's proposed research scope as a substance category for future, properly authorised evaluation. Ketamine also has legitimate medical and veterinary uses, so a screening workflow must not assume that its presence or possession is illicit without lawful context and authorised human assessment.
+
+- **Current status:** candidate category only; no ketamine-specific detector, validated dataset, or measured detection performance is claimed.
+- **Visual limitation:** powder, liquid, tablets, labels, and packaging vary; an RGB photograph or X-ray appearance alone cannot confirm ketamine or establish chemical identity.
+- **Evidence required before evaluation:** lawful access to appropriately licensed, expert-labelled data; documented provenance and independent test splits; and, where chemical identity matters, suitable validated analytical instrumentation and trained review.
+- **Decision boundary:** any future model output is an uncertain screening cue for authorised human review, not proof of substance identity, illegal activity, or grounds for automatic enforcement.
+
 ### Image and dataset integrity rules
 
 - Reference images communicate project scope; they do **not** automatically become training data.
