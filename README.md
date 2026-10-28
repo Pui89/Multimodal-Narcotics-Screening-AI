@@ -140,6 +140,15 @@ Ketamine is included in the project's proposed research scope as a substance cat
 - **Evidence required before evaluation:** lawful access to appropriately licensed, expert-labelled data; documented provenance and independent test splits; and, where chemical identity matters, suitable validated analytical instrumentation and trained review.
 - **Decision boundary:** any future model output is an uncertain screening cue for authorised human review, not proof of substance identity, illegal activity, or grounds for automatic enforcement.
 
+### Cocaine — candidate research category
+
+Cocaine is included as a research category for future, properly authorised screening evaluation. Reference appearances may include powder and rock forms, but appearance alone cannot establish chemical identity, purity, composition, or whether an item is illicit.
+
+- **Current status:** candidate category only; this README does not claim a validated cocaine detector or measured detection performance.
+- **Visual and X-ray limits:** RGB photographs and ordinary baggage X-ray images may help flag items for review, but cannot reliably confirm cocaine or identify a chemical substance on their own.
+- **Evidence required before evaluation:** lawfully sourced and appropriately labelled data, recorded provenance and licence terms, independent test splits, and qualified review. Where chemical identity matters, use suitable validated analytical methods and trained personnel.
+- **Decision boundary:** model outputs must be treated as uncertain screening cues for authorised human review, not proof of substance identity, trafficking, or illegal activity.
+
 ### Image and dataset integrity rules
 
 - Reference images communicate project scope; they do **not** automatically become training data.
