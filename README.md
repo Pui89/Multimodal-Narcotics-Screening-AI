@@ -17,6 +17,10 @@ Run `python tools/pui89_master_verify.py` for a free, standard-library-only Pyth
 - **Gate 4 — human control:** route uncertain, conflicting or out-of-distribution cases to authorised human review. AI must not independently accuse, detain, search or make enforcement decisions.
 - **Reproducibility:** record the command, commit, input/evidence hashes, test result, failures and limits. Ask before any paid or recurring-cost choice.
 
+## Product quality and safety roadmap
+
+The [Product Quality and Safety Roadmap](docs/PRODUCT_QUALITY_AND_SAFETY_ROADMAP.md) sets staged safety, reliability, evidence, human-oversight and buyer-readiness gates. It is an engineering plan—not certification or proof of field performance.
+
 **Shared PUI89 AI Core contract:** [missing/conflicting modality tests, uncertainty, abstention, human review and evaluation gates](docs/SHARED_PUI89_AI_CORE_INTEGRATION.md).
 
 **Next action:** strengthen synthetic modality-quality and disagreement tests, then document a lawful, licensed, independently reviewed evaluation dataset before attempting any substance-screening performance claim.
