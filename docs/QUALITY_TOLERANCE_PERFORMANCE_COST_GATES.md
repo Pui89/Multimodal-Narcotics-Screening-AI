@@ -49,3 +49,9 @@ Test low-quality input, camera obstruction, sensor drift, stale timestamp, calib
 6. Human-in-the-loop pilot validates workflow and error handling before deployment claims.
 
 Passing a software test does not certify a sensor, prove chemical identity, establish fairness or authorize enforcement.
+
+## Fail-safe simulation contract
+
+Before a simulated screening or inspection task action is considered, the world-state input must explicitly include `emergency_stop`, `sensors_ok`, `sensor_data_fresh`, and `comms_ok`. If any field is absent, malformed, stale, or indicates a fault, the policy must return a non-actuating `SAFE_HOLD` result and record the reason in the failure report. Emergency stop, sensor faults, stale readings, and communication loss must never be treated as healthy defaults.
+
+Chemical identity remains unconfirmed unless independently validated by an appropriate instrument and review process. This contract is a software design requirement for simulation and regression testing only; it does not establish detection accuracy, chemical identification, or physical safety.
