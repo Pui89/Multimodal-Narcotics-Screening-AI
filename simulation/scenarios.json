@@ -16,7 +16,9 @@
             "target_visible": true,
             "confidence": 0.9,
             "human_review_required": true,
-            "operator_approved": true
+            "operator_approved": true,
+            "emergency_stop": false,
+            "sensor_data_fresh": true
           },
           "expected_action": "REQUEST_HUMAN_REVIEW"
         }
@@ -29,7 +31,11 @@
         {
           "state": {
             "modalities_conflict": true,
-            "confidence": 0.98
+            "confidence": 0.98,
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "sensor_data_fresh": true,
+            "comms_ok": true
           },
           "expected_action": "UNKNOWN"
         }
@@ -42,7 +48,11 @@
         {
           "state": {
             "missing_required_modality": true,
-            "confidence": 0.9
+            "confidence": 0.9,
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "sensor_data_fresh": true,
+            "comms_ok": true
           },
           "expected_action": "UNKNOWN"
         }
@@ -55,7 +65,10 @@
         {
           "state": {
             "sensor_data_fresh": false,
-            "confidence": 0.9
+            "confidence": 0.9,
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "comms_ok": true
           },
           "expected_action": "SAFE_HOLD"
         }
@@ -68,7 +81,11 @@
         {
           "state": {
             "confidence": 0.3,
-            "human_review_required": true
+            "human_review_required": true,
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "sensor_data_fresh": true,
+            "comms_ok": true
           },
           "expected_action": "UNKNOWN"
         }
@@ -81,7 +98,10 @@
         {
           "state": {
             "comms_ok": false,
-            "confidence": 0.95
+            "confidence": 0.95,
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "sensor_data_fresh": true
           },
           "expected_action": "SAFE_HOLD"
         }
@@ -97,19 +117,26 @@
             "sensor_data_fresh": true,
             "comms_ok": true,
             "confidence": 0.9,
-            "human_review_required": true
+            "human_review_required": true,
+            "emergency_stop": false
           },
           "expected_action": "REQUEST_HUMAN_REVIEW"
         },
         {
           "state": {
-            "sensor_data_fresh": false
+            "sensor_data_fresh": false,
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "comms_ok": true
           },
           "expected_action": "SAFE_HOLD"
         },
         {
           "state": {
-            "sensor_data_fresh": true
+            "sensor_data_fresh": true,
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "comms_ok": true
           },
           "expected_action": "REQUEST_HUMAN_REVIEW"
         }
