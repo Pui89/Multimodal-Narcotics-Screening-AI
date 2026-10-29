@@ -674,3 +674,8 @@ See [Multimodal Narcotics Screening AI safety and validation gates](docs/PUI89_S
 - [Safety and validation gates](docs/PUI89_SAFETY_AND_VALIDATION_GATES.md)
 - [PUI89 engineering charter](https://github.com/Pui89/Pui89.github.io/blob/main/PUI89_ENGINEERING_CHARTER.md)
 See also [repeatable screening scenario matrix](docs/REPEATABLE_SCENARIO_MATRIX.md). The matrix is a test plan; it does not validate a chemical sensor.
+
+
+## PUI89 master roadmap and next validation gates
+
+See the [PUI89 Master Roadmap](https://github.com/Pui89/Pui89.github.io/blob/main/PUI89_MASTER_ROADMAP.md) for current status, unfinished work, checks, known issues, the ordered next process and future upgrade levels across all three projects. Project-specific validation boundaries remain documented in [Safety and validation gates](docs/PUI89_SAFETY_AND_VALIDATION_GATES.md).
