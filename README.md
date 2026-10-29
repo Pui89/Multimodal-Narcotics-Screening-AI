@@ -679,3 +679,10 @@ See also [repeatable screening scenario matrix](docs/REPEATABLE_SCENARIO_MATRIX.
 ## PUI89 master roadmap and next validation gates
 
 See the [PUI89 Master Roadmap](https://github.com/Pui89/Pui89.github.io/blob/main/PUI89_MASTER_ROADMAP.md) for current status, unfinished work, checks, known issues, the ordered next process and future upgrade levels across all three projects. Project-specific validation boundaries remain documented in [Safety and validation gates](docs/PUI89_SAFETY_AND_VALIDATION_GATES.md).
+
+
+## Latest automated verification (29 October 2026)
+
+The [lightweight verification run](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/40878549402) completed successfully. Its workflow passed Python syntax compilation and a dependency-free observability smoke check. [Verification report artifact](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/40878549402/artifacts/12899860349).
+
+This lightweight job is not a full model/sensor benchmark. The selected PUI89 combined run passed 13 shared-core tests for this project, but no substance-specific performance, chemical-identification, X-ray, sensor-calibration or physical quadruped capability is established by those checks. RGB appearance alone cannot confirm chemical identity; consequential alerts require appropriate sensing evidence and human review.
