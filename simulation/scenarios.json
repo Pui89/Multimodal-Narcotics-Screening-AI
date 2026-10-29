@@ -141,6 +141,60 @@
           "expected_action": "REQUEST_HUMAN_REVIEW"
         }
       ]
+    },
+    {
+      "id": "missing_emergency_stop_telemetry",
+      "seed": 308,
+      "steps": [
+        {
+          "state": {
+            "sensors_ok": true,
+            "sensor_data_fresh": true,
+            "comms_ok": true,
+            "target_visible": true,
+            "confidence": 0.95,
+            "human_review_required": true,
+            "operator_approved": true
+          },
+          "expected_action": "SAFE_HOLD"
+        }
+      ]
+    },
+    {
+      "id": "malformed_sensor_boolean",
+      "seed": 309,
+      "steps": [
+        {
+          "state": {
+            "emergency_stop": false,
+            "sensors_ok": "false",
+            "sensor_data_fresh": true,
+            "comms_ok": true,
+            "target_visible": true,
+            "confidence": 0.95,
+            "human_review_required": true
+          },
+          "expected_action": "SAFE_HOLD"
+        }
+      ]
+    },
+    {
+      "id": "boolean_confidence",
+      "seed": 310,
+      "steps": [
+        {
+          "state": {
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "sensor_data_fresh": true,
+            "comms_ok": true,
+            "target_visible": true,
+            "confidence": true,
+            "human_review_required": true
+          },
+          "expected_action": "UNKNOWN"
+        }
+      ]
     }
   ]
 }
