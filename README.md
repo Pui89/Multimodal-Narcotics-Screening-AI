@@ -7,6 +7,22 @@
 
 Run `python tools/pui89_master_verify.py` for a free, standard-library-only Python syntax scan and inventory of this project's key verification tools. Add `--report verification-report.json` to save a JSON report. Use `--pytest` only when you want to run the full installed test suite; it installs nothing. The helper does not download models, call hosted APIs, change datasets, or control hardware. Tool presence is not proof that a gate passed, and software checks do not establish real-world performance.
 
+
+## Current project status — 29 October 2026
+
+**Overall status: screening workflow software prototype and robotic concept; not a validated narcotics detector.** The combined PUI89 workflow verified 13 shared-core tests for this project. These tests do not validate chemical sensing or substance identification.
+
+| Workstream | Current evidence | Status |
+|---|---|---|
+| Shared software core | 13 tests passed in the combined run | **Unit-tested** |
+| Modality/safety workflow | Software and design requirements documented | **Prototype / test planning** |
+| Repeatable scenario matrix | Missing modality, sensor disagreement, calibration and human-review cases documented | **Test plan; not proof scenarios ran** |
+| Methamphetamine, cocaine, ketamine and other categories | Candidate categories only unless a specific validated model/data evidence is separately provided | **No validated class-specific performance claimed** |
+| Chemical or X-ray sensing | No validated integration/performance established by this combined run | **NOT VALIDATED** |
+| Quadruped/robot operation | Concept only; physical robot capability not demonstrated | **NOT PHYSICALLY VALIDATED** |
+
+**Next gate:** define the actual sensor and physical quantity measured, document calibration and lawful sample provenance, test each modality independently, and evaluate class-specific false positives/negatives with trained human review. RGB imagery alone cannot establish chemical identity.
+
 ## Shared PUI89 AI Core — verification update (28 October 2026)
 
 This project now shares a common set of software-contract and simulation-evidence checks with the other PUI89 AI applications. The latest test additions check that benchmark validation rejects inconsistent CSV row counts, a success status that conflicts with reported failures, and missing CSV evidence.
