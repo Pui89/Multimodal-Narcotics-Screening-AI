@@ -195,6 +195,66 @@
           "expected_action": "UNKNOWN"
         }
       ]
+    },
+    {
+      "id": "operator_approval_missing",
+      "seed": 311,
+      "steps": [
+        {
+          "state": {
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "sensor_data_fresh": true,
+            "comms_ok": true,
+            "confidence": 0.96,
+            "target_visible": true,
+            "target_valid": true,
+            "operator_approved": false,
+            "human_review_required": false
+          },
+          "expected_action": "REQUEST_APPROVAL"
+        }
+      ]
+    },
+    {
+      "id": "conflicting_observations_human_review",
+      "seed": 312,
+      "steps": [
+        {
+          "state": {
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "sensor_data_fresh": true,
+            "comms_ok": true,
+            "modalities_conflict": true,
+            "confidence": 0.96,
+            "target_visible": true,
+            "human_review_required": true,
+            "operator_approved": true
+          },
+          "expected_action": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "required_observation_missing_human_review",
+      "seed": 313,
+      "steps": [
+        {
+          "state": {
+            "emergency_stop": false,
+            "sensors_ok": true,
+            "sensor_data_fresh": true,
+            "comms_ok": true,
+            "missing_required_modality": true,
+            "confidence": 0.96,
+            "target_visible": true,
+            "human_review_required": true,
+            "operator_approved": true
+          },
+          "expected_action": "UNKNOWN"
+        }
+      ]
     }
   ]
 }
