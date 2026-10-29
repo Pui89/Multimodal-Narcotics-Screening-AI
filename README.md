@@ -651,3 +651,10 @@ This project follows the [PUI89 Shared AI Safety Contract](https://github.com/Pu
 ## Safety and validation gates
 
 See [Multimodal Narcotics Screening AI safety and validation gates](docs/PUI89_SAFETY_AND_VALIDATION_GATES.md) for the evidence requirements, failure scenarios, safety limits and current validation boundaries. These documents distinguish software tests and simulation plans from measured AI performance and real-world validation.
+
+
+## Reproducible validation resources
+
+- [Safety and validation gates](docs/PUI89_SAFETY_AND_VALIDATION_GATES.md)
+- [PUI89 engineering charter](https://github.com/Pui89/Pui89.github.io/blob/main/PUI89_ENGINEERING_CHARTER.md)
+See also [repeatable screening scenario matrix](docs/REPEATABLE_SCENARIO_MATRIX.md). The matrix is a test plan; it does not validate a chemical sensor.
