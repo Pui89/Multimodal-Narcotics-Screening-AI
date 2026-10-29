@@ -6,6 +6,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "verification-report.json"
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 class JsonTestResult(unittest.TextTestResult):
     def __init__(self, *args, **kwargs):
@@ -27,7 +29,12 @@ def main() -> int:
         if folder.is_dir() and not compileall.compile_dir(str(folder), quiet=1, force=True):
             compile_errors.append({"path": str(folder.relative_to(ROOT)), "error": "Python compilation failed"})
     tests_dir = ROOT / "tests"
-    suite = unittest.defaultTestLoader.discover(str(tests_dir), top_level_dir=str(ROOT)) if tests_dir.is_dir() else unittest.TestSuite()
+    if tests_dir.is_dir():
+        # Using tests_dir as the top-level directory supports repositories whose
+        # tests/ folder intentionally has no __init__.py.
+        suite = unittest.defaultTestLoader.discover(str(tests_dir), top_level_dir=str(tests_dir))
+    else:
+        suite = unittest.TestSuite()
     result = unittest.TextTestRunner(stream=sys.stdout, verbosity=2, resultclass=JsonTestResult).run(suite)
     failures = compile_errors + result.failures_json
     report = {
