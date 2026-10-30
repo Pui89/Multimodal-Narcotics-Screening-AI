@@ -8,6 +8,12 @@
 Run `python tools/pui89_master_verify.py` for a free, standard-library-only Python syntax scan and inventory of this project's key verification tools. Add `--report verification-report.json` to save a JSON report. Use `--pytest` only when you want to run the full installed test suite; it installs nothing. The helper does not download models, call hosted APIs, change datasets, or control hardware. Tool presence is not proof that a gate passed, and software checks do not establish real-world performance.
 
 
+## Latest engineering update — 30 October 2026
+
+The merged rule-based simulation evaluation completed **7/7 scenarios and 9/9 steps, with 0 reported failures**. [Open the recorded simulation run](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/40919469891).
+
+Shared PUI89 AI Core checks cover uncertainty, missing or conflicting modalities, fail-safe handling and human-review boundaries. These software tests do not establish substance identification accuracy. RGB appearance alone cannot confirm chemical identity; suitable instruments, independent validation, lawful procedures and authorised human review remain necessary.
+
 ## Current project status — 30 October 2026
 
 **Overall status: screening workflow software prototype and robotic concept; not a validated narcotics detector.** The combined PUI89 workflow verified 13 shared-core tests for this project. These tests do not validate chemical sensing or substance identification.
