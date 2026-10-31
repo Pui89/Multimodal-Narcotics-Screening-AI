@@ -106,6 +106,30 @@ A research-and-development project exploring how computer vision, suitable inspe
 
 ---
 
+## E-cigarettes and vaping devices — separate screening category
+
+E-cigarettes and vaping products are included as a **separate device/product-screening category**, not automatically classified as narcotics. E-cigarettes (also called electronic nicotine delivery systems, or ENDS) heat a liquid to create an aerosol. Products and liquids vary; some contain nicotine and some do not. A device's appearance does not establish its contents.
+
+**Proposed scope for future, lawful evaluation**
+- Disposable and reusable e-cigarette/vape devices, vape pens and device-like objects.
+- Pods, cartridges, tanks, atomisers, refill containers and e-liquids.
+- Visible batteries, chargers, packaging, labels and accessories where relevant to an authorised inspection workflow.
+- Possible device damage, tampering or concealed compartments only where suitable imaging, validated methods and lawful authority exist.
+
+**What the AI may and may not conclude**
+- RGB vision may, after a separately validated evaluation, flag an object as a *possible e-cigarette/vaping device* or identify visible device components.
+- RGB appearance cannot establish whether a liquid contains nicotine, THC/cannabis, another controlled substance, or no such substance. It cannot confirm chemical composition, concentration, authenticity or legality.
+- A vape device must not be labelled “narcotics detected” merely because it is a vape. If contents require identification, that is a separate analytical task requiring suitable validated instrumentation, lawful sample handling, documented calibration and qualified human review.
+- Outputs must use cautious wording such as **“possible vaping device — human review required”**. Uncertain, conflicting or out-of-scope cases must be referred to an authorised reviewer.
+
+**Safety, legal and evidence boundaries**
+- Product rules differ by jurisdiction and can change. Any deployment requires a current legal review for the relevant location; this project does not provide legal advice.
+- For Thailand, official government and customs information describes restrictions concerning e-cigarette importation and related products. The applicable rules and enforcement position must be checked against current official sources before any operational use.
+- The system must not independently accuse, search, detain, confiscate, or make enforcement decisions. It must respect privacy, non-discrimination, lawful scope, evidence provenance and chain-of-custody requirements.
+- This is a proposed research category. No e-cigarette detector, nicotine/THC identifier, chemical-sensing integration or field performance is claimed as validated.
+
+**Background references:** [WHO — Tobacco: E-cigarettes](https://www.who.int/news-room/questions-and-answers/item/tobacco-e-cigarettes); [WHO — ENDS/ENNDS terminology](https://www.who.int/teams/health-promotion/tobacco-control/global-tobacco-control/ends); [Thai Customs Department](https://www.customs.go.th/).
+
 ## Real-world substance reference images — research scope
 
 These are **real reference photographs**, included to explain the project’s proposed research scope. They are not verified training samples and do not prove that an item contains a particular substance. Appearance varies by purity, processing, packaging, lighting and camera; many harmless materials look similar. A camera-only model must not label a substance as confirmed.
