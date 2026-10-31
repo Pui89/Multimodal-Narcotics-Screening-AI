@@ -23,6 +23,7 @@ def adapt_screening_mock(request: Any) -> dict[str, Any]:
     if not isinstance(request, dict):
         raise ValueError("request must be an object")
     reject_command_fields(request)
+    _reject_identity_or_enforcement(request)
     sample = request.get("mock_observation")
     if not isinstance(sample, dict):
         raise ValueError("mock_observation must be an object")
