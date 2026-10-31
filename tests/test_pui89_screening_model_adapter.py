@@ -31,6 +31,9 @@ class ScreeningModelAdapterTests(unittest.TestCase):
     def test_enforcement_action_rejected(self):
         q=request(); q["mock_observation"]["enforcement_action"]="detain"
         with self.assertRaises(ValueError): adapt_screening_mock(q)
+    def test_top_level_chemical_identity_rejected(self):
+        q=request(); q["chemical_identity"]="cocaine"
+        with self.assertRaises(ValueError): adapt_screening_mock(q)
     def test_hardware_command_rejected(self):
         q=request(); q["robot_command"]={"approach":"target"}
         with self.assertRaises(ValueError): adapt_screening_mock(q)
