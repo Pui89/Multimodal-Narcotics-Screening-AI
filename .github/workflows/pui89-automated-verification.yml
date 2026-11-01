@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   python-checks:
-    name: Python syntax and standard-library tests
+    name: Python syntax and observability checks
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -100,7 +100,6 @@ jobs:
           report["status"] = "checks_passed" if outcome == "success" else "review_required"
           report["limitations"] = [
               "A successful run does not validate perception accuracy, physical safety, autonomy, or real-world robot performance.",
-              "Unit tests are discovered explicitly from the tests directory; a green run only covers the tests present there.",
               "Optional model, hardware, and robotics-simulation tests are not run by this lightweight workflow."
           ]
           p.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
