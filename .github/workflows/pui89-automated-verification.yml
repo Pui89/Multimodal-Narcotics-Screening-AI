@@ -1,4 +1,4 @@
-name: PUI89 Automated Verification
+name: PUI89 Software and Observability Checks
 
 on:
   push:
@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   python-checks:
-    name: Python syntax and standard-library tests
+    name: Python syntax and observability checks
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -96,20 +96,19 @@ jobs:
           p = Path("pui89-verification-report.json")
           report = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
           outcome = os.environ.get("SMOKE_CHECK_OUTCOME", "unknown")
-          report["smoke_check_step_outcome"] = outcome
+          report["observability_smoke_test_outcome"] = outcome
           report["status"] = "checks_passed" if outcome == "success" else "review_required"
           report["limitations"] = [
               "A successful run does not validate perception accuracy, physical safety, autonomy, or real-world robot performance.",
-              "Unit tests are discovered explicitly from the tests directory; a green run only covers the tests present there.",
               "Optional model, hardware, and robotics-simulation tests are not run by this lightweight workflow."
           ]
           p.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
           Path("pui89-verification-summary.md").write_text(
-              "# PUI89 Automated Verification\n\n"
+              "# PUI89 Software and Observability Checks\n\n"
               f"- Project: {report.get('project', 'unknown')}\n"
               f"- Commit: {report.get('commit', 'unknown')}\n"
               f"- Python: {report.get('python', 'unknown')}\n"
-              f"- Unit-test step: {outcome}\n"
+              f"- Observability smoke test: {outcome}\n"
               f"- Status: {report['status']}\n\n"
               "This report covers software checks only. It is not evidence of real-world robot or AI performance.\n",
               encoding="utf-8")
