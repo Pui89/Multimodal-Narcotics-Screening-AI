@@ -75,8 +75,6 @@ The [Product Quality and Safety Roadmap](docs/PRODUCT_QUALITY_AND_SAFETY_ROADMAP
 
 ## PUI89 Sentinel — mobile robot concept and how it works
 
-![PUI89 Sentinel four-legged mobile inspection robot concept](docs/images/quadruped-screening-robot.svg)
-
 **PUI89 Sentinel** is the proposed mobile inspection assistant identity for this project: a compact four-legged platform with a protected central chassis, raised awareness mast, forward RGB/depth camera positions, a sealed modular payload bay and a human operator interface. It is a visual and engineering concept, not a built robot or validated narcotics detector.
 
 ### Proposed operating sequence
