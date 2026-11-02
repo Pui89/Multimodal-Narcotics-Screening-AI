@@ -5,6 +5,6 @@ models:
   temporal: {family: V-JEPA2, role: video_representation}
   anomaly: {role: open_set_unknown_detection}
   simulation:
-    world_model_candidates: [LTX-2.5-Diffusers, MiniMax-H3-Turbo-LoRA]
+    world_model_candidates: [LTX-2.5-Diffusers]
     action_model_candidates: [GR00T-N1.7, FLUX-3-Action-Base, SmolVLA, OpenVLA, pi0]
     direct_motor_authority: false
