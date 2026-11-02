@@ -417,15 +417,31 @@ python -m pytest -q tests/test_project_agent.py
 
 A dedicated [GitHub Actions workflow](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/workflows/agent-tests.yml) is configured to run the agent tests on Python 3.10, 3.11, and 3.12 when relevant files change. Check the Actions page for the actual run status; adding this workflow does not itself mean the tests have passed.
 
-## Support, sponsorship and open-source collaboration
+## Strategic partnerships, funding and collaboration
 
-PUI89 welcomes open-source contributions, multimodal evaluation expertise, authorised data-governance guidance, independent technical review, and scoped research or sponsorship discussions.
+### Help develop responsible multimodal inspection research
 
-- **Support and sponsorship brief:** [ways to collaborate with PUI89](https://github.com/Pui89/Pui89.github.io/blob/main/SUPPORT_AND_SPONSORSHIP.md)
-- **Project website:** [PUI89 AI Robotics](https://pui89.github.io/)
+This project explores a multimodal screening workflow and a dog-like mobile inspection-robot concept. Its intended role is decision support for authorised human reviewers—not autonomous enforcement or a claim that visual appearance can identify a chemical substance.
 
-Any data or testing proposal must be authorised, privacy-reviewed, and legally appropriate. Outputs are decision-support research only; images alone cannot establish chemical identity, and AI must not independently trigger enforcement action.
+**Who we would like to hear from**
+- **Universities and independent research teams** — sensor science, computer vision, multimodal evaluation, calibration, uncertainty, human factors and independent review.
+- **Inspection technology and instrument providers** — lawful, technically appropriate sensing options, calibration procedures and integration feasibility.
+- **Transport and facility operators** — authorised workflow discovery, privacy and safety requirements, and human-review process design.
+- **Accredited laboratories and domain experts** — confirmatory testing protocols, lawful sample handling, reference standards and expert-reviewed labels.
+- **Grant makers and innovation programmes** — support for scoped milestones such as sensor feasibility studies, data governance, benchmark design, calibration evaluation and safety analysis.
 
+**Potential first collaboration**
+Start with a lawful use case and a clearly defined physical quantity or sensor signal; establish data provenance, privacy and permissions; validate each modality independently; measure false positives and false negatives on appropriately separated, expert-reviewed data; and retain human confirmation and documented escalation. Any pilot must be authorised and governed by written procedures.
+
+**Current boundary:** this repository is a software workflow prototype and robotic inspection concept, not a validated narcotics detector or operational screening product. RGB images alone cannot establish chemical identity. No substance-identification accuracy, chemical/X-ray sensor integration, field performance or physical robot capability is claimed. AI outputs must not independently trigger search, detention, enforcement or other consequential action.
+
+**Start a conversation**
+- [Strategic partnership and funding enquiries](https://pui89.github.io/support.html#partner-pathways)
+- [ภาษาไทย: ความร่วมมือเชิงกลยุทธ์](https://pui89.github.io/support-th.html#partner-pathways)
+- [PUI89 project website](https://pui89.github.io/)
+- [PUI89 support and sponsorship brief](https://github.com/Pui89/Pui89.github.io/blob/main/SUPPORT_AND_SPONSORSHIP.md)
+
+Please describe the authorised use case, relevant sensing expertise or resources, governance requirements, and the milestone you would like to explore. No funding, agency endorsement, deployment or detection capability is implied by an enquiry. Data, sample access, privacy, costs, intellectual property, responsibilities and pilot scope must be agreed in writing before work begins.
 ## Latest engineering update — 21 October 2026
 
 - **Safety input validation:** [PR #14](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/pull/14) is merged. The software gate rejects malformed thresholds and invalid navigation inputs rather than treating ambiguous values as safe.
