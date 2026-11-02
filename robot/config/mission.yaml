@@ -16,7 +16,7 @@ perception:
   nir: optional
   detector: YOLO
   segmentation: SAM3
-  reasoning: Qwen3-VL
+  reasoning: Gemma4-E4B-it
 safety:
   physical_estop_required: true
   deterministic_gate_required: true

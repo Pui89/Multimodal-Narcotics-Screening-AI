@@ -1,8 +1,7 @@
 models:
   detector: {family: YOLO, role: object_detection}
   segmenter: {family: SAM3, role: instance_segmentation}
-  vlm_primary: {family: Qwen3-VL, role: multimodal_reasoning}
-  vlm_secondary: {family: Gemma4-E4B-it, role: independent_review}
+  vlm_primary: {family: Gemma4-E4B-it, role: multimodal_reasoning}
   temporal: {family: V-JEPA2, role: video_representation}
   anomaly: {role: open_set_unknown_detection}
   simulation:

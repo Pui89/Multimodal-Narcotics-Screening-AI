@@ -7,8 +7,7 @@ perception:
   tracking: true
   anomaly_detection: true
   unknown_class_required: true
-  reasoning_primary: Qwen3-VL
-  reasoning_secondary: Gemma4-E4B-it
+  reasoning_primary: Gemma4-E4B-it
 sensors:
   rgb: true
   rgbd: true
