@@ -2,7 +2,7 @@
 
 Perception: RGB/RGB-D/thermal/NIR/LiDAR -> YOLO-family detection -> SAM3-style masks -> tracking -> depth/LiDAR 3D evidence -> open-set anomaly detection.
 
-Reasoning: Qwen3-VL and Gemma4-E4B-it can provide independent review aids; V-JEPA2-style temporal representations can add video context. Outputs remain hypotheses with uncertainty.
+Reasoning: Gemma4-E4B-it provides multimodal scene reasoning; V-JEPA2-style temporal representations can add video context. Outputs remain hypotheses with uncertainty and require human review.
 
 Navigation: LiDAR/depth/IMU SLAM -> local map -> Nav2/planner -> optional MPC -> deterministic safety gate -> ROS2 controller.
 
