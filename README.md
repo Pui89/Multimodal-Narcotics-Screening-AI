@@ -741,3 +741,22 @@ See the [PUI89 Master Roadmap](https://github.com/Pui89/Pui89.github.io/blob/mai
 The [lightweight verification run](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/40878549402) completed successfully. Its workflow passed Python syntax compilation and a dependency-free observability smoke check. [Verification report artifact](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/40878549402/artifacts/12899860349).
 
 This lightweight job is not a full model/sensor benchmark. The selected PUI89 combined run passed 13 shared-core tests for this project, but no substance-specific performance, chemical-identification, X-ray, sensor-calibration or physical quadruped capability is established by those checks. RGB appearance alone cannot confirm chemical identity; consequential alerts require appropriate sensing evidence and human review.
+
+## Strategic adoption — why partner with this project
+
+**The opportunity:** research a human-supervised, multimodal inspection workflow that could help authorised operators organise sensor evidence and identify cases that require further review. The proposed dog-inspired mobile platform is a concept, not a deployed screening robot.
+
+**Why it matters:** screening environments need consistent procedures, traceable evidence and careful handling of uncertain or conflicting sensor readings. A responsible system should support trained personnel with transparent evidence—not make accusations or enforcement decisions.
+
+**What a partner can support now**
+- **Research and sensor partners:** identify lawful, appropriate sensing modalities and document exactly what physical quantity each instrument measures.
+- **Transport and facility operators:** review permitted use cases, privacy, accessibility, pedestrian safety and human-review workflows.
+- **Academic, legal and funding partners:** help establish lawful data provenance, calibration protocols, independent evaluation and governance safeguards.
+
+**Evidence before promises:** no validated substance-identification accuracy, chemical-sensor integration, X-ray performance or physical quadruped capability is established here. RGB appearance or an AI score alone cannot confirm chemical identity. AI must not independently accuse, detain, search or make enforcement decisions; consequential decisions remain with authorised human personnel under applicable law.
+
+**Next collaboration milestone:** define one lawful, narrowly scoped use case and its sensor measurement requirements, then publish a modality-by-modality evaluation protocol with false-positive, false-negative, calibration and human-review criteria before any performance claim.
+
+**Explore a collaboration:** open a [GitHub Discussion](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/discussions) or contact the PUI89 project owner through the public GitHub profile. A first step can be a research, sensor or governance review; no purchase commitment is implied.
+
+*Partner message: help build a transparent, human-centred inspection workflow where evidence, rights and accountability come first.*
