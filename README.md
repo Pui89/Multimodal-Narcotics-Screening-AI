@@ -73,6 +73,27 @@ The [Product Quality and Safety Roadmap](docs/PRODUCT_QUALITY_AND_SAFETY_ROADMAP
 
 **Design direction:** mobile quadruped + spatial awareness + optional modular screening sensors + human operator oversight. Movement speed must be limited by validated safety performance, and the robot must slow or stop near people.
 
+## PUI89 Sentinel — mobile robot concept and how it works
+
+**PUI89 Sentinel** is the proposed mobile inspection assistant identity for this project: a compact four-legged platform with a protected central chassis, raised awareness mast, forward RGB/depth camera positions, a sealed modular payload bay and a human operator interface. It is a visual and engineering concept, not a built robot or validated narcotics detector.
+
+### Proposed operating sequence
+
+1. **Authorise:** a trained operator sets the permitted purpose, area, route, time and data limits.
+2. **Navigate safely:** bounded low-speed movement; yield to people and enter safe-hold on stale navigation, obstruction, communications loss or safety fault.
+3. **Check evidence:** configured modalities are checked independently for provenance, timestamp, quality and calibration.
+4. **Handle uncertainty:** missing or conflicting data remains UNKNOWN/CONFLICT; it is not silently guessed or replaced.
+5. **Support human review:** the system may create a neutral review task. An AI alert is not proof of a substance or offence.
+6. **Audit:** retain the evidence references, software version, uncertainty and authorised reviewer outcome under the applicable data rules.
+
+No facial recognition, biometric identification, person profiling, autonomous accusation, detention, search, seizure or enforcement decision is permitted. RGB appearance alone cannot identify chemical contents. Optional X-ray or analytical sensors require suitable equipment, lawful authority, calibration and independent validation.
+
+- **Robot engineering concept:** [PUI89 Sentinel concept](docs/PUI89_SENTINEL_ROBOT_CONCEPT.md)
+- **4D animation storyboard:** [30-second time-based storyboard](docs/4d-video-storyboard.md)
+- **Concept illustration:** [quadruped robot SVG](docs/images/quadruped-screening-robot.svg)
+
+**Evidence status:** software workflow prototype + proposed robot design only. Mobility, sensor payload, chemical identification, class-specific accuracy and field performance are NOT VALIDATED.
+
 ## Free-first offline engineering tools
 
 - **Free robotics stack selection:** [open-source systems, licence notes and adoption gates](docs/FREE_ROBOTICS_STACK_ADOPTION.md). These are recommendations only; no robotics packages or model weights are installed or downloaded by this PR.
