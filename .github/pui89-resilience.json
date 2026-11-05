@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "standard": "PUI89-TOTAL-RESILIENCE",
+  "project": "Multimodal Narcotics Screening AI",
+  "project_type": "multimodal-screening-and-robotic-inspection-concept",
+  "status": "policy-baseline-only; detection performance and physical protections not verified",
+  "protection_domains": {
+    "cybersecurity": "secure data/model access, prompt-injection resistance, provenance, dependency/supply-chain review",
+    "water_environment": "dust, humidity, cleaning exposure, enclosure requirements for mobile platform",
+    "fire_heat_power": "battery/controller thermal protection and electrical isolation",
+    "communications": "secure transfer, network loss, stale inputs, sensor disconnection",
+    "ai_data": "adversarial inputs, false positives/negatives, poisoning, calibration, uncertainty, privacy, dataset provenance",
+    "mechanical": "collision avoidance, speed limits, stability, emergency stop",
+    "human_mission": "qualified human review, no autonomous accusation/enforcement, privacy and auditability"
+  },
+  "project_specific_hazards": [
+    "false positive or false negative",
+    "manipulated image/audio inputs",
+    "privacy-sensitive screening data",
+    "automation bias",
+    "human-review failure"
+  ]
+}
