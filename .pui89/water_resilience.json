@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "project": "Multimodal Narcotics Screening AI",
+  "exposure": "Rain, splash, cleaning moisture and humid transport-hub environments",
+  "sensors": [
+    "enclosure_leak_sensor",
+    "internal_humidity_sensor",
+    "electronics_temperature_sensor",
+    "battery_health_monitor"
+  ],
+  "temperature_limit_c": 60,
+  "physical_validation": "NOT_PERFORMED",
+  "hardware_integration": "NOT_CONFIRMED",
+  "ip_rating": "NOT_CLAIMED",
+  "project_notes": "Protect mobile inspection electronics and sensing payloads. Keep sensor apertures and any chemical/X-ray instrumentation within manufacturer environmental limits."
+}
