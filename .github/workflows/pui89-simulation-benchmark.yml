@@ -41,7 +41,7 @@ jobs:
           test -n "$report"
           python tools/validate_simulation_report.py --report "$report" --config simulation/scenarios.json
       - name: Upload JSON and CSV evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: pui89-simulation-benchmark
           path: reports/simulation/
