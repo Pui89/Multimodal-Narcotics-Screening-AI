@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 MODEL_ID = "google/owlvit-base-patch32"
-MODEL_REVISION = "main"
+MODEL_REVISION = "cbc355fb364588351c5d51c7f74465e8e7ec6f72"
 PROJECT = "Multimodal-Narcotics-Screening-AI"
 DEFAULT_LABELS = ["sealed parcel","bag","bottle","container","luggage","document","person"]
 TASK_SCOPE = "Package and scene-context localization only; not substance identification, intent or guilt inference, person ranking, or enforcement."
