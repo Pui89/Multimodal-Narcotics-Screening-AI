@@ -782,55 +782,6 @@ This lightweight job is not a full model/sensor benchmark. The selected PUI89 co
 
 *Partner message: help build a transparent, human-centred inspection workflow where evidence, rights and accountability come first.*
 
-## Hugging Face model candidates — Non-Chinese origin only
-
-**PUI89 mandatory rule:** use only models with verified non-Chinese developer and checkpoint provenance. Unknown or unclear origin means exclude. This section is a candidate list only; no weights have been downloaded, installed, or evaluated.
-
-| Candidate checkpoint | Research role | Status |
-|---|---|---|
-| [microsoft/Florence-2-base](https://huggingface.co/microsoft/Florence-2-base) | RGB image description, OCR and candidate region localization | CANDIDATE — review required |
-| [facebook/dinov2-base](https://huggingface.co/facebook/dinov2-base) | Visual feature extraction for controlled research datasets | CANDIDATE — review required |
-| [google/siglip2-base-patch16-224](https://huggingface.co/google/siglip2-base-patch16-224) | Text-image similarity for research triage only | CANDIDATE — review required |
-
-These are not narcotics identification models. Do not infer substance identity from appearance or use them for enforcement, accusation, search, detention or other consequential decisions. X-ray and chemical-sensor modalities require separately sourced, validated models and instrument data.
-
-**Adoption gates:** verify the exact checkpoint's developer, origin, immutable revision, model-card and file licence, training-data disclosures, code/dependency security, file format, hardware fit and total cost before any download or execution. No paid APIs, hosted inference, cloud GPUs, automatic downloads or direct physical control. Florence-2 requires extra source review because its documented loader uses trust_remote_code=True. All models remain research-only until independently evaluated and approved.
-
-**Shared policy:** [PUI89 Hugging Face Model Policy](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_HUGGINGFACE_MODEL_POLICY.md).
-
-## Robotics foundation model candidates — Non-Chinese origin only
-
-### Shortlisted candidate: SmolVLA
-
-- Checkpoint: [`lerobot/smolvla_base`](https://huggingface.co/lerobot/smolvla_base)
-- Publisher/developer: Hugging Face / LeRobot
-- Model-card licence: Apache-2.0
-- Size: 450 million parameters
-- Type: Vision-Language-Action (VLA); consumes camera images, robot state and an optional language instruction, and predicts continuous action sequences.
-- Status: **CANDIDATE ONLY — not downloaded, installed, tested or approved for physical deployment.**
-
-The model card describes SmolVLA as a compact VLA designed for robot manipulation research. It still requires robot-specific demonstrations, fine-tuning and evaluation; the published training guidance uses a GPU. Its 450M parameter count does not guarantee it will run acceptably on this project's available hardware or without cost.
-
-### Project fit and limits
-
-- **Coconut Harvest AI:** possible simulation-only research for a robot arm's bounded grasp/reach/cut-preparation proposal. It is not validated for harvesting, outdoor conditions, people/animals nearby, coconut mass, cutting forces or the 0–30 m operating concept. Cutting and release must remain independently guarded and human-supervised.
-- **Flood Rescue AI:** not suitable as boat navigation, water-current control, rescue approach or propulsion policy. Consider only if a separate manipulator is designed, and then only in a controlled simulator with bounded proposals.
-- **Sentinel Multimodal Screening AI:** not a substance-identification, search, enforcement or autonomous screening model. Consider only for a future non-consequential manipulator research task, if one is defined; otherwise do not integrate.
-- **AI HOME:** not a general indoor mobile-navigation or hazard-response policy. Do not use for driving wheels, stairs, doors, appliance control or emergency response. A future arm/gripper task would require separate robot-specific validation.
-- **AI NOMAD:** **not recommended for quadruped locomotion, gait, balance, foothold selection or outdoor navigation.** SmolVLA's manipulation focus does not establish dog-like mobility capability.
-- **AI Car:** **not suitable for vehicle control.** No steering, throttle, braking, gear, propulsion or road-decision authority.
-- **AI Motorcycle / EasyRide:** **not suitable for motorcycle control.** No steering, throttle, braking, balance, motor or rider-safety authority.
-
-### Additional candidates not approved
-
-- **OpenVLA 7B** ([model card](https://huggingface.co/openvla/openvla-7b)): research reference only, **HOLD — LICENCE REVIEW REQUIRED**. Although the Hugging Face card labels the checkpoint MIT, the upstream OpenVLA repository warns that the pretrained weights may inherit the Llama 2 Community License. The 7B model also has substantial compute needs and documents remote custom code. Do not adopt, download or commercially use until the exact weight terms and code are reconciled.
-
-### Robotics safety rule
-
-A VLA predicts actions; it is not a safety controller. In PUI89 it may only produce a bounded, logged **ActionProposal** for a simulator or an independently reviewed offline experiment. It must never issue actuator commands. Require typed observations, robot-specific coordinate/action mapping, joint and workspace limits, collision checks, speed/force limits, emergency stop, watchdog, deterministic safety interlocks, human approval, and a verified safe fallback outside the model. No physical robot tests are authorized by this documentation.
-
-
-
 ## Real Hugging Face model integration — offline OWL-ViT
 
 This repository now contains an executable inference adapter for the real Hugging Face checkpoint **[google/owlvit-base-patch32](https://huggingface.co/google/owlvit-base-patch32)**. It runs zero-shot, text-conditioned object detection against a local image and writes a JSON evidence report with image SHA-256, model ID/revision, candidate labels, scores and bounding boxes.
