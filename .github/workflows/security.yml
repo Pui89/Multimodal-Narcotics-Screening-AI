@@ -44,8 +44,12 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Install lightweight static security tool
-        run: python -m pip install --disable-pip-version-check bandit
+      - name: Install security tools in the ephemeral runner
+        run: |
+          python -m pip install --upgrade pip setuptools
+          python -m pip install --disable-pip-version-check bandit pip-audit
+      - name: Audit installed dependencies
+        run: pip-audit
       - name: Static security analysis
         run: bandit -r src -ll
 
