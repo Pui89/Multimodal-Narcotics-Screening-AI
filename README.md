@@ -781,3 +781,13 @@ This lightweight job is not a full model/sensor benchmark. The selected PUI89 co
 **Explore a collaboration:** open a [GitHub Discussion](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/discussions) or contact the PUI89 project owner through the public GitHub profile. A first step can be a research, sensor or governance review; no purchase commitment is implied.
 
 *Partner message: help build a transparent, human-centred inspection workflow where evidence, rights and accountability come first.*
+
+
+## Hugging Face vision models — opt-in local integration
+
+This repository now includes real Hugging Face checkpoint adapters in [`pui89_models/hf_vision.py`](pui89_models/hf_vision.py), with project-specific usage boundaries in [`docs/HUGGING_FACE_MODEL_INTEGRATION.md`](docs/HUGGING_FACE_MODEL_INTEGRATION.md).
+
+- **OWLv2:** `google/owlv2-base-patch16-ensemble` for text-conditioned object proposals.
+- **Depth Anything V2 Small:** `depth-anything/Depth-Anything-V2-Small-hf` for relative scene depth where appropriate; not calibrated distance or physical depth.
+- **Zero-cost default:** no packages or model weights are installed/downloaded automatically; CPU-only inference, local cache only by default, no hosted inference API or cloud GPU.
+- **Evidence status:** adapter code is added; model inference and project-specific accuracy are NOT YET TESTED. Outputs remain uncertain observations for human review, never actuator commands.
