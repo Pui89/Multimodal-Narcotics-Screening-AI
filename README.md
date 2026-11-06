@@ -781,3 +781,20 @@ This lightweight job is not a full model/sensor benchmark. The selected PUI89 co
 **Explore a collaboration:** open a [GitHub Discussion](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/discussions) or contact the PUI89 project owner through the public GitHub profile. A first step can be a research, sensor or governance review; no purchase commitment is implied.
 
 *Partner message: help build a transparent, human-centred inspection workflow where evidence, rights and accountability come first.*
+
+## Hugging Face model candidates — Non-Chinese origin only
+
+**PUI89 mandatory rule:** use only models with verified non-Chinese developer and checkpoint provenance. Unknown or unclear origin means exclude. This section is a candidate list only; no weights have been downloaded, installed, or evaluated.
+
+| Candidate checkpoint | Research role | Status |
+|---|---|---|
+| [microsoft/Florence-2-base](https://huggingface.co/microsoft/Florence-2-base) | RGB image description, OCR and candidate region localization | CANDIDATE — review required |
+| [facebook/dinov2-base](https://huggingface.co/facebook/dinov2-base) | Visual feature extraction for controlled research datasets | CANDIDATE — review required |
+| [google/siglip2-base-patch16-224](https://huggingface.co/google/siglip2-base-patch16-224) | Text-image similarity for research triage only | CANDIDATE — review required |
+
+These are not narcotics identification models. Do not infer substance identity from appearance or use them for enforcement, accusation, search, detention or other consequential decisions. X-ray and chemical-sensor modalities require separately sourced, validated models and instrument data.
+
+**Adoption gates:** verify the exact checkpoint's developer, origin, immutable revision, model-card and file licence, training-data disclosures, code/dependency security, file format, hardware fit and total cost before any download or execution. No paid APIs, hosted inference, cloud GPUs, automatic downloads or direct physical control. Florence-2 requires extra source review because its documented loader uses trust_remote_code=True. All models remain research-only until independently evaluated and approved.
+
+**Shared policy:** [PUI89 Hugging Face Model Policy](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_HUGGINGFACE_MODEL_POLICY.md).
+
