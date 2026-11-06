@@ -71,6 +71,28 @@
       "domain": "mechanical",
       "expected_warning": "CRITICAL_OR_UNKNOWN_DEGRADED",
       "expected_behavior": "Inhibit operation that depends on the unavailable safety function until inspected."
+    },
+    {
+      "id": "SCREEN-001",
+      "name": "RGB and secondary sensor evidence conflict",
+      "domain": "ai_data",
+      "expected_warning": "UNKNOWN_DEGRADED",
+      "expected_behavior": "Return inconclusive and route to qualified human review; preserve each modality's provenance."
+    },
+    {
+      "id": "SCREEN-002",
+      "name": "Calibration drift or sensor health check fails",
+      "domain": "ai_data",
+      "expected_warning": "WARNING",
+      "expected_behavior": "Mark affected modality invalid until calibration and maintenance evidence are restored."
+    },
+    {
+      "id": "SCREEN-003",
+      "name": "Possible positive result with weak or incomplete evidence",
+      "domain": "human_mission",
+      "expected_warning": "UNKNOWN_DEGRADED",
+      "expected_behavior": "Do not accuse or enforce; preserve uncertainty and require qualified human assessment."
     }
-  ]
+  ],
+  "project": "multimodal-narcotics-screening-ai"
 }
