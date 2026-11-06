@@ -23,3 +23,8 @@ Please do not publish exploit details, credentials, personal data, or a working 
 
 ## Disclosure
 Please allow the maintainer reasonable time to investigate and prepare a fix before sharing technical details publicly.
+
+
+## Automated security verification
+
+Security checks are run through the repository's GitHub Actions security workflow when relevant source, dependency, workflow, or security-policy files change. Depending on the workflow configuration, checks may include secret-pattern detection, dependency vulnerability auditing, static analysis, and CodeQL. A configured check is not evidence of a clean result: verify the latest workflow run and retain its logs before marking a control as passed. No AI model or robot/vehicle command is authorized by a successful software scan. Verify current GitHub Actions billing terms and usage limits before enabling additional workflows or services.
