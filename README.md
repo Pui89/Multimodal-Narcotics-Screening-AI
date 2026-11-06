@@ -781,3 +781,8 @@ This lightweight job is not a full model/sensor benchmark. The selected PUI89 co
 **Explore a collaboration:** open a [GitHub Discussion](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/discussions) or contact the PUI89 project owner through the public GitHub profile. A first step can be a research, sensor or governance review; no purchase commitment is implied.
 
 *Partner message: help build a transparent, human-centred inspection workflow where evidence, rights and accountability come first.*
+
+
+## Commercial product readiness
+
+This project follows the [PUI89 Commercial Product & Company-Readiness Standard](PUI89_COMMERCIAL_PRODUCT_STANDARD.md). Commercial use of original materials is governed by the root [LICENSE](LICENSE); third-party assets retain their own terms. Commercial readiness, safety, certification and product performance must be demonstrated with evidence before sale or deployment.
