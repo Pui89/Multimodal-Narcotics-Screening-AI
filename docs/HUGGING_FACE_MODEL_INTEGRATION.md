@@ -9,7 +9,7 @@ This project now has an opt-in local adapter at [`pui89_models/hf_vision.py`](..
 | Checkpoint | Task | Licence shown on model card | Use in this project |
 |---|---|---|---|
 | [google/owlv2-base-patch16-ensemble](https://huggingface.co/google/owlv2-base-patch16-ensemble) | Text-conditioned, open-vocabulary object detection | Apache-2.0 | Generic packaging/object localization only; never substance identification or enforcement. |
-| [depth-anything/Depth-Anything-V2-Small-hf](https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf) | Monocular relative-depth estimation | Apache-2.0 | Not used for screening decisions. |
+| [Intel/dpt-hybrid-midas](https://huggingface.co/Intel/dpt-hybrid-midas) | Monocular relative-depth estimation | Apache-2.0 | Not used for screening decisions. |
 
 Model-card licences are checkpoint-level information, not a blanket clearance for datasets, dependencies, downstream uses or every project jurisdiction. Recheck the model card, terms, provenance and security before release.
 
@@ -43,12 +43,12 @@ The first run fails clearly if the model is not already cached. It will not sile
 ## Project-specific boundaries
 
 - **OWLv2:** Restricted to generic, non-sensitive object/packaging localization in controlled research imagery. Do not prompt it to identify narcotics or infer chemical identity, intent, guilt or risk. No enforcement, border, policing or consequential person-level decision use.
-- **Depth Anything V2:** Not enabled for screening decisions. RGB appearance and monocular depth cannot establish chemical identity. Use validated instrument outputs, lawful provenance and authorised human review for any modality-specific research.
+- **Intel DPT-Hybrid:** Not enabled for screening decisions. RGB appearance and monocular depth cannot establish chemical identity. Use validated instrument outputs, lawful provenance and authorised human review for any modality-specific research.
 
 ## Important limitations
 
 - OWLv2 is an open-vocabulary proposal model, not a project-trained detector. A text prompt does not establish that an object is present.
-- Depth Anything V2 produces **relative monocular depth**, not calibrated metric distance. It must not be reported as exact range, flood depth, coconut height, clearance or braking distance.
+- Intel DPT-Hybrid produces **relative monocular depth**, not calibrated metric distance. It must not be reported as exact range, flood depth, coconut height, clearance or braking distance.
 - Neither model controls motors, steering, brakes, cutters, valves, alarms, locks or other actuators.
 - Preserve source, timestamp, image quality, model ID/revision, prompt, threshold, raw output, uncertainty and human-review outcome in the project's evidence records.
 - Unknown, conflicting, low-quality or out-of-distribution results must remain unknown and go to human review.
