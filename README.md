@@ -1,5 +1,13 @@
 # Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
 
+## Project website
+
+- **English:** https://pui89.github.io/screening.html
+- **ภาษาไทย:** https://pui89.github.io/screening-th.html
+- **PUI89 main website:** https://pui89.github.io/
+
+
+
 
 > **Free-source / cost guard:** [PUI89 zero-cost upgrade policy](docs/PUI89_ZERO_COST_UPGRADE_POLICY.md) — no paid API, cloud GPU, scheduled jobs, or automatic model downloads by default.
 
