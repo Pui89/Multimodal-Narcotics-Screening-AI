@@ -1,5 +1,24 @@
 # Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
 
+
+## PUI89 — Intelligent Systems. Verifiable Decisions. Safer Outcomes.
+
+PUI89 develops intelligent software and next-generation robotic systems for practical challenges across agriculture, emergency response, multimodal inspection, home environments and mobility. Our engineering approach integrates perception, contextual reasoning, decision intelligence, safety engineering and evidence-led validation.
+
+### Engineering capabilities
+
+- **Perception and sensing:** visual, spatial and multimodal information processing.
+- **Context and reasoning:** world-state representation, uncertainty handling and evidence alignment.
+- **Decision intelligence:** structured recommendations, action proposals and human approval boundaries.
+- **Safety engineering:** risk-aware operating limits, safe-state logic and failure reporting.
+- **Verification and assurance:** reproducible tests, benchmark records, provenance and traceable engineering evidence.
+
+### Technology governance
+
+PUI89 selects and integrates technologies according to capability, provenance, security, licence obligations, maintainability, interoperability and operational suitability. Product claims are grounded in documented implementation and validation rather than a list of underlying components. Required third-party notices and attributions remain in the appropriate technical and legal records.
+
+**Development principle:** distinguish implemented capabilities, tested software behaviour, simulation results, proposed designs and independently validated real-world performance. A concept or passing software test is not represented as a commercially validated physical product.
+
 ## Commercial readiness progress
 
 **45% — evidence-based commercial-readiness estimate**  
@@ -133,7 +152,7 @@ No facial recognition, biometric identification, person profiling, autonomous ac
 
 ## local-first offline engineering tools
 
-- **Robotics stack selection:** [open-source systems, licence notes and adoption gates](docs/FREE_ROBOTICS_STACK_ADOPTION.md). These are recommendations only; no robotics packages or model weights are installed or downloaded by this PR.
+- **Robotics stack selection:** [selected systems, licence notes and adoption gates](docs/FREE_ROBOTICS_STACK_ADOPTION.md). These are recommendations only; no robotics packages or model weights are installed or downloaded by this PR.
 - **local agentic AI:** [optional agents, local runtimes, licence notes and safety gates](docs/LOCAL_AGENTIC_AI.md); discover what's already installed with `python tools/check_optional_resources.py`. No models or packages are downloaded automatically.
 - **Model-optional agentic workflow:** `agents/agentic_workflow.py` sequences input validation, the existing decision agent, a policy gate and an evidence-hash report; it requires human review and never runs actions.
 - **Run the local agentic workflow:** `python -m tools.run_agentic_workflow --input examples/agentic_workflow.synthetic.json` — standard-library only; synthetic inputs, review output, no model download or actuator control.
@@ -407,7 +426,7 @@ The following are proposed improvements, not claims that the capabilities alread
 | Sensor integration | The software can represent and review multiple modality inputs; validated real-sensor fusion is not established |
 | Screening performance | No representative independent real-data benchmark establishes reliable narcotics detection or chemical identification |
 | Safety and privacy boundary | Outputs are screening signals for authorised human review, never proof of substance identity or wrongdoing; no automatic enforcement decision |
-| Development approach | Local-first, privacy-conscious, and open-source where practical |
+| Development approach | Local-first, privacy-conscious, and selected where practical |
 | Immediate focus | Use lawful, appropriately licensed and expert-reviewed data; test missing/conflicting/noisy inputs; measure false positives, false negatives, calibration and human-review routing |
 
 **Explore:** [Complete-system blueprint](docs/COMPLETE_SYSTEM_BLUEPRINT.md) · [Validation matrix](docs/VALIDATION_MATRIX.md) · [Evaluation guide](docs/EVALUATION.md) · [Automated tests](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions)
@@ -589,7 +608,7 @@ The latest local-first regression workflow passed on the current main-branch cha
 - **Continuing:** define the lawful task; check provenance/licences and labels; expand tests for missing/conflicting modalities, uncertainty, calibration and abstention to UNKNOWN/human review.
 - **Next:** secure lawful, expert-reviewed data; prevent duplicate leakage; compare single-modality baselines with fusion only when suitable aligned data exist; report false positives/negatives and calibration.
 - **Future:** test distribution shifts, sensor failure, privacy and auditability before any independently reviewed pilot.
-- **Corrections:** synthetic test scores are not screening accuracy; pharmaceutical pill imagery is not proof of illicit-narcotics detection; images alone cannot confirm chemical identity. AI must not independently trigger enforcement action. Open-source-first.
+- **Corrections:** synthetic test scores are not screening accuracy; pharmaceutical pill imagery is not proof of illicit-narcotics detection; images alone cannot confirm chemical identity. AI must not independently trigger enforcement action. selected-first.
 
 ## Project status overview — updated 18 October 2026
 
@@ -729,7 +748,7 @@ Run `python tools/free_first_audit.py` from the repository root to create a loca
 
 - Prioritise lawful data provenance, modality availability, privacy-minimised evidence records and human-reviewed false-positive/false-negative evaluation.
 - The report inventories data files and hashes manageable files, flags Python syntax errors, and notes candidate dataset documentation. It does **not** verify licences, annotations, model accuracy, physical safety, or real-world performance; a human must review those items.
-- Suggested open-source technology is already documented in this repository's adoption plan. Evaluate ROS 2/Gazebo or MoveIt only when the project needs simulation or manipulation integration; these tools are not installed by this audit.
+- Suggested selected technology is already documented in this repository's adoption plan. Evaluate ROS 2/Gazebo or MoveIt only when the project needs simulation or manipulation integration; these tools are not installed by this audit.
 
 ## local-first startup toolkit
 
