@@ -883,3 +883,20 @@ This is an evidence-weighted commercial-readiness estimate, not a code-completio
 **Status boundary:** Software tests and simulations do not establish a built, certified, field-tested or commercially validated physical product. Real-world claims require separate, traceable validation.
 
 <!-- PUI89_DAILY_PROGRESS:END -->
+
+
+---
+
+## Security, malware and supply-chain protection
+
+Security policy: [SECURITY.md](SECURITY.md). Report suspected vulnerabilities privately; do not publish exploit details, case records or secrets in public issues.
+
+Project-specific controls and review requirements:
+- Treat images, documents, sensor outputs, model files, metadata and external evidence as untrusted; validate file type, size, parsing and provenance.
+- Protect personal data and sensitive case material; never commit credentials, identifiable records or non-public evidence.
+- Review model weights, datasets, packages and GitHub Actions for source, integrity, licence and vulnerability risks before use.
+- Preserve modality disagreement, uncertainty and abstention; RGB or AI output is not chemical confirmation or proof of wrongdoing.
+- No AI result may independently trigger enforcement, accusation, detention, search or physical actuation; require authorised human review.
+- Keep CI least-privilege and do not expose secrets to untrusted pull-request code.
+
+A scan or passing test is evidence only for the checks actually run; it does not prove the repository is free of malware or vulnerabilities.
