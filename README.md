@@ -4,6 +4,24 @@
 
 <table><tr><td align="center"><strong>English website</strong><br><a href="https://pui89.github.io/screening.html"><img src="https://pui89.github.io/qr/screening-en.png" width="160" alt="Multimodal Narcotics Screening AI English website QR code"></a><br><a href="https://pui89.github.io/screening.html">Open English website</a></td><td align="center"><strong>เว็บไซต์ภาษาไทย</strong><br><a href="https://pui89.github.io/screening-th.html"><img src="https://pui89.github.io/qr/screening-th.png" width="160" alt="QR Code เว็บไซต์ภาษาไทย Multimodal Narcotics Screening AI"></a><br><a href="https://pui89.github.io/screening-th.html">เปิดเว็บไซต์ภาษาไทย</a></td></tr></table>
 
+## PUI89 product maturity snapshot — 7 November 2026
+
+**Strategic direction: From AI Projects to AI Products.**  
+**Current maturity: Grade 2 — Engineering Foundation.** The repository has a screening-workflow software prototype, shared evidence checks and synthetic scenario evaluation; it is not a validated narcotics detector or enforcement system.
+
+| Area | Verified position |
+|---|---|
+| Software foundation | Shared-core and evidence-benchmark checks are present; the 1 November benchmark workflow reported 6 standard-library tests passing. |
+| Synthetic evaluation | Earlier recorded rule-based evaluation completed 7/7 scenarios and 9/9 steps. These results test defined software scenarios, not substance-identification accuracy. |
+| Modalities and models | RGB, X-ray and chemical-sensor inputs are research directions unless actual lawful data, calibrated instruments and modality-specific validation are documented. Model inference and class-specific accuracy must not be assumed. |
+| Human and physical safety | Human review, uncertainty reporting, provenance and calibration are essential. No autonomous enforcement decision or validated robotic screening performance is claimed. |
+
+**Next product gate:** specify each sensor's measured physical quantity and operating limits; document lawful sample/data provenance and calibration; evaluate each modality independently and in combination using representative, independently labelled data. Report class-specific false positives/negatives, uncertainty, missing/conflicting modality behaviour and human-review outcomes.
+
+**Product discipline:** RGB appearance alone cannot confirm chemical identity. Keep all consequential decisions with authorised human reviewers; do not claim detection accuracy, field readiness or enforcement capability without independent evidence. No paid API, cloud GPU, automatic model download or physical robot actuation is part of this update.
+
+
+
 ## Project website
 
 - **English:** https://pui89.github.io/screening.html
