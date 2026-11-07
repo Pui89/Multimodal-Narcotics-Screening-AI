@@ -165,7 +165,7 @@ No facial recognition, biometric identification, person profiling, autonomous ac
 
 ## Frontier AI technology and local-first upgrade plan
 
-Current gaps, recent technology directions, open-source-first adoption gates, and project-specific next steps: [Frontier technology gap and local-first plan](docs/FRONTIER_TECHNOLOGY_GAP_AND_FREE_PLAN.md). No large model or simulator is installed automatically; verify licences, download size, hardware fit and licences and resource requirements first. Project-specific implementation priorities: [Frontier AI upgrade plan](docs/FRONTIER_AI_UPGRADE_PLAN.md).
+Current gaps, recent technology directions, open-source-first adoption gates, and project-specific next steps: [Frontier technology gap and local-first plan](docs/FRONTIER_TECHNOLOGY_GAP_AND_FREE_PLAN.md). No large model or simulator is installed automatically; verify licences, download size, hardware fit and resource requirements first. Project-specific implementation priorities: [Frontier AI upgrade plan](docs/FRONTIER_AI_UPGRADE_PLAN.md).
 
 **Robot product name: PUI89 Sentinel**
 
@@ -748,7 +748,7 @@ Run `python tools/free_first_audit.py` from the repository root to create a loca
 
 See [local-first Product and Engineering Toolkit](docs/FREE_FIRST_STARTUP_TOOLKIT.md) for resource-adoption checks, recommended local-first workflows, project-specific validation rules, and evidence standards. The guide does not require paid APIs, subscriptions, cloud GPUs, or automatic model downloads.
 
-See [Marketing, SEO and Sales Playbook](docs/MARKETING_SEO_SALES_PLAYBOOK.md) for a local-first product page, evidence-led messaging, customer discovery, search visibility, and outreach guidance. No marketing subscription or ad spend is required.
+See [Marketing, SEO and Sales Playbook](docs/MARKETING_SEO_SALES_PLAYBOOK.md) for a local-first product page, evidence-led messaging, customer discovery, search visibility, and outreach guidance. Prioritise evidence-led organic outreach, partner channels and clear project documentation.
 
 See [local-first Resource Catalogue](docs/FREE_FIRST_RESOURCE_CATALOGUE.md) for curated tools, local model options, testing/security helpers, SEO resources, resource cautions, and project-specific evidence boundaries.
 
@@ -783,7 +783,7 @@ See the [PUI89 local-first Engineering Resource Roadmap](docs/PUI89_FREE_RESOURC
 
 ## quality, tolerance, resource and performance gates
 
-See [quality, tolerance, performance and safety gates](docs/QUALITY_TOLERANCE_PERFORMANCE_resource requirements_GATES.md) for measurable acceptance criteria, fault-injection scenarios, human/animal safety requirements and local-first engineering constraints. This is a proposed test plan, not a claim of validated performance or certification.
+See [quality, tolerance, performance and safety gates](docs/QUALITY_TOLERANCE_PERFORMANCE_COST_GATES.md) for measurable acceptance criteria, fault-injection scenarios, human/animal safety requirements and local-first engineering constraints. This is a proposed test plan, not a claim of validated performance or certification.
 
 ## Shared PUI89 AI Safety Contract
 
@@ -893,4 +893,4 @@ Project-specific controls and review requirements:
 - No AI result may independently trigger enforcement, accusation, detention, search or physical actuation; require authorised human review.
 - Keep CI least-privilege and do not expose secrets to untrusted pull-request code.
 
-A scan or passing test is evidence only for the checks actually run; it does not prove the repository is absence of malware or vulnerabilities.
+A scan or passing test is evidence only for the checks actually run; it does not establish whether the repository contains malware or vulnerabilities.
