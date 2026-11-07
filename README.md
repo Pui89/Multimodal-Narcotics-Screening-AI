@@ -319,7 +319,7 @@ Try open-vocabulary detection of generic visible items on a local image with [`t
 
 ## Video concept and interactive 4D-style simulation
 
-**Start here — playable cinematic concept:** open the [PUI89 Quadruped Airport Robot — Cinematic Concept](docs/demos/quadruped-screening-robot-cinematic-concept.html). This free, self-contained browser animation presents a 75-second concept sequence with play/pause, restart, timeline scrubbing, and shot selection: terminal establishing shot, four-leg gait, adaptive speed, pedestrian yielding, spatial-awareness overlays, a conceptual scan graphic, an inconclusive simulated alert, and authorised human review. It uses Canvas with no external library, paid API, or cloud GPU. **It is an animated concept preview, not an exported MP4 or real footage.**
+**Start here — playable cinematic concept:** open the [PUI89 Quadruped Airport Robot — Cinematic Concept](docs/demos/quadruped-screening-robot-cinematic-concept.html). this self-contained browser animation presents a 75-second concept sequence with play/pause, restart, timeline scrubbing, and shot selection: terminal establishing shot, four-leg gait, adaptive speed, pedestrian yielding, spatial-awareness overlays, a conceptual scan graphic, an inconclusive simulated alert, and authorised human review. It uses Canvas with no external library, paid API, or cloud GPU. **It is an animated concept preview, not an exported MP4 or real footage.**
 
 **Video production plan:** read the [PUI89 robot video storyboard](docs/demos/quadruped-screening-robot-video-storyboard.md) for the 60–75 second shot list, visual direction, and production notes.
 
