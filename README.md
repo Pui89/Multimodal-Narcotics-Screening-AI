@@ -829,3 +829,12 @@ This repository now includes real Hugging Face checkpoint adapters in [`pui89_mo
 - **Intel DPT-Hybrid:** `Intel/dpt-hybrid-midas` for relative scene depth where appropriate; not calibrated distance or physical depth.
 - **Zero-cost default:** no packages or model weights are installed/downloaded automatically; CPU-only inference, local cache only by default, no hosted inference API or cloud GPU.
 - **Evidence status:** adapter code is added; model inference and project-specific accuracy are NOT YET TESTED. Outputs remain uncertain observations for human review, never actuator commands.
+
+
+## PUI89 efficient engineering profile
+
+This project follows the shared [PUI89 Efficient Engineering Standard](https://github.com/Pui89/Pui89.github.io/blob/main/PUI89_EFFICIENT_ENGINEERING_STANDARD.md). The standard is proposed in portfolio PR #152 and becomes the canonical reference after merge.
+
+**Project focus:** Measure per-modality RAM, CPU, latency and storage; preserve sensor provenance, calibration, uncertainty and human-review gates. Optimise modality scheduling without dropping required evidence or implying chemical identification from RGB images.
+
+Track relevant RAM, CPU/GPU, latency, storage and network measurements using documented workloads and comparable environments. Record power (W/Wh), battery runtime and temperature only when suitable physical instruments and hardware are available. No paid APIs, subscriptions, cloud GPU, metered services, purchases or model downloads are authorised. Efficiency changes must preserve accuracy, safety, evidence integrity, privacy and security. Unmeasured physical performance must be labelled **not measured**.
