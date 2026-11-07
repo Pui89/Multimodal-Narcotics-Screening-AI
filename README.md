@@ -106,7 +106,7 @@ On 30 October, the shared observation-provenance guard was tightened to reject n
 - **Gate 2 — evidence before inference:** validate provenance, modality quality, timestamps, uncertainty and reviewer records. Do not treat ordinary RGB imagery or an AI score as chemical identification or proof of narcotics.
 - **Gate 3 — optional model preflight:** before downloading any model weights or installing a sensor stack, check licence/access terms, disk/RAM/VRAM, offline operation and data-handling restrictions. No large model or simulator is downloaded automatically.
 - **Gate 4 — human control:** route uncertain, conflicting or out-of-distribution cases to authorised human review. AI must not independently accuse, detain, search or make enforcement decisions.
-- **Reproducibility:** record the command, commit, input/evidence hashes, test result, failures and limits. Ask before any paid or recurring-cost choice.
+- **Reproducibility:** record the command, commit, input/evidence hashes, test result, failures and limits. Ask before any external service or recurring commitment.
 
 ## Product quality and safety roadmap
 
@@ -155,7 +155,7 @@ No facial recognition, biometric identification, person profiling, autonomous ac
 
 - offline evidence-provenance validation and human-review routing: `scripts/free_first_project_tools.py`; tests: `tests/test_free_first_project_tools.py`. Outputs do not identify substances or establish guilt.
 - **Review audit trail:** records cannot enter the `reviewed` workflow state unless a non-empty `reviewer_reference` and `reviewed_at` timestamp are recorded; see `validate_evidence_record` and its tests. These fields document workflow provenance, not the truth of a screening result.
-- Dependency-free precision, recall, F1 and confusion counts support later evaluation; no substance-identification or enforcement claims are implied.
+- standard-library-only precision, recall, F1 and confusion counts support later evaluation; no substance-identification or enforcement claims are implied.
 
 - Offline state tracker: `pui89_autonomy/world_state.py` records time-stamped observations, stale data and conflicts.
 - Experiment report helper: `pui89_autonomy/experiment_report.py` summarizes supplied metrics, dataset hash, code version and measured latency.
@@ -165,7 +165,7 @@ No facial recognition, biometric identification, person profiling, autonomous ac
 
 ## Frontier AI technology and local-first upgrade plan
 
-Current gaps, recent technology directions, no-recurring-cost adoption gates, and project-specific next steps: [Frontier technology gap and local-first plan](docs/FRONTIER_TECHNOLOGY_GAP_AND_FREE_PLAN.md). No large model or simulator is installed automatically; verify licences, download size, hardware fit and costs first. Project-specific implementation priorities: [Frontier AI upgrade plan](docs/FRONTIER_AI_UPGRADE_PLAN.md).
+Current gaps, recent technology directions, open-source-first adoption gates, and project-specific next steps: [Frontier technology gap and local-first plan](docs/FRONTIER_TECHNOLOGY_GAP_AND_FREE_PLAN.md). No large model or simulator is installed automatically; verify licences, download size, hardware fit and licences and resource requirements first. Project-specific implementation priorities: [Frontier AI upgrade plan](docs/FRONTIER_AI_UPGRADE_PLAN.md).
 
 **Robot product name: PUI89 Sentinel**
 
@@ -385,7 +385,7 @@ The following are proposed improvements, not claims that the capabilities alread
 | 2 | Local quadruped/robot simulation with synthetic pedestrians and obstacles | local tools where feasible |
 | 3 | Automated navigation, pedestrian-yielding, fault, and emergency-stop tests | local tools where feasible |
 | 4 | Chemical-sensor interface specification and controlled evaluation plan | Design first; no hardware purchase yet |
-| 5 | Physical prototype and authorised pilot after cost, safety, and privacy review | Requires separate approval and budget |
+| 5 | Physical prototype and authorised pilot after resource requirements, safety, and privacy review | Requires separate approval and budget |
 
 **First implementation milestone:** build and test a local simulation featuring adaptive speed, pedestrian avoidance, safe stopping, fault handling, and repeatable automated tests. No simulation result should be presented as evidence of physical robot performance or reliable narcotics detection.
 
@@ -459,7 +459,7 @@ The screening application and proposed robotic system should use three modes: **
 
 ## Decision-support agent (current scope)
 
-**Additional cost for this rule-based agent: $0.** It uses the repository's Python code and supplied inputs; it does not require a paid AI API, cloud service, or model download. Local Python/test tooling and GitHub usage remain subject to their own terms and limits.
+**This rule-based agent uses repository code and supplied inputs without a hosted AI API, cloud service or model download.** It uses the repository's Python code and supplied inputs; it does not require a paid AI API, cloud service, or model download. Local Python/test tooling and GitHub usage remain subject to their own terms and limits.
 
 **What it does:** Checks supplied modality records, authorisation, conflicting inputs, and human review. It does not identify chemicals or infer criminality from appearance.
 
@@ -468,7 +468,7 @@ Authorised case inputs → completeness and conflict checks → human review →
 ```
 
 - **Run guide:** [Agent guide](docs/AGENT_GUIDE.md)
-- **Important limitation:** this is a rule-based decision-support prototype, not proof of real-world performance. Hardware, optional third-party services, or future model training may have separate costs.
+- **Important limitation:** this is a rule-based decision-support prototype, not proof of real-world performance. Hardware, optional third-party services, or future model training may have separate funding requirements.
 
 
 > **Product quality standard:** [benchmark protocol and fair comparison criteria](docs/PRODUCT_BENCHMARK_STANDARD.md). This workflow prototype is **not validated** for narcotics detection or chemical identification. Appearance alone cannot establish chemical identity; no validated identification claim is made.
@@ -512,7 +512,7 @@ Start with a lawful use case and a clearly defined physical quantity or sensor s
 - [PUI89 project website](https://pui89.github.io/)
 - [PUI89 support and sponsorship brief](https://github.com/Pui89/Pui89.github.io/blob/main/SUPPORT_AND_SPONSORSHIP.md)
 
-Please describe the authorised use case, relevant sensing expertise or resources, governance requirements, and the milestone you would like to explore. No funding, agency endorsement, deployment or detection capability is implied by an enquiry. Data, sample access, privacy, costs, intellectual property, responsibilities and pilot scope must be agreed in writing before work begins.
+Please describe the authorised use case, relevant sensing expertise or resources, governance requirements, and the milestone you would like to explore. No funding, agency endorsement, deployment or detection capability is implied by an enquiry. Data, sample access, privacy, funding and resource requirements, intellectual property, responsibilities and pilot scope must be agreed in writing before work begins.
 ## Latest engineering update — 21 October 2026
 
 - **Safety input validation:** [PR #14](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/pull/14) is merged. The software gate rejects malformed thresholds and invalid navigation inputs rather than treating ambiguous values as safe.
@@ -750,9 +750,9 @@ See [local-first Product and Engineering Toolkit](docs/FREE_FIRST_STARTUP_TOOLKI
 
 See [Marketing, SEO and Sales Playbook](docs/MARKETING_SEO_SALES_PLAYBOOK.md) for a local-first product page, evidence-led messaging, customer discovery, search visibility, and outreach guidance. No marketing subscription or ad spend is required.
 
-See [local-first Resource Catalogue](docs/FREE_FIRST_RESOURCE_CATALOGUE.md) for curated tools, local model options, testing/security helpers, SEO resources, cost cautions, and project-specific evidence boundaries.
+See [local-first Resource Catalogue](docs/FREE_FIRST_RESOURCE_CATALOGUE.md) for curated tools, local model options, testing/security helpers, SEO resources, resource cautions, and project-specific evidence boundaries.
 
-**Recommended technology stack:** [PUI89 local-first Technology Stack](docs/PUI89_FREE_FIRST_TECH_STACK.md) — stable, local-first tools; dependencies and costs reviewed before adoption.
+**Recommended technology stack:** [PUI89 local-first Technology Stack](docs/PUI89_FREE_FIRST_TECH_STACK.md) — stable, local-first tools; dependencies and resource requirements reviewed before adoption.
 
 ## Engineering maturity level — 27 October 2026
 
@@ -778,12 +778,12 @@ See [local-first Resource Catalogue](docs/FREE_FIRST_RESOURCE_CATALOGUE.md) for 
 
 ## local-first engineering resources
 
-See the [PUI89 local-first Engineering Resource Roadmap](docs/PUI89_FREE_RESOURCE_ROADMAP.md) for approved-first tools, adoption gates, licence/cost checks and project-specific next steps. The default is to reuse existing Python and GitHub automation; optional packages and model weights are not installed or downloaded automatically.
+See the [PUI89 local-first Engineering Resource Roadmap](docs/PUI89_FREE_RESOURCE_ROADMAP.md) for approved-first tools, adoption gates, licence and resource checks and project-specific next steps. The default is to reuse existing Python and GitHub automation; optional packages and model weights are not installed or downloaded automatically.
 
 
-## Quality, tolerance and cost gates
+## quality, tolerance, resource and performance gates
 
-See [Quality, Tolerance, Performance, Safety and Cost Gates](docs/QUALITY_TOLERANCE_PERFORMANCE_COST_GATES.md) for measurable acceptance criteria, fault-injection scenarios, human/animal safety requirements and local-first engineering constraints. This is a proposed test plan, not a claim of validated performance or certification.
+See [quality, tolerance, performance and safety gates](docs/QUALITY_TOLERANCE_PERFORMANCE_resource requirements_GATES.md) for measurable acceptance criteria, fault-injection scenarios, human/animal safety requirements and local-first engineering constraints. This is a proposed test plan, not a claim of validated performance or certification.
 
 ## Shared PUI89 AI Safety Contract
 
@@ -809,7 +809,7 @@ See the [PUI89 Master Roadmap](https://github.com/Pui89/Pui89.github.io/blob/mai
 
 ## Latest automated verification (29 October 2026)
 
-The [lightweight verification run](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/40878549402) completed successfully. Its workflow passed Python syntax compilation and a dependency-free observability smoke check. [Verification report artifact](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/40878549402/artifacts/12899860349).
+The [lightweight verification run](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/40878549402) completed successfully. Its workflow passed Python syntax compilation and a standard-library-only observability smoke check. [Verification report artifact](https://github.com/Pui89/Multimodal-Narcotics-Screening-AI/actions/runs/40878549402/artifacts/12899860349).
 
 This lightweight job is not a full model/sensor benchmark. The selected PUI89 combined run passed 13 shared-core tests for this project, but no substance-specific performance, chemical-identification, X-ray, sensor-calibration or physical quadruped capability is established by those checks. RGB appearance alone cannot confirm chemical identity; consequential alerts require appropriate sensing evidence and human review.
 
@@ -893,4 +893,4 @@ Project-specific controls and review requirements:
 - No AI result may independently trigger enforcement, accusation, detention, search or physical actuation; require authorised human review.
 - Keep CI least-privilege and do not expose secrets to untrusted pull-request code.
 
-A scan or passing test is evidence only for the checks actually run; it does not prove the repository is free of malware or vulnerabilities.
+A scan or passing test is evidence only for the checks actually run; it does not prove the repository is absence of malware or vulnerabilities.
