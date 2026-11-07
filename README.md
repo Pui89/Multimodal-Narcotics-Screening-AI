@@ -1,5 +1,9 @@
 # Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
 
+## Project website QR codes
+
+<table><tr><td align="center"><strong>English website</strong><br><a href="https://pui89.github.io/screening.html"><img src="https://pui89.github.io/qr/screening-en.png" width="160" alt="Multimodal Narcotics Screening AI English website QR code"></a><br><a href="https://pui89.github.io/screening.html">Open English website</a></td><td align="center"><strong>เว็บไซต์ภาษาไทย</strong><br><a href="https://pui89.github.io/screening-th.html"><img src="https://pui89.github.io/qr/screening-th.png" width="160" alt="QR Code เว็บไซต์ภาษาไทย Multimodal Narcotics Screening AI"></a><br><a href="https://pui89.github.io/screening-th.html">เปิดเว็บไซต์ภาษาไทย</a></td></tr></table>
+
 ## Project website
 
 - **English:** https://pui89.github.io/screening.html
