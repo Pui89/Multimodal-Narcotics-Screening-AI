@@ -165,7 +165,7 @@ A research-and-development project exploring how computer vision, suitable inspe
 - **AI role:** Analyse permitted inputs, identify visible patterns or sensor anomalies, communicate uncertainty, and help trained staff decide what needs further inspection.
 - **Possible modalities:** RGB imagery and, when suitable licensed data and equipment are available, X-ray imagery and validated chemical-sensor outputs. Each modality needs its own evaluation.
 - **Safety rule:** An AI alert is not proof of narcotics. No autonomous accusation, detention, search, or enforcement decision; consequential actions require authorised human review and applicable lawful procedures.
-- **Development approach:** local-first and local-first where feasible; document model licenses, data provenance, limitations, and reproducible tests.
+- **Development approach:** local-first where feasible; document model licenses, data provenance, limitations, and reproducible tests.
 - **Evidence status:** Exploratory software and concepts only. No validated narcotics-detection performance or physical-robot capability is claimed.
 
 ---
@@ -323,9 +323,9 @@ Try open-vocabulary detection of generic visible items on a local image with [`t
 
 **Video production plan:** read the [PUI89 robot video storyboard](docs/demos/quadruped-screening-robot-video-storyboard.md) for the 60–75 second shot list, visual direction, and production notes.
 
-**Interactive 4D-style simulation:** open the [Quadruped Autonomy Lab](docs/demos/quadruped-robot-autonomy-lab.html). Here, “4D-style” means a time-evolving interactive 3D scene—not a validated physics-based digital twin. The browser lab includes an animated articulated quadruped, synthetic airport passengers, rule-based adaptive speed and pedestrian yielding, sensor-style overlays, telemetry, event logging, and simulated fault scenarios. It uses the Three.js library via a public CDN, so internet is required. No paid API or cloud GPU is required. Navigation is rule-based, not a trained AI model, and fault responses are illustrative rather than verified safety performance.
+**Interactive 4D-style simulation:** open the [Quadruped Autonomy Lab](docs/demos/quadruped-robot-autonomy-lab.html). Here, “4D-style” means a time-evolving interactive 3D scene—not a validated physics-based digital twin. The browser lab includes an animated articulated quadruped, synthetic airport passengers, rule-based adaptive speed and pedestrian yielding, sensor-style overlays, telemetry, event logging, and simulated fault scenarios. It uses the Three.js library via a public CDN, so internet is required.  Navigation is rule-based, not a trained AI model, and fault responses are illustrative rather than verified safety performance.
 
-**Step 2 — Interactive true-3D concept:** open [Quadruped Airport Digital Twin](docs/demos/quadruped-screening-robot-true-3d.html). It uses the Three.js library via a public CDN to render a perspective 3D terminal, a procedural four-leg robot gait, synthetic walking passengers, orbit/zoom camera controls, adaptive rule-based speed, pedestrian yielding, a sensor-overlay visual, and a simulated anomaly that pauses the robot for human review. **Internet is required to load Three.js; there is no paid API or cloud GPU requirement.** The navigation logic is a transparent rule-based demonstration, not a trained AI model or validated autonomy stack.
+**Step 2 — Interactive true-3D concept:** open [Quadruped Airport Digital Twin](docs/demos/quadruped-screening-robot-true-3d.html). It uses the Three.js library via a public CDN to render a perspective 3D terminal, a procedural four-leg robot gait, synthetic walking passengers, orbit/zoom camera controls, adaptive rule-based speed, pedestrian yielding, a sensor-overlay visual, and a simulated anomaly that pauses the robot for human review. **Internet is required to load Three.js; ** The navigation logic is a transparent rule-based demonstration, not a trained AI model or validated autonomy stack.
 
 **Step 3 — Autonomy and fault-injection lab:** open the [Quadruped Autonomy Lab](docs/demos/quadruped-robot-autonomy-lab.html). This expanded WebGL concept adds articulated gait animation, a synthetic pedestrian field, rule-based predictive yielding, adaptive speed, a lidar-style visualization, live telemetry, an event log, and simulated lidar-dropout, communication-loss, and emergency-stop scenarios. It uses Three.js from a public CDN and therefore needs internet access. Fault responses are illustrative software behaviour—not verified safety performance.
 
@@ -366,7 +366,7 @@ The following are proposed improvements, not claims that the capabilities alread
 
 #### Implementation phases
 
-| Phase | Deliverable | Cost approach |
+| Phase | Deliverable | Development approach |
 |---|---|---|
 | 1 | Architecture, requirements, sensor interfaces, and safety criteria | local-first design |
 | 2 | Local quadruped/robot simulation with synthetic pedestrians and obstacles | local tools where feasible |
@@ -562,7 +562,7 @@ The categories below are possible future research scopes, not current model capa
 
 This repository's recommended local model, intended tasks, licence checks, setup notes, and no-surprise-billing rules are documented in **[HUGGINGFACE_LOCAL_MODELS.md](docs/HUGGINGFACE_LOCAL_MODELS.md)**.
 
-**Cost boundary:** the plan uses downloaded local weights only; it does not require paid Hugging Face inference, cloud GPUs, paid notebooks, or a subscription. Model integration and performance must be verified by running tests locally.
+**Resource boundary:** the plan uses downloaded local weights only; it does not require paid Hugging Face inference, cloud GPUs, paid notebooks, or a subscription. Model integration and performance must be verified by running tests locally.
 
 **Dataset and labelling workflow:** see [dataset sources, licence checks, annotation and training plan](docs/DATASET_ACQUISITION_AND_LABELING.md), the [Windows opt-in dataset helper](scripts/prepare_free_datasets.ps1), the [image inventory/manifest generator](tools/dataset_inventory.py), the [manifest template](data/manifest.template.csv), the [group-aware train/validation/test splitter](tools/group_split_manifest.py), and the [local manifest audit tool](tools/audit_dataset_manifest.py). Downloads require local user confirmation; no images are automatically considered licensed or correctly labelled. Keep datasets and weights out of Git.
 
@@ -581,7 +581,7 @@ The latest local-first regression workflow passed on the current main-branch cha
 - **Next checks:** test missing, stale and conflicting modalities; verify confidence calibration and the ability to abstain as `UNKNOWN`; compare single-modality baselines with multimodal fusion only when suitable aligned real data exist; report false positives, false negatives, calibration and failure cases.
 - **Not yet demonstrated:** a trained model validated on a representative independent dataset, reliable chemical identification, validated multimodal sensor fusion, or a validated physical screening robot. Ordinary RGB images cannot establish chemical identity or reveal contents hidden inside closed luggage.
 - **Human review and rights:** any screening output is a hypothesis for an authorised reviewer, not proof of a substance or grounds for automatic enforcement. Preserve privacy, auditability and documented review.
-- **Cost boundary:** remain cost-conscious and local-first where feasible; local model plans do not mean that model integration or accuracy has already been verified.
+- **Resource boundary:** remain cost-conscious and local-first where feasible; local model plans do not mean that model integration or accuracy has already been verified.
 
 ## Previous status update — 18 October 2026
 
@@ -680,7 +680,7 @@ Keep the screening workflow local-first, auditable, and dependent on authorised 
 - **Agent workflow:** use the current rule-based workflow first. Add LangGraph or another agent framework only if a concrete, reviewable multi-step requirement justifies it.
 - **Retrieval:** search local documentation and policies first; consider a local vector index only if a measured retrieval need exists.
 
-**Cost, privacy, and evidence guardrails:** no paid API, cloud GPU, subscription, or hosted inference is required by this plan. Ask before introducing costs. Review every model/weight licence and data-use permission. Synthetic workflow tests are not real screening benchmarks; outputs must not independently identify a substance, infer guilt, or trigger enforcement.
+**Privacy and evidence guardrails:** Review model licences, data-use permissions and system limitations before adoption. Review every model/weight licence and data-use permission. Synthetic workflow tests are not real screening benchmarks; outputs must not independently identify a substance, infer guilt, or trigger enforcement.
 
 
 ## PUI89 Sentinel — AI robot upgrade roadmap
@@ -733,7 +733,7 @@ Run `python tools/free_first_audit.py` from the repository root to create a loca
 
 ## local-first startup toolkit
 
-See [local-first Product and Engineering Toolkit](docs/FREE_FIRST_STARTUP_TOOLKIT.md) for cost guardrails, recommended local-first workflows, project-specific validation rules, and evidence standards. The guide does not require paid APIs, subscriptions, cloud GPUs, or automatic model downloads.
+See [local-first Product and Engineering Toolkit](docs/FREE_FIRST_STARTUP_TOOLKIT.md) for resource-adoption checks, recommended local-first workflows, project-specific validation rules, and evidence standards. The guide does not require paid APIs, subscriptions, cloud GPUs, or automatic model downloads.
 
 See [Marketing, SEO and Sales Playbook](docs/MARKETING_SEO_SALES_PLAYBOOK.md) for a local-first product page, evidence-led messaging, customer discovery, search visibility, and outreach guidance. No marketing subscription or ad spend is required.
 
@@ -759,7 +759,7 @@ See [local-first Resource Catalogue](docs/FREE_FIRST_RESOURCE_CATALOGUE.md) for 
 - Run the existing local verification and relevant test suites; record the exact command, environment, commit and result.
 - Add or strengthen repeatable tests for uncertain inputs, failure cases and safe-stop / human-review behavior.
 - Report only measured results. A passing syntax scan or synthetic test is evidence for that software path only—not real-world detection accuracy or robot capability.
-- Keep the workflow local-first: no paid API, cloud GPU, automatic model download or recurring-cost service by default.
+- Keep the workflow local-first: external integrations require prior review.
 
 **Capability boundary:** proposed architecture, synthetic tests and software checks do not prove validated real-world performance. Physical operation remains unvalidated until supported by separate, documented evidence.
 
@@ -836,4 +836,4 @@ This project follows the shared [PUI89 Efficient Engineering Standard](https://g
 
 **Project focus:** Measure per-modality RAM, CPU, latency and storage; preserve sensor provenance, calibration, uncertainty and human-review gates. Optimise modality scheduling without dropping required evidence or implying chemical identification from RGB images.
 
-Track relevant RAM, CPU/GPU, latency, storage and network measurements using documented workloads and comparable environments. Record power (W/Wh), battery runtime and temperature only when suitable physical instruments and hardware are available. No paid APIs, subscriptions, cloud GPU, metered services, purchases or model downloads are authorised. Efficiency changes must preserve accuracy, safety, evidence integrity, privacy and security. Unmeasured physical performance must be labelled **not measured**.
+Track relevant RAM, CPU/GPU, latency, storage and network measurements using documented workloads and comparable environments. Record power (W/Wh), battery runtime and temperature only when suitable physical instruments and hardware are available. External services, datasets and model downloads require explicit review before adoption. Efficiency changes must preserve accuracy, safety, evidence integrity, privacy and security. Unmeasured physical performance must be labelled **not measured**.
