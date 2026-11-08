@@ -943,3 +943,22 @@ Scores are awarded only through a dated review with a defined scope, version/com
 
 This score is separate from any commercial-readiness estimate and is not certification, safety approval or an investment rating.
 <!-- PUI89_PROJECT_STRENGTH_SCORECARD:END -->
+
+## Materials & Hardware — Research Plan
+
+**Status: proposed screening-system architecture only.** This is an AI application and robotic screening concept, not a claim of a built or operational robot or screening instrument.
+
+| Subsystem | Candidate materials / hardware | Purpose and checks before selection |
+|---|---|---|
+| Mobile platform | Research quadruped platform or non-mobile bench rig; aluminium frame and protective polymer covers | Verify stability, payload, pinch hazards, serviceability and emergency stop |
+| RGB imaging | Machine-vision camera, suitable lens, controlled illumination and protected mount | Verify resolution, colour calibration, lighting, privacy and false-alarm performance |
+| X-ray modality (optional) | Certified facility-based X-ray equipment operated by qualified personnel | Requires radiation licensing, shielding, interlocks and trained operators; never improvise an X-ray source |
+| Chemical modality (optional) | Commercial sensor output or authorised instrument interface | Verify selectivity, cross-sensitivity, calibration, consumables and chain of custody |
+| Environmental sensing | Temperature/humidity sensors | Verify calibration, placement, drift and relevance |
+| Compute/interface | Local workstation or edge computer, isolated sensor interfaces and secure storage | Verify resource needs, access control, encryption, retention and reproducibility |
+| Power/enclosure | Certified supply or battery system, fusing, thermal monitoring and suitable enclosure | Verify electrical safety, heat dissipation and equipment ratings |
+| Calibration | Manufacturer-approved targets, reference samples and documented fixtures | Verify traceability, expiry, handling and contamination controls |
+
+Preserve source identity, timestamps, calibration state, instrument status, uncertainty and modality-specific limitations. Missing, stale, conflicting or out-of-calibration evidence must go to human review. AI must not autonomously accuse, detain, search, seize or enforce. Software fusion and mock sensor interfaces can be developed without specialist instruments; X-ray and chemical modalities require lawful access, trained operators and validated procedures.
+
+**Procurement rule:** research only. Do not buy or operate radiation or chemical-analysis equipment based only on this README. No purchases, supplier contact, subscriptions or paid services without explicit approval. Verify model, intended-use limits, calibration, safety approvals, licence, price and service arrangements.
