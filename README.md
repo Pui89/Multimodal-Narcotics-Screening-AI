@@ -1,5 +1,10 @@
 # Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
 
+
+## Public privacy boundary
+
+This public README is limited to the project overview, approved concept material and evidence that can be shared openly. Do not publish API keys, passwords, private tokens, Wi-Fi or internal network settings, private camera footage, personal or precise location data, detailed security configurations, unreleased engineering specifications, or confidential commercial plans. Keep sensitive material in an appropriately access-controlled private location. If a credential may have been exposed, revoke it; removing it from the latest commit does not remove it from Git history.
+
 <!-- PUI89_PINNED_CONCEPT_ILLUSTRATION:START -->
 ![PUI89 Sentinel quadruped mobile screening robot concept](docs/images/quadruped-screening-robot.svg)
 
@@ -131,27 +136,6 @@ The [Product Quality and Safety Roadmap](docs/PRODUCT_QUALITY_AND_SAFETY_ROADMAP
 ntinel — proposed mobile robot-dog concept, not a built or validated robot. The intended design is a four-legged, mobile inspection assistant that can patrol authorised areas, move around obstacles, yield to pedestrians, and support human-reviewed screening of permitted items and sensor readings. It is not just a fixed baggage scanner. Concealed-item and chemical-screening capabilities require separate suitable sensors, lawful procedures, and independent validation.*
 
 **Design direction:** mobile quadruped + spatial awareness + optional modular screening sensors + human operator oversight. Movement speed must be limited by validated safety performance, and the robot must slow or stop near people.
-
-## PUI89 Sentinel — mobile robot concept and how it works
-
-**PUI89 Sentinel** is the proposed mobile inspection assistant identity for this project: a compact four-legged platform with a protected central chassis, raised awareness mast, forward RGB/depth camera positions, a sealed modular payload bay and a human operator interface. It is a visual and engineering concept, not a built robot or validated narcotics detector.
-
-### Proposed operating sequence
-
-1. **Authorise:** a trained operator sets the permitted purpose, area, route, time and data limits.
-2. **Navigate safely:** bounded low-speed movement; yield to people and enter safe-hold on stale navigation, obstruction, communications loss or safety fault.
-3. **Check evidence:** configured modalities are checked independently for provenance, timestamp, quality and calibration.
-4. **Handle uncertainty:** missing or conflicting data remains UNKNOWN/CONFLICT; it is not silently guessed or replaced.
-5. **Support human review:** the system may create a neutral review task. An AI alert is not proof of a substance or offence.
-6. **Audit:** retain the evidence references, software version, uncertainty and authorised reviewer outcome under the applicable data rules.
-
-No facial recognition, biometric identification, person profiling, autonomous accusation, detention, search, seizure or enforcement decision is permitted. RGB appearance alone cannot identify chemical contents. Optional X-ray or analytical sensors require suitable equipment, lawful authority, calibration and independent validation.
-
-- **Robot engineering concept:** [PUI89 Sentinel concept](docs/PUI89_SENTINEL_ROBOT_CONCEPT.md)
-- **4D animation storyboard:** [30-second time-based storyboard](docs/4d-video-storyboard.md)
-- **Concept illustration:** [quadruped robot SVG](docs/images/quadruped-screening-robot.svg)
-
-**Evidence status:** software workflow prototype + proposed robot design only. Mobility, sensor payload, chemical identification, class-specific accuracy and field performance are NOT VALIDATED.
 
 ## local-first offline engineering tools
 
@@ -308,14 +292,6 @@ Cocaine is included as a research category for future, properly authorised scree
 
 
 
-## Mobile quadruped screening robot — people, carry-on items, and ambient-air sampling
-
-[View the main quadruped robot concept illustration](docs/images/quadruped-screening-robot.svg) · [View the complementary multimodal screening-system concept illustration](docs/images/multimodal-screening-robot-concept-2026.svg).
-
-**Concept only — not a built or validated robot.**
-
-The proposed system is a four-legged, dog-inspired mobile platform designed to move through an authorised terminal screening zone rather than remain fixed at a baggage conveyor. It can navigate around people who are walking, pause at a safe distance, observe permitted screening zones, and sample ambient air near a person or item when an authorised operator requests a secondary check.
-
 ## Optional local visual anomaly baseline
 
 A separate exploratory tool compares a local image with a reference set using Hugging Face DINOv2 image embeddings and reports an image-level distance score. It is a generic visual outlier baseline, **not a concealed-object detector**, narcotics detector, or chemical identifier. Ordinary RGB images cannot reveal objects hidden under clothing. See [the anomaly baseline guide](docs/HUGGINGFACE_VISUAL_ANOMALY.md), [the staged concealed-object roadmap](docs/CONCEALED_OBJECT_SCREENING_ROADMAP.md), and [the script](tools/huggingface_visual_anomaly_baseline.py).
@@ -397,17 +373,6 @@ The following are proposed improvements, not claims that the capabilities alread
 | 5 | Physical prototype and authorised pilot after resource requirements, safety, and privacy review | Requires separate approval and budget |
 
 **First implementation milestone:** build and test a local simulation featuring adaptive speed, pedestrian avoidance, safe stopping, fault handling, and repeatable automated tests. No simulation result should be presented as evidence of physical robot performance or reliable narcotics detection.
-
-### Proposed physical architecture
-
-| Subsystem | Proposed implementation | Evidence status |
-|---|---|---|
-| Mobility | Commercial quadruped base or a small research quadruped; speed limited by validated safe operating zones | Design proposal; no robot built or tested is claimed |
-| Navigation | 3D lidar/depth camera, IMU, wheel/leg odometry where available, mapping and obstacle avoidance | To be integrated and tested |
-| Scene sensing | RGB camera and depth sensor aimed at the environment, not used to infer guilt | Hardware and privacy review required |
-| Chemical screening | Replaceable, validated vapour/trace sensor selected with qualified screening specialists | Not selected or validated; no chemical detection claim |
-| Compute and communications | Local edge computer, encrypted operator link, physical emergency stop, battery and thermal monitoring | Proposed |
-| Human interface | Alert review, sensor health, audit log, uncertainty display, manual override | Software workflow prototype is separate from physical integration |
 
 ### Safe development sequence
 
@@ -944,21 +909,3 @@ Scores are awarded only through a dated review with a defined scope, version/com
 This score is separate from any commercial-readiness estimate and is not certification, safety approval or an investment rating.
 <!-- PUI89_PROJECT_STRENGTH_SCORECARD:END -->
 
-## Materials & Hardware — Research Plan
-
-**Status: proposed screening-system architecture only.** This is an AI application and robotic screening concept, not a claim of a built or operational robot or screening instrument.
-
-| Subsystem | Candidate materials / hardware | Purpose and checks before selection |
-|---|---|---|
-| Mobile platform | Research quadruped platform or non-mobile bench rig; aluminium frame and protective polymer covers | Verify stability, payload, pinch hazards, serviceability and emergency stop |
-| RGB imaging | Machine-vision camera, suitable lens, controlled illumination and protected mount | Verify resolution, colour calibration, lighting, privacy and false-alarm performance |
-| X-ray modality (optional) | Certified facility-based X-ray equipment operated by qualified personnel | Requires radiation licensing, shielding, interlocks and trained operators; never improvise an X-ray source |
-| Chemical modality (optional) | Commercial sensor output or authorised instrument interface | Verify selectivity, cross-sensitivity, calibration, consumables and chain of custody |
-| Environmental sensing | Temperature/humidity sensors | Verify calibration, placement, drift and relevance |
-| Compute/interface | Local workstation or edge computer, isolated sensor interfaces and secure storage | Verify resource needs, access control, encryption, retention and reproducibility |
-| Power/enclosure | Certified supply or battery system, fusing, thermal monitoring and suitable enclosure | Verify electrical safety, heat dissipation and equipment ratings |
-| Calibration | Manufacturer-approved targets, reference samples and documented fixtures | Verify traceability, expiry, handling and contamination controls |
-
-Preserve source identity, timestamps, calibration state, instrument status, uncertainty and modality-specific limitations. Missing, stale, conflicting or out-of-calibration evidence must go to human review. AI must not autonomously accuse, detain, search, seize or enforce. Software fusion and mock sensor interfaces can be developed without specialist instruments; X-ray and chemical modalities require lawful access, trained operators and validated procedures.
-
-**Procurement rule:** research only. Do not buy or operate radiation or chemical-analysis equipment based only on this README. No purchases, supplier contact, subscriptions or paid services without explicit approval. Verify model, intended-use limits, calibration, safety approvals, licence, price and service arrangements.
