@@ -1,5 +1,11 @@
 # Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
 
+<!-- PUI89_PINNED_CONCEPT_ILLUSTRATION:START -->
+![PUI89 Sentinel quadruped mobile screening robot concept](docs/images/quadruped-screening-robot.svg)
+
+*Conceptual design illustration — not a deployed or validated screening robot. Sensor integrations and detection performance are unvalidated; consequential decisions require authorised human review.*
+<!-- PUI89_PINNED_CONCEPT_ILLUSTRATION:END -->
+
 ## Open-source-first engineering
 
 PUI89 prioritises open-source software, transparent licensing, reproducible workflows and evidence-led collaboration. Model weights, datasets, hosted services and hardware are assessed separately for provenance, licence terms, security, data handling, resource requirements and intended use. Public availability alone does not establish permission for reuse or commercial deployment.
@@ -122,9 +128,7 @@ The [Product Quality and Safety Roadmap](docs/PRODUCT_QUALITY_AND_SAFETY_ROADMAP
 **Next action:** strengthen synthetic modality-quality and disagreement tests, then document a lawful, licensed, independently reviewed evaluation dataset before attempting any substance-screening performance claim.
 
 
-![PUI89 Sentinel dog-inspired quadruped mobile screening robot concept moving through a terminal with walking passengers](docs/images/quadruped-screening-robot.svg)
-
-*PUI89 Sentinel — proposed mobile robot-dog concept, not a built or validated robot. The intended design is a four-legged, mobile inspection assistant that can patrol authorised areas, move around obstacles, yield to pedestrians, and support human-reviewed screening of permitted items and sensor readings. It is not just a fixed baggage scanner. Concealed-item and chemical-screening capabilities require separate suitable sensors, lawful procedures, and independent validation.*
+ntinel — proposed mobile robot-dog concept, not a built or validated robot. The intended design is a four-legged, mobile inspection assistant that can patrol authorised areas, move around obstacles, yield to pedestrians, and support human-reviewed screening of permitted items and sensor readings. It is not just a fixed baggage scanner. Concealed-item and chemical-screening capabilities require separate suitable sensors, lawful procedures, and independent validation.*
 
 **Design direction:** mobile quadruped + spatial awareness + optional modular screening sensors + human operator oversight. Movement speed must be limited by validated safety performance, and the robot must slow or stop near people.
 
