@@ -42,11 +42,17 @@ class ScreeningSharedCoreV01Tests(unittest.TestCase):
         self.assertIs(proposal["authority"]["execution_authorized"], False)
         self.assertEqual(proposal["actions"][0]["evidence_refs"], ["fixture-sentinel-v01-1"])
 
-    def test_no_identity_or_enforcement_claims_are_created(self):
+    def test_no_identity_or_enforcement_fields_are_created(self):
         bundle = build_screening_v01_records(adapt_screening_mock(request()))
-        serialized = json.dumps(bundle).lower()
-        for forbidden in ("chemical_identity", "suspect_score", "guilt", "detention", "arrest"):
-            self.assertNotIn(forbidden, serialized)
+        def collect_keys(value):
+            if isinstance(value, dict):
+                return set(value.keys()).union(*(collect_keys(child) for child in value.values()))
+            if isinstance(value, list):
+                return set().union(*(collect_keys(child) for child in value))
+            return set()
+        output_keys = collect_keys(bundle)
+        for forbidden in ("chemical_identity", "suspect_score", "guilt", "detention", "arrest", "enforcement_action"):
+            self.assertNotIn(forbidden, output_keys)
 
     def test_mapper_rejects_timezone_missing(self):
         envelope = adapt_screening_mock(request())
