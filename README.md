@@ -1,6 +1,12 @@
 # Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
 
 
+## Visual concept
+
+![PUI89 Sentinel robotic screening concept](docs/images/multimodal-screening-robot-concept-2026.svg)
+
+*Concept illustration only; this is not a built, validated, or certified robot. Sensor capabilities depend on separately validated hardware and data.*
+
 ## Public privacy boundary
 
 This public README is limited to the project overview, approved concept material and evidence that can be shared openly. Do not publish API keys, passwords, private tokens, Wi-Fi or internal network settings, private camera footage, personal or precise location data, detailed security configurations, unreleased engineering specifications, or confidential commercial plans. Keep sensitive material in an appropriately access-controlled private location. If a credential may have been exposed, revoke it; removing it from the latest commit does not remove it from Git history.
