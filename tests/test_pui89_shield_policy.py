@@ -105,3 +105,69 @@ class ShieldContractTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SharedCoreAdapterTests(unittest.TestCase):
+    def test_observation_preserves_provenance_and_degraded_quality(self):
+        from pui89_shield_policy import build_core_observation
+        item = build_core_observation(
+            observation_id="obs-1", observed_at="2026-11-09T10:00:00Z",
+            source_id="camera-1", source_type="sensor", modality="rgb",
+            payload={"asset_ref": "fixture://image-1"}, quality_status="degraded",
+            provenance={"recorded_at": "2026-11-09T10:00:01Z", "dataset_or_file": "synthetic-fixture"},
+            uncertainty={"description": "synthetic fixture", "value": 0.8, "method": "test-only"},
+        )
+        self.assertEqual(item["schema_version"], "0.1.0")
+        self.assertEqual(item["quality"]["status"], "degraded")
+        self.assertEqual(item["provenance"]["dataset_or_file"], "synthetic-fixture")
+
+    def test_world_state_keeps_unknowns_and_conflicts(self):
+        from pui89_shield_policy import build_core_world_state
+        item = build_core_world_state(
+            state_id="state-1", updated_at="2026-11-09T10:00:00Z",
+            evidence_refs=["obs-1", "obs-1"], unknowns=["chemical modality unavailable"],
+            conflicts=["two synthetic sources disagree"],
+        )
+        self.assertEqual(item["evidence_refs"], ["obs-1"])
+        self.assertIn("chemical modality unavailable", item["unknowns"])
+        self.assertTrue(item["conflicts"])
+
+    def test_proposal_is_advisory_and_never_authorizes_execution(self):
+        from pui89_shield_policy import build_human_review_proposal
+        item = build_human_review_proposal(
+            proposal_id="proposal-1", created_at="2026-11-09T10:00:00Z",
+            objective="request qualified human review", action_id="review-1",
+            description="Ask an authorised reviewer to inspect the evidence",
+            risk_level="moderate", preconditions=["evidence provenance available"],
+            expected_effect="human assessment", evidence_refs=["obs-1"],
+        )
+        self.assertEqual(item["authority"]["mode"], "advisory_only")
+        self.assertIs(item["authority"]["human_approval_required"], True)
+        self.assertIs(item["authority"]["execution_authorized"], False)
+
+    def test_failure_report_records_evidence_and_open_status(self):
+        from pui89_shield_policy import build_core_failure_report
+        item = build_core_failure_report(
+            failure_id="failure-1", occurred_at="2026-11-09T10:00:00Z",
+            component="screening-input", severity="moderate",
+            summary="Synthetic sensor disagreement", observed_result="conflict",
+            evidence_refs=["obs-1"], response_status="investigating",
+        )
+        self.assertEqual(item["schema_version"], "0.1.0")
+        self.assertEqual(item["response_status"], "investigating")
+        self.assertEqual(item["evidence_refs"], ["obs-1"])
+
+    def test_invalid_contract_values_are_rejected(self):
+        from pui89_shield_policy import build_core_observation, build_human_review_proposal
+        with self.assertRaises(ValueError):
+            build_core_observation(
+                observation_id="obs-2", observed_at="now", source_id="cam",
+                source_type="unknown-device", modality="rgb", payload=None,
+                quality_status="usable", provenance={"recorded_at": "now"},
+            )
+        with self.assertRaises(ValueError):
+            build_human_review_proposal(
+                proposal_id="p", created_at="now", objective="review",
+                action_id="a", description="review", risk_level="unbounded",
+                preconditions=[], expected_effect="review",
+            )
