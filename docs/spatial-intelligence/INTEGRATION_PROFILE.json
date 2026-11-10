@@ -1,0 +1,38 @@
+{
+  "profile_version": "0.1.0",
+  "project_id": "multimodal-narcotics-screening-ai",
+  "project_name": "PUI89 Sentinel Screening",
+  "integration_status": "profile_added_runtime_integration_pending",
+  "shared_core": {
+    "repository": "Pui89/PUI89-Shared-AI-Core",
+    "pull_request": "https://github.com/Pui89/PUI89-Shared-AI-Core/pull/26",
+    "release_status": "draft_not_merged"
+  },
+  "intended_use": "Optional geometry context for inspection positioning and scene documentation only.",
+  "recommended_modalities": [
+    "rgb",
+    "depth",
+    "lidar"
+  ],
+  "planned_spatial_tasks": [
+    "Scene layout and inspection-position context",
+    "Geometry evidence kept separate from substance-related evidence",
+    "Human-review workflow references"
+  ],
+  "limitations_and_safety_boundaries": [
+    "LiDAR/depth geometry cannot identify narcotics or infer chemical composition.",
+    "No substance classification from spatial data; no enforcement action.",
+    "Chemical/X-ray modalities require lawful, validated equipment and separately verified evidence."
+  ],
+  "common_gates": [
+    "usable evidence quality",
+    "valid calibration before fusion",
+    "matching coordinate frames",
+    "validated timestamp tolerance",
+    "sensor-health and uncertainty assessment",
+    "human review required",
+    "execution_authorized=false"
+  ],
+  "evidence_status": "No real sensor integration, substance detection performance, field validation or certification claimed.",
+  "cost_policy": "standard-library-first; no paid APIs, cloud GPU, model downloads or hardware purchases"
+}
