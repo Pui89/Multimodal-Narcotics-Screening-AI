@@ -1,0 +1,41 @@
+{
+  "profile_version": "0.1.0",
+  "project_id": "sentinel-multimodal-screening",
+  "project_name": "PUI89 Sentinel / Multimodal Screening",
+  "integration_status": "profile_documented_runtime_adapter_pending",
+  "shared_core": {
+    "repository": "Pui89/PUI89-Shared-AI-Core",
+    "contract": "anomaly_evidence",
+    "contract_version": "0.1.0",
+    "connection_status": "not_connected"
+  },
+  "intended_modalities": [
+    "rgb",
+    "xray",
+    "chemical_sensor"
+  ],
+  "candidate_scope": [
+    "Unusual image regions or modality inconsistencies for authorised human examination",
+    "Sensor drift and input-quality anomalies"
+  ],
+  "explicit_non_goals": [
+    "Anomaly score does not identify a substance or prove contraband",
+    "No autonomous enforcement, search, detention or consequential decision"
+  ],
+  "required_gates": [
+    "Use X-ray or chemical-sensor outputs only with lawful access, appropriate equipment and verified calibration",
+    "Record provenance, modality, uncertainty and missing/conflicting evidence",
+    "Human review required; no enforcement action",
+    "execution_authorized=false",
+    "no paid API, subscription, cloud GPU, model download or new dependency without explicit approval"
+  ],
+  "model_adapters": {
+    "PaDiM": "not_configured",
+    "PatchCore": "not_configured",
+    "EfficientAD": "not_configured"
+  },
+  "model_weights": "not_downloaded",
+  "dataset_status": "no_dataset_authorised_or_loaded_by_this_profile",
+  "evidence_status": "documentation_only; no model accuracy, runtime integration, hardware validation or field safety is claimed",
+  "cost_policy": "zero-cost-first; no external services or downloads"
+}
