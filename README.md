@@ -35,30 +35,16 @@ PUI89 prioritises open-source software, transparent licensing, reproducible work
 > 
 > **Validation boundary:** No validated substance detector, chemical/X-ray integration or autonomous enforcement capability is claimed; consequential decisions require authorised human review.
 
-## Commercial readiness progress
+## Development stage
 
-**45% — evidence-based commercial-readiness estimate**  
-**Target: 100% = ready for an appropriately scoped commercial release or formal commercial procurement submission.** This is not a code-completion percentage, a sales forecast, or a claim of product certification. Scores are provisional and based on the evidence currently documented in this repository; they must be revised when new evidence is verified.
+**Current stage:** Screening-workflow software prototype  
+**ขั้นการพัฒนา:** ต้นแบบซอฟต์แวร์กระบวนการคัดกรอง
 
-The repository documents a screening-workflow software prototype, shared-core/benchmark tests and synthetic scenarios. No validated substance detector, chemical/X-ray integration, robotic platform or field accuracy is established; human review and lawful procedures remain mandatory.
+**Evidence:** A human-supervised workflow and synthetic evaluation scenarios are documented.
 
-| Readiness gate | Weight | Evidence credit |
-|---|---:|---:|
-| Product purpose & requirements | 10 | 9 |
-| Architecture & engineering design | 10 | 9 |
-| Working software baseline | 15 | 9 |
-| Reproducible tests & evaluation | 15 | 12 |
-| Integrated product prototype | 15 | 0 |
-| Safety, reliability & real-world validation | 15 | 2 |
-| Licensing, IP & regulatory readiness | 10 | 2 |
-| Commercial release package & support | 10 | 2 |
-| **Total** | **100** | **45** |
+**Limitations:** Substance-identification accuracy, chemical/X-ray sensor integration, robotic deployment and field performance are not validated.
 
-**What 100% requires:** a defined product and acceptance criteria; integrated release candidate; reproducible performance and reliability evidence; appropriate safety and real-world validation; verified rights/licences and applicable regulatory conformity; manufacturing/deployment, pricing, warranty, maintenance, user documentation and support arrangements. A score of 100% is awarded only after all applicable release gates are evidenced and reviewed. Partner or research discussions may happen earlier, but must be labelled as development-stage collaboration—not a ready-to-sell product.
-
-**Next commercial-readiness gate:** close the missing evidence above, beginning with project-specific working-product validation and safety evidence. Never count a planned feature, concept image, tool inventory, synthetic-only result or unrun test as a completed gate.
-
-_Last readiness review: 7 November 2026. This estimate can rise or fall as evidence changes._
+**Next milestone:** Establish lawful, rights-cleared test data and modality-specific evaluation with human review.
 
 
 ## Project website QR codes
@@ -831,32 +817,7 @@ This project follows the shared [PUI89 Efficient Engineering Standard](https://g
 
 Track relevant RAM, CPU/GPU, latency, storage and network measurements using documented workloads and comparable environments. Record power (W/Wh), battery runtime and temperature only when suitable physical instruments and hardware are available. External services, datasets and model downloads require explicit review before adoption. Efficiency changes must preserve accuracy, safety, evidence integrity, privacy and security. Unmeasured physical performance must be labelled **not measured**.
 
-<!-- PUI89_DAILY_PROGRESS:START -->
-## Daily project progress
 
-**🟠 45% — Foundation and prototype stage**  
-**Evidence score:** 45/100 · **Review date:** 7 November 2026 (Asia/Bangkok)  
-**Progress graph:** 🟦🟦🟦🟦🟦🟦🟦🟦🟦⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ 45%
-
-This is an evidence-weighted commercial-readiness estimate, not a code-completion percentage, sales forecast, certification, or measured real-world performance. Scores change only when repository evidence is reviewed and the evidence credits below are updated. The daily run refreshes the review date; it never increases the score merely because time has passed.
-
-| Readiness gate | Evidence credit | Visual score |
-|---|---:|---|
-| Purpose & requirements | 9/10 | 🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜ |
-| Architecture & engineering | 9/10 | 🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜ |
-| Working software baseline | 9/15 | 🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ |
-| Reproducible tests & evaluation | 12/15 | 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜ |
-| Integrated product prototype | 0/15 | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ |
-| Safety & real-world validation | 2/15 | 🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ |
-| Licensing & regulatory readiness | 2/10 | 🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜ |
-| Release package & support | 2/10 | 🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜ |
-| **Total** | **45/100** | **🟦🟦🟦🟦🟦🟦🟦🟦🟦⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜** |
-
-**Next milestone:** Improve the lowest-scoring applicable gate with reproducible project-specific evidence. Planned work, concept artwork, unrun tests, synthetic-only results and tool inventories do not earn evidence credit.
-
-**Status boundary:** Software tests and simulations do not establish a built, certified, field-tested or commercially validated physical product. Real-world claims require separate, traceable validation.
-
-<!-- PUI89_DAILY_PROGRESS:END -->
 
 
 ---
@@ -912,7 +873,7 @@ Scores are awarded only through a dated review with a defined scope, version/com
 
 **Scoring method / รายละเอียดเกณฑ์:** [English](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PROJECT_STRENGTH_SCORECARD.md) · [ภาษาไทย](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PROJECT_STRENGTH_SCORECARD_TH.md)
 
-This score is separate from any commercial-readiness estimate and is not certification, safety approval or an investment rating.
+This project-strength review is separate from the documented development stage; it is not certification, safety approval or an investment rating.
 <!-- PUI89_PROJECT_STRENGTH_SCORECARD:END -->
 
 
