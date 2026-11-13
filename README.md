@@ -38,7 +38,7 @@ PUI89 prioritises open-source software, transparent licensing, reproducible work
 ## Development stage
 
 **Stage:** Stage 2 of 5 — Human-supervised screening workflow prototype
-**ขั้นการพัฒนา:** Software workflow prototype
+**ระยะการพัฒนา:** ต้นแบบกระบวนงานคัดกรองที่มีมนุษย์กำกับ
 
 **Shared framework:** [PUI89 Development Stage Standard](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_DEVELOPMENT_STAGE_STANDARD.md)
 
