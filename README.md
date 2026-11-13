@@ -35,6 +35,24 @@ PUI89 prioritises open-source software, transparent licensing, reproducible work
 > 
 > **Validation boundary:** No validated substance detector, chemical/X-ray integration or autonomous enforcement capability is claimed; consequential decisions require authorised human review.
 
+## Perception & Task Intelligence (PTI)
+
+**Role in this product:** help authorised inspectors organise multimodal inspection evidence and identify items or regions that warrant closer human examination. PTI is the shared PUI89 perception-and-task framework; this is a proposed workflow, not a claim of operational screening accuracy.
+
+**Priority perception tasks**
+- Check each input for image quality, completeness, modality, timestamp and provenance before analysis.
+- Detect and localise regions of interest in RGB and X-ray images only for classes supported by appropriate labelled data.
+- Keep RGB, X-ray and instrument-based chemical measurements as distinct evidence channels; do not infer chemical identity from ordinary RGB imagery.
+- Compare modality-specific findings and explicitly flag disagreement, missing inputs and out-of-scope cases.
+- Record source, modality, model/data version, uncertainty and supporting evidence for every finding.
+- Escalate uncertain, conflicting or high-consequence findings to a qualified human inspector.
+
+**Task flow:** OBSERVE → PERCEIVE → ASSESS → DECIDE → RESPOND → LEARN FROM EVIDENCE. Outputs are prioritisation and review suggestions only; they are not a definitive substance identification, enforcement decision or substitute for validated instruments and trained inspectors.
+
+**First evidence gate:** lawfully obtained and appropriately governed datasets; separate modality-specific labels, splits and evaluations; class-level precision/recall/F1, false-positive/false-negative analysis, uncertainty and out-of-distribution tests, plus human-factors review.
+
+**Not established:** operational detection rates, definitive narcotics identification from RGB or X-ray alone, validated chemical identification, or replacement of human inspectors. See the [shared PTI specification](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/perception/PUI89_PERCEPTION_TASK_INTELLIGENCE_V1.0.md) (maintainer repository access required).
+
 ## Development stage
 
 **Current stage:** Screening-workflow software prototype  
