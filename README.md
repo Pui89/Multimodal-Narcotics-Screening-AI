@@ -5,13 +5,13 @@
 **Relationship to NOMAD:** Sentinel uses four articulated legs; PUI89 NOMAD is a separate four-wheel mobile assistant.  
 **Development status:** Product concept and engineering requirements. No physical Sentinel prototype, field capability or sensor integration is claimed.
 
-![PUI89 Sentinel quadruped robot-dog concept](docs/images/pui89-sentinel-quadruped-v2.svg)
+![PUI89 Sentinel quadruped robot-dog concept](docs/images/pui89-sentinel-quadruped-inspection-v3.svg)
 
 *Concept illustration only. It is not evidence of a built, tested or validated robot.*
 
 ## Product direction
 
-PUI89 Sentinel is being repositioned as a general-purpose **All-Terrain Inspection Robot Dog**, not a narcotics-screening product. The product is intended to help authorised operators inspect environments, assets and visible conditions, collect traceable sensor evidence and report findings for human review.
+PUI89 Sentinel is being repositioned as a general-purpose **All-Terrain Inspection Robot Dog**, a general-purpose inspection platform; it does not include drug detection, X-ray payloads or chemical-identification functions. The product is intended to help authorised operators inspect environments, assets and visible conditions, collect traceable sensor evidence and report findings for human review.
 
 ### Target operating contexts
 
@@ -103,6 +103,12 @@ Excludes engineering salaries, facilities, taxes/VAT, import duty, international
 ## Evidence and maturity boundary
 
 Current status is **concept / requirements definition** for the physical robot. Software tools or simulated scenarios do not establish physical mobility, terrain capability, inspection accuracy or field readiness. No physical prototype, all-terrain performance, fall recovery, container entry, hazardous-atmosphere detection or industrial deployment is claimed.
+
+## Architecture, validation and visual reference
+
+- [Complete system blueprint](docs/COMPLETE_SYSTEM_BLUEPRINT.md)
+- [Validation matrix](docs/VALIDATION_MATRIX.md)
+- [Sentinel quadruped inspection concept v3](docs/images/pui89-sentinel-quadruped-inspection-v3.svg)
 
 ## Engineering requirements
 
