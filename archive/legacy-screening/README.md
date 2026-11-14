@@ -11,6 +11,7 @@ These files are retained for historical traceability only. They are **not** part
 - `ROBOT_BUILD.md` — earlier screening-oriented robot build plan.
 - `PHYSICAL_AI_STACK.md` — earlier screening-specific AI architecture.
 - `AUTONOMOUS_SYSTEMS.md` — earlier screening-specific system notes.
+- `MULTIMODAL_SCREENING_ROBOT_CONCEPT.md` — earlier mobile screening robot concept.
 
 ## Archived concept artwork
 
