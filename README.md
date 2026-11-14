@@ -940,3 +940,19 @@ The portfolio-wide count is published on the [PUI89 website](https://pui89.githu
 
 จะนับเมื่อมีสถานะเสร็จสมบูรณ์ วันที่ ขอบเขต บทบาทผู้ทบทวน ผลการทบทวน และหลักฐานอ้างอิงอย่างน้อยหนึ่งรายการครบถ้วนเท่านั้น รายการร่าง คะแนน ดาว ยอดเข้าชม และความคิดเห็นจะไม่นับ
 <!-- PUI89_EVIDENCE_BACKED_REVIEW:END -->
+
+## AI Engineering Intelligence & Screening-System Design
+
+This project adopts PUI89 Engineering Intelligence to structure inspection workflows, sensor integration requirements, uncertainty handling, human review and evidence traceability. Screening outputs are decision support; they are not proof that a substance is present or absent.
+
+**Product-specific design priorities**
+- **Multimodal evidence alignment:** maintain separate provenance, calibration, timestamp, quality and uncertainty for RGB, X-ray and any approved chemical-sensor observations; never imply that one modality substitutes for another.
+- **Cross-modal consistency:** identify agreement, disagreement, missing modalities and out-of-distribution inputs; preserve modality-specific findings for an authorised reviewer.
+- **Inspection workflow engineering:** define sample/item identity, chain-of-custody events, repeat-scan rules, operator review, escalation and audit records.
+- **Human factors:** design clear risk explanations, uncertainty displays, accessible operator interfaces and safe handling procedures; avoid presenting model scores as legal conclusions.
+- **Reliability and calibration:** evaluate sensor drift, calibration status, environmental interference, occlusion, scan quality, false alarms and missed detections.
+- **Privacy and security:** minimise retained imagery and sensitive records, apply access controls and retention rules, and document approved data flows.
+
+**AI engineering methods to evaluate:** object detection and segmentation for visible evidence, X-ray image analysis, approved sensor-signal classification, multimodal representation alignment, anomaly detection, open-set/unknown rejection, calibration analysis and human-in-the-loop decision support.
+
+**Evidence gates:** modality-specific dataset rights and provenance → independently labelled held-out evaluation → per-class precision/recall and false-positive/false-negative analysis → calibration and domain-shift testing → workflow usability and security review → authorised pilot validation. Chemical detection capability, substance identification, regulatory suitability and operational performance must not be claimed without modality-specific evidence.
