@@ -1,30 +1,26 @@
-# Product Quality Roadmap — Multimodal Narcotics Screening AI
+# PUI89 Sentinel — Product Quality Roadmap
 
-**Priority:** Equal top priority across all PUI89 projects.  
-**Current evidence level:** screening workflow and evaluation prototype; no validated narcotics detector or chemical-identification system.
+**Product stage:** Concept and requirements definition.  
+**Evidence boundary:** No physical prototype, integrated sensor stack or validated field capability is claimed.
 
 ## Release gates
 
-1. **Define a narrow authorised task:** specify intended use, target classes, decision boundary, authorised operators, and what the system must never conclude.
-2. **Data and ground truth:** document lawful source, consent/authority where applicable, provenance, modality, calibration, labels, reviewer qualifications, and limitations. Keep synthetic examples separate from real samples.
-3. **Leakage-safe evaluation:** split by source, subject/item, device, site, and session where relevant. Freeze the held-out set before model selection.
-4. **Fair baseline comparison:** measure each modality separately before fusion; compare against fusion on the same split. Report per-class precision/recall, confusion matrix, false-positive/false-negative rates, calibration, uncertainty, abstention coverage/risk, and missing/conflicting-modality behavior.
-5. **Human review and privacy:** incomplete, conflicting, out-of-distribution, or low-confidence input must be escalated or abstained from. Minimize sensitive data, restrict access, protect audit logs, and document retention/deletion.
-6. **No automated enforcement:** model output is a screening signal, not proof of substance identity, illegality, intent, or wrongdoing.
+1. **Mission and operating envelope:** define intended inspection tasks, permitted environments, payload, terrain classes, no-go conditions and operator responsibilities.
+2. **Requirements and hazards:** document measurable system requirements, hazard analysis, emergency-stop architecture, human exclusion zones and safe recovery behaviour.
+3. **Simulation and scenarios:** build repeatable gait, terrain, obstacle, localisation, sensor-fault and communications-loss scenarios. Label all simulation results as simulation.
+4. **Hardware and sourcing:** compare candidate components by exact manufacturer, model/part number, country of manufacture/origin evidence, compatibility, supplier, dated price, lead time and warranty. No procurement without approval.
+5. **Perception evaluation:** use permissioned, representative data with traceable labels. Report per-class precision/recall, false positives/negatives, calibration, uncertainty and abstention.
+6. **Mobility validation:** measure stability, payload, gait, step/threshold capability, stopping, recovery, endurance and thermal behaviour within a declared operating envelope.
+7. **Safety and human oversight:** verify independent emergency stop, fail-closed controls, operator approval, privacy, access control and audit trail.
+8. **Release evidence:** publish only reproducible results for the exact hardware/software configuration, including sample counts, test conditions, limitations and unresolved risks.
 
-## Milestones
+## Current priorities
 
-- [ ] Document intended use and prohibited uses.
-- [ ] Inventory input modalities, data provenance, licenses, and ground truth.
-- [ ] Add tests for missing, corrupted, conflicting, stale, and misleading inputs.
-- [ ] Establish unimodal baselines and a comparable fusion evaluation.
-- [ ] Publish metrics, uncertainty/abstention results, false-positive examples, and limitations.
-- [ ] Review privacy, security, dependencies/licenses, human-review flow, and rollback.
+- Complete the system blueprint and validation matrix.
+- Define the first narrow inspection mission and its measurable acceptance criteria.
+- Establish simulation-only baselines before hardware procurement.
+- Keep concept, implementation, simulation, bench-test and field-validation evidence separate.
 
-## Resource policy
+## Quality rule
 
-Prefer dependency-light local evaluation. Do not automatically download large models, send sensitive data to external services, or incur paid compute/API charges. Review model and dataset licenses before use.
-
-## Honest status rule
-
-A populated dashboard, synthetic test, passing unit test, trained model, validated sensor, and real-sample laboratory evaluation are different evidence levels. Do not claim reliable chemical identification without appropriate controlled ground-truth validation and independent testing.
+A passing software test or simulation is not proof of real-world safety or performance. Every public capability statement must point to evidence appropriate to the claim.
