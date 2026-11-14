@@ -11,7 +11,7 @@
 
 ## Product direction
 
-PUI89 Sentinel is being repositioned as a general-purpose **All-Terrain Inspection Robot Dog**, not a narcotics-screening product. The product is intended to help authorised operators inspect environments, assets and visible conditions, collect traceable sensor evidence and report findings for human review.
+PUI89 Sentinel is being repositioned as a general-purpose **All-Terrain Inspection Robot Dog**, a general-purpose inspection platform; it does not include drug detection, X-ray payloads or chemical-identification functions. The product is intended to help authorised operators inspect environments, assets and visible conditions, collect traceable sensor evidence and report findings for human review.
 
 ### Target operating contexts
 
