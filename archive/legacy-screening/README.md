@@ -12,6 +12,13 @@ These files are retained for historical traceability only. They are **not** part
 - `PHYSICAL_AI_STACK.md` — earlier screening-specific AI architecture.
 - `AUTONOMOUS_SYSTEMS.md` — earlier screening-specific system notes.
 - `MULTIMODAL_SCREENING_ROBOT_CONCEPT.md` — earlier mobile screening robot concept.
+- `SCREENING_PRODUCT_READINESS.md` — superseded screening readiness assessment.
+- `REAL_SCREENING_DATASET_PLAN.md` — superseded dataset planning document.
+- `PUI89_SCREENING_MODEL_ADAPTER.md` — superseded model adapter notes.
+- `VALIDATION_MATRIX.md` — earlier screening-specific validation matrix.
+- `COMPLETE_SYSTEM_BLUEPRINT.md` — earlier screening-oriented system blueprint.
+- `CONCEALED_OBJECT_SCREENING_ROADMAP.md` — superseded roadmap.
+- `SENTINEL_MOBILE_XRAY_ENGINEERING_SPEC_V0.1.md` — superseded specification filename and scope.
 
 ## Archived concept artwork
 
