@@ -1,11 +1,7 @@
-# Multimodal AI for Intelligent Narcotics Screening and Robotic Inspection
+# PUI89 Sentinel — Multimodal Inspection, Screening & Robotic Intelligence
 
 
 ## Visual concept
-
-![PUI89 Sentinel robotic screening concept](docs/images/multimodal-screening-robot-concept-2026.svg)
-
-*Concept illustration only; this is not a built, validated, or certified robot. Sensor capabilities depend on separately validated hardware and data.*
 
 ## Public privacy boundary
 
@@ -17,6 +13,32 @@ This public README is limited to the project overview, approved concept material
 *Conceptual design illustration — not a deployed or validated screening robot. Sensor integrations and detection performance are unvalidated; consequential decisions require authorised human review.*
 <!-- PUI89_PINNED_CONCEPT_ILLUSTRATION:END -->
 
+## Mission and inspection scope — not limited to bags
+
+PUI89 Sentinel is intended as a **modular multimodal inspection and screening platform**, not a bag-only scanner. Its purpose is to help authorised operators inspect objects, goods, materials and approved operational environments by organising evidence from suitable, separately validated sensors. The quadruped robot-dog form is a proposed mobile inspection platform for moving between approved inspection points, observing surroundings and positioning compatible sensor payloads. The robot's shape does not itself detect narcotics.
+
+### Intended inspection contexts
+
+- **Personal and travel items:** bags, luggage and carried items, only through lawful, authorised inspection procedures.
+- **Parcels and mail:** packages, envelopes and shipping items using appropriate imaging or instrument-based inspection.
+- **Goods and freight:** cartons, pallets, cargo, containers and warehouse consignments, subject to suitable sensor coverage and operating procedures.
+- **Vehicles and transport assets:** authorised inspection of vehicle compartments, cargo areas and transport assets; no assumption of hidden-substance detection without validated instruments.
+- **Facilities and operational areas:** inspection rounds in approved logistics, border, warehouse, transport and security facilities; detection of visible anomalies, unattended objects or environmental events is a separate task from substance identification.
+- **Materials and samples:** controlled examination of defined samples using instruments calibrated for specific target substances or properties.
+
+These are **target use contexts**, not claims that every modality or deployment is currently implemented, validated, certified or legally approved. Each context requires its own risk assessment, sensor configuration, data rights, operating procedure and validation evidence.
+
+### Sensor and decision boundaries
+
+- RGB cameras support visible-scene and object inspection; RGB appearance alone cannot confirm chemical identity or prove that a substance is narcotic.
+- X-ray imaging may support internal-structure inspection only when suitable, legally compliant equipment, trained operators, radiation protection and validated procedures are provided.
+- Chemical or trace-detection instruments can only report the analytes and measurement limits for which they are designed, calibrated and independently evaluated.
+- Audio supports communication and relevant acoustic-event awareness; it is not a narcotics detector.
+- Sensor channels must retain separate provenance, calibration, timestamps, uncertainty and limitations before any authorised evidence fusion.
+- AI outputs are inspection cues and review prioritisation—not proof, accusation, search authority or an enforcement decision. Qualified authorised personnel retain consequential decisions.
+
+**Out of scope:** biometric identity inference, profiling people as suspicious, automated accusations, detention, searches or enforcement actions. Any inspection involving people must follow applicable law, necessity, proportionality, privacy and human oversight requirements.
+
 ## Open-source-first engineering
 
 PUI89 prioritises open-source software, transparent licensing, reproducible workflows and evidence-led collaboration. Model weights, datasets, hosted services and hardware are assessed separately for provenance, licence terms, security, data handling, resource requirements and intended use. Public availability alone does not establish permission for reuse or commercial deployment.
@@ -27,8 +49,8 @@ PUI89 prioritises open-source software, transparent licensing, reproducible work
 
 > **PUI89 | Intelligent Systems. Verifiable Decisions. Safer Outcomes.**
 > 
-> **Project:** PUI89 Sentinel — Multimodal Narcotics Screening AI  
-> **Focus:** Human-reviewed multimodal screening workflow and robotic inspection concept  
+> **Project:** PUI89 Sentinel — Multimodal Inspection, Screening & Robotic Intelligence  
+> **Focus:** Human-reviewed inspection and screening across objects, goods, materials and authorised facilities, supported by a quadruped mobile-robot concept  
 > **Development stage:** Screening-workflow software prototype; detector performance and sensor integrations are not validated.
 > 
 > **Project website:** [English](https://pui89.github.io/screening.html) · [ภาษาไทย](https://pui89.github.io/screening-th.html) · [PUI89 portfolio](https://pui89.github.io/)
