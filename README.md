@@ -35,6 +35,10 @@ PUI89 prioritises open-source software, transparent licensing, reproducible work
 > 
 > **Validation boundary:** No validated substance detector, chemical/X-ray integration or autonomous enforcement capability is claimed; consequential decisions require authorised human review.
 
+## Hardware & Materials Sourcing
+
+PUI89 uses a traceable sourcing workflow for materials, mechanical parts, sensors, compute, power and control components. See the [bilingual Hardware & Materials Sourcing guide](https://pui89.github.io/materials.html) for the process covering exact manufacturer/model identification, Thailand and international supplier discovery, country-of-origin evidence, dated pricing and availability, lead times, shipping, compatibility checks and verification gates. Product-specific candidates are added only when supported by evidence; research candidates are not purchases or validated hardware.
+
 ## Perception & Task Intelligence (PTI)
 
 **Role in this product:** help authorised inspectors organise multimodal inspection evidence and identify items or regions that warrant closer human examination. PTI is the shared PUI89 perception-and-task framework; this is a proposed workflow, not a claim of operational screening accuracy.
