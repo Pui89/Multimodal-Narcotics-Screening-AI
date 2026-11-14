@@ -933,6 +933,22 @@ This lightweight job is not a full model/sensor benchmark. The selected PUI89 co
 
 ## Port and shipping-container inspection mission — design target
 
+### Difficult container environments
+
+| Environment | Required capability |
+|---|---|
+| Narrow entrance | Accurate approach and alignment |
+| Raised floor threshold | Controlled step-over |
+| Dark interior | Low-light imaging and onboard illumination |
+| Crowded cargo | Narrow-space navigation and safe retreat |
+| Uneven floor | Adaptive foot placement and slip detection |
+| Long container | Mapping and return-route planning |
+| Lost communication | Safe hold and recovery procedure |
+
+If Sentinel cannot confirm clearance, stable footing, localisation or a viable exit route, it must stop safely and request operator assistance. These are proposed requirements pending representative testing, not validated capabilities.
+
+
+
 Sentinel is intended to support authorised inspection missions across defined port areas, cargo yards, container rows and selected shipping-container interiors. The proposed workflow is to patrol approved routes, approach an assigned container, assess doorway and threshold clearance, enter only when site conditions and the exit route are confirmed, map and inspect the interior, record evidence and safely exit. Port navigation must account for pedestrians, forklifts, trucks, trailers, cranes, moving cargo and restricted operating zones; site traffic controls and authorised human supervision take precedence.
 
 Container entry requires a compact verified body envelope, threshold traversal, low-speed precision movement, forward/reverse/turning capability, low-light sensing, local mapping where GNSS is unavailable, overhead and cargo-obstacle awareness, and a safe retreat/hold behaviour. A container may contain hazardous atmospheres, fumigants, chemicals, heat, dust, unstable cargo or other risks not detectable by RGB/depth/LiDAR alone. Entry is conditional on a site-specific risk assessment and confirmation by the responsible operator that robotic entry is safe; Sentinel is not an atmosphere-safety certification device.
