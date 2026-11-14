@@ -1,131 +1,95 @@
-# PUI89 Sentinel — Mobile X-ray Engineering Specification (Preliminary)
+# PUI89 Sentinel — All-Terrain Inspection Robot Dog Engineering Requirements
 
-**Status:** Concept / requirements definition only  |  **Revision:** 0.1
-**Hardware status:** No X-ray payload selected, purchased, integrated, certified or tested.
-**Approval:** This document does not authorise procurement, radiation generation or field operation.
+**Revision:** 0.2  
+**Status:** Concept and requirements definition only  
+**Product form:** Four-legged quadruped robot dog; no wheels  
+**Mission:** General industrial, infrastructure, logistics, port and selected outdoor inspection  
+**Procurement / build approval:** Not authorised by this document
 
-## 1. System objective
+## 1. Product identity and boundary
 
-Define a quadruped mobile inspection robot that carries a removable X-ray payload while travelling between authorised inspection locations. The robot may transport the payload while walking, but X-ray emission is prohibited while the robot is moving. Scanning is permitted only after the robot is stationary, stabilised, the inspection arrangement and controlled area are established, and an authorised operator enables the certified system.
+Sentinel is a general-purpose mobile inspection robot dog. It is not a narcotics-screening product and this baseline does not include an X-ray payload or dedicated narcotics-detection subsystem. PUI89 NOMAD is a separate four-wheel mobile assistant. Sentinel's four articulated legs are intended for selected terrain and access challenges that may be unsuitable for wheeled platforms.
 
-The X-ray subsystem must be a complete, commercially supplied and appropriately certified source/detector solution selected for a clearly defined inspection task. Generator design, exposure settings and shielding construction are outside this concept document and must be handled by qualified suppliers and radiation-safety specialists.
+This is an engineering target, not a built or validated robot.
 
-## 2. System architecture and interfaces
+## 2. Mission requirements
 
-| Subsystem | Required function | Key interface / evidence |
-|---|---|---|
-| Quadruped mobility | Carry payload between inspection locations; stand and hold a stable posture | Payload envelope, mounting loads, joint state, foot contact, IMU |
-| Removable payload carrier | Secure equipment and permit controlled removal/service | Mechanical interface drawing, retention inspection, mass properties |
-| X-ray source/detector package | Produce and capture images for the defined object class | Manufacturer datasheet, certification, intended-use statement, service requirements |
-| RGB camera | External object and scene context | Camera calibration, image-quality checks, timestamp |
-| Depth camera | Surface geometry and relative positioning | Validated operating range and calibration |
-| Thermal camera | Surface-temperature context where relevant | Sensor specification and calibrated-use limits |
-| 360-degree LiDAR | Navigation and spatial mapping | Sensor specification, calibration and environmental limits |
-| IMU and robot-state sensing | Estimate posture, movement and stability | Timestamped orientation, acceleration, joint and foot-contact state |
-| Edge AI computer | Image-quality checks, modality-specific inference and evidence management | Compute, memory, thermal and power budget |
-| Independent safety subsystem | Enforce safe state and inhibit X-ray unless all required conditions are met | Safety case, interlock evidence, radiation monitoring and operator authorisation |
+- Inspect authorised industrial facilities, infrastructure, warehouses, logistics yards and port areas.
+- Patrol approved routes, observe assets and environmental conditions, capture timestamped evidence and report anomalies for human review.
+- Approach assigned container entrances and assess geometry and hazards before any entry.
+- Enter only where doorway, threshold, floor, overhead clearance, atmosphere controls, localisation and exit route have been assessed and approved.
+- Support safe retreat, stop and operator escalation when conditions become uncertain.
 
-RGB, depth, thermal, LiDAR and X-ray are distinct evidence modalities. They must retain their own source identity, timestamps, calibration status, uncertainty and quality flags. X-ray imagery alone must not be represented as chemical identification or proof that an item contains a narcotic substance.
+## 3. Quadruped mobility requirements
 
-## 3. Payload and mass budget
+- Four articulated legs with mechanically rated joints, actuators and structural members.
+- Controlled forward/reverse walking, turning, sidestepping and speed transitions.
+- Adaptive gait and foot placement for validated surface classes.
+- IMU, joint-state and foot-contact estimation; slip/stumble detection.
+- Managed centre of mass and payload envelope.
+- Fall-risk mitigation, controlled stop and supervised recovery research.
+- Speed must adapt to terrain, slope, payload, traction, visibility, temperature and battery state.
+- Candidate algorithms: gait planning, state estimation, MPC and whole-body control; selection requires simulation and comparative testing.
 
-No payload mass or external dimensions are approved yet. Populate this ledger only from exact manufacturer datasheets or measured prototype parts.
+No claim of running speed, guaranteed balance, impact resistance, self-righting or unrestricted all-terrain operation is permitted without test evidence.
 
-| Item | Quantity | Unit mass | Subtotal | Source / status |
-|---|---:|---:|---:|---|
-| Certified X-ray source assembly | TBD | TBD kg | TBD kg | Manufacturer datasheet required |
-| Compatible digital detector | TBD | TBD kg | TBD kg | Manufacturer datasheet required |
-| Manufacturer-approved protective enclosure / shielding assembly | TBD | TBD kg | TBD kg | Supplier and radiation-safety approval required |
-| Interlocks, indicators and radiation monitor | TBD | TBD kg | TBD kg | Certified component datasheets required |
-| Payload frame, mounts and retention | TBD | TBD kg | TBD kg | CAD and structural assessment |
-| RGB camera | TBD | TBD kg | TBD kg | Selected sensor datasheet |
-| Depth camera | TBD | TBD kg | TBD kg | Selected sensor datasheet |
-| Thermal camera | TBD | TBD kg | TBD kg | Selected sensor datasheet |
-| 360-degree LiDAR | TBD | TBD kg | TBD kg | Selected sensor datasheet |
-| Edge computer and storage | TBD | TBD kg | TBD kg | Selected hardware datasheet |
-| Power conversion and wiring | TBD | TBD kg | TBD kg | Electrical design |
-| Other robot payload accessories | TBD | TBD kg | TBD kg | Itemised evidence required |
+## 4. Target environment and no-go conditions
 
-Payload mass = sum of all installed payload item subtotals.
-Gross robot mass = base robot mass (including legs, actuators and base battery) + installed payload mass + any carried accessories not already counted.
+Target surfaces for staged evaluation: indoor floors, corridors, paved paths, gravel, grass, firm soil, moderate slopes, steps and selected uneven/rubble-like surfaces. Each surface class requires documented traction, stability, payload, endurance, weather and obstacle tests.
 
-Avoid double-counting batteries, mounts, cables or protective enclosures. Record both travel configuration and scan configuration if any component is repositioned or deployed.
+No-go unless separately engineered, risk-assessed and authorised: deep water, cliffs, unstable structures, extreme slopes, inaccessible gaps, hazardous atmospheres, fire zones and conditions outside the validated operating envelope.
 
-## 4. Packaging and centre-of-gravity assessment
+## 5. Container and confined-area requirements
 
-Record the following from the selected equipment and a dimensioned CAD assembly:
-- Payload length, width, height and keep-out envelope: TBD.
-- Mounting interface, fasteners and retention method: TBD.
-- Payload centre of gravity in robot coordinates: TBD.
-- Complete robot centre of gravity in travel and scan configurations: TBD.
-- Clearance from legs, joints, cameras, LiDAR field of view and service access: TBD.
-- Permitted body pitch/roll and foot-placement envelope: established by locomotion testing, not assumed.
+| Challenge | Required behaviour / evidence |
+|---|---|
+| Narrow entrance | Measure and verify body/leg clearance; accurate approach and alignment |
+| Raised threshold | Controlled step-over only after geometry and footing assessment |
+| Dark interior | Low-light imaging and onboard illumination where safe |
+| Crowded cargo | Narrow-space navigation, overhead awareness and safe retreat |
+| Uneven floor | Adaptive foot placement, slip detection and stable stopping |
+| Long container | Local mapping, localisation confidence and return-route planning |
+| Lost communication | Safe hold, local safety behaviour and recovery procedure |
+| Unknown atmosphere | No entry until site-approved assessment and suitable calibrated instruments establish safe conditions |
 
-For each configuration, calculate the combined centre of gravity from measured component masses and their three-dimensional positions:
+Cameras, depth sensors and LiDAR cannot certify breathable air or detect all hazardous gases. Site risk assessment, operator authorisation and calibrated atmosphere instruments are separate requirements where relevant. If clearance, footing, localisation, atmosphere status or exit route is unknown, Sentinel must not proceed.
 
-r_CG = (sum(m_i × r_i)) / (sum(m_i))
+## 6. Candidate sensing and compute
 
-Assess the projected centre of gravity against the support polygon throughout the intended stationary inspection postures, including the effect of uneven ground, payload movement and external disturbances. This equation is a bookkeeping model, not proof of dynamic stability. Dynamic stability and fall risk require simulation and physical testing.
+RGB, depth, 360° LiDAR, IMU, joint/foot state, audio and edge compute are candidate core elements. Thermal imaging and calibrated gas/atmosphere instruments are mission-specific options. Each candidate requires exact manufacturer/model, part number, country of manufacture and origin evidence, technical datasheet, interface compatibility, power/thermal analysis, supplier, dated quotation, lead time and warranty review.
 
-## 5. Leg, actuator and structure sizing inputs
+No component is selected, purchased or integrated by this document.
 
-Do not select motors from robot body mass alone. The engineering team must determine:
-- Maximum gross mass and payload distribution from the verified mass ledger.
-- Leg geometry, segment lengths, joint locations and mechanical transmission.
-- Static support loads and dynamic load cases for walking, stopping, turning, stepping and recovery.
-- Ground-contact assumptions for each target terrain.
-- Joint torque-speed envelope, peak and continuous thermal limits, duty cycle and braking/holding requirements from actuator manufacturer data.
-- Structural strength, fatigue, joint backlash, impact protection and serviceability.
-- Safe payload and operating-envelope limits for each gait and posture.
+## 7. Six intelligence groups
 
-Required outputs: joint torque-speed requirements, actuator thermal margins, structural safety assessment, foot-ground load estimates and a validated payload envelope. All numeric limits remain TBD until the robot geometry, verified mass properties and terrain test cases are defined.
+Vision; Audio; Multimodal; Robotics; Action & Reaction; Safety & Control. Their roles and limitations are defined in the project README. All model outputs remain bounded proposals. Safety policy must be independent of model confidence and must enforce operating envelopes, safe hold, human approval and emergency-stop boundaries.
 
-## 6. Electrical power and battery budget
+## 8. Safety and privacy
 
-Create separate loads for locomotion, compute, cameras, LiDAR, communications, detector, X-ray source package, safety electronics and power conversion. Use exact manufacturer input-voltage and power data.
+- Authorised operation only; comply with site traffic and exclusion zones.
+- Treat people, forklifts, trucks and moving cargo as dynamic hazards.
+- No biometric identity inference, voice identity recognition, profiling or autonomous enforcement.
+- No automatic accusation, detention, search or coercive action.
+- Human approval for consequential actions.
+- Preserve timestamp, sensor identity, calibration status, provenance, uncertainty and audit record.
+- Safe hold and operator escalation on loss of localisation, unsafe footing, sensor conflict, communications failure or unknown hazard.
+- Do not use visual sensing as a substitute for gas detection, structural assessment or site safety procedures.
 
-For each load, record nominal power, peak power, duty cycle, voltage, start-up behaviour and thermal constraints. Do not assume the X-ray source can be powered by the quadruped battery; confirm its certified power arrangement with the supplier.
+## 9. Verification plan
 
-E_required (Wh) = sum(P_i (W) × t_i (h)) / system_efficiency
+1. Requirements review and simulation of gait, stability, obstacle clearance and safe-stop behaviours.
+2. Bench verification of power, thermal, compute, sensing and emergency-stop interfaces.
+3. Controlled indoor locomotion tests with unloaded and representative payload configurations.
+4. Incremental terrain tests with measurable traction, stability, speed, endurance and recovery criteria.
+5. Container mock-up tests for entrance, threshold, narrow-space movement, mapping and retreat.
+6. Supervised site trial only after independent safety review and operator/site approval.
 
-Add an explicitly justified reserve after measuring the real mission profile. Verify battery discharge limits, peak current, wiring, connectors, fusing, isolation, thermal management, charging and emergency shutdown. Runtime is not to be published until measured under a representative payload and terrain mission.
+Simulation results are not physical validation. A successful test on one surface or configuration does not establish all-terrain capability.
 
-## 7. Operating states and safety gates
+## 10. Preliminary prototype cost
 
-1. **Travel:** X-ray emission hardware remains inhibited. Robot may move only within its separately validated locomotion envelope.
-2. **Arrive and stabilise:** stop, verify posture, foot contacts, IMU state, payload retention and ground suitability.
-3. **Inspection-area authorisation:** establish the controlled area, access restrictions, warning indicators and radiation-monitoring arrangements as defined by the approved system.
-4. **Pre-scan checks:** certified equipment self-check, interlock state, detector readiness, operator authorisation and independent safety-system permissives.
-5. **Scan:** only the certified system's approved operating procedure may enable exposure. Robot remains stationary; no locomotion command may coexist with exposure enable.
-6. **Exposure complete:** confirm beam-off state, verify monitoring status and release the controlled area only under the approved procedure.
-7. **Resume travel:** retract/secure any deployed components, verify payload retention and only then enable locomotion.
+**Planning estimate: ฿1,225,000–฿2,990,000 for one engineering prototype.** This is a high-uncertainty estimate, not a supplier quote, verified BOM, fixed budget or purchase approval. It assumes a custom quadruped platform, actuators, mobility control, battery/power, core perception sensors, edge compute and integration/testing. It excludes salaries, facilities, VAT, duty, freight, certification, tooling, mass production and maintenance. Specialist thermal or atmosphere instruments may add cost. Final cost requires a defined mass/payload envelope, supplier-verified BOM and written quotations.
 
-Any loss of interlock integrity, unexpected motion, loss of safety monitoring, unauthorised access, communications fault affecting the safety case or emergency-stop event must inhibit exposure and transition to the certified system's defined safe state. The safety subsystem must be independent of AI perception or model confidence.
+## 11. Approval gates
 
-## 8. Verification and validation gates
-
-| Gate | Evidence required | Status |
-|---|---|---|
-| G0 — Requirements | Intended object classes, inspection purpose, operating environments and jurisdiction identified | Open |
-| G1 — Supplier selection | Certified source/detector package datasheets, mass, dimensions, power, service and intended-use documents | Open |
-| G2 — Mechanical feasibility | CAD envelope, mass properties, centre-of-gravity analysis, mounting and retention review | Open |
-| G3 — Mobility feasibility | Simulation and physical tests with representative inert payload; gait, stability, braking and fall-risk evidence | Open |
-| G4 — Electrical feasibility | Measured power budget, battery and thermal assessment, electrical safety review | Open |
-| G5 — Radiation safety | Complete-system shielding assessment, interlock validation, radiation survey, qualified specialist and regulatory approvals | Open |
-| G6 — Imaging performance | Image-quality and detection-performance tests using authorised test objects and documented acceptance criteria | Open |
-| G7 — Integrated operation | Stationary-only exposure interlock, no-motion permissive, emergency-stop and fault-injection tests | Open |
-| G8 — Field release | Site-specific risk assessment, operator training, maintenance plan, legal approvals and controlled trial evidence | Open |
-
-No gate is passed by documentation alone where physical measurement, independent review or regulatory approval is required.
-
-## 9. Procurement and provenance controls
-
-Before any purchase proposal, record exact manufacturer, model/part number, country of manufacture, manufacturer origin evidence, datasheet revision, certification, intended use, mass, dimensions, power, warranty, service availability, indicative price/date/source, shipping and import constraints. Verify provenance independently; unknown origin or incomplete certification is UNVERIFIED — NOT APPROVED.
-
-No purchase, download, installation, supplier commitment or paid service is authorised by this specification.
-
-## 10. Current engineering decision
-
-The design requirement is onboard carriage of a removable X-ray payload. This does not establish that a compact, safe, compliant payload meeting the robot's eventual mass and power limits is commercially available. If supplier evidence shows that the payload cannot meet the validated mobility envelope, revise the platform or mission concept rather than weakening radiation-safety requirements.
-
-**Current status:** concept only; all dimensions, mass, actuator, battery, imaging and compliance values are TBD. No prototype, integration, radiation emission or field capability is claimed.
+No procurement, fabrication or field deployment is authorised. Proceed only after mission definition, safety review, supplier/origin verification, BOM and budget approval, controlled test plan and explicit owner approval.
