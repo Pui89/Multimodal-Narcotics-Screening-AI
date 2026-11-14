@@ -1078,3 +1078,17 @@ This project adopts PUI89 Engineering Intelligence to structure inspection workf
 
 
 **Preliminary engineering specification:** [Sentinel Mobile X-ray Engineering Specification v0.1](docs/SENTINEL_MOBILE_XRAY_ENGINEERING_SPEC_V0.1.md) — requirements and calculation framework; all hardware values remain TBD pending verified supplier data.
+
+---
+
+## Preliminary Prototype Cost Estimate (15 November 2026)
+
+**Indicative one-unit engineering prototype planning range: ฿1,500,000–฿4,000,000 (THB).**
+
+**Included at a planning level:** A custom industrial quadruped platform, actuators, battery/power, mobility control, core inspection sensors and engineering integration. Certified X-ray equipment is excluded.
+
+**Estimate status:** preliminary internal planning estimate only; not a supplier quotation, purchase commitment, verified bill of materials, fixed project budget or claim that a prototype exists. The range depends on final requirements, component selection, non-Chinese-origin supplier availability, compatibility, import/shipping costs and test scope. Obtain current written quotations and verify country of manufacture/origin, exact model/part number, specifications, warranty and lead time before any procurement.
+
+**Generally excluded:** engineering labour, research salaries, facilities, taxes/VAT, import duties, shipping unless stated in a supplier quotation, certification/regulatory approvals, production tooling, mass production, long-term maintenance and contingency. Project-specific exclusions: X-ray source/detector, radiation shielding, licensing, radiation safety infrastructure and specialist operator costs; no X-ray hardware is selected or approved.
+
+**Lower-cost development path:** continue software-first development, open-source tools and simulation before purchasing physical hardware. Shared AI Core software and reusable development equipment may reduce duplicated costs; savings are not yet quantified. No purchase or installation is authorised by this estimate.
