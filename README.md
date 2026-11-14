@@ -114,6 +114,10 @@ Current status is **concept / requirements definition** for the physical robot. 
 
 - [All-Terrain Inspection Robot Dog requirements v0.2](docs/SENTINEL_ALL_TERRAIN_INSPECTION_ROBOT_DOG_REQUIREMENTS_V0.2.md)
 
+## Historical materials
+
+Superseded concepts and documents are preserved in the [legacy archive](archive/legacy-screening/README.md). They are not part of the current Sentinel product definition.
+
 ## Project links
 
 - [English website](https://pui89.github.io/sentinel.html)
