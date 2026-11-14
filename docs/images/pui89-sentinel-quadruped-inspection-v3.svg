@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+<title id="title">PUI89 Sentinel — Quadruped All-Terrain Inspection Robot Dog, concept v3</title>
+<desc id="desc">A newly drawn industrial quadruped inspection robot dog in deep navy, titanium silver and electric cyan. Four articulated legs with visible hip, knee and foot joints support a compact armored body. A forward sensor head carries RGB and depth cameras; a raised 360-degree lidar module sits above the body. Industrial inspection site background. Concept illustration only, not a built or validated robot.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10263a"/><stop offset=".55" stop-color="#091827"/><stop offset="1" stop-color="#050d17"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#1b9dbb" stop-opacity=".28"/><stop offset="1" stop-color="#071522" stop-opacity="0"/></radialGradient>
+ <linearGradient id="armor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8e4ec"/><stop offset=".22" stop-color="#607b90"/><stop offset=".52" stop-color="#213a50"/><stop offset="1" stop-color="#0a1828"/></linearGradient>
+ <linearGradient id="dark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#36536b"/><stop offset=".48" stop-color="#142b40"/><stop offset="1" stop-color="#071421"/></linearGradient>
+ <linearGradient id="metal" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#f1f7fb"/><stop offset=".4" stop-color="#9eb2c1"/><stop offset="1" stop-color="#526b7f"/></linearGradient>
+ <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#087ca5"/><stop offset=".5" stop-color="#35d5f5"/><stop offset="1" stop-color="#b5f7ff"/></linearGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a7f4ff"/><stop offset=".35" stop-color="#238fb4"/><stop offset="1" stop-color="#071725"/></linearGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="24"/></filter>
+ <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse"><path d="M56 0H0V56" fill="none" stroke="#4c7893" stroke-opacity=".12"/></pattern>
+</defs>
+<rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="1000" fill="url(#grid)"/>
+<ellipse cx="835" cy="475" rx="700" ry="470" fill="url(#halo)"/>
+<!-- industrial inspection environment -->
+<g fill="none" stroke="#7391a6" stroke-width="5" opacity=".24">
+ <path d="M70 660V300H350V660M70 360H350M110 300V230H310V300M110 230L210 155L310 230"/>
+ <path d="M1230 660V250H1530V660M1230 330H1530M1280 250V190H1480V250"/>
+ <path d="M1320 190V130H1440V190M1320 130L1380 85L1440 130"/>
+ <path d="M0 700H1600M0 740H1600"/>
+</g>
+<g fill="#19354b" opacity=".42"><rect x="95" y="410" width="235" height="210" rx="8"/><rect x="1270" y="385" width="220" height="235" rx="8"/></g>
+<g stroke="#35c9ec" stroke-width="3" opacity=".3"><path d="M110 455H310M110 495H310M110 535H310M1290 435H1470M1290 480H1470M1290 525H1470"/></g>
+<path d="M0 755Q380 720 800 752T1600 740V1000H0Z" fill="#07121e"/><path d="M0 760Q420 730 800 760T1600 750" fill="none" stroke="#294b63" stroke-width="3"/>
+<ellipse cx="850" cy="795" rx="470" ry="65" fill="#000" opacity=".62" filter="url(#blur)"/>
+<!-- far-side legs: four independent articulated limbs -->
+<g stroke-linecap="round" stroke-linejoin="round">
+ <!-- far rear leg -->
+ <path d="M620 545L560 640L585 744" stroke="#06111d" stroke-width="64" fill="none"/>
+ <path d="M620 545L560 640L585 744" stroke="url(#metal)" stroke-width="42" fill="none"/>
+ <circle cx="560" cy="640" r="26" fill="#10283d" stroke="#35c9ec" stroke-width="8"/>
+ <path d="M585 744L560 778H620L608 744Z" fill="#152d42" stroke="#91a8b8" stroke-width="5"/>
+ <!-- far front leg -->
+ <path d="M1015 520L1060 626L1038 744" stroke="#06111d" stroke-width="64" fill="none"/>
+ <path d="M1015 520L1060 626L1038 744" stroke="url(#metal)" stroke-width="42" fill="none"/>
+ <circle cx="1060" cy="626" r="26" fill="#10283d" stroke="#35c9ec" stroke-width="8"/>
+ <path d="M1038 744L1010 780H1070L1060 744Z" fill="#152d42" stroke="#91a8b8" stroke-width="5"/>
+</g>
+<!-- central chassis -->
+<path d="M470 390Q505 325 610 315L980 330Q1065 344 1100 410L1075 535Q1050 585 965 600L585 580Q500 565 455 500Z" fill="#030b13" opacity=".78" transform="translate(0 18)"/>
+<path d="M455 370Q500 305 610 298L980 315Q1065 328 1108 398L1085 520Q1060 572 970 590L580 568Q490 550 445 485Z" fill="url(#armor)" stroke="#6f8da2" stroke-width="8"/>
+<path d="M500 380Q545 335 630 330L965 345Q1020 350 1060 405L1040 465L510 450Z" fill="url(#dark)" stroke="#45677f" stroke-width="5"/>
+<path d="M510 478L1040 493L1015 545Q995 565 950 565L600 548Q545 540 510 510Z" fill="#0a1a2a" stroke="#3b5b73" stroke-width="5"/>
+<!-- top access panels and cooling -->
+<path d="M650 327L900 338L930 382L625 370Z" fill="#0a1b2b" stroke="#6d899c" stroke-width="4"/>
+<path d="M685 345L875 353M680 359L845 367" stroke="#42d8f4" stroke-width="5" stroke-linecap="round"/>
+<path d="M540 430L1045 447L1038 465L535 448Z" fill="url(#cyan)"/>
+<path d="M585 468L990 480" stroke="#b4f7ff" stroke-width="3" opacity=".8"/>
+<!-- near-side legs -->
+<g stroke-linecap="round" stroke-linejoin="round">
+ <!-- near rear leg -->
+ <path d="M585 530L500 648L520 758" stroke="#030a12" stroke-width="82" fill="none"/>
+ <path d="M585 530L500 648L520 758" stroke="url(#metal)" stroke-width="58" fill="none"/>
+ <path d="M585 530L500 648" stroke="#f4f8fb" stroke-width="7" opacity=".55" fill="none"/>
+ <circle cx="500" cy="648" r="37" fill="#10263b" stroke="url(#cyan)" stroke-width="9"/>
+ <circle cx="500" cy="648" r="13" fill="#b4c7d3"/>
+ <path d="M520 758L482 790Q475 807 496 812H565Q585 804 568 784L548 756Z" fill="#142d43" stroke="#a0b4c3" stroke-width="7"/>
+ <path d="M495 800H566" stroke="#35d5f5" stroke-width="6"/>
+ <!-- near front leg -->
+ <path d="M1000 510L1090 635L1115 760" stroke="#030a12" stroke-width="84" fill="none"/>
+ <path d="M1000 510L1090 635L1115 760" stroke="url(#metal)" stroke-width="60" fill="none"/>
+ <path d="M1000 510L1090 635" stroke="#f4f8fb" stroke-width="7" opacity=".55" fill="none"/>
+ <circle cx="1090" cy="635" r="38" fill="#10263b" stroke="url(#cyan)" stroke-width="9"/>
+ <circle cx="1090" cy="635" r="13" fill="#b4c7d3"/>
+ <path d="M1115 760L1080 793Q1074 810 1095 815H1165Q1185 807 1168 786L1142 758Z" fill="#142d43" stroke="#a0b4c3" stroke-width="7"/>
+ <path d="M1095 803H1165" stroke="#35d5f5" stroke-width="6"/>
+</g>
+<!-- sensor head, facing right -->
+<path d="M1035 355Q1090 325 1160 352L1218 407L1195 485Q1150 525 1070 500L1035 455Z" fill="url(#dark)" stroke="#86a0b2" stroke-width="7"/>
+<path d="M1080 382Q1135 360 1185 400L1170 460Q1125 488 1080 455Z" fill="#061522" stroke="#42647c" stroke-width="5"/>
+<rect x="1094" y="407" width="90" height="42" rx="13" fill="#07121e" stroke="#38d5f3" stroke-width="5"/>
+<circle cx="1118" cy="428" r="12" fill="url(#glass)" filter="url(#glow)"/><circle cx="1158" cy="428" r="12" fill="url(#glass)"/>
+<path d="M1080 474L1178 482" stroke="#35d5f5" stroke-width="6" stroke-linecap="round"/>
+<!-- 360 lidar mast -->
+<path d="M780 305V262Q780 246 800 246H900Q920 246 920 262V315" fill="#10283d" stroke="#819caf" stroke-width="6"/>
+<ellipse cx="850" cy="250" rx="76" ry="25" fill="#1b3d56" stroke="#a7bac7" stroke-width="6"/>
+<ellipse cx="850" cy="246" rx="54" ry="14" fill="#061522" stroke="#35d5f5" stroke-width="5"/>
+<path d="M800 244H900" stroke="#b8f8ff" stroke-width="4"/>
+<!-- visible emergency stop -->
+<circle cx="948" cy="366" r="17" fill="#e4b75c" stroke="#fff0c5" stroke-width="5"/><circle cx="948" cy="366" r="6" fill="#8a5423"/>
+<!-- callouts -->
+<g font-family="Arial,Helvetica,sans-serif" fill="#eaf5fb">
+ <path d="M850 220V165H1045" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="850" cy="220" r="6" fill="#42d8f4"/>
+ <text x="1060" y="158" font-size="26" font-weight="700">360° LiDAR</text><text x="1060" y="188" font-size="18" fill="#9eb7c8">Candidate mapping sensor</text>
+ <path d="M1140 420L1275 335H1450" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="1140" cy="420" r="6" fill="#42d8f4"/>
+ <text x="1280" y="305" font-size="25" font-weight="700">RGB + DEPTH</text><text x="1280" y="335" font-size="18" fill="#9eb7c8">Forward perception concept</text>
+ <path d="M500 648L360 590H125" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="500" cy="648" r="6" fill="#42d8f4"/>
+ <text x="125" y="548" font-size="24" font-weight="700">ARTICULATED LEGS</text><text x="125" y="578" font-size="18" fill="#9eb7c8">Four independent limbs</text>
+ <path d="M1115 790L1285 850H1460" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="1115" cy="790" r="6" fill="#42d8f4"/>
+ <text x="1290" y="820" font-size="24" font-weight="700">FOOT CONTACT</text><text x="1290" y="850" font-size="18" fill="#9eb7c8">Terrain sensing design target</text>
+</g>
+<!-- identity -->
+<g font-family="Arial,Helvetica,sans-serif">
+ <text x="100" y="105" fill="#42d8f4" font-size="23" font-weight="700" letter-spacing="6">PUI89 / INDUSTRIAL ROBOTICS</text>
+ <text x="100" y="164" fill="#f3f7fa" font-size="48" font-weight="800" letter-spacing="1">SENTINEL</text>
+ <text x="100" y="205" fill="#b6c9d7" font-size="22" letter-spacing="2">ALL-TERRAIN INSPECTION ROBOT DOG</text>
+ <text x="100" y="915" fill="#88a6ba" font-size="17">CONCEPT ART · FOUR-LEGGED PLATFORM · HUMAN-SUPERVISED INSPECTION</text>
+ <text x="100" y="944" fill="#5f7e93" font-size="14">NOT A PHYSICAL PROTOTYPE · MOBILITY AND SENSOR PERFORMANCE NOT VALIDATED</text>
+</g>
+</svg>
