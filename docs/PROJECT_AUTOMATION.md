@@ -1,4 +1,4 @@
-# Free Local Project Automation — Multimodal Narcotics Screening AI
+# PUI89 Sentinel — Local Project Automation
 
 ## Purpose
 
@@ -28,7 +28,7 @@ If pytest is absent, the script falls back to Python's built-in unittest discove
 
 ## Project-specific automation priorities
 
-- dataset provenance/licences, annotation integrity, multimodal input checks, false-positive/false-negative evaluation and human review.
+- sensor provenance and calibration, scenario reproducibility, fault injection, perception uncertainty, mobility validation and human review.
 - Record test inputs, environment, actual output, and failures.
 - Report model metrics only when a model has been run on labelled test data.
 - Keep concept-only, simulated, manually reviewed, and physically validated evidence clearly separated.
