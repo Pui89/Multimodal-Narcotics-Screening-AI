@@ -1,6 +1,6 @@
 # PUI89 Sentinel — Mobile X-ray Engineering Specification (Preliminary)
 
-**Status:** Concept / requirements definition only  |  **Revision:** 0.1
+**Status:** Concept / requirements definition only  |  **Revision:** 0.2
 **Hardware status:** No X-ray payload selected, purchased, integrated, certified or tested.
 **Approval:** This document does not authorise procurement, radiation generation or field operation.
 
@@ -102,7 +102,67 @@ Add an explicitly justified reserve after measuring the real mission profile. Ve
 
 Any loss of interlock integrity, unexpected motion, loss of safety monitoring, unauthorised access, communications fault affecting the safety case or emergency-stop event must inhibit exposure and transition to the certified system's defined safe state. The safety subsystem must be independent of AI perception or model confidence.
 
-## 8. Verification and validation gates
+## 8. Port, cargo-yard and container-entry inspection
+
+### 8.1 Mission scope
+
+Sentinel's proposed port mission is to support authorised inspection teams across defined port operating areas, including cargo yards, container rows, approved inspection zones and selected container interiors. This is a design target only; no port deployment, access permission, port-system integration or field capability is claimed.
+
+The mission may include:
+- Patrol and mapping of approved routes in container yards and logistics areas.
+- Navigation around parked containers, trailers, pallets and other static cargo.
+- Detection and avoidance of moving vehicles, forklifts, cranes, workers and pedestrians, with conservative yielding and safe-stop behaviour.
+- Approach to an assigned container and assessment of doorway, threshold, floor and interior clearance.
+- Entry, internal mapping, visual/thermal inspection and safe exit where geometry, floor condition, air quality and operating permissions are suitable.
+- Inspection evidence capture, anomaly flagging and operator-reviewed reporting with container/task identifiers supplied by authorised workflows.
+
+Sentinel must not enter active vehicle lanes, crane operating envelopes, restricted areas or a container with unknown or unsafe conditions. Port traffic control, site rules and authorised human supervision take precedence over robot navigation.
+
+### 8.2 Container access and interior navigation
+
+Before entry, the system must assess the opening width and height, threshold height, door position, available turning space, visible floor condition, cargo protrusions, overhead clearance and a viable exit path. The robot's complete body, legs, sensor modules, carried payload and any moving joints must remain within the verified clearance envelope.
+
+Required capabilities to engineer and test:
+- Precise approach alignment and low-speed threshold traversal.
+- Body and leg configuration suitable for narrow doorways and constrained interior clearance.
+- Forward, reverse and turning manoeuvres, including a verified retreat strategy.
+- Obstacle, cargo-edge, overhead and protrusion awareness.
+- Low-light illumination and camera exposure control without obscuring evidence.
+- Local mapping and localisation with safe behaviour when GNSS is unavailable indoors.
+- Detection of unstable stacks, blocked routes, damaged flooring, liquid, loose straps and other visible hazards where sensors support it.
+- Safe hold and operator escalation if the route is blocked, localisation confidence is inadequate, communication is lost or the robot cannot confirm an exit path.
+
+Container interiors may contain hazardous atmospheres, oxygen deficiency, fumigants, chemicals, heat, dust, unstable cargo or other risks not reliably detectable by the proposed camera/LiDAR package. Entry requires a site-specific risk assessment and confirmation by the responsible port operator that the space is safe for robotic entry. Sentinel is not an atmosphere-safety certification device; dedicated calibrated gas/atmosphere instruments and approved procedures are required where relevant. No human-entry or confined-space safety rule is replaced by the robot.
+
+### 8.3 Port sensing and mission data
+
+Potential sensor inputs include RGB and low-light cameras, depth sensing, LiDAR, thermal imaging, IMU and robot-state sensors, and authorised site/map data. GNSS may be unavailable or degraded between container rows and inside containers; local localisation and mapping must therefore be tested independently. Optional connectivity to terminal operating systems, container manifests, OCR or RFID is a separately authorised integration and must not be assumed.
+
+Every observation must retain timestamp, sensor identity, calibration/health status, location or local map reference, uncertainty and task/container association. OCR or visible container markings may be used as candidate identifiers only; an authorised workflow must verify identity before records are linked. Minimise collection of worker/visitor imagery and apply site-approved privacy, access, retention and cybersecurity controls.
+
+### 8.4 X-ray and other inspection modalities in port operations
+
+The quadruped may carry a removable certified X-ray payload between authorised inspection points, subject to the payload feasibility gates in this specification. X-ray exposure remains prohibited during locomotion. A scan may occur only when the robot is stationary and stabilised, the complete certified inspection arrangement and controlled area are established, independent safety permissives are satisfied and an authorised qualified operator enables the procedure. Whether an X-ray system can safely and legally be used inside a container, in a cargo yard or near other workers must be assessed for the exact equipment, geometry, jurisdiction and site; no universal permission is implied.
+
+RGB, thermal, X-ray and any calibrated chemical-instrument measurements remain distinct evidence channels. X-ray structure images do not identify a chemical or prove narcotics. Chemical instruments can report only defined analytes within validated calibration and operating limits. AI outputs are inspection decision support, not grounds for automatic accusation, detention, search or enforcement.
+
+### 8.5 Port and container validation gates
+
+| Gate | Evidence required | Status |
+|---|---|---|
+| P0 — Site and mission definition | Port operator approval, mapped operating zones, traffic interfaces, task scope and jurisdictional review | Open |
+| P1 — Port mobility | Simulation and supervised tests for container rows, pedestrian/vehicle interactions, stopping distance and communications loss | Open |
+| P2 — Doorway access | Measured doorway/threshold envelope and repeatable entry/exit tests using an inert payload | Open |
+| P3 — Interior navigation | Clearance, turning/reversing, localisation, obstacle and exit-route tests in representative mock-up containers | Open |
+| P4 — Environmental safety | Site-specific assessment for atmosphere, temperature, dust, water, floor integrity and cargo stability; dedicated instruments where required | Open |
+| P5 — Inspection evidence | Modality-specific image quality, timestamping, container/task association, uncertainty and human-review workflow | Open |
+| P6 — X-ray port use | Equipment-specific radiation safety case, controlled-area design, operator qualification and regulatory/site approvals | Open |
+| P7 — Operational trial | Port-authorised supervised trial, incident/recovery records, privacy/security review and acceptance criteria | Open |
+
+No gate is passed by design documentation alone. Physical access, mobility, sensing and safe operation require representative testing and site approval.
+
+## 9. Verification and validation gates
+
 
 | Gate | Evidence required | Status |
 |---|---|---|
@@ -118,13 +178,13 @@ Any loss of interlock integrity, unexpected motion, loss of safety monitoring, u
 
 No gate is passed by documentation alone where physical measurement, independent review or regulatory approval is required.
 
-## 9. Procurement and provenance controls
+## 10. Procurement and provenance controls
 
 Before any purchase proposal, record exact manufacturer, model/part number, country of manufacture, manufacturer origin evidence, datasheet revision, certification, intended use, mass, dimensions, power, warranty, service availability, indicative price/date/source, shipping and import constraints. Verify provenance independently; unknown origin or incomplete certification is UNVERIFIED — NOT APPROVED.
 
 No purchase, download, installation, supplier commitment or paid service is authorised by this specification.
 
-## 10. Current engineering decision
+## 11. Current engineering decision
 
 The design requirement is onboard carriage of a removable X-ray payload. This does not establish that a compact, safe, compliant payload meeting the robot's eventual mass and power limits is commercially available. If supplier evidence shows that the payload cannot meet the validated mobility envelope, revise the platform or mission concept rather than weakening radiation-safety requirements.
 
