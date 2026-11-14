@@ -1075,3 +1075,6 @@ This project adopts PUI89 Engineering Intelligence to structure inspection workf
 **Current status:** global readiness is a portfolio-wide design target. Each product must report its actual gate and evidence separately. No product is to be described as globally available or purchasable until the relevant commercial and regional release gates are met.
 
 **Shared standard:** [PUI89 Global Product Readiness Standard v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/product/PUI89_GLOBAL_PRODUCT_READINESS_STANDARD_V1.0.md).
+
+
+**Preliminary engineering specification:** [Sentinel Mobile X-ray Engineering Specification v0.1](docs/SENTINEL_MOBILE_XRAY_ENGINEERING_SPEC_V0.1.md) — requirements and calculation framework; all hardware values remain TBD pending verified supplier data.
