@@ -120,6 +120,20 @@ Sentinel must not enter active vehicle lanes, crane operating envelopes, restric
 
 ### 8.2 Container access and interior navigation
 
+### Difficult container environments
+
+| Environment | Required capability |
+|---|---|
+| Narrow entrance | Accurate approach, alignment and verified body/leg clearance |
+| Raised floor threshold | Controlled step-over with foot-contact and body-stability monitoring |
+| Dark interior | Low-light imaging and onboard illumination with exposure/lighting checks |
+| Crowded cargo | Narrow-space navigation, cargo-edge awareness and safe retreat |
+| Uneven floor | Adaptive foot placement and slip/stumble detection |
+| Long container | Local mapping, localisation and return-route planning |
+| Lost communication | Safe hold, onboard fault handling and recovery/exit procedure; no blind continuation |
+
+These are engineering requirements, not validated capabilities. Each condition requires representative mock-up testing and documented acceptance criteria. If Sentinel cannot confirm clearance, stable footing, localisation or a viable exit route, it must stop safely and request operator assistance rather than continue blindly.
+
 Before entry, the system must assess the opening width and height, threshold height, door position, available turning space, visible floor condition, cargo protrusions, overhead clearance and a viable exit path. The robot's complete body, legs, sensor modules, carried payload and any moving joints must remain within the verified clearance envelope.
 
 Required capabilities to engineer and test:
