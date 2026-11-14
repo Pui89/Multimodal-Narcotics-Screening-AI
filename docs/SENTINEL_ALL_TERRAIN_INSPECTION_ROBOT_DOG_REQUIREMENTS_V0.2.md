@@ -8,7 +8,7 @@
 
 ## 1. Product identity and boundary
 
-Sentinel is a general-purpose mobile inspection robot dog. It is not a narcotics-screening product and this baseline does not include an X-ray payload or dedicated narcotics-detection subsystem. PUI89 NOMAD is a separate four-wheel mobile assistant. Sentinel's four articulated legs are intended for selected terrain and access challenges that may be unsuitable for wheeled platforms.
+Sentinel is a general-purpose mobile inspection robot dog. PUI89 NOMAD is a separate four-wheel mobile assistant. Sentinel's four articulated legs are intended for selected terrain and access challenges that may be unsuitable for wheeled platforms.
 
 This is an engineering target, not a built or validated robot.
 
