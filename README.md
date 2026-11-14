@@ -5,7 +5,7 @@
 **Relationship to NOMAD:** Sentinel uses four articulated legs; PUI89 NOMAD is a separate four-wheel mobile assistant.  
 **Development status:** Product concept and engineering requirements. No physical Sentinel prototype, field capability or sensor integration is claimed.
 
-![PUI89 Sentinel quadruped robot-dog concept](docs/images/sentinel-all-terrain-inspection-robot-dog.svg)
+![PUI89 Sentinel quadruped robot-dog concept](docs/images/pui89-sentinel-quadruped-v2.svg)
 
 *Concept illustration only. It is not evidence of a built, tested or validated robot.*
 

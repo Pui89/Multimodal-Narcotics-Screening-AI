@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">PUI89 Sentinel — All-Terrain Inspection Robot Dog</title>
+<desc id="desc">A premium industrial quadruped inspection robot concept in deep navy, titanium silver and electric cyan, with articulated legs, protected joints, a forward stereo camera head and a raised panoramic sensor mast, standing on rugged terrain.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0c1b2c"/><stop offset=".55" stop-color="#14283b"/><stop offset="1" stop-color="#07111f"/></linearGradient>
+ <radialGradient id="aura"><stop stop-color="#42d9ff" stop-opacity=".22"/><stop offset="1" stop-color="#42d9ff" stop-opacity="0"/></radialGradient>
+ <linearGradient id="armor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dce6ee"/><stop offset=".22" stop-color="#71869b"/><stop offset=".52" stop-color="#263b52"/><stop offset=".8" stop-color="#101f33"/><stop offset="1" stop-color="#52677d"/></linearGradient>
+ <linearGradient id="darkArmor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3b5269"/><stop offset=".42" stop-color="#14283d"/><stop offset="1" stop-color="#081522"/></linearGradient>
+ <linearGradient id="metal" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#f1f6fa"/><stop offset=".3" stop-color="#aab9c7"/><stop offset=".72" stop-color="#52677b"/><stop offset="1" stop-color="#26394d"/></linearGradient>
+ <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#087eaa"/><stop offset=".45" stop-color="#42d9ff"/><stop offset="1" stop-color="#b3f3ff"/></linearGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8ef0ff"/><stop offset=".25" stop-color="#1b8db4"/><stop offset=".7" stop-color="#09243a"/><stop offset="1" stop-color="#06111e"/></linearGradient>
+ <filter id="shadow" x="-40%" y="-40%" width="180%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+ <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#9bc9dc" stroke-opacity=".055" stroke-width="1"/></pattern>
+</defs>
+<rect width="1200" height="760" rx="30" fill="url(#bg)"/>
+<rect width="1200" height="760" rx="30" fill="url(#grid)"/>
+<ellipse cx="585" cy="350" rx="470" ry="320" fill="url(#aura)"/>
+<path d="M0 585 180 550 340 573 510 542 690 565 870 535 1040 560 1200 530V760H0Z" fill="#081522" opacity=".62"/>
+<path d="M85 650 300 620 460 638 650 606 830 635 1040 600 1160 620" fill="none" stroke="#42d9ff" stroke-opacity=".18" stroke-width="2"/>
+<ellipse cx="590" cy="608" rx="330" ry="45" fill="#000" opacity=".48" filter="url(#shadow)"/>
+<ellipse cx="590" cy="596" rx="290" ry="26" fill="#42d9ff" opacity=".12" filter="url(#glow)"/>
+<!-- far rear leg -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <path d="M690 390 790 420 844 510 820 535 755 468 660 447Z" fill="#0b1928" stroke="#526a80" stroke-width="7"/>
+ <path d="M790 420 839 500 825 548 797 552 802 503 755 454Z" fill="url(#darkArmor)" stroke="#70879a" stroke-width="5"/>
+ <circle cx="788" cy="426" r="28" fill="#172c40" stroke="#8fa2b2" stroke-width="6"/><circle cx="788" cy="426" r="11" fill="#071421" stroke="#42d9ff" stroke-width="3"/>
+ <path d="M820 535 858 546 866 563 844 576 806 563Z" fill="#24394e" stroke="#93a5b5" stroke-width="5"/>
+</g>
+<!-- near rear leg -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <path d="M700 412 775 450 752 523 696 550 661 519 680 460Z" fill="url(#armor)" stroke="#a5b6c4" stroke-width="7"/>
+ <path d="M742 500 723 566 735 602 699 614 675 586 690 528Z" fill="url(#darkArmor)" stroke="#71869b" stroke-width="6"/>
+ <circle cx="738" cy="500" r="30" fill="#172d42" stroke="#b5c4d0" stroke-width="7"/><circle cx="738" cy="500" r="13" fill="#091827" stroke="#42d9ff" stroke-width="4"/>
+ <path d="M688 588 735 589 751 610 735 628 676 621 659 606Z" fill="#263b50" stroke="#93a6b6" stroke-width="5"/>
+ <path d="M679 606 735 614" stroke="#42d9ff" stroke-width="4" filter="url(#glow)"/>
+</g>
+<!-- far front leg -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <path d="M390 360 450 397 435 480 390 510 360 484 367 408Z" fill="#24394e" stroke="#879bab" stroke-width="6"/>
+ <path d="M395 475 371 545 385 581 352 594 325 565 342 497Z" fill="url(#darkArmor)" stroke="#7e92a4" stroke-width="6"/>
+ <circle cx="405" cy="472" r="26" fill="#152a3e" stroke="#a3b4c2" stroke-width="6"/><circle cx="405" cy="472" r="10" fill="#071421" stroke="#42d9ff" stroke-width="3"/>
+ <path d="M328 563 378 569 395 589 379 608 319 598 306 581Z" fill="#263b50" stroke="#899dad" stroke-width="5"/>
+</g>
+<!-- near front leg -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <path d="M430 365 500 394 485 470 430 503 393 475 402 402Z" fill="url(#armor)" stroke="#d1dce5" stroke-width="7"/>
+ <path d="M438 470 420 541 438 580 402 596 372 568 390 500Z" fill="url(#darkArmor)" stroke="#8fa2b4" stroke-width="6"/>
+ <circle cx="451" cy="470" r="31" fill="#172d42" stroke="#c4d0da" stroke-width="7"/><circle cx="451" cy="470" r="14" fill="#081522" stroke="#42d9ff" stroke-width="4"/>
+ <path d="M385 570 438 576 456 599 439 619 378 610 365 590Z" fill="#293f54" stroke="#a3b3c0" stroke-width="5"/>
+ <path d="M383 595 438 604" stroke="#42d9ff" stroke-width="4" filter="url(#glow)"/>
+</g>
+<!-- torso main shell -->
+<path d="M355 278 444 228 672 242 781 307 760 416 682 473 447 454 348 391Z" fill="url(#darkArmor)" stroke="#a9bac8" stroke-width="8" stroke-linejoin="round"/>
+<path d="M380 290 465 254 665 266 744 316 723 384 658 430 456 415 377 371Z" fill="url(#armor)" stroke="#d2dce4" stroke-opacity=".72" stroke-width="4"/>
+<path d="M405 300 468 274 652 285 710 322 694 371 643 404 464 392 405 355Z" fill="#0d2033" stroke="#526a80" stroke-width="3"/>
+<path d="M432 302 486 285 649 297 685 322 668 348 482 342 425 328Z" fill="#172f45" stroke="#42d9ff" stroke-opacity=".7" stroke-width="3"/>
+<path d="M459 364 652 375 632 397 471 385Z" fill="#0b1928" stroke="#6f8598" stroke-width="3"/>
+<path d="M480 373 625 383" stroke="#42d9ff" stroke-width="5" filter="url(#glow)"/>
+<!-- service panels and vents -->
+<path d="M510 305 623 313 615 341 503 333Z" fill="#1b344a" stroke="#8fa3b5" stroke-width="2"/>
+<path d="M523 315 592 320M520 323 590 328" stroke="#42d9ff" stroke-opacity=".7" stroke-width="3"/>
+<path d="M688 336 723 348 715 374 678 363Z" fill="#0a1927" stroke="#a3b5c4" stroke-width="3"/>
+<circle cx="699" cy="353" r="6" fill="#42d9ff" filter="url(#glow)"/>
+<!-- shoulder housings -->
+<path d="M354 333 390 307 425 327 424 388 390 416 352 389Z" fill="url(#metal)" stroke="#d8e2e9" stroke-width="5"/>
+<path d="M684 291 728 296 760 329 748 381 707 393 675 360Z" fill="url(#metal)" stroke="#d8e2e9" stroke-width="5"/>
+<circle cx="388" cy="360" r="22" fill="#10243a" stroke="#42d9ff" stroke-width="5"/><circle cx="388" cy="360" r="8" fill="#d5f9ff"/>
+<circle cx="723" cy="345" r="22" fill="#10243a" stroke="#42d9ff" stroke-width="5"/><circle cx="723" cy="345" r="8" fill="#d5f9ff"/>
+<!-- forward head -->
+<path d="M295 253 373 230 430 257 430 329 385 366 308 350 275 302Z" fill="url(#metal)" stroke="#e0e8ee" stroke-width="7" stroke-linejoin="round"/>
+<path d="M286 272 365 250 407 271 405 318 373 344 312 331 287 301Z" fill="url(#darkArmor)" stroke="#8095a8" stroke-width="4"/>
+<path d="M296 286 362 268 393 284 389 310 365 328 315 318Z" fill="#071725" stroke="#42d9ff" stroke-width="3"/>
+<circle cx="329" cy="299" r="12" fill="url(#glass)" stroke="#9ef1ff" stroke-width="3"/>
+<circle cx="371" cy="289" r="10" fill="url(#glass)" stroke="#9ef1ff" stroke-width="3"/>
+<path d="M311 337 370 349 394 336" fill="none" stroke="#42d9ff" stroke-width="5" filter="url(#glow)"/>
+<path d="M281 305 260 316 265 335 294 342" fill="#182e43" stroke="#8fa3b5" stroke-width="4"/>
+<!-- sensor mast / panoramic lidar -->
+<path d="M518 247 523 196 548 181 575 194 580 251" fill="none" stroke="#9aabba" stroke-width="12" stroke-linecap="round"/>
+<path d="M500 194 518 159 572 153 597 179 586 211 531 220Z" fill="url(#darkArmor)" stroke="#b8c6d1" stroke-width="5"/>
+<path d="M514 181 532 169 572 167 585 183 570 197 529 198Z" fill="#071a2a" stroke="#42d9ff" stroke-width="4"/>
+<path d="M521 181 574 180" stroke="#42d9ff" stroke-width="5" filter="url(#glow)"/>
+<circle cx="548" cy="182" r="9" fill="#bff7ff" filter="url(#glow)"/>
+<!-- small antenna -->
+<path d="M587 157 606 129" stroke="#9eafbd" stroke-width="5" stroke-linecap="round"/><circle cx="609" cy="125" r="7" fill="#42d9ff" filter="url(#glow)"/>
+<!-- rear top detail -->
+<path d="M666 260 709 275 735 299 711 313 665 292Z" fill="#0b1a29" stroke="#8da1b3" stroke-width="3"/>
+<path d="M674 276 711 291" stroke="#42d9ff" stroke-width="4"/>
+<!-- terrain and small stones -->
+<g fill="#23394d" stroke="#526b80" stroke-width="2" opacity=".8"><path d="m230 616 24-19 37 7 13 17-25 13-39-5Z"/><path d="m905 598 20-16 33 4 17 18-22 12-39-5Z"/><path d="m1000 637 14-11 25 5 9 12-21 8-26-5Z"/><path d="m152 662 20-14 26 7 6 14-25 7-25-5Z"/></g>
+<!-- subtle technical framing -->
+<g fill="none" stroke="#42d9ff" stroke-opacity=".48" stroke-width="2"><path d="M90 170V110H150M1050 150h60v60M1050 600h60v-55M90 580v60h60"/><path d="M160 180h115M160 190h64M920 220h120M965 230h75"/></g>
+<g fill="#8db6c8" font-family="Arial,sans-serif" font-size="13" letter-spacing="3" opacity=".8"><text x="92" y="94">PUI89 / FIELD ROBOTICS</text><text x="880" y="685">SENTINEL · QUADRUPED CONCEPT</text></g>
+<g fill="#42d9ff"><circle cx="90" cy="110" r="4"/><circle cx="1110" cy="150" r="4"/><circle cx="1110" cy="545" r="4"/><circle cx="150" cy="640" r="4"/></g>
+</svg>
