@@ -86,7 +86,7 @@
 <path d="M675 530L700 532" stroke="#38d4f2" stroke-width="7" stroke-linecap="round"/>
 <!-- technical callouts -->
 <g font-family="Arial,Helvetica,sans-serif" fill="#eaf5fb">
- <g><path d="M852 226V160H1050" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="852" cy="226" r="6" fill="#42d8f4"/><text x="1070" y="153" font-size="26" font-weight="700">360° LiDAR</text><text x="1070" y="184" font-size="18" fill="#9fb7c8">Mapping & obstacle awareness</text></g>
+ <g><path d="M852 226V160H1050" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="852" cy="226" r="6" fill="#42d8f4"/><text x="1070" y="153" font-size="26" font-weight="700">360° LiDAR</text><text x="1070" y="184" font-size="18" fill="#9fb7c8">Mapping &amp; obstacle awareness</text></g>
  <g><path d="M1132 410L1265 330H1435" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="1132" cy="410" r="6" fill="#42d8f4"/><text x="1270" y="300" font-size="26" font-weight="700">RGB + DEPTH</text><text x="1270" y="330" font-size="18" fill="#9fb7c8">Forward perception module</text></g>
  <g><path d="M560 660L390 590H145" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="560" cy="660" r="6" fill="#42d8f4"/><text x="145" y="548" font-size="26" font-weight="700">ARTICULATED LEGS</text><text x="145" y="578" font-size="18" fill="#9fb7c8">Four-leg mobility concept</text></g>
  <g><path d="M1098 800L1280 850H1450" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="1098" cy="800" r="6" fill="#42d8f4"/><text x="1285" y="820" font-size="26" font-weight="700">FOOT CONTACT</text><text x="1285" y="850" font-size="18" fill="#9fb7c8">Terrain-adaptive design target</text></g>
