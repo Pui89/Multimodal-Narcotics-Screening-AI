@@ -1,73 +1,101 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
-<title id="t">PUI89 SENTINEL mobile inspection robot — 3D concept illustration</title>
-<desc id="d">A proposed four-legged navy and brushed-metal mobile inspection assistant with a 360-degree sensor mast, forward RGB and depth cameras, protected modular sensor bay, emergency stop, and human reviewer station in a modern transport terminal. Concept only; no detection capability is implied.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+<title id="title">PUI89 Sentinel — All-Terrain Inspection Robot Dog</title>
+<desc id="desc">Original vector concept illustration of a deep navy and electric cyan four-legged industrial inspection robot dog, with articulated legs, four feet, front RGB and depth cameras, and a 360-degree lidar sensor, in an industrial port environment. Concept only; not a built or validated robot.</desc>
 <defs>
- <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#10243a"/><stop offset="1" stop-color="#07111f"/></linearGradient>
- <radialGradient id="halo"><stop stop-color="#1a5471" stop-opacity=".65"/><stop offset="1" stop-color="#07111f" stop-opacity="0"/></radialGradient>
- <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2f7fb"/><stop offset=".3" stop-color="#91a7b9"/><stop offset=".65" stop-color="#d9e5ee"/><stop offset="1" stop-color="#60788d"/></linearGradient>
- <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#29435e"/><stop offset=".55" stop-color="#14283e"/><stop offset="1" stop-color="#091827"/></linearGradient>
- <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b8f2ff"/><stop offset=".45" stop-color="#42d9ff"/><stop offset="1" stop-color="#0786b6"/></linearGradient>
- <filter id="blur"><feGaussianBlur stdDeviation="24"/></filter>
- <filter id="shadow"><feGaussianBlur stdDeviation="16"/></filter>
- <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M64 0H0V64" fill="none" stroke="#31516a" stroke-opacity=".25"/></pattern>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#12263c"/><stop offset="1" stop-color="#07111d"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#1c7894" stop-opacity=".48"/><stop offset="1" stop-color="#07111d" stop-opacity="0"/></radialGradient>
+ <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#284762"/><stop offset=".38" stop-color="#10263d"/><stop offset="1" stop-color="#071421"/></linearGradient>
+ <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eff7fb"/><stop offset=".35" stop-color="#8199aa"/><stop offset=".7" stop-color="#d6e2e9"/><stop offset="1" stop-color="#52697b"/></linearGradient>
+ <linearGradient id="cyan" x2="1" y2="1"><stop stop-color="#8bf1ff"/><stop offset=".5" stop-color="#25c8ee"/><stop offset="1" stop-color="#087da8"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="22"/></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="5"/></filter>
+ <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M64 0H0V64" fill="none" stroke="#4b7895" stroke-opacity=".12" stroke-width="1"/></pattern>
 </defs>
 <rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="1000" fill="url(#grid)"/>
-<ellipse cx="740" cy="500" rx="620" ry="420" fill="url(#halo)"/>
-<g opacity=".34" stroke="#5a8199" stroke-width="3" fill="none"><path d="M0 210H1600M0 330H1600M0 450H1600M0 570H1600"/><path d="M180 0L400 680M520 0L620 680M860 0L820 680M1200 0L1040 680M1500 0L1260 680"/></g>
-<path d="M0 730H1600V1000H0Z" fill="#0a1726"/><path d="M0 730L1600 650" stroke="#31536c" stroke-width="4"/><path d="M0 875L1600 795M200 730L430 1000M1100 690L1370 1000" stroke="#25445c" stroke-width="3" opacity=".55"/>
-<!-- distant terminal silhouettes -->
-<g opacity=".48" fill="#18344b"><rect x="90" y="250" width="250" height="340" rx="12"/><rect x="370" y="300" width="190" height="290" rx="12"/><rect x="1190" y="220" width="310" height="370" rx="12"/></g>
-<g opacity=".42" stroke="#65a4c3" stroke-width="5"><path d="M120 330H310M120 385H310M1210 300H1480M1210 365H1480"/></g>
-<!-- operator kiosk -->
-<g transform="translate(1190 500)"><rect x="0" y="70" width="270" height="175" rx="18" fill="#102b41" stroke="#3c6680" stroke-width="4"/><rect x="22" y="90" width="226" height="118" rx="10" fill="#061522" stroke="#42d9ff" stroke-opacity=".55" stroke-width="3"/><path d="M42 125H215M42 148H190M42 171H165" stroke="#42d9ff" stroke-width="5" stroke-linecap="round" opacity=".7"/><rect x="88" y="245" width="95" height="18" rx="6" fill="#567287"/><circle cx="238" cy="225" r="8" fill="#42d9ff"/></g>
-<!-- generic human reviewer -->
-<g transform="translate(1390 370)" opacity=".82"><circle cx="0" cy="0" r="28" fill="#b7c8d5"/><path d="M-35 38Q0 18 35 38L48 170H-48Z" fill="#29465e"/><path d="M-20 165L-30 290M20 165L35 290" stroke="#8fa7b9" stroke-width="22" stroke-linecap="round"/></g>
-<!-- robot shadow -->
-<ellipse cx="700" cy="800" rx="400" ry="65" fill="#000" opacity=".42" filter="url(#shadow)"/>
-<!-- legs: far pair -->
-<g fill="none" stroke-linecap="round" stroke-linejoin="round">
- <path d="M510 575L420 645L380 790" stroke="#071522" stroke-width="62"/><path d="M510 575L420 645L380 790" stroke="url(#metal)" stroke-width="42"/>
- <path d="M840 580L930 650L970 790" stroke="#071522" stroke-width="62"/><path d="M840 580L930 650L970 790" stroke="url(#metal)" stroke-width="42"/>
- <path d="M510 575L420 645L380 790" stroke="#42d9ff" stroke-width="5" opacity=".7"/><path d="M840 580L930 650L970 790" stroke="#42d9ff" stroke-width="5" opacity=".7"/>
- <path d="M490 545L440 620M825 550L900 625" stroke="#0a1b2b" stroke-width="76"/>
- <path d="M490 545L440 620M825 550L900 625" stroke="url(#navy)" stroke-width="54"/>
- <!-- near legs -->
- <path d="M600 600L555 690L535 825" stroke="#071522" stroke-width="66"/><path d="M600 600L555 690L535 825" stroke="url(#metal)" stroke-width="44"/>
- <path d="M760 600L805 690L825 825" stroke="#071522" stroke-width="66"/><path d="M760 600L805 690L825 825" stroke="url(#metal)" stroke-width="44"/>
- <path d="M600 600L555 690L535 825M760 600L805 690L825 825" stroke="#42d9ff" stroke-width="5" opacity=".75"/>
+<ellipse cx="820" cy="470" rx="690" ry="490" fill="url(#glow)"/>
+<!-- industrial port silhouette -->
+<g opacity=".32" fill="none" stroke="#7392a8" stroke-width="7">
+ <path d="M80 650V280H390V650M80 340H390M130 280V220H340V280M120 220L235 130L350 220"/>
+ <path d="M1180 650V210H1510V650M1180 280H1510M1220 210V155H1470V210"/>
+ <path d="M1280 155V95H1430V155M1280 95L1355 45L1430 95"/>
+ <path d="M0 720H1600"/>
 </g>
-<g fill="#10263a" stroke="#7e9aaf" stroke-width="6"><circle cx="490" cy="545" r="39"/><circle cx="840" cy="580" r="39"/><circle cx="600" cy="600" r="40"/><circle cx="760" cy="600" r="40"/></g>
-<g fill="#071522" stroke="#9fb4c4" stroke-width="4"><path d="M335 790Q380 768 418 795L423 824H329Z"/><path d="M485 825Q535 802 578 830L580 858H480Z"/><path d="M770 825Q820 802 860 830L865 858H765Z"/><path d="M920 790Q970 768 1008 795L1013 824H915Z"/></g>
-<!-- central armored chassis -->
-<path d="M390 445Q405 395 465 385L800 390Q875 395 900 455L875 590Q860 630 810 640L465 625Q410 615 390 560Z" fill="#071522" stroke="#47677f" stroke-width="8"/>
-<path d="M420 445Q440 415 485 416L795 420Q840 425 858 463L845 545Q832 580 795 584L478 570Q438 565 425 530Z" fill="url(#navy)" stroke="#a6bac8" stroke-width="5"/>
-<path d="M450 455Q470 435 500 438L790 442" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="7"/>
-<path d="M440 545L835 560" stroke="url(#cyan)" stroke-width="13" stroke-linecap="round" opacity=".95"/>
-<path d="M465 580L800 594" stroke="#061522" stroke-width="9"/>
-<!-- sensor payload window, sealed and modular -->
-<rect x="605" y="475" width="185" height="72" rx="15" fill="#081a29" stroke="#6d8ca2" stroke-width="4"/>
-<rect x="622" y="490" width="150" height="42" rx="9" fill="#102c40" stroke="#42d9ff" stroke-opacity=".7" stroke-width="2"/>
-<path d="M640 510H750" stroke="#42d9ff" stroke-width="5" stroke-linecap="round"/><circle cx="754" cy="510" r="7" fill="#a7f2ff"/>
-<text x="698" y="570" fill="#c6d9e7" font-family="Arial,sans-serif" font-size="16" text-anchor="middle" letter-spacing="2">MODULAR BAY</text>
-<!-- sensor mast -->
-<path d="M520 414L530 305L570 305L580 420Z" fill="url(#navy)" stroke="#718da2" stroke-width="5"/>
-<rect x="475" y="258" width="150" height="70" rx="18" fill="url(#metal)" stroke="#4c687d" stroke-width="5"/>
-<rect x="490" y="273" width="120" height="39" rx="11" fill="#071522"/>
-<circle cx="515" cy="292" r="11" fill="url(#cyan)"/><circle cx="550" cy="292" r="11" fill="#8db5ff"/><circle cx="585" cy="292" r="11" fill="#42d9ff"/>
-<rect x="520" y="230" width="60" height="27" rx="9" fill="#152d41" stroke="#88a2b4" stroke-width="3"/><ellipse cx="550" cy="230" rx="32" ry="10" fill="url(#cyan)"/>
-<!-- safety stop -->
-<rect x="815" y="405" width="55" height="24" rx="7" fill="#142c40"/><circle cx="843" cy="405" r="14" fill="#ff5b66" stroke="#ffd2d4" stroke-width="4"/>
-<!-- identity -->
-<text x="650" y="390" fill="#f4f9ff" font-family="Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" letter-spacing="5">PUI89 SENTINEL</text>
-<!-- annotation cards -->
-<g font-family="Arial,sans-serif">
- <path d="M550 230L400 155H190" fill="none" stroke="#42d9ff" stroke-width="3"/><circle cx="550" cy="230" r="6" fill="#42d9ff"/>
- <rect x="70" y="105" width="325" height="86" rx="14" fill="#0c2236" stroke="#42d9ff" stroke-opacity=".6" stroke-width="2"/><text x="94" y="139" fill="#b8f2ff" font-size="19" font-weight="700">360° awareness mast</text><text x="94" y="168" fill="#b8c7da" font-size="16">Navigation sensors, if fitted</text>
- <path d="M700 500L1030 400H1160" fill="none" stroke="#42d9ff" stroke-width="3"/><circle cx="700" cy="500" r="6" fill="#42d9ff"/>
- <rect x="1025" y="335" width="350" height="92" rx="14" fill="#0c2236" stroke="#42d9ff" stroke-opacity=".6" stroke-width="2"/><text x="1050" y="371" fill="#b8f2ff" font-size="19" font-weight="700">Protected modular payload</text><text x="1050" y="401" fill="#b8c7da" font-size="16">Sensor fitment is a future gate</text>
- <path d="M843 405L1060 250H1270" fill="none" stroke="#ff7780" stroke-width="3"/><circle cx="843" cy="405" r="6" fill="#ff7780"/>
- <rect x="1080" y="192" width="360" height="70" rx="14" fill="#291b2b" stroke="#ff7780" stroke-opacity=".7" stroke-width="2"/><text x="1105" y="235" fill="#ffd4d6" font-size="19" font-weight="700">Emergency stop / safe hold</text>
- <rect x="65" y="875" width="780" height="75" rx="14" fill="#0c2236" stroke="#31536c" stroke-width="2"/><text x="92" y="908" fill="#b8f2ff" font-size="19" font-weight="700">RESEARCH CONCEPT ONLY · NOT A BUILT OR VALIDATED DETECTOR</text><text x="92" y="933" fill="#b8c7da" font-size="15">Visual design illustration; sensor and robot performance not established.</text>
- <text x="1170" y="915" fill="#42d9ff" font-size="17" font-weight="700" letter-spacing="3">PUI89 / AI ROBOTICS</text>
+<g opacity=".25" fill="#1b3850"><rect x="105" y="390" width="260" height="220" rx="10"/><rect x="1235" y="330" width="245" height="280" rx="10"/></g>
+<g opacity=".4" stroke="#35c9ec" stroke-width="3" fill="none"><path d="M110 430H360M110 470H360M110 510H360M1250 380H1465M1250 425H1465M1250 470H1465"/></g>
+<!-- ground -->
+<path d="M0 735Q400 700 800 735T1600 725V1000H0Z" fill="#091522"/>
+<path d="M0 755Q400 720 800 755T1600 745" stroke="#31506a" stroke-width="3" fill="none"/>
+<ellipse cx="820" cy="790" rx="480" ry="74" fill="#000" opacity=".62" filter="url(#shadow)"/>
+<!-- robot rear legs -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <!-- far rear leg -->
+ <path d="M650 565L615 665L570 748" stroke="#06101a" stroke-width="76" fill="none"/>
+ <path d="M650 565L615 665L570 748" stroke="url(#silver)" stroke-width="54" fill="none"/>
+ <circle cx="615" cy="665" r="34" fill="#10263b" stroke="url(#cyan)" stroke-width="9"/>
+ <path d="M570 748L548 780Q545 792 560 796H612Q626 790 616 779L590 747Z" fill="#12283d" stroke="#7293a7" stroke-width="6"/>
+ <!-- far front leg -->
+ <path d="M1030 540L1080 650L1120 744" stroke="#06101a" stroke-width="78" fill="none"/>
+ <path d="M1030 540L1080 650L1120 744" stroke="url(#silver)" stroke-width="55" fill="none"/>
+ <circle cx="1080" cy="650" r="34" fill="#10263b" stroke="url(#cyan)" stroke-width="9"/>
+ <path d="M1120 744L1090 780Q1086 795 1102 799H1158Q1173 792 1160 778L1140 744Z" fill="#12283d" stroke="#7293a7" stroke-width="6"/>
+</g>
+<!-- main torso -->
+<path d="M515 390Q545 325 650 312L1010 328Q1080 342 1115 415L1090 548Q1068 600 985 615L620 590Q540 578 500 515Z" fill="#040c14" opacity=".7" transform="translate(0 18)"/>
+<path d="M500 380Q530 315 635 300L1000 315Q1080 325 1115 400L1090 530Q1070 585 985 600L615 580Q525 565 490 500Z" fill="url(#navy)" stroke="#52758c" stroke-width="8"/>
+<path d="M548 385Q585 340 655 337L980 350Q1030 355 1065 408L1047 475L560 468Z" fill="#1d3b55" stroke="#42647e" stroke-width="5"/>
+<path d="M560 488L1040 502L1022 550Q1004 574 955 577L635 558Q590 550 560 520Z" fill="#0a1826" stroke="#35536a" stroke-width="5"/>
+<!-- top service panels -->
+<path d="M690 329L925 338L955 385L670 378Z" fill="#0b1b2b" stroke="#52768d" stroke-width="4"/>
+<path d="M720 344L900 350" stroke="#36cbea" stroke-width="6" stroke-linecap="round"/>
+<path d="M730 365L865 370" stroke="#8aa8bb" stroke-opacity=".55" stroke-width="4"/>
+<!-- cyan identity strip -->
+<path d="M530 435L1047 451L1040 470L526 454Z" fill="url(#cyan)"/>
+<path d="M585 464L990 477" stroke="#a5f6ff" stroke-width="3" opacity=".75"/>
+<!-- rear near leg -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <path d="M600 550L560 660L520 756" stroke="#030b13" stroke-width="86" fill="none"/>
+ <path d="M600 550L560 660L520 756" stroke="url(#silver)" stroke-width="62" fill="none"/>
+ <path d="M600 550L560 660" stroke="#f1f7fa" stroke-width="9" opacity=".5" fill="none"/>
+ <circle cx="560" cy="660" r="39" fill="#10263b" stroke="url(#cyan)" stroke-width="10"/>
+ <circle cx="560" cy="660" r="15" fill="#9eb6c5"/>
+ <path d="M520 756L490 788Q486 804 505 809H570Q588 801 574 784L548 753Z" fill="#10263b" stroke="#8199aa" stroke-width="7"/>
+ <path d="M505 798H570" stroke="#31c9ed" stroke-width="6"/>
+ <!-- front near leg -->
+ <path d="M1010 520L1070 640L1110 758" stroke="#030b13" stroke-width="88" fill="none"/>
+ <path d="M1010 520L1070 640L1110 758" stroke="url(#silver)" stroke-width="63" fill="none"/>
+ <path d="M1010 520L1070 640" stroke="#f1f7fa" stroke-width="9" opacity=".5" fill="none"/>
+ <circle cx="1070" cy="640" r="40" fill="#10263b" stroke="url(#cyan)" stroke-width="10"/>
+ <circle cx="1070" cy="640" r="15" fill="#9eb6c5"/>
+ <path d="M1110 758L1085 790Q1080 806 1100 811H1165Q1183 803 1168 785L1138 756Z" fill="#10263b" stroke="#8199aa" stroke-width="7"/>
+ <path d="M1098 800H1165" stroke="#31c9ed" stroke-width="6"/>
+</g>
+<!-- front sensor head -->
+<path d="M1030 365Q1080 340 1145 360L1195 410L1178 495Q1140 530 1065 510L1038 465Z" fill="url(#navy)" stroke="#69879a" stroke-width="7"/>
+<path d="M1080 390Q1135 370 1170 402L1155 465Q1118 488 1075 464Z" fill="#071522" stroke="#31546c" stroke-width="5"/>
+<rect x="1094" y="414" width="74" height="34" rx="12" fill="#08101a" stroke="#31c9ed" stroke-width="5"/>
+<circle cx="1113" cy="431" r="10" fill="#7feeff"/><circle cx="1150" cy="431" r="10" fill="#41b6e4"/>
+<path d="M1082 475L1165 482" stroke="#28c7ec" stroke-width="6" stroke-linecap="round"/>
+<!-- lidar puck -->
+<path d="M790 302V265Q790 250 810 250H895Q915 250 915 265V310" fill="#102a40" stroke="#6b899e" stroke-width="6"/>
+<ellipse cx="852" cy="254" rx="68" ry="22" fill="#193a54" stroke="#91a8b8" stroke-width="6"/>
+<ellipse cx="852" cy="250" rx="50" ry="13" fill="#07121f" stroke="#35ccec" stroke-width="5"/>
+<path d="M805 247H899" stroke="#a5f5ff" stroke-width="4"/>
+<!-- emergency stop and status -->
+<circle cx="945" cy="365" r="17" fill="#ffcf67" stroke="#fff0bd" stroke-width="5"/>
+<circle cx="945" cy="365" r="6" fill="#9e5427"/>
+<path d="M675 530L700 532" stroke="#38d4f2" stroke-width="7" stroke-linecap="round"/>
+<!-- technical callouts -->
+<g font-family="Arial,Helvetica,sans-serif" fill="#eaf5fb">
+ <g><path d="M852 226V160H1050" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="852" cy="226" r="6" fill="#42d8f4"/><text x="1070" y="153" font-size="26" font-weight="700">360° LiDAR</text><text x="1070" y="184" font-size="18" fill="#9fb7c8">Mapping & obstacle awareness</text></g>
+ <g><path d="M1132 410L1265 330H1435" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="1132" cy="410" r="6" fill="#42d8f4"/><text x="1270" y="300" font-size="26" font-weight="700">RGB + DEPTH</text><text x="1270" y="330" font-size="18" fill="#9fb7c8">Forward perception module</text></g>
+ <g><path d="M560 660L390 590H145" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="560" cy="660" r="6" fill="#42d8f4"/><text x="145" y="548" font-size="26" font-weight="700">ARTICULATED LEGS</text><text x="145" y="578" font-size="18" fill="#9fb7c8">Four-leg mobility concept</text></g>
+ <g><path d="M1098 800L1280 850H1450" stroke="#42d8f4" stroke-width="3" fill="none"/><circle cx="1098" cy="800" r="6" fill="#42d8f4"/><text x="1285" y="820" font-size="26" font-weight="700">FOOT CONTACT</text><text x="1285" y="850" font-size="18" fill="#9fb7c8">Terrain-adaptive design target</text></g>
+</g>
+<!-- product title -->
+<g font-family="Arial,Helvetica,sans-serif">
+ <text x="100" y="110" fill="#52dcf5" font-size="24" font-weight="700" letter-spacing="6">PUI89 / ROBOTICS</text>
+ <text x="100" y="170" fill="#f2f7fb" font-size="48" font-weight="800">SENTINEL</text>
+ <text x="100" y="210" fill="#b7c9d8" font-size="23">ALL-TERRAIN INSPECTION ROBOT DOG</text>
+ <text x="100" y="900" fill="#8fa7b9" font-size="18">ENGINEERING CONCEPT · FOUR ARTICULATED LEGS · HUMAN-SUPERVISED INSPECTION</text>
 </g>
 </svg>
