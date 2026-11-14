@@ -931,6 +931,16 @@ This lightweight job is not a full model/sensor benchmark. The selected PUI89 co
 *Partner message: help build a transparent, human-centred inspection workflow where evidence, rights and accountability come first.*
 
 
+## Port and shipping-container inspection mission — design target
+
+Sentinel is intended to support authorised inspection missions across defined port areas, cargo yards, container rows and selected shipping-container interiors. The proposed workflow is to patrol approved routes, approach an assigned container, assess doorway and threshold clearance, enter only when site conditions and the exit route are confirmed, map and inspect the interior, record evidence and safely exit. Port navigation must account for pedestrians, forklifts, trucks, trailers, cranes, moving cargo and restricted operating zones; site traffic controls and authorised human supervision take precedence.
+
+Container entry requires a compact verified body envelope, threshold traversal, low-speed precision movement, forward/reverse/turning capability, low-light sensing, local mapping where GNSS is unavailable, overhead and cargo-obstacle awareness, and a safe retreat/hold behaviour. A container may contain hazardous atmospheres, fumigants, chemicals, heat, dust, unstable cargo or other risks not detectable by RGB/depth/LiDAR alone. Entry is conditional on a site-specific risk assessment and confirmation by the responsible operator that robotic entry is safe; Sentinel is not an atmosphere-safety certification device.
+
+The port mission may use RGB, low-light, depth, LiDAR, thermal and robot-state sensing. OCR, RFID, container-manifest or terminal-system integrations are optional and require separate authorisation. Container identity and evidence association must be verified through an authorised workflow. X-ray remains a separate stationary-only operation: no emission while walking, entering, exiting or navigating a container. Any port/container X-ray use requires equipment-specific radiation-safety assessment, controlled-area arrangements, qualified operator authorisation and applicable site/regulatory approvals.
+
+These are proposed requirements, not validated capabilities or an approved port deployment. See the [Sentinel Mobile X-ray Engineering Specification](docs/SENTINEL_MOBILE_XRAY_ENGINEERING_SPEC_V0.1.md) for port/container validation gates and outstanding engineering inputs.
+
 ## Hugging Face vision models — opt-in local integration
 
 This repository now includes real Hugging Face checkpoint adapters in [`pui89_models/hf_vision.py`](pui89_models/hf_vision.py), with project-specific usage boundaries in [`docs/HUGGING_FACE_MODEL_INTEGRATION.md`](docs/HUGGING_FACE_MODEL_INTEGRATION.md).
