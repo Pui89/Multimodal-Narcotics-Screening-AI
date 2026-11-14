@@ -13,9 +13,9 @@ python tools/free_first_check.py --report reports/free-first-check.json
 
 The first command uses only Python's standard library. The second also runs the existing pytest suite and writes a JSON report; pytest must already be installed. The script never installs dependencies, downloads models, edits files, or calls paid services.
 
-## Screening and evidence boundary
+## Inspection and evidence boundary
 
-Software tests do not establish chemical identity, reliable narcotics detection, or suitability for enforcement decisions. Measure false positives, false negatives, uncertainty, and human-review behavior on lawful, appropriately labelled evaluation data. Keep consequential decisions under qualified human review.
+Software tests do not establish physical mobility, terrain capability, inspection accuracy or field readiness. Measure perception errors, localisation drift, uncertainty, fault response and human-review behaviour on documented test scenarios. Keep consequential actions under human supervision.
 
 ## Safe automation loop
 
@@ -25,4 +25,4 @@ Software tests do not establish chemical identity, reliable narcotics detection,
 4. Re-run the same checks and benchmark validators.
 5. Keep the change unmerged until review and CI support it.
 
-Automatic repair is intentionally limited: this helper diagnoses failures but does not classify real-world substances or make consequential decisions.
+Automatic repair is intentionally limited: this helper diagnoses failures but does not certify physical robot capability or make consequential decisions.

@@ -1,8 +1,8 @@
 # PUI89 Free-First Engineering Resource Roadmap
 
-**Project:** Multimodal Narcotics Screening AI
+**Project:** PUI89 Sentinel — All-Terrain Inspection Robot Dog
 
-Use for multimodal input quality, uncertainty, audit logs and human-review workflow; no chemical identity or enforcement capability is validated.
+Use for inspection perception, sensor provenance, uncertainty, simulation, fault testing and human-review workflow; no physical robot capability is validated.
 
 This is a resource and adoption plan, not a claim that every tool is installed or integrated. Start with existing Python and GitHub automation; add dependencies only when a specific test needs them.
 

@@ -1,69 +1,76 @@
-# PUI89 SENTINEL — mobile multimodal inspection robot concept
+# PUI89 Sentinel — All-Terrain Inspection Robot Dog Concept
 
-**Status: PROPOSED DESIGN / SOFTWARE WORKFLOW PROTOTYPE.** This document describes a research concept, not a built robot, validated narcotics detector, certified security product, or operational system.
+**Status:** Product concept and engineering requirements only. No physical robot, integrated sensor stack or validated field capability is claimed.
 
-![PUI89 Sentinel quadruped robot concept](images/quadruped-screening-robot.svg)
+![PUI89 Sentinel quadruped inspection robot concept](images/pui89-sentinel-quadruped-inspection-v3.svg)
 
-## 1. Robot form
+## 1. Product form
 
-PUI89 Sentinel is proposed as a compact four-legged mobile inspection assistant for controlled, authorised environments such as a supervised terminal or logistics research site.
+PUI89 Sentinel is a four-legged mobile inspection platform for authorised industrial, infrastructure, logistics, port and selected outdoor environments.
 
-- **Body:** low-profile, protected central chassis with rounded external surfaces and guarded joints.
-- **Mobility:** four articulated legs for slow, supervised movement; pedestrian-aware yielding and stop-first behaviour are design requirements, not demonstrated capabilities.
-- **Awareness mast:** a raised 360-degree sensor position for navigation and scene awareness, subject to the selected hardware.
-- **Forward perception:** RGB/depth cameras may support scene understanding and obstacle awareness; ordinary RGB imagery cannot identify chemical composition.
-- **Payload bay:** protected, replaceable module bay. X-ray, spectrometric or chemical instruments are not included by default and must not be implied until selected, lawfully operated, calibrated and independently validated.
-- **Human interface:** operator console, status indicators, event log, emergency stop and explicit hand-off to an authorised reviewer.
+- **Body:** compact protected chassis with guarded joints and serviceable modules.
+- **Mobility:** four articulated legs with controlled gait, foot placement and supervised recovery.
+- **Perception:** candidate RGB, depth and 360-degree LiDAR sensing for scene context, geometry and obstacle awareness.
+- **State sensing:** IMU, joint-state and foot-contact signals for body and locomotion estimation.
+- **Optional mission sensing:** thermal, audio or calibrated environmental instruments only when justified by the mission risk assessment.
+- **Operator interface:** mission setup, live status, evidence review, alerts, safe hold and emergency-stop status.
 
-The four-legged shape is a mobility concept, not a claim that quadruped mobility is necessary or safer than a wheeled platform. A later engineering comparison should assess cost, maintainability, stability, accessibility and pedestrian risk before selecting hardware.
+The quadruped form is a design direction. Cost, stability, maintainability, accessibility, payload and safety must be compared against alternatives before hardware selection.
 
-## 2. How the proposed system works
+## 2. Inspection workflow
 
-1. **Authorised mission setup:** a trained operator defines the permitted area, purpose, time window, data rules and stop conditions. No covert patrol or unrestricted person tracking.
-2. **Safe navigation:** the robot receives a bounded route and speed limit. Stale navigation data, blocked paths, a person too close, communications loss or a safety fault leads to slow/stop/safe-hold.
-3. **Evidence intake:** only configured and authorised modalities are read. Each observation carries source identity, timestamp, calibration state, quality and provenance.
-4. **Independent modality checks:** image, depth, X-ray or analytical sensor streams are assessed separately. A modality that is absent, stale, uncalibrated, out of range or conflicting is marked UNKNOWN/INVALID and is not silently replaced.
-5. **Evidence fusion:** only validated, compatible evidence may be combined. The system reports what evidence is present, missing, conflicting and uncertain. RGB appearance alone never confirms a substance.
-6. **Human review:** the software may create a neutral review task such as “additional inspection may be required”. It must not label a person guilty or decide that narcotics are present from appearance alone.
-7. **Audit and safe exit:** record the input references, timestamps, model/software version, uncertainty, reviewer action and reason. The robot remains stationary or returns to a designated safe point only under a separately validated navigation policy.
+1. An authorised operator defines the mission, permitted area, time window, task and stop conditions.
+2. The system checks robot health, sensor availability, calibration and communications.
+3. Perception builds a timestamped world state with source provenance and uncertainty.
+4. The task supervisor assesses obstacles, terrain, access geometry and retreat options.
+5. The system proposes a bounded inspection action.
+6. An independent deterministic safety gate checks permissions, localisation, collision clearance, footing, speed/force limits and hardware status.
+7. The operator approves consequential actions and reviews observations.
+8. Evidence is stored with sensor/configuration, timestamp, software/model version and reviewer notes.
+9. Unknown or unsafe conditions result in STOP, SAFE_HOLD, retreat or operator escalation.
 
-## 3. Decision states
+## 3. Intelligence layers
 
-| State | Meaning | Permitted response |
+- **Vision:** image quality, detection, classification, tracking, segmentation, scene understanding and visible change cues.
+- **Spatial:** depth, mapping, localisation, geometry and traversability estimation where supported by calibrated sensors.
+- **Multimodal:** evidence alignment, sensor health, missing-data handling, disagreement and uncertainty.
+- **Task:** mission decomposition, checklist progression, route proposals and completion evidence.
+- **Robotics:** body-state estimation, gait and foot-placement proposals, obstacle awareness and recovery planning.
+- **Safety:** permissions, independent limits, fault detection, safe hold, human approval and emergency-stop policy.
+
+These are target capabilities, not claims of implementation or validation.
+
+## 4. Decision states
+
+| State | Meaning | Required response |
 |---|---|---|
-| UNKNOWN | Missing, stale or insufficient evidence | Ask for a human check; no inference |
-| CONFLICT | Modalities disagree | Preserve both records; escalate |
-| REVIEW_REQUIRED | A configured rule or validated model warrants attention | Neutral queue for authorised reviewer |
-| NO_ALERT | No configured review trigger | Does not certify an item as safe |
-| SAFE_HOLD | Navigation, sensor or system safety condition is not met | Stop motion and request operator support |
+| UNKNOWN | Evidence or critical state is missing or insufficient | Abstain and request review |
+| CONFLICT | Sensors or system states disagree | Preserve evidence and escalate |
+| REVIEW_REQUIRED | An observation needs operator assessment | Present a neutral review item |
+| NO_ALERT | No configured review trigger was raised | Do not infer that the environment is risk-free |
+| SAFE_HOLD | A safety condition is missing, invalid or failed | Block motion and request operator support |
 
-An AI alert is not proof of narcotics, wrongdoing or legal status. No autonomous accusation, detention, search, seizure, confiscation or enforcement decision is permitted.
+## 5. Safety and privacy
 
-## 4. 4D concept sequence
-
-The companion storyboard in [4D video storyboard](4d-video-storyboard.md) describes a 30-second cinematic sequence with time, camera movement, robot movement, environment and interface overlays. It is an animation brief, not a simulation result.
-
-## 5. Safety and privacy boundaries
-
-- No facial recognition, biometric identification, emotion inference, demographic profiling or person scoring.
-- No covert recording, unrestricted tracking, or collection beyond the authorised purpose.
-- No weapon, restraint, pursuit, physical contact, forced access or autonomous enforcement.
-- No chemical identity claim without a suitable validated analytical method, calibration, lawful chain of custody, independent ground truth and qualified human review.
-- Emergency stop, speed/force limits, obstacle and pedestrian tests, cybersecurity, battery safety, mechanical risk assessment and operator training are prerequisites before any physical pilot.
-- Legal authority, privacy impact, retention, access control and evidence-handling requirements must be reviewed for each jurisdiction.
+- No autonomous enforcement, coercive action or person scoring.
+- No biometric identity inference.
+- No covert recording or collection beyond the authorised mission.
+- People and vehicles are dynamic obstacles; site exclusion rules apply.
+- AI proposals cannot override the independent safety controller.
+- Loss of localisation, unsafe footing, stale sensing, sensor disagreement or communications failure must trigger a defined safe response.
+- Apply data minimisation, access controls, retention limits and audit logging.
 
 ## 6. Evidence gates
 
-1. **Software prototype:** synthetic tests for provenance, timestamps, modality absence/conflict, uncertainty, abstention, human-review routing and audit integrity.
-2. **Simulation-only:** only after a documented simulator and robot model are actually configured; report simulated results as simulation.
-3. **Bench integration:** only with selected, documented sensors and safety-reviewed hardware; no public-space operation.
-4. **Controlled pilot:** independent validation, lawful approval, human factors and safety review.
-5. **Field claims:** only measured results with sample counts, test conditions, false-positive/false-negative analysis, calibration and limitations.
+1. **Requirements:** mission definition, hazards, operating envelope and measurable acceptance criteria.
+2. **Simulation:** repeatable gait, terrain, obstacle, localisation and fault scenarios.
+3. **Bench integration:** documented sensors, power, compute, thermal and communications checks.
+4. **Controlled mobility:** stability, payload, stopping, recovery and emergency-stop validation.
+5. **Supervised site trial:** site permission, safety review, operator training and recorded acceptance.
+6. **Public claims:** only reproducible results with configuration, sample counts, conditions, metrics and limitations.
 
-## 7. Evidence labels
+Simulation results are not proof of physical performance.
 
-Use PROPOSED, IMPLEMENTED, TESTED, SIMULATION-ONLY, MEASURED, VERIFIED and NOT VALIDATED accurately. Passing software tests does not validate chemical sensing, detection accuracy, robot mobility or legal compliance.
+## 7. Open-source and low-cost development
 
-## 8. Free-first engineering approach
-
-Start with existing Python checks, synthetic scenarios, diagrams and offline report generation. ROS 2, Gazebo, Blender, FreeCAD and additional model runtimes are optional future tools: check licences, installation size, hardware requirements and cost before use. Do not download model weights, install large stacks, call paid APIs or incur recurring services by default.
+Prefer documented open-source tools and existing local/GitHub workflows. Check licence, provenance, hardware requirements, installation size and compatibility before adopting any dependency. Do not download large models, install additional stacks, procure hardware or incur paid services without separate approval.

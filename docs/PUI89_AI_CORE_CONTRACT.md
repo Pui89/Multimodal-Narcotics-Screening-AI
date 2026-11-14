@@ -27,7 +27,7 @@ Do not silently coerce strings such as `"false"`, integers such as `1`, or null 
 ## 3. Human review and action boundary
 
 - These autonomy-lab interfaces generate proposals and simulation labels only; they do not authorize hardware actuation.
-- High-impact decisions must request human review. For narcotics screening, visual or multimodal screening is not chemical confirmation and must not independently accuse, detain, or penalize a person.
+- High-impact decisions must request human review. High-impact inspection findings must remain reviewable observations; the system must not independently accuse, penalize or take coercive action.
 - A simulation scenario passing is not evidence of real-world safety, accuracy, rescue capability, or harvest capability.
 
 ## 4. Reproducible scenario reports
@@ -46,7 +46,7 @@ At minimum, regression tests should cover:
 
 - **Coconut Harvest AI:** maturity-stage uncertainty, cutting/capture hazards, drop zone, and worker/animal separation.
 - **Extreme Flood Rescue AI:** water/environment uncertainty, victim-location confidence, communication degradation, and simulation-only depth scenarios.
-- **Multimodal Narcotics Screening AI:** sensor provenance, modality disagreement, chain of custody, instrument validation, and mandatory qualified human review.
+- **PUI89 Sentinel:** terrain and foothold uncertainty, sensor provenance, localisation confidence, human exclusion zones, and supervised recovery.
 
 ## 6. Release gate
 
