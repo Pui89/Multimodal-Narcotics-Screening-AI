@@ -104,6 +104,10 @@ Excludes engineering salaries, facilities, taxes/VAT, import duty, international
 
 Current status is **concept / requirements definition** for the physical robot. Software tools or simulated scenarios do not establish physical mobility, terrain capability, inspection accuracy or field readiness. No physical prototype, all-terrain performance, fall recovery, container entry, hazardous-atmosphere detection or industrial deployment is claimed.
 
+## Engineering requirements
+
+- [All-Terrain Inspection Robot Dog requirements v0.2](docs/SENTINEL_ALL_TERRAIN_INSPECTION_ROBOT_DOG_REQUIREMENTS_V0.2.md)
+
 ## Project links
 
 - [English website](https://pui89.github.io/screening.html)
