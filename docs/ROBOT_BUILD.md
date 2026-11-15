@@ -1,25 +1,35 @@
-# AI Robot Build Plan
+# PUI89 Sentinel — Quadruped Build & Validation Roadmap
 
-## Phase 1 — simulation
+This document defines a staged engineering path. It does not authorise purchases, installations or physical operation.
 
-1. Load the URDF into ROS2/Gazebo or Isaac Sim.
-2. Add RGB-D, LiDAR and IMU sensor plugins.
-3. Run SLAM and Nav2.
-4. Connect the screening pipeline as an observation service.
-5. Add the deterministic safety gate.
+## Stage 1 — Software and requirements
 
-## Phase 2 — edge AI
+1. Define mission profiles, terrain classes, no-go conditions and operating envelope.
+2. Define Observation, WorldState, ActionProposal and FailureReport contracts.
+3. Build mock sensor adapters for RGB, depth, IMU, joint state and foot contact.
+4. Implement image/spatial quality, uncertainty, event and evidence handling.
+5. Add deterministic negative tests for missing, stale, invalid and conflicting inputs.
 
-Run YOLO/SAM3-style perception and multimodal reasoning on Jetson-class hardware. Fuse RGB-D/LiDAR observations into a 3D scene representation.
+## Stage 2 — Simulation
 
-## Phase 3 — physical robot
+1. Select a lightweight, open-source quadruped simulation path after licence, provenance, resource and hardware review.
+2. Model the robot only from a documented geometry/joint baseline.
+3. Add terrain, slope, step, loose-ground, obstacle, lighting and sensor-fault scenarios.
+4. Evaluate stability, gait state, contact, slip, localisation, stop and recovery proposals.
+5. Report simulator results as simulation only; do not present them as physical validation.
 
-Use a differential-drive mobile base with an independent E-stop, watchdog and hardware safety controller. The AI layer may request safe navigation goals but cannot bypass the safety controller.
+## Stage 3 — Bench integration
 
-## Phase 4 — validation
+Only after separate approval: connect selected cameras, depth, IMU, joint/foot sensors and edge compute on a controlled bench. Verify calibration, timing, power, thermal, communication, emergency-stop and watchdog interfaces. Do not enable locomotion by default.
 
-Test localization, obstacle avoidance, sensor failures, false positives/negatives, unknown objects, human entry into exclusion zones, communications loss and emergency stop.
+## Stage 4 — Controlled quadruped prototype
 
-## Important boundary
+After mechanical and safety review, test low-speed locomotion in a bounded test area with physical emergency stop, independent safety controller, trained operator and documented exclusion zone. Measure stability, slip, stumble, falls, payload, endurance, thermal and recovery behaviour.
 
-The robot is an observation/screening platform for accessible external objects and environments. It is not an autonomous police, medical or invasive-search robot and cannot determine whether a person has swallowed or concealed narcotics inside their body.
+## Stage 5 — Supervised field validation
+
+Test one terrain/environment class at a time under written permission and risk assessment. Record conditions, ground truth, failures, interventions, stop events and limitations. Expand the operating envelope only after evidence review.
+
+## Non-negotiable boundaries
+
+No unrestricted “go anywhere” autonomy. No entry into deep water, unstable structures or hazardous atmospheres without specific engineering and independent validation. No direct actuator control from an LLM or perception model. No autonomous enforcement, pursuit, restraint, forced access or biometric identification. No drone or aerial flight capability. No claim of a built prototype, sensor integration or field performance without evidence.
