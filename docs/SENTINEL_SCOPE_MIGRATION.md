@@ -1,50 +1,76 @@
-# Sentinel scope migration and legacy artifact register
+# Sentinel Scope Migration & Legacy Artifact Register
 
-**Current product identity:** PUI89 Sentinel — All-Terrain Inspection Robot Dog (quadruped).  
-**Current mission:** supervised inspection, situational awareness and evidence capture in authorised industrial, infrastructure, logistics and selected outdoor environments.  
-**Status:** concept and engineering requirements; no physical robot or field capability is validated.
+**Current product:** PUI89 Sentinel — All-Terrain Exploration & Inspection Robot  
+**Form factor:** Four-legged AI quadruped  
+**Tagline:** Explore Anywhere  
+**Current stage:** Stage 1 — new concept and requirements baseline  
+**Portfolio distinction:** AI NOMAD remains a separate four-wheel mobile assistant; AI HOME remains a separate four-wheel indoor assistant.
 
 ## Why this register exists
 
-The repository previously contained a different project direction called “Multimodal Narcotics Screening AI”. That earlier work left documentation, scripts, schemas, workflows, dashboards, tests, robot models and artwork with screening-related terminology. The current Sentinel product is not a narcotics-screening product. It does not claim chemical identification, X-ray screening, narcotics detection or enforcement capability.
+This repository originated under a former Multimodal Narcotics Screening AI direction. The product has since changed. Sentinel is now a general-purpose quadruped for supervised exploration, environmental awareness, inspection and evidence capture. The former narcotics-screening mission is discontinued and is not part of the current product.
 
-## Migration policy
+## Current scope
 
-1. The current product definition is the quadruped inspection robot dog described in the root README and current product brief.
-2. Historical screening code and artifacts are not automatically considered Sentinel features or evidence of quadruped capability.
-3. Preserve Git history and existing files during this scope transition. Do not perform bulk deletion or rename operations without a reviewed migration plan.
-4. Where legacy files remain necessary for provenance, mark them as historical/legacy and link to this register.
-5. New active Sentinel documentation must use quadruped inspection terminology and must not reuse screening-specific claims, interfaces or images.
-6. Any code reused from legacy work must undergo a separate relevance, security, licence, architecture and test review before adoption.
-7. Update the shared AI Core product mapping to Sentinel quadruped capabilities: perception, terrain/traversability, localisation/motion state, inspection evidence, uncertainty, safe hold and supervised recovery.
+Active Sentinel work must address:
+- quadruped mechanical and locomotion requirements;
+- environmental perception and scene understanding;
+- depth/spatial awareness, terrain and traversability estimation;
+- mapping/localisation and uncertainty;
+- robot body state, gait, joint and foot-contact awareness;
+- inspection missions, visible asset/change observations and evidence;
+- independent safety supervision, human authority and fail-safe behaviour.
 
-## Known legacy indicators
+Out of scope: narcotics or substance screening, X-ray/baggage screening, chemical identification, enforcement workflows, autonomous policing, weapons, pursuit, restraint, forced entry, biometric identification, drone or aerial flight.
 
-The following terms and paths were found in the default-branch repository search during this review. This is a bounded discovery list, not an exhaustive inventory of every occurrence:
+## Migration rules
 
-- Former project title: “Multimodal Narcotics Screening AI”.
-- Screening-specific documents such as docs/PRODUCT_BRIEF.md (now rewritten), docs/SCREENING_PRODUCT_READINESS.md, docs/MULTIMODAL_SCREENING_ROBOT_CONCEPT.md, and older screening roadmaps.
-- Screening-oriented code namespaces and modules such as src/narcotics_platform/, tools/pui89_screening_model_adapter.py, schemas/screening_event.schema.json and examples/multimodal_screening_demo.py.
-- Older workflows, robot descriptions, demos and SVG/3D artwork whose filenames or content refer to screening/narcotics.
-- Old security and integration documents that described screening data, chemical evidence or chain-of-custody workflows.
+1. The root README, Product Brief, current system specification and this register define the active product scope.
+2. Historical code, documents, schemas, dashboards, test fixtures, workflows and artwork from the former screening direction are legacy artifacts. They are not active Sentinel features, product evidence or capability claims.
+3. Preserve Git history and legacy files during this transition. Do not bulk-delete, overwrite or rename historical assets without a reviewed file-level plan.
+4. Do not execute legacy screening applications or workflows as Sentinel product demos.
+5. Reuse any generic component only after a separate review of purpose, safety, architecture, provenance, licence, security and tests.
+6. Replace old project identifiers only where they are part of the active Sentinel configuration or current public interface. Historical records must remain clearly identifiable as historical.
+7. Reset product maturity and evidence baselines. Former screening metrics, CI results, readiness percentages and dataset records do not transfer to quadruped exploration.
+8. Update website and Shared AI Core references to distinguish Sentinel quadruped from four-wheel NOMAD and four-wheel HOME.
 
-The presence of these files is not a statement that they are currently maintained, deployed, connected to hardware or part of the Sentinel baseline.
+## Known legacy areas
 
-## Validation boundary
+The default-branch scan identified screening-era material in the following areas. This is an initial bounded inventory, not a claim that every occurrence has been enumerated:
 
-- A quadruped concept illustration is not a physical prototype.
-- A software unit test is not a locomotion or sensor-integration test.
-- A simulation result is not a physical terrain or safety validation.
-- A sensor name in documentation is not proof that the sensor has been purchased, integrated, calibrated or tested.
-- No narcotics, chemical-identification, X-ray or enforcement capability is part of the Sentinel baseline.
+- Documentation: screening readiness, dataset plans, modality fusion, X-ray/chemical, baggage inspection, enforcement boundaries, screening roadmaps, historical status and old product/marketing briefs.
+- Source packages: legacy screening/fusion pipelines and adapters under old screening-oriented namespaces.
+- Applications and demos: former screening dashboards, synthetic screening examples and demo entrypoints.
+- Schemas and data: screening event/review schemas, old project identifiers, screening labels and synthetic evaluation records.
+- Configuration: old platform mission names, modality states and screening-specific robotics profiles.
+- Tests and workflows: tests that exercise former screening contracts and workflow names.
+- Visual assets: airport/baggage scenes, screening dashboards, X-ray/chemical illustrations and screening-themed robot storyboards.
+- External references: historical links to the old repository name.
 
-## Next migration sequence
+## Treatment by artifact class
 
-1. Maintain a complete file-level inventory of legacy references across the repository.
-2. Classify each file as historical archive, reusable generic component, or obsolete artifact.
-3. Review reusable components individually; preserve tests and provenance.
-4. Mark or relocate historical-only material in a dedicated, clearly labelled legacy area through small pull requests.
-5. Remove obsolete assets only after explicit review, dependency checks and confirmation that history/recovery requirements are met.
-6. Run the repository test suite and verify active README/docs/workflows consistently describe Sentinel as a quadruped inspection robot.
+| Artifact class | Treatment |
+|---|---|
+| Current README, product brief, safety, system spec, validation and active integration profile | Rewrite to quadruped exploration/inspection |
+| Generic utilities with no screening assumptions | Review individually before reuse |
+| Screening-specific application/source modules | Keep isolated as legacy; do not present or run as current Sentinel |
+| Screening schemas, fixtures and test reports | Preserve as historical records; do not use as quadruped evidence |
+| Screening images, dashboards and storyboards | Retain for history only; replace in active product presentation |
+| Old workflows and automation | Disable from current product claims; review before any future execution |
+| Git history and historical PR references | Preserve; do not rewrite history |
 
-This register documents a scope boundary. It does not claim the entire repository migration is complete.
+## Evidence and safety boundary
+
+A concept image is not a physical prototype. A unit test is not a locomotion test. A simulation is not field validation. A sensor listed in a file is not proof of purchase, integration or calibration. No unrestricted all-terrain capability is claimed. No former screening metric or capability is part of the new Sentinel baseline.
+
+## Completion criteria
+
+- [x] Current product identity and portfolio distinction stated in core README and product brief.
+- [x] Active robot concept, system blueprint, safety and validation matrix rewritten for quadruped exploration.
+- [x] Current Shared AI Core adoption profile rewritten for terrain, quadruped state and inspection.
+- [ ] Full file-level inventory of every legacy reference.
+- [ ] Reusable generic code reviewed and separated from legacy modules.
+- [ ] Legacy-only code, docs, schemas, demos, images and workflows isolated through reviewed, reversible changes.
+- [ ] Repository-wide tests and website link/QR checks completed after migration.
+
+This migration is in progress. Do not describe the entire repository as fully migrated until all remaining completion criteria are supported by evidence.
