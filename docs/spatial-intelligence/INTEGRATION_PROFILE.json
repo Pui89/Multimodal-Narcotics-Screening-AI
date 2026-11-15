@@ -1,38 +1,34 @@
 {
-  "profile_version": "0.1.0",
-  "project_id": "multimodal-narcotics-screening-ai",
-  "project_name": "PUI89 Sentinel Screening",
-  "integration_status": "profile_added_runtime_integration_pending",
+  "profile_version": "0.2.0",
+  "project_id": "sentinel-quadruped-exploration-inspection",
+  "project_name": "PUI89 Sentinel — All-Terrain Exploration & Inspection Robot",
+  "form_factor": "four_legged_quadruped",
+  "integration_status": "proposed_documentation_profile_only",
   "shared_core": {
     "repository": "Pui89/PUI89-Shared-AI-Core",
-    "pull_request": "https://github.com/Pui89/PUI89-Shared-AI-Core/pull/26",
-    "release_status": "draft_not_merged"
+    "runtime_integration": false
   },
-  "intended_use": "Optional geometry context for inspection positioning and scene documentation only.",
-  "recommended_modalities": [
-    "rgb",
-    "depth",
-    "lidar"
-  ],
+  "intended_use": "Spatial and terrain context for human-supervised quadruped exploration and inspection.",
+  "candidate_modalities": ["rgb", "depth", "optional_lidar", "imu", "joint_state", "foot_contact"],
+  "mission_specific_optional_modalities": ["thermal", "audio", "calibrated_environmental_sensors"],
   "planned_spatial_tasks": [
-    "Scene layout and inspection-position context",
-    "Geometry evidence kept separate from substance-related evidence",
-    "Human-review workflow references"
+    "depth_geometry_quality",
+    "obstacle_and_free_space_estimation",
+    "slope_step_roughness_cues",
+    "terrain_traversability_with_uncertainty",
+    "local_mapping_and_localisation_confidence",
+    "dynamic_obstacle_observation",
+    "quadruped_body_and_foot_contact_context"
   ],
-  "limitations_and_safety_boundaries": [
-    "LiDAR/depth geometry cannot identify narcotics or infer chemical composition.",
-    "No substance classification from spatial data; no enforcement action.",
-    "Chemical/X-ray modalities require lawful, validated equipment and separately verified evidence."
+  "safety_gates": [
+    "mission_permission",
+    "source_timestamp_and_quality_validation",
+    "calibration_and_coordinate_frame_validation",
+    "unknown_and_conflict_preservation",
+    "independent_motion_safety_controller",
+    "human_authorised_motion",
+    "safe_hold_on_uncertainty"
   ],
-  "common_gates": [
-    "usable evidence quality",
-    "valid calibration before fusion",
-    "matching coordinate frames",
-    "validated timestamp tolerance",
-    "sensor-health and uncertainty assessment",
-    "human review required",
-    "execution_authorized=false"
-  ],
-  "evidence_status": "No real sensor integration, substance detection performance, field validation or certification claimed.",
-  "cost_policy": "standard-library-first; no paid APIs, cloud GPU, model downloads or hardware purchases"
+  "evidence_status": "No sensor selection, purchase, calibration, runtime integration, locomotion or field validation is claimed.",
+  "excluded_functions": ["narcotics_screening", "chemical_identification", "xray_screening", "autonomous_enforcement", "drone_or_aerial_flight"]
 }
