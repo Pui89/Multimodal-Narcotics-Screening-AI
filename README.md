@@ -1092,3 +1092,27 @@ This project adopts PUI89 Engineering Intelligence to structure inspection workf
 **Generally excluded:** engineering labour, research salaries, facilities, taxes/VAT, import duties, shipping unless stated in a supplier quotation, certification/regulatory approvals, production tooling, mass production, long-term maintenance and contingency. Project-specific exclusions: X-ray source/detector, radiation shielding, licensing, radiation safety infrastructure and specialist operator costs; no X-ray hardware is selected or approved.
 
 **Lower-cost development path:** continue software-first development, open-source tools and simulation before purchasing physical hardware. Shared AI Core software and reusable development equipment may reduce duplicated costs; savings are not yet quantified. No purchase or installation is authorised by this estimate.
+
+
+### Prototype hardware, materials and component budget breakdown
+
+**Planning scope:** one engineering prototype; total planning range remains **฿1,500,000–฿4,000,000 THB**. The following subsystem allowances are preliminary engineering estimates, not supplier quotes. Individual ranges are not a promise of purchase price and must be reconciled against exact selected parts and written quotations before procurement.
+
+| Subsystem / component type | Qty per prototype | Material / specification and function | Indicative allowance (THB) |
+|---|---:|---|---:|
+| Quadruped frame + articulated legs | 1 custom platform | Load-bearing metal structure, joints, bearings, machined brackets and serviceable covers | ฿250,000–฿650,000 |
+| Actuators + joint transmissions | 12–16 provisional joints | Industrial servo actuators, gear reduction, encoders and joint feedback; final count depends on selected gait/platform | ฿350,000–฿1,000,000 |
+| Motor drives + locomotion controller | 1 set | Real-time joint controllers, power stages, safety stop and low-level motion control | ฿120,000–฿350,000 |
+| Battery + power architecture | 1 set | High-current battery, BMS, contactors, fusing, DC/DC conversion and thermal monitoring | ฿100,000–฿250,000 |
+| Perception sensor suite | 1 set | RGB cameras, depth/range sensor, IMU and optional mission sensors after requirements review | ฿80,000–฿250,000 |
+| Edge compute + data storage | 1 set | CPU/GPU/NPU compute selected from measured perception/locomotion workload | ฿60,000–฿180,000 |
+| Enclosure, feet, harness + protection | 1 set | Ingress-resistant covers, foot/contact elements, cable routing and replaceable wear parts | ฿60,000–฿180,000 |
+| Integration, calibration + safety testing | 1 lot | Mechanical integration, gait tuning, load tests, thermal tests, controlled terrain trials and recovery procedures | ฿480,000–฿1,140,000 |
+
+**Material families:** aluminium alloy or stainless-steel structural members where suitable; engineering polymer covers; corrosion-resistant fasteners; rated cables/connectors; protective enclosures; and product-specific seals, guards or vibration isolation. Exact alloy/grade, IP rating, load rating and country of manufacture remain unselected until engineering calculations and supplier evidence are available.
+
+**Shared hardware accounting:** Shared AI Core software is not a product BOM. Reusable development computers, cameras or bench instruments must be listed as shared assets and allocated once; do not duplicate their full purchase cost across all seven products. Product-specific mounts, wiring, protection and integration remain in each product allowance.
+
+**Sourcing controls:** prefer non-Chinese-origin candidates only when the exact manufacturing origin is evidenced. Record legal manufacturer, brand, exact model/part number, manufacturing country, evidence URL/document, authorised supplier, dated price/currency, stock, MOQ, lead time, warranty and landed-cost assumptions. Brand headquarters or seller location is not proof of manufacturing origin. Unknown origin = **UNVERIFIED**.
+
+**Prototype boundary:** the allowance is for a controlled engineering prototype, not a certified commercial product or production-ready system. It excludes labour, research salaries, facilities, VAT/tax, import duties, freight/insurance unless explicitly quoted, certification, production tooling, mass production, maintenance and contingency. No purchase, download, installation or supplier commitment is authorised by this documentation.
