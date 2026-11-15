@@ -1,138 +1,101 @@
-# PUI89 Sentinel — All-Terrain Inspection Robot Dog
+# PUI89 Sentinel — All-Terrain Exploration & Inspection Robot
 
-**Product identity:** Four-legged quadruped mobile inspection robot  
-**Mission:** Supervised inspection, situational awareness and evidence capture in authorised industrial, infrastructure, logistics and selected outdoor environments.  
-**Relationship to NOMAD:** Sentinel uses four articulated legs; PUI89 NOMAD is a separate four-wheel mobile assistant.  
-**Development status:** Product concept and engineering requirements. No physical Sentinel prototype, field capability or sensor integration is claimed.
+**Product identity:** Four-legged AI quadruped robot for supervised exploration, environmental awareness and inspection.  
+**Tagline:** Explore Anywhere.  
+**Mission:** Help authorised operators explore and inspect selected indoor, industrial, infrastructure, logistics, outdoor and difficult-to-access environments; understand terrain and surroundings; observe assets and environmental conditions; and return traceable evidence for human review.  
+**Portfolio distinction:** Sentinel is a four-legged quadruped. PUI89 AI NOMAD is a separate four-wheel mobile assistant. PUI89 AI HOME is a separate four-wheel indoor assistant.  
+**Development status:** Stage 1 — concept and requirements reset. No physical Sentinel prototype, integrated sensors, validated locomotion, all-terrain capability or field performance is claimed.
 
-![PUI89 Sentinel quadruped robot-dog concept](docs/images/pui89-sentinel-quadruped-inspection-v3.svg)
+![PUI89 Sentinel quadruped robot concept](docs/images/pui89-sentinel-quadruped-inspection-v3.svg)
 
-*Concept illustration only. It is not evidence of a built, tested or validated robot.*
+*Concept illustration only; not evidence of a built or tested robot.*
 
-## Product direction
+## Product purpose
 
-PUI89 Sentinel is being repositioned as a general-purpose **All-Terrain Inspection Robot Dog**, a general-purpose inspection platform; it does not include drug detection, X-ray payloads or chemical-identification functions. The product is intended to help authorised operators inspect environments, assets and visible conditions, collect traceable sensor evidence and report findings for human review.
+PUI89 Sentinel is a general-purpose, human-supervised quadruped exploration and inspection platform. It is intended to help an operator observe places and conditions that are difficult, repetitive or inconvenient to inspect on foot. The robot's AI should perceive the environment, estimate terrain and obstacles, monitor its own state, identify visible changes or anomalies, capture evidence and propose bounded next steps.
 
-### Target operating contexts
+**Sentinel is not a narcotics-screening product.** Substance detection, chemical identification, X-ray screening, baggage screening and enforcement workflows are outside the current product scope. Historical material from the former project direction is explicitly separated in [the legacy migration register](docs/SENTINEL_SCOPE_MIGRATION.md).
 
-- Industrial facilities, plant rooms and infrastructure inspection.
-- Warehouses, logistics yards, ports and authorised cargo areas.
-- Selected container and confined-area inspection, subject to clearance, atmosphere and exit-route checks.
-- Outdoor paths, paved surfaces, gravel, grass, soil, moderate slopes, steps and selected uneven terrain.
-- Disaster-site reconnaissance from safe, authorised locations.
-- Routine inspection patrols and documented condition monitoring.
+## Target mission environments
 
-These are target use cases, not validated deployments. Each site requires a risk assessment, operating permissions, environmental limits and task-specific verification.
+- Industrial facilities, plant rooms, utilities and infrastructure.
+- Warehouses, logistics yards, ports and authorised inspection areas.
+- Outdoor paths, gravel, grass, soil, moderate slopes, steps and selected uneven terrain.
+- Remote observation and supervised reconnaissance from safe, permitted locations.
+- Emergency-site situational awareness from approved safe stand-off locations.
+- Routine inspection patrols, condition snapshots and change detection.
 
-## Mobility and physical design requirements
+These are target use cases, not validated deployments. “Explore Anywhere” is an engineering ambition, not a guarantee of unrestricted access. Deep water, cliffs, unstable structures, hazardous atmospheres, extreme slopes, fire, explosive zones and unknown environments are no-go until specifically engineered and validated.
 
-Sentinel is a four-legged robot with articulated legs, not a wheeled base. The mobility ambition is strong, agile and stable walking—not unrestricted movement everywhere.
+## Core AI capabilities — proposed
 
-- Controlled forward/reverse walking, turning, sidestepping and speed transitions.
-- Terrain-aware gait selection and adaptive foot placement.
-- IMU, joint-state and foot-contact estimation.
-- Slip, stumble, obstacle and fall-risk detection.
-- Managed centre of mass, payload envelope and power/thermal budget.
-- Controlled stop, safe hold, supervised recovery and emergency-stop provisions.
-- Local mapping and safe retreat planning where communications or GNSS are unavailable.
+1. **Vision intelligence:** image quality, object/asset detection and classification, tracking, segmentation, scene understanding and visible change/anomaly cues.
+2. **Spatial intelligence:** RGB-D/depth and optional LiDAR geometry, obstacle/free-space estimation, terrain shape, slope/step/roughness cues and traversability confidence.
+3. **Terrain and locomotion awareness:** quadruped body state, IMU, joint state, foot contact, gait phase, slip/stumble/fall-risk cues and safe-hold status.
+4. **Mapping and localisation:** local mapping, localisation confidence, route context and recovery/retreat proposals; no claim of validated autonomous navigation.
+5. **Multimodal awareness:** optional thermal, audio and mission-specific environmental sensor inputs, each with independent provenance, quality and uncertainty.
+6. **Inspection intelligence:** operator-defined mission checklist, visible asset observations, change/anomaly comparison, event timeline and evidence capture.
+7. **Task intelligence:** bounded mission decomposition, waypoint and inspection-step proposals, risk assessment and human escalation.
+8. **Safety intelligence:** independent operating envelope, permission checks, fault monitoring, stop/safe-hold, emergency-stop interface and supervised recovery proposals.
 
-Candidate research methods include state estimation, gait planning, model-predictive control and whole-body control. These are candidate methods only, not selected or validated implementations.
+All capabilities are proposed requirements until implemented and supported by appropriate software, simulation, bench or real-world evidence. AI models do not directly authorise actuator commands.
 
-**Terrain limits:** cliffs, deep water, unstable structures, hazardous atmospheres, inaccessible gaps, extreme slopes and any environment outside the validated operating envelope are no-go conditions. “All-terrain” is an engineering ambition, not a guarantee.
+## Proposed system architecture
 
-### Container and confined-area inspection
+Sensors → input validation and provenance → perception → spatial/terrain world state → mission and inspection reasoning → independent safety supervisor → human-approved bounded action proposal → evidence and event report.
 
-Before approaching or entering a container, the system must assess doorway width/height, threshold, body/leg clearance, floor condition, overhead and cargo hazards, localisation confidence and a viable exit route. It must support careful approach/alignment, controlled threshold step-over, low-light sensing, narrow-space navigation, mapping, turn/reverse/retreat and safe stop.
+Reuse PUI89 Shared AI Core contracts: Observation, WorldState, ActionProposal and FailureReport, with timestamps, source provenance, quality, uncertainty, explicit UNKNOWN/CONFLICT states and safe-hold outcomes. Safety must remain independent of model confidence and language-model reasoning.
 
-**Atmosphere safety:** RGB, depth and LiDAR do not certify breathable air or detect all hazardous gases. Entry requires site-authorised procedures and suitable calibrated atmosphere instruments where the risk assessment requires them. If clearance, footing, localisation, atmosphere status or exit route cannot be established, Sentinel must not enter or must stop and request operator assistance.
+## Candidate hardware direction
 
-## Six Core Intelligence Groups
-
-1. **Vision Intelligence** — scene understanding, object detection/classification, tracking, segmentation, depth and visual change/anomaly cues.
-2. **Audio Intelligence** — speech interface, alarms, sirens and relevant acoustic events; no real-world speaker identity inference.
-3. **Multimodal Intelligence** — context-aware combination of authorised image, audio, text, map and sensor/time-series evidence with provenance and uncertainty.
-4. **Robotics Intelligence** — robot state, localisation, mapping, navigation, gait/motion planning and task-appropriate interaction.
-5. **Action & Reaction Intelligence** — inspection task decomposition, bounded planning, event response, escalation, safe retreat and recovery proposals.
-6. **Safety & Control Intelligence** — independent operating limits, permissions, verification, human approval, fault containment, safe hold and emergency-stop policy.
-
-Safety policy is independent of model confidence. AI outputs are observations or bounded proposals, not direct authority to perform hazardous actions.
-
-## Target sensor and compute architecture
-
-| Capability | Candidate role | Status |
+| Area | Candidate | Status |
 |---|---|---|
-| RGB cameras | Visual inspection, scene context and evidence capture | Candidate |
-| Depth camera | Near-field geometry and obstacle clearance | Candidate |
-| 360° LiDAR | Mapping, localisation and obstacle awareness | Candidate |
-| Thermal camera | Temperature-pattern observation where justified | Optional candidate |
-| Microphones/speaker | Acoustic events and operator communication | Candidate |
-| IMU + joint/foot sensors | Body state, gait and contact estimation | Required design function |
-| Edge AI computer | Local perception, planning support and evidence handling | Candidate |
-| Calibrated gas/atmosphere instruments | Specific atmosphere hazards when mission risk requires | Mission-specific; not included by default |
+| Vision | RGB cameras; optional stereo/depth | Candidate |
+| Spatial sensing | Depth camera; optional 360° LiDAR | Candidate |
+| Body state | IMU, joint encoders, foot/contact sensing | Required design functions; hardware TBD |
+| Environment | Optional thermal, audio or calibrated mission-specific sensors | Mission-specific; not selected |
+| Compute | Local CPU-first edge compute; optional GPU/NPU | Candidate |
+| Robotics | Quadruped state, gait, localisation, mapping and safety interfaces | Requirements only |
 
-Exact manufacturers, part numbers, country of manufacture/origin, compatibility, supplier, dated price, lead time and warranty must be evidenced before procurement. No hardware has been selected or purchased through this specification.
+No manufacturer, part number, country of origin, supplier, price or component is confirmed. Hardware selection requires compatibility, provenance, non-Chinese-origin and cost review. No purchase is authorised.
 
-## Safety, privacy and human oversight
+## Safety and privacy
 
-- Operate only in authorised locations and within a documented operating envelope.
-- Detect people and vehicles as dynamic obstacles; follow site traffic and exclusion rules.
-- No autonomous enforcement, accusation, detention, search or coercive action.
-- No biometric identity inference or voice identity recognition.
-- Do not enter hazardous atmospheres or unstable structures based on camera/LiDAR interpretation alone.
-- Stop safely on loss of localisation, unsafe footing, sensor disagreement, communications failure or unknown hazards.
-- Preserve evidence provenance, timestamps, uncertainty, model/data version and operator review.
-- Require human authorisation for consequential actions and site-specific procedures.
+- Human defines the mission, area, permissions, operating limits and abort conditions.
+- Stop or safe-hold on uncertain footing, obstacle clearance, localisation, sensor health, battery/thermal state, communications or safety-system status.
+- Never enter a hazardous atmosphere or structure based only on RGB, depth or LiDAR.
+- No weapon, pursuit, restraint, forced access, autonomous enforcement or person scoring.
+- No facial recognition, biometric identification or covert/unrestricted surveillance.
+- Preserve source, time, quality, calibration, uncertainty, software/model version and operator review.
+- A model proposal cannot bypass independent safety controls or human approval.
 
-## Prototype cost — preliminary planning estimate
+## Development sequence
 
-**Indicative allowance for one engineering prototype: ฿1,225,000–฿2,990,000.**
+1. **Stage 1 — Requirements and software contracts:** mission profiles, operating envelope, hazards, sensor interfaces, evidence records and acceptance criteria.
+2. **Stage 2 — Simulation:** reproducible quadruped/terrain scenarios; simulation is not physical validation.
+3. **Stage 3 — Bench integration:** selected sensors and compute only after separate approval.
+4. **Stage 4 — Controlled prototype:** locomotion, stability, foot contact, payload, endurance, thermal behaviour and emergency-stop tests.
+5. **Stage 5 — Supervised field validation:** risk-assessed trials with defined terrain and environmental limits.
+6. **Stage 6 — Release consideration:** independent safety, reliability, privacy, maintenance, procurement and regulatory review.
 
-This is a high-uncertainty planning estimate for a custom four-legged platform, actuators and locomotion control, battery/power, core perception sensors, edge compute, integration and controlled testing. It is not a supplier quotation, verified BOM, fixed budget or evidence that a prototype exists.
+## Current evidence boundary
 
-Excludes engineering salaries, facilities, taxes/VAT, import duty, international freight, certification, production tooling, mass production and long-term maintenance. Thermal and specialist gas instruments may add cost depending on mission. Final cost requires a mass/payload definition, supplier-verified BOM and written quotations. No purchase is authorised.
+The current physical product is at **concept / requirements definition**. Existing repository code or historical screening workflow tests do not prove quadruped locomotion, perception accuracy, mapping, obstacle avoidance, sensor integration or field performance. Do not transfer former screening maturity scores or metrics to the new Sentinel mission. Establish a new evidence baseline.
 
-## Development approach
+## Key documents
 
-1. Define mission scenarios, operating envelope and measurable acceptance criteria.
-2. Build software workflows and simulation before hardware procurement.
-3. Evaluate quadruped platform alternatives and non-Chinese-origin sourcing evidence.
-4. Verify locomotion, stability, payload, endurance, thermal and environmental performance in controlled tests.
-5. Conduct supervised site trials only after safety review and approvals.
-6. Publish capability claims only when supported by reproducible evidence.
-
-## Evidence and maturity boundary
-
-Current status is **concept / requirements definition** for the physical robot. Software tools or simulated scenarios do not establish physical mobility, terrain capability, inspection accuracy or field readiness. No physical prototype, all-terrain performance, fall recovery, container entry, hazardous-atmosphere detection or industrial deployment is claimed.
-
-## Architecture, validation and visual reference
-
-- [Complete system blueprint](docs/COMPLETE_SYSTEM_BLUEPRINT.md)
+- [Product brief](docs/PRODUCT_BRIEF.md)
+- [Exploration and inspection system specification v0.1](docs/PUI89_SENTINEL_EXPLORATION_INSPECTION_SYSTEM_SPEC_V0.1.md)
+- [Quadruped robot concept](docs/PUI89_SENTINEL_ROBOT_CONCEPT.md)
 - [Validation matrix](docs/VALIDATION_MATRIX.md)
-- [Sentinel quadruped inspection concept v3](docs/images/pui89-sentinel-quadruped-inspection-v3.svg)
-
-## Engineering requirements
-
-- [All-Terrain Inspection Robot Dog requirements v0.2](docs/SENTINEL_ALL_TERRAIN_INSPECTION_ROBOT_DOG_REQUIREMENTS_V0.2.md)
+- [Legacy scope migration register](docs/SENTINEL_SCOPE_MIGRATION.md)
+- [Security policy](SECURITY.md)
 
 ## Project links
 
 - [English website](https://pui89.github.io/sentinel.html)
 - [เว็บไซต์ภาษาไทย](https://pui89.github.io/sentinel-th.html)
 - [PUI89 portfolio](https://pui89.github.io/)
-- [Hardware & Materials Sourcing](https://pui89.github.io/materials.html)
-- [PUI89 engineering standard](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_SIMPLE_SAFE_PROFESSIONAL_STANDARD.md)
+- [PUI89 Shared AI Core](https://github.com/Pui89/PUI89-Shared-AI-Core)
 
 **PUI89 | Intelligent Systems. Verifiable Decisions. Safer Outcomes.**
-
-## World-Class Engineering Standard v1.0
-
-This product follows the [PUI89 World-Class Engineering Standard v1.0](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_WORLD_CLASS_ENGINEERING_STANDARD_V1.0.md), alongside the [PUI89 Simple, Safe & Professional Engineering Standard](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_SIMPLE_SAFE_PROFESSIONAL_STANDARD.md). The shared standard defines requirements traceability, Shared AI Core contracts, PTI evaluation, simulation, safety, hardware provenance, cost engineering, verification and release gates. Product capabilities remain subject to their stated evidence and validation boundaries; this reference does not imply that a gate has been passed.
-
-
-## PUI89 Technical Visual — AI workflow
-
-![PUI89 Sentinel quadruped robot inspection AI workflow with sensor fusion, terrain perception, safe route planning and operator supervision.](docs/images/pui89-technical-visual.svg)
-
-*Proposed quadruped inspection architecture. No physical Sentinel prototype, gait capability, sensor integration or field validation is claimed.*
-
-This diagram follows the [PUI89 Technical Visual Standard v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/PUI89_TECHNICAL_VISUAL_STANDARD_V1.0.md). It explains the proposed product-specific AI workflow and does not imply unverified implementation or physical capability.
