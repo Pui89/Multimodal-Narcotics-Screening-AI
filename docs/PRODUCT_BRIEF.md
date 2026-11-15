@@ -1,55 +1,60 @@
-# Product brief — Multimodal Narcotics Screening AI
+# Product brief — PUI89 Sentinel All-Terrain Inspection Robot Dog
 
-**Product direction:** A local-first screening-evidence review application, with a future mobile inspection-robot concept. The current implementation is a software prototype; it is not a validated narcotics detector, chemical-identification system, or operational screening robot.
+**Product identity:** Four-legged quadruped inspection robot dog.  
+**Mission:** Supervised inspection, situational awareness and evidence capture in authorised industrial, infrastructure, logistics and selected outdoor environments.  
+**Relationship to NOMAD:** Sentinel uses articulated legs; PUI89 AI NOMAD is a separate four-wheel mobile assistant.  
+**Development status:** Concept and engineering requirements. No physical Sentinel prototype, sensor integration, terrain capability or field performance is claimed.
 
-## The operational problem
+## Product problem
 
-Authorized screening teams may need to review multiple kinds of evidence, sensor quality, conflicting observations and uncertainty. A useful tool must keep provenance visible, avoid overstating what an image can prove, preserve an `UNKNOWN` state when evidence is insufficient, and support accountable human review.
+Operators need a safer, more repeatable way to observe assets and environmental conditions in locations where a supervised mobile inspection platform may be useful. Sentinel is intended to collect traceable visual and spatial observations, assess traversability, document visible changes and provide evidence for a human operator. It is not an enforcement system or a substitute for certified safety instruments.
 
-## What exists today
+## Intended operating contexts
 
-- A local API and dashboard prototype with manually entered example features and heuristic decision rules.
-- Software regression tests and an evaluation runner that can check structured predictions and calculate metrics.
-- Synthetic examples for checking the evaluation pipeline.
-- Documentation for local-first deployment, data provenance, uncertainty, privacy and safety boundaries.
+- Industrial facilities, plant rooms and infrastructure inspection.
+- Warehouses, logistics yards, ports and authorised cargo areas.
+- Selected outdoor routes and uneven terrain, only within a validated operating envelope.
+- Disaster-site reconnaissance from safe, authorised locations.
+- Routine inspection patrols and documented condition monitoring.
 
-Uploaded images are preview-only; the current dashboard does not run a trained vision model on them. Synthetic scores are not real screening accuracy. No reliable chemical identification, validated multimodal fusion, or physical robot operation is established.
+These are target use cases, not validated deployments. Each site requires permission, risk assessment, environmental limits and task-specific verification.
 
-## Intended product workflow
+## Core product capabilities — proposed
 
-1. Receive authorized observations from configured sensors or approved data sources.
-2. Check timestamps, quality, calibration, missing modalities and provenance.
-3. Present supported observations and anomalies without inferring chemical identity from appearance alone.
-4. Record agreement, conflicts, uncertainty and the reason for an `UNKNOWN` outcome.
-5. Present a screening hypothesis to an authorized reviewer.
-6. Record the reviewer decision and an audit trail with suitable access controls.
+1. **Perception:** image quality checks, object/asset observation, detection, classification, tracking, segmentation, depth/spatial estimation and visible change/anomaly cues.
+2. **Terrain intelligence:** obstacle and free-space estimation, slope/step/roughness cues, traversability confidence and no-go-zone recognition.
+3. **Robot state:** localisation confidence, motion state, joint/foot-contact observations, slip/stumble/fall-risk cues and sensor-health status.
+4. **Inspection workflow:** operator-defined checklist, waypoint/route proposals, evidence capture, timestamps, provenance and structured reports.
+5. **Action and response:** bounded task planning, operator notification, safe stop/hold, retreat or recovery proposals.
+6. **Safety and control:** independent operating limits, permission checks, emergency-stop provisions, fault handling and human approval gates.
 
-A normal RGB photograph cannot reveal the contents of closed baggage or reliably identify a chemical. Baggage screening requires an appropriate authorized imaging system; chemical identity requires a validated analytical procedure. The AI must not independently accuse a person, initiate enforcement, or command a robot.
+All capabilities are proposed until implemented and validated. Model outputs are observations or bounded proposals, not direct authority to actuate hardware.
 
-## Potential users and collaborators
+## Mobility requirements — proposed
 
-Potential stakeholders include authorized airport or transport-screening teams, public-sector technology groups, security researchers, and robotics/system integrators. These are audiences for discovery and validation, not confirmed customers or endorsements.
+Sentinel is a quadruped with four articulated legs, not a wheeled base. Candidate engineering work includes gait planning, foot placement, state estimation, balance control, slip detection, payload and power budgeting, safe hold and supervised recovery. “All-terrain” is an engineering ambition, not a guarantee of unrestricted movement.
 
-## Product requirements before any operational pilot
+Cliffs, deep water, unstable structures, hazardous atmospheres, inaccessible gaps, extreme slopes and any environment outside the validated operating envelope are no-go conditions. RGB, depth and LiDAR do not certify breathable air or detect every hazardous gas. Entry into a confined or potentially hazardous area requires site-authorised procedures and suitable calibrated instruments where the risk assessment requires them.
 
-- A narrowly defined lawful intended use and documented operating limits.
-- Authorized data access, source/licence records, expert-reviewed labels and leakage-safe splits.
-- A trained baseline evaluated on a frozen, independent and representative test set.
-- Per-class precision/recall, confusion matrix, false-positive and false-negative rates, calibration, abstention coverage, latency, robustness and failure analysis.
-- Privacy impact review, access controls, cybersecurity testing, audit-log policy and retention limits.
-- Human-factors evaluation and written procedures that prevent an AI score from being treated as proof or an automatic enforcement trigger.
-- Independent expert review, formal approvals and a controlled pilot plan before operational use.
+## Sensor and compute direction
 
-## Deployment and cost direction
+Candidate components may include RGB cameras, depth sensing, IMU, joint encoders, foot-contact sensing, optional LiDAR, edge AI compute, battery management and environmental protection. Final selection depends on a documented mission, verified compatibility, origin/licence evidence, power and thermal budgets, safety assessment and supplier validation. No component purchase is authorised by this brief.
 
-Prefer free/open-source tooling and local inference where practical. The current application can be run locally; cloud inference, paid subscriptions and hosted GPU services are not required by the documented prototype workflow. Actual local model integration, hardware needs and performance must be tested before they are claimed.
+## Evidence and validation gates
 
-## Product milestones
+- **Gate 1 — requirements:** define mission, operating envelope, hazards, operator workflow and measurable acceptance criteria.
+- **Gate 2 — software:** implement schemas, perception interfaces, uncertainty, provenance, reports and deterministic tests.
+- **Gate 3 — simulation:** evaluate locomotion and inspection scenarios in a reproducible simulator; simulation is not physical validation.
+- **Gate 4 — bench prototype:** validate sensors, compute, power, communications and emergency-stop interfaces on a controlled bench.
+- **Gate 5 — supervised physical trials:** conduct risk-assessed trials in bounded environments with human oversight and recorded failure cases.
+- **Gate 6 — release readiness:** independent safety, reliability, privacy, maintainability and procurement review.
 
-- **Stage 1 — software reliability:** keep installation, API, dashboard and evaluation tests reproducible.
-- **Stage 2 — data readiness:** secure lawful data, document annotation, and freeze group-separated splits.
-- **Stage 3 — measured baseline:** train or integrate one bounded baseline and publish independently evaluated results and failure cases.
-- **Stage 4 — controlled system validation:** test missing/conflicting modalities, uncertainty, security, privacy and human review.
-- **Stage 5 — robotics feasibility:** separately validate sensors, navigation, safety controls and human supervision before any physical pilot.
+Report software tests, simulated results, bench tests and physical trials separately. Do not publish performance metrics without reproducible evidence, dataset/scenario definitions and limitations.
 
-These are development gates, not promised delivery dates. No product-readiness, detection-accuracy or customer-savings claim is made until supported by evidence.
+## Legacy scope boundary
+
+Older repository files may still contain the former “Multimodal Narcotics Screening AI” name, screening workflows, chemical-sensor references, or screening-specific code and artwork. These are historical software artifacts from an earlier project direction; they are not the current Sentinel product definition, do not establish chemical-identification capability, and must not be presented as Sentinel features. See [Sentinel scope migration and legacy artifact register](SENTINEL_SCOPE_MIGRATION.md). Existing history is retained; this scope correction does not authorise bulk deletion.
+
+## Cost and procurement
+
+Any prototype cost range is a preliminary, high-uncertainty planning allowance, not a verified bill of materials or supplier quote. Commercial/custom quadruped platform, actuators, locomotion control, battery/power, perception sensors, edge compute and controlled integration must be separately scoped. Thermal or calibrated atmosphere instruments are mission-specific options. No purchase or supplier commitment is authorised.
