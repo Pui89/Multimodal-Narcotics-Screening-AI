@@ -136,3 +136,11 @@ This product follows the [PUI89 World-Class Engineering Standard v1.0](https://g
 *Proposed quadruped inspection architecture. No physical Sentinel prototype, gait capability, sensor integration or field validation is claimed.*
 
 This diagram follows the [PUI89 Technical Visual Standard v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/PUI89_TECHNICAL_VISUAL_STANDARD_V1.0.md). It explains the proposed product-specific AI workflow and does not imply unverified implementation or physical capability.
+
+---
+
+## Alignment with PUI89 AI 2030 Vision
+
+**Strategic direction (proposed, not a completed capability):** develop a human-supervised quadruped inspection application using multimodal condition awareness, anomaly reporting, evidence capture and operator-directed missions. Sentinel is a four-legged robot concept and remains distinct from the four-wheel PUI89 NOMAD. Locomotion, balance, terrain traversal, endurance and any “all-terrain” performance remain unvalidated until physically tested under defined conditions.
+
+See the [PUI89 AI 2030 Vision](https://pui89.github.io/ai-2030-vision.html) and [Shared AI Core roadmap](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/strategy/PUI89_AI_2030_VISION_AND_IMPLEMENTATION_ROADMAP_V1.0.md).
