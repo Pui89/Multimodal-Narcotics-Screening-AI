@@ -1,43 +1,34 @@
-# PUI89 Shared AI Core — Sentinel Screening Adapter
+# PUI89 Shared AI Core — Sentinel Quadruped Exploration & Inspection Profile
 
-**Status:** Integration plan; documentation only.  
-**Platform contract:** [PUI89 Evidence-to-Action Intelligence Platform](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_EVIDENCE_TO_ACTION_PLATFORM.md)
+**Status:** Proposed integration profile; documentation only. No runtime integration or sensor connection is claimed.  
+**Product:** PUI89 Sentinel — All-Terrain Exploration & Inspection Robot.
 
 ## Purpose
 
-Apply shared evidence, provenance, multimodal quality, uncertainty, abstention and human-review contracts to the Sentinel screening workflow. This project is decision support; it is not an autonomous enforcement system.
+Reuse PUI89 Shared AI Core contracts for environmental perception, spatial/terrain awareness, quadruped state observations, supervised inspection tasks, uncertainty, evidence and safety proposals.
 
-## Modality observations
+## Observation requirements
 
-Each modality is an independent evidence item with source, timestamp, device/system identifier, quality status, calibration status when documented, provenance, licence/permission context, and missing/failed status. RGB, X-ray and chemical-sensor observations must not be represented as available unless corresponding lawful data and actual equipment exist.
+Each observation should carry source/device identifier and authorised mission context; timestamp and freshness; modality, data quality and calibration state; coordinate frame and transform provenance where spatial data is used; confidence/uncertainty and explicit missing, invalid or conflicting status; software/model/configuration version and evidence reference.
 
-## World-state requirements
+Candidate modalities: RGB, depth/stereo, optional LiDAR, IMU, joint encoders, foot-contact sensors, and mission-specific thermal/audio/environmental sensors only when selected and validated.
 
-Track modality availability, image/sensor quality, conflicts between modalities, model/version provenance, evidence age, and human-review status. Do not merge incompatible scores or treat an absent modality as a negative result.
+## WorldState requirements
 
-## Proposal and safety rules
+Represent scene objects and visible assets; local geometry, obstacles, free-space and terrain estimates; robot pose, body attitude, joint/gait state and foot-contact observations; localisation/map confidence and sensor health; mission progress, operator-defined constraints and no-go zones; uncertainty, stale data, conflicts and unknown regions.
 
-- Outputs are screening indicators for authorised human review only.
-- HOLD when modalities are missing, degraded, uncalibrated, stale, out of distribution or materially conflicting.
-- Abstain rather than force a classification when evidence is inadequate.
-- Never infer guilt, intent or legal status from model output.
-- No search, detention, seizure, denial of service or other enforcement action may be triggered by the AI core.
-- Consequential decisions remain with authorised personnel under applicable law and procedure.
+Do not infer safe traversability from a single image or model score. Missing or conflicting evidence must remain UNKNOWN/CONFLICT.
 
-## Evaluation gates
+## ActionProposal boundary
 
-1. Validate shared schemas and modality-specific metadata.
-2. Test missing, degraded, corrupted, conflicting and out-of-distribution inputs.
-3. Report per-modality and fused results separately.
-4. Measure false-positive and false-negative rates on a lawful, representative, permission-verified evaluation set.
-5. Report class balance, uncertainty, abstention/coverage and subgroup limitations where lawful and statistically meaningful.
-6. Test human-review escalation and ensure no automatic enforcement path exists.
-7. Keep synthetic data results separate from real-world validation.
+Permitted proposal classes may include observe, capture evidence, inspect asset, request operator review, suggest waypoint, slow/stop, safe-hold or request supervised recovery. A proposal is not actuator authority. Physical motion requires an independently engineered controller, interlocks, emergency stop, operating-envelope checks and human-authorised mission control.
 
-## Required report
+## FailureReport requirements
 
-Include dataset provenance/permissions, modality availability, model/version, test split, confusion matrix, class counts, false-positive/negative analysis, abstention rate, calibration method, limitations and reviewer. If lawful representative data or actual sensor integrations are unavailable, report the corresponding metrics as NOT MEASURED.
+Record sensor dropout, localisation loss, map inconsistency, obstacle uncertainty, slip/stumble/fall-risk cues, communications loss, battery/thermal faults, emergency stop and operator abort. Include timestamp, source, severity, safe state, evidence references and recovery request.
 
-## Implementation boundary
+## Validation
 
-This document is an adoption plan. It does not establish a validated substance detector, X-ray/chemical integration, field accuracy or deployed robotic screening capability.
+Test stale/missing sensors, invalid transforms, conflicting geometry, low light, dynamic obstacles, map drift, localisation loss, foot-contact dropout, slip/stumble scenarios, communication loss, emergency-stop and recovery proposals. Keep synthetic, simulation, bench and field evidence separate.
+
+No narcotics screening, chemical-identification or X-ray task belongs in the current Sentinel integration profile.
