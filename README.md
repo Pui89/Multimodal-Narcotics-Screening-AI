@@ -1,5 +1,11 @@
-# PUI89 Sentinel — Multimodal Inspection, Screening & Robotic Intelligence
+# PUI89 Sentinel — All-Terrain Inspection Robot Dog
 
+
+## Current product definition
+
+PUI89 Sentinel is a general-purpose **All-Terrain Inspection Robot Dog**: a quadruped mobile platform for supervised inspection of environments and assets, visible-condition observation, mapping and traceable sensor evidence for human review. The current product baseline is not a narcotics-screening system. X-ray, chemical-identification and narcotics-screening payloads are outside this product scope. Mobility, perception, payload and environmental capabilities remain design objectives until independently tested.
+
+Superseded screening concepts are historical material and must not be treated as current product requirements or capability claims.
 
 ## Visual concept
 
@@ -8,9 +14,9 @@
 This public README is limited to the project overview, approved concept material and evidence that can be shared openly. Do not publish API keys, passwords, private tokens, Wi-Fi or internal network settings, private camera footage, personal or precise location data, detailed security configurations, unreleased engineering specifications, or confidential commercial plans. Keep sensitive material in an appropriately access-controlled private location. If a credential may have been exposed, revoke it; removing it from the latest commit does not remove it from Git history.
 
 <!-- PUI89_PINNED_CONCEPT_ILLUSTRATION:START -->
-![PUI89 Sentinel quadruped mobile screening robot concept](docs/images/quadruped-screening-robot.svg)
+![PUI89 Sentinel All-Terrain Inspection Robot Dog concept](docs/images/quadruped-screening-robot.svg)
 
-*Conceptual design illustration — not a deployed or validated screening robot. Sensor integrations and detection performance are unvalidated; consequential decisions require authorised human review.*
+*Conceptual design illustration — not a deployed or validated robot. Mobility, sensing, payload and environmental performance remain unvalidated.*
 <!-- PUI89_PINNED_CONCEPT_ILLUSTRATION:END -->
 
 ## Mission and inspection scope — not limited to bags
