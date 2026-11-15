@@ -1,49 +1,41 @@
-# PUI89 Sentinel — 4D cinematic concept storyboard
+# PUI89 Sentinel — 4D Exploration & Inspection Concept Storyboard
 
-**Status: animation brief only.** This is a time-based visualisation of a proposed robot and workflow. It is not a 4D simulation, sensor demonstration, validated detector, or evidence of physical performance.
+**Status:** Visual/animation brief only. Not a 4D physics simulation, robot demonstration, sensor test or evidence of physical performance.
 
 ## Visual identity
 
-- Robot: compact four-legged PUI89 Sentinel, deep navy protected chassis, brushed-metal leg links, electric-cyan status lighting, raised 360° awareness mast and sealed modular payload bay.
-- Environment: modern transport terminal / supervised logistics inspection area; calm, bright, professional and accessible.
-- People: generic background figures only. No face identification, profiling, suspicion labels or targeted tracking.
-- Interface: neutral evidence cards, source/time labels, modality status, uncertainty and “HUMAN REVIEW REQUIRED”.
-- Do not show real narcotics, chemical signatures, secret surveillance, automatic guilt decisions or unvalidated sensor readings.
+- Robot: compact four-legged PUI89 Sentinel, deep navy protected chassis, brushed-metal articulated legs and controlled electric-cyan status lighting.
+- Environment sequence: industrial corridor, outdoor gravel/grass path, uneven terrain, infrastructure perimeter and a safe observation point.
+- Sensors: show generic RGB/depth camera windows and optional 360-degree awareness sensor; label all sensors as proposed/not integrated.
+- People: generic background figures only. No face identification, profiling or targeted tracking.
+- Interface: terrain map, obstacle cues, robot-state panel, source/time labels, uncertainty and “HUMAN SUPERVISION”.
+- No drone, aerial flight, weapons, narcotics, X-ray screening, chemical detection or enforcement imagery.
 
-## 30-second 4D sequence
+## 30-second sequence
 
 | Time | Camera / space | Robot / environment motion | Interface / story |
 |---|---|---|---|
-| 0–4 s | Wide establishing shot; slow dolly through terminal | People walk naturally; Sentinel is parked at a marked research station | Title: “PUI89 SENTINEL · RESEARCH CONCEPT” |
-| 4–8 s | Low three-quarter orbit, 120° around robot | Mast lights pulse softly; legs make a small controlled posture adjustment while stationary | Callouts identify chassis, awareness mast, camera position and protected payload bay |
-| 8–12 s | Close-up tracking shot across sensor mast and payload enclosure | Camera lenses and sealed module surfaces catch light; no scan beam or chemical effect | Labels say “RGB / DEPTH — if fitted” and “OPTIONAL ANALYTICAL SENSOR — NOT INTEGRATED” |
-| 12–17 s | Side tracking shot at walking pace | Robot moves slowly along a clear marked lane, yields to a pedestrian and stops | Navigation status: “BOUNDED ROUTE · LOW SPEED · HUMAN SUPERVISION” |
-| 17–21 s | Overhead cut to a sealed benign test parcel at a supervised station | Robot remains outside a marked boundary; operator handles the test object | Separate neutral evidence cards appear: image, depth and optional instrument channel; all marked illustrative |
-| 21–26 s | Push-in to operator display | Robot stays still; no autonomous approach or handling | Dashboard shows “SOURCE / TIME / QUALITY / UNCERTAINTY”; status: “REVIEW REQUIRED — NOT A SUBSTANCE IDENTIFICATION” |
-| 26–30 s | Pull back to wide frame, then fade | Operator acknowledges the review; robot remains in safe hold | End card: “AI SUPPORTS REVIEW. AUTHORISED HUMANS DECIDE.” / “Concept only — not a validated detector.” |
+| 0–4 s | Wide establishing shot of a modern industrial/outdoor site | Sentinel is stationary at a marked safe starting point | Title: “PUI89 SENTINEL · EXPLORATION & INSPECTION CONCEPT” |
+| 4–8 s | Low three-quarter orbit around the robot | Camera reveals four articulated legs, protected chassis and sensor positions | Labels: “QUADRUPED FORM · PROPOSED SENSOR LAYOUT” |
+| 8–13 s | Side tracking shot | Robot walks slowly over a controlled flat-to-gravel transition | Overlay: “SIMULATED TERRAIN · NOT PHYSICAL VALIDATION” |
+| 13–18 s | Overhead view of an uneven path | Robot pauses before an obstacle; a route/clearance uncertainty is highlighted | Status: “ASSESSING · HUMAN SUPERVISION” |
+| 18–23 s | Close-up of operator dashboard | Robot remains in safe hold while the operator reviews terrain and robot-state information | Cards: “SOURCE / TIME / QUALITY / UNCERTAINTY” |
+| 23–27 s | Wide shot of a permitted infrastructure inspection point | Operator authorises a bounded observation task; robot captures a visual record | Status: “INSPECTION EVIDENCE CAPTURED · CONCEPT UI” |
+| 27–30 s | Pull back and fade | Robot remains stationary at a safe point | End card: “EXPLORE ANYWHERE — DESIGN AMBITION, NOT A VALIDATED CAPABILITY” |
 
-## Animation layers and timing
+## Visual layers
 
-1. **Environment layer:** terminal architecture, floor reflections, signage and generic pedestrian silhouettes.
-2. **Robot layer:** chassis, four legs, joint housings, sensor mast, payload cover, status lights and emergency stop.
-3. **Motion layer:** camera orbit, slow gait cycle, pedestrian-yield pause and stationary safe-hold. No fast pursuit, contact or object manipulation.
-4. **Evidence layer:** abstract modality cards, timestamps, source identifiers, missing/conflict states and uncertainty bars. All graphics are illustrative and carry a “SIMULATED UI” label.
-5. **Human layer:** reviewer workstation and an operator acknowledging a neutral review task.
-6. **Typography layer:** PUI89 navy/cyan identity, clear captions and persistent concept disclaimer.
+1. Environment: corridor, yard, gravel, grass and selected uneven terrain; all environments are illustrative.
+2. Robot: four legs, joint housings, central chassis, RGB/depth sensor windows and emergency stop.
+3. Motion: slow gait cycle, careful pause, safe-hold and operator-supervised continuation.
+4. Intelligence overlay: obstacle/free-space cues, terrain estimate, localisation confidence and uncertainty.
+5. Evidence overlay: timestamps, source identifiers, mission checklist and event log.
+6. Human layer: operator dashboard and explicit stop/override authority.
 
 ## Audio direction
 
-Soft ambient terminal sound, restrained mechanical servo movement and a subtle interface tone. No alarm sirens, threat music or dramatic “drug detected” sound.
+Quiet environmental ambience, restrained servo sounds and subtle interface tones. No dramatic threat cues or alarms implying a validated hazard detector.
 
 ## Video-generation prompt
 
-Create a cinematic 3D industrial-design concept film, 16:9, 30 seconds, 24 fps, with a compact four-legged mobile inspection assistant named PUI89 Sentinel. Use a deep navy and brushed-metal body, crisp electric-cyan accents, protected rounded chassis, four articulated legs, a raised 360-degree awareness mast, forward RGB/depth camera windows and a sealed modular payload bay. Show a modern supervised transport terminal, generic pedestrians, a slow camera orbit, a careful low-speed walk, a clear yield-and-stop near a pedestrian, a benign sealed test parcel at a staffed inspection station, and a human reviewer reading a neutral evidence dashboard. Display source, timestamp, quality, uncertainty and “HUMAN REVIEW REQUIRED”. Make the robot remain stationary during review. Clearly state “RESEARCH CONCEPT ONLY — NOT A VALIDATED DETECTOR”. Do not depict real narcotics, chemical identification, hidden surveillance, face recognition, autonomous accusation, search, detention, enforcement, or any unvalidated sensor output. All interface graphics are illustrative.
-
-## Free-first production path
-
-- Blender: robot modeling, camera paths, lighting and animation.
-- FreeCAD: optional mechanical envelope and modular mount study.
-- Kdenlive: edit, captions and sound.
-- ROS 2 / Gazebo: optional later simulation only after model, sensor definitions and test scenarios are actually configured.
-
-Check licence, installation size and hardware requirements before installing tools. No cloud rendering, paid API, model download or subscription is required for this storyboard.
+Create a cinematic 3D industrial-design concept film, 16:9, 30 seconds, featuring PUI89 Sentinel, a compact four-legged AI quadruped with a deep navy protected body, brushed-metal articulated legs and restrained electric-cyan accents. Show supervised exploration across a modern industrial corridor and a selected outdoor gravel/grass path. The robot moves slowly, pauses before an obstacle, displays terrain and localisation uncertainty, enters safe hold and waits for an operator to review a local dashboard before capturing an inspection observation. Label sensor hardware and UI as proposed or simulated. Clearly state that “Explore Anywhere” is a design ambition, not a validated capability. No drone, flight, wheels, narcotics, X-ray, chemical analysis, weapons, pursuit, facial recognition, autonomous enforcement or unvalidated sensor output. Concept artwork only; not a physical prototype or performance demonstration.
