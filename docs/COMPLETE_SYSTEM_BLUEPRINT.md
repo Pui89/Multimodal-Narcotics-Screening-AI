@@ -1,47 +1,33 @@
-# Complete System Blueprint — Multimodal Narcotics Screening AI
+# PUI89 Sentinel — Complete Quadruped Exploration & Inspection System Blueprint
 
-**Scope:** evidence-management and human-supervised screening prototype. This is not a validated narcotics detector, chemical analyser or autonomous enforcement system.
+**Status:** Proposed system architecture; not a deployed robot or validated autonomy stack.
 
-## System architecture
+## System flow
 
-```text
-Authorised RGB / depth / thermal / X-ray or CT / metadata inputs
-  -> consent, provenance, access-control and quality checks
-  -> modality-specific model adapters (only for available, validated sensors)
-  -> calibration / out-of-distribution / missing-modality checks
-  -> evidence aggregation with explicit uncertainty
-  -> triage state: NO INDICATION / REVIEW / UNKNOWN
-  -> authorised human review and confirmatory procedure
-  -> access-controlled audit record and evaluation report
-```
+Authorised mission → RGB/depth/optional LiDAR/IMU/joint and foot sensors/optional mission sensors → input validation, calibration and provenance → vision, spatial and terrain perception → robot-state estimation and local WorldState → inspection and mission reasoning → independent safety supervisor → human-supervised bounded action proposal → evidence bundle, event log and report.
 
-## Component contracts
+## Main subsystems
 
-1. **Authorised input only:** retain source, collection context, licence/permission, timestamp and data handling basis. Minimise personal data and avoid unnecessary retention.
-2. **Modality boundaries:** ordinary RGB imagery cannot establish the chemical identity of a substance or see through closed luggage. X-ray/CT requires the relevant authorised sensor and suitable labelled data. Do not present an unimplemented modality as active.
-3. **Model adapter:** record model/checkpoint hash, input modality, training-data scope, confidence and known exclusions. Never treat confidence as a probability unless calibration was measured.
-4. **Fusion:** combine only evidence that has been validated for the intended task. Missing or conflicting modalities must lead to UNKNOWN/REVIEW, not an automatic positive decision.
-5. **Human review:** an AI flag is a screening hypothesis, not proof of narcotics. Consequential action must not be triggered solely by the model.
-6. **Audit/privacy:** log reviewer decisions and versioned evidence references with role-based access; avoid copying sensitive imagery into logs or public repositories.
-7. **Evaluation:** report per-class precision/recall, confusion matrix, false-positive and false-negative rates, calibration, abstention rate, subgroup/condition analysis and independent expert review.
+1. **Sensor ingestion:** validate source, timestamp, frame, quality, calibration, freshness and mission permission.
+2. **Perception:** image quality, detection, classification, tracking, segmentation, scene understanding and visible change/anomaly cues.
+3. **Spatial intelligence:** depth/point-cloud geometry, free-space, obstacle clearance, slope/step/roughness and terrain uncertainty.
+4. **Quadruped state:** IMU, joint state, gait phase, foot contact, body attitude, slip/stumble/fall-risk observations.
+5. **Mapping/localisation:** local map, pose estimate, confidence, map consistency and safe-retreat context.
+6. **Inspection intelligence:** mission checklist, visible asset observations, change comparison, event timeline and evidence capture.
+7. **Safety supervisor:** independent operating limits, permissions, watchdog, emergency stop, safe hold and fault response.
+8. **Operator interface:** mission status, map/terrain context, uncertainty, alerts, evidence and abort/override controls.
 
-## Free-first development profile
+## Shared AI Core contracts
 
-- Run the software pipeline locally; no paid inference endpoint or cloud GPU is required.
-- C3PI is a prescription-pill image resource, not a dataset proving illicit-narcotics identification. It may be used only for a clearly scoped pill-image workflow after its licence/terms and label meaning are reviewed.
-- A seized-ecstasy image collection must not be used until redistribution/use rights, provenance and ground-truth basis are verified. Image appearance alone is not chemical confirmation.
-- Keep sensitive datasets, personal information and model weights out of Git unless authorised and licensed for publication.
+- **Observation:** source, time, quality, calibration, provenance and uncertainty.
+- **WorldState:** spatial and mission state with freshness and conflict handling.
+- **ActionProposal:** bounded advisory proposal; never direct actuator permission.
+- **FailureReport:** fault, severity, safe state, evidence and recovery request.
 
-## Acceptance gates
+## Engineering rules
 
-- [ ] Intended use, operator role, prohibited use and data governance are documented.
-- [ ] Every data source has a verified licence/permission and traceable ground-truth basis.
-- [ ] Labels are reviewed by an appropriate qualified source; uncertain cases remain UNKNOWN.
-- [ ] Independent splits prevent the same item, subject, scene or near-duplicate from leaking across train and test.
-- [ ] Evaluation includes false positives/negatives, calibration, abstention, out-of-distribution inputs and failure cases.
-- [ ] Missing modality, low-quality input, tampered metadata and model failure all produce safe review/unknown states.
-- [ ] A qualified human and, where relevant, an authorised confirmatory test determine actual substance identity.
+Local-first and open-source-first where suitable; CPU-capable software baseline. Keep AI perception and mission reasoning separate from deterministic low-level motor control. No model or language model can bypass safety interlocks or operator authority. Fail safe on uncertain footing, localisation, sensor health, communications or operating-envelope status. Use optional sensors only when a defined mission justifies them and calibration/validation are feasible. Protect privacy, minimise retention and preserve evidence provenance.
 
-## Current boundary
+## Current boundaries
 
-The repository contains a screening workflow and evaluation tooling, including synthetic pipeline checks. This blueprint does not establish a trained model validated on real narcotics, chemical identification, X-ray/CT capability or a deployed screening robot. Mark each gate **PASS**, **FAIL**, or **NOT RUN** and link evidence.
+No physical robot, quadruped gait, obstacle avoidance, sensor calibration, autonomous navigation, thermal/gas detection, all-terrain performance or field deployment is established. The former screening pipeline is legacy material and is not the current product system.
