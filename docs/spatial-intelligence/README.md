@@ -1,18 +1,26 @@
-# PUI89 Sentinel Screening: Spatial Intelligence integration profile
+# PUI89 Sentinel — Spatial & Terrain Intelligence
 
-## Intended use
-Optional geometry context for inspection positioning and scene documentation only.
+## Purpose
 
-## Planned tasks
-- Scene layout and inspection-position context
-- Geometry evidence kept separate from substance-related evidence
-- Human-review workflow references
+Provide geometry and spatial context for supervised quadruped exploration, terrain assessment and inspection. This profile is a proposed integration direction; no runtime sensor integration is claimed.
+
+## Planned functions
+
+- RGB-D/depth geometry and point-cloud quality assessment.
+- Obstacle and free-space estimation.
+- Slope, step, roughness and terrain-shape cues.
+- Traversability confidence and explicit unknown regions.
+- Local map, coordinate-frame and localisation confidence.
+- Dynamic obstacle observation and change detection.
+- Quadruped body-state context: attitude, joint state and foot-contact observations.
+- Evidence references and uncertainty for operator review.
 
 ## Safety boundaries
-- LiDAR/depth geometry cannot identify narcotics or infer chemical composition.
-- No substance classification from spatial data; no enforcement action.
-- Chemical/X-ray modalities require lawful, validated equipment and separately verified evidence.
 
-The common interfaces are under development in [Shared AI Core PR #26](https://github.com/Pui89/PUI89-Shared-AI-Core/pull/26), still draft and unmerged. This profile documents intended integration only; no runtime import or sensor integration is claimed.
+- A map or traversability score is not permission to move.
+- A camera, depth sensor or LiDAR cannot certify structural integrity, air quality or absence of hazardous gas.
+- Missing, stale, misaligned or conflicting geometry must remain UNKNOWN/CONFLICT.
+- Physical movement requires independent low-level control, interlocks, emergency stop and human-authorised mission control.
+- No chemical/substance classification, X-ray screening or enforcement task is part of Sentinel.
 
-**Status:** profile documentation added; runtime adapter, real sensor integration, accuracy and field validation pending. No paid services or hardware purchase required.
+The Shared AI Core integration is a proposed profile only. Sensor drivers, calibration, coordinate transforms, mapping quality and field performance remain unvalidated.
