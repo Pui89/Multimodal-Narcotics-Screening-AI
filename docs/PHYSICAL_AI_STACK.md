@@ -1,29 +1,29 @@
-# Physical AI stack — Multimodal Narcotics Screening AI
+# PUI89 Sentinel — Physical AI & Embodied Intelligence Stack
 
-## Planned architecture
+## Proposed architecture
 
-1. **Vision-language model (VLM):** summarize inspection images and identify visible features that may warrant review. A VLM description is not proof of substance identity.
-2. **Task/action LLM:** convert an approved inspection request into a structured checklist and propose the next non-invasive inspection step.
-3. **Multimodal evidence fusion:** combine only validated and legally sourced modalities, preserving each modality's separate result and limitations.
-4. **Provenance and audit trail:** record sample/reference ID, modality, timestamp, model/version, transformations, confidence and reviewer decisions.
-5. **Uncertainty and disagreement handling:** return “inconclusive” for missing, conflicting or out-of-distribution evidence; route cases to qualified reviewers.
-6. **Autonomy supervisor:** retain the existing supervisor as an independent gate. The LLM cannot bypass it.
-7. **Evaluation:** measure per-class precision/recall, false positives/negatives, calibration, subgroup limitations and performance with missing modalities.
+1. **Perception models:** object/asset detection, classification, segmentation, tracking, image quality and scene understanding.
+2. **Spatial models:** depth/point-cloud processing, free-space, obstacle geometry, terrain features and traversability estimates.
+3. **State estimation:** sensor time alignment, IMU, joint-state and foot-contact fusion, body attitude and localisation confidence.
+4. **World model:** timestamped local representation of observed objects, terrain, obstacles, robot state, mission constraints and uncertainty.
+5. **Mission reasoning:** convert an operator-approved inspection objective into a checklist and bounded route/observation proposals.
+6. **Safety supervisor:** deterministic operating-envelope checks, watchdog, emergency stop, safe hold and fault handling independent of AI models.
+7. **Evidence layer:** preserve source, timestamp, calibration, quality, model/software version, uncertainty and operator review.
 
-## Safe starter action vocabulary
+## Candidate software direction
 
-Use high-level allowlisted actions such as `review_sample_metadata`, `request_additional_measurement`, `compare_validated_modalities`, `mark_inconclusive`, and `request_human_review`. The planner must not declare guilt, identify a substance conclusively without validated evidence, or trigger enforcement actions.
+Prefer a CPU-first, open-source, local workflow. ROS 2 and Gazebo may be considered for robotics middleware and simulation only after checking exact versions, licence, origin/provenance, installation size, hardware needs and compatibility. Do not install or download large stacks/models automatically.
 
-## Current implementation status
+## Safe proposal vocabulary
 
-- `pui89_autonomy/llm_interfaces.py` provides dependency-free data contracts and validators for vision findings and action plans.
-- It does **not** load or run a VLM/LLM, connect to an API, identify narcotics, or control a robot.
-- Model output is an aid to inspection only; it must not be treated as proof of substance identity or guilt.
-- Only use datasets and sensor inputs with appropriate permissions and documented provenance.
+Examples: observe area, capture evidence, inspect asset, suggest waypoint, request operator review, slow/stop, safe hold, request supervised recovery.
 
-## Next steps
+These are proposal labels, not commands to actuators. An independent low-level controller and physical safety system must authorise movement.
 
-1. Define the legally and scientifically valid input modalities before choosing a model.
-2. Establish a transparent baseline and an independent evaluation protocol.
-3. Test conflicting inputs, missing modalities, adversarial examples and out-of-distribution cases.
-4. Add a local model adapter only after checking model license, hardware fit, download size and reproducible evaluation.
+## Evaluation requirements
+
+Measure perception metrics on permission-cleared, annotated data; spatial error against calibrated references; terrain false-safe/false-stop rates; localisation drift; contact/slip detection; task completion; stop latency; resource use; and failure recovery. Report sample counts, conditions and confidence intervals where appropriate. No metrics are currently claimed.
+
+## Current implementation boundary
+
+The repository's legacy screening workflow and tests are not Sentinel's active embodied-AI baseline. This document describes target architecture only; no VLM/VLA, locomotion policy, sensor driver or physical robot integration is claimed.
