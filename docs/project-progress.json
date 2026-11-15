@@ -1,35 +1,22 @@
 {
-  "project": "PUI89 Sentinel Screening AI",
-  "score_basis": "weighted_evidence_credits",
+  "project": "PUI89 Sentinel — All-Terrain Exploration & Inspection Robot",
+  "project_id": "sentinel-quadruped-exploration-inspection",
+  "form_factor": "four_legged_quadruped",
+  "tagline": "Explore Anywhere",
+  "stage": "stage_1_concept_and_requirements_reset",
+  "score_basis": "new_product_evidence_credits_only",
   "review_timezone": "Asia/Bangkok",
-  "evidence_credit": [
-    9,
-    9,
-    9,
-    12,
-    0,
-    2,
-    2,
-    2
-  ],
-  "gate_weights": [
-    10,
-    10,
-    15,
-    15,
-    15,
-    15,
-    10,
-    10
-  ],
+  "evidence_credit": [0, 0, 0, 0, 0, 0, 0, 0],
+  "gate_weights": [10, 10, 15, 15, 15, 15, 10, 10],
   "gate_names": [
     "Purpose & requirements",
     "Architecture & engineering",
     "Working software baseline",
     "Reproducible tests & evaluation",
-    "Integrated product prototype",
+    "Integrated quadruped prototype",
     "Safety & real-world validation",
     "Licensing & regulatory readiness",
     "Release package & support"
-  ]
+  ],
+  "baseline_note": "Former narcotics-screening workflow scores and metrics are not transferable to this quadruped product. This is a reset baseline; no readiness percentage is claimed until evidence for the new mission is reviewed."
 }
