@@ -1,26 +1,46 @@
 platform:
-  name: multimodal_narcotics_screening_ai
-  mission: defensive_screening_and_human_review
+  id: sentinel-quadruped-exploration-inspection
+  name: PUI89 Sentinel
+  product_direction: all_terrain_exploration_and_inspection
+  form_factor: four_legged_quadruped
+  tagline: Explore Anywhere
+  stage: stage_1_concept_and_requirements
+  operating_mode: human_supervised
+  physical_actuation_enabled: false
 perception:
-  detector: YOLO
-  segmentation: SAM3
-  tracking: true
-  anomaly_detection: true
-  unknown_class_required: true
-  reasoning_primary: Gemma4-E4B-it
+  image_quality: proposed
+  object_detection: proposed
+  classification: proposed
+  tracking: proposed
+  segmentation: proposed
+  scene_understanding: proposed
+  change_anomaly_detection: proposed
+spatial_awareness:
+  depth_geometry: candidate
+  lidar_mapping: optional_candidate
+  free_space_obstacles: proposed
+  terrain_traversability: proposed
+  localisation: proposed
+quadruped_state:
+  imu: candidate
+  joint_state: candidate
+  foot_contact: candidate
+  gait_phase: proposed_interface
+  slip_stumble_fall_risk: proposed
 sensors:
-  rgb: true
-  rgbd: true
-  thermal: optional
-  nir: optional
+  rgb: candidate
+  depth: candidate
   lidar: optional
-  imu: optional
-states: [SEARCHING, CANDIDATE, OCCLUDED, UNSEEN, UNKNOWN, SUSPECTED_SUBSTANCE, HUMAN_REVIEW, CLEARED, ESCALATE]
+  thermal: mission_specific_optional
+  audio: mission_specific_optional
+  calibrated_environmental: mission_specific_optional
 safety:
-  human_confirmation_required: true
-  no_autonomous_seizure: true
-  no_autonomous_restraint: true
-  no_internal_body_diagnosis: true
-  no_direct_motor_control_from_foundation_models: true
-  emergency_stop: true
-  audit_logging: true
+  human_mission_authority: required
+  independent_safety_supervisor: required_before_motion
+  emergency_stop: required_before_motion
+  safe_hold_on_uncertainty: required
+  no_direct_actuation_from_ai_models: true
+  no_autonomous_enforcement: true
+  no_biometric_identification: true
+  no_drone_or_aerial_capability: true
+  unrestricted_all_terrain_claim: false
