@@ -1,60 +1,73 @@
-# Product brief — PUI89 Sentinel All-Terrain Inspection Robot Dog
+# Product Brief — PUI89 Sentinel
 
-**Product identity:** Four-legged quadruped inspection robot dog.  
-**Mission:** Supervised inspection, situational awareness and evidence capture in authorised industrial, infrastructure, logistics and selected outdoor environments.  
-**Relationship to NOMAD:** Sentinel uses articulated legs; PUI89 AI NOMAD is a separate four-wheel mobile assistant.  
-**Development status:** Concept and engineering requirements. No physical Sentinel prototype, sensor integration, terrain capability or field performance is claimed.
+**Official working name:** PUI89 Sentinel — All-Terrain Exploration & Inspection Robot  
+**Product class:** AI quadruped / four-legged mobile robot  
+**Tagline:** Explore Anywhere  
+**Mission:** Supervised exploration, situational awareness, inspection and evidence capture across selected environments.  
+**Portfolio distinction:** Sentinel is four-legged; AI NOMAD and AI HOME are separate four-wheel products.  
+**Status:** Stage 1 — concept and requirements definition. No physical robot, integrated sensors, validated locomotion or field performance is claimed.
 
-## Product problem
+## 1. Product intent
 
-Operators need a safer, more repeatable way to observe assets and environmental conditions in locations where a supervised mobile inspection platform may be useful. Sentinel is intended to collect traceable visual and spatial observations, assess traversability, document visible changes and provide evidence for a human operator. It is not an enforcement system or a substitute for certified safety instruments.
+PUI89 Sentinel is a general-purpose quadruped platform intended to help an authorised operator explore and inspect places that are difficult, repetitive or inconvenient to access. It combines environmental perception, spatial and terrain awareness, robot-state monitoring, inspection workflows and evidence reporting. The robot should understand conditions around itself and communicate uncertainty before any movement or task proposal.
 
-## Intended operating contexts
+“Explore Anywhere” is an ambition to develop broad environmental adaptability. It is not a promise that the robot can safely traverse every terrain, enter every structure or operate in hazardous conditions.
 
-- Industrial facilities, plant rooms and infrastructure inspection.
-- Warehouses, logistics yards, ports and authorised cargo areas.
-- Selected outdoor routes and uneven terrain, only within a validated operating envelope.
-- Disaster-site reconnaissance from safe, authorised locations.
-- Routine inspection patrols and documented condition monitoring.
+## 2. Target users and use cases
 
-These are target use cases, not validated deployments. Each site requires permission, risk assessment, environmental limits and task-specific verification.
+- Facility and infrastructure inspection teams.
+- Industrial, warehouse, logistics and port operators.
+- Research and engineering teams studying quadruped mobility and embodied AI.
+- Emergency-response teams needing supervised reconnaissance from safe, authorised locations.
+- Operators performing repeatable outdoor condition monitoring.
 
-## Core product capabilities — proposed
+Target missions include visible asset inspection, route/terrain observation, obstacle awareness, environmental change detection, site documentation and evidence collection. All require site permission, risk assessment and mission-specific operating limits.
 
-1. **Perception:** image quality checks, object/asset observation, detection, classification, tracking, segmentation, depth/spatial estimation and visible change/anomaly cues.
-2. **Terrain intelligence:** obstacle and free-space estimation, slope/step/roughness cues, traversability confidence and no-go-zone recognition.
-3. **Robot state:** localisation confidence, motion state, joint/foot-contact observations, slip/stumble/fall-risk cues and sensor-health status.
-4. **Inspection workflow:** operator-defined checklist, waypoint/route proposals, evidence capture, timestamps, provenance and structured reports.
-5. **Action and response:** bounded task planning, operator notification, safe stop/hold, retreat or recovery proposals.
-6. **Safety and control:** independent operating limits, permission checks, emergency-stop provisions, fault handling and human approval gates.
+## 3. Product capability groups
 
-All capabilities are proposed until implemented and validated. Model outputs are observations or bounded proposals, not direct authority to actuate hardware.
+1. **Perception:** RGB image quality, detection, classification, tracking, segmentation, scene understanding and visible anomaly/change cues.
+2. **Spatial awareness:** depth/point-cloud processing, geometry, free-space, obstacle clearance, slope/step/roughness estimation and traversability uncertainty.
+3. **Quadruped state awareness:** IMU, joint state, gait phase, foot contact, slip, stumble, body attitude and fall-risk observations.
+4. **Mapping and localisation:** local map, pose estimate, localisation confidence, route context and recovery/retreat proposals.
+5. **Multimodal environment awareness:** optional thermal, audio and mission-specific calibrated environment sensors; no sensor is assumed present until selected and tested.
+6. **Inspection intelligence:** mission checklist, asset/area observations, change detection, event timeline, evidence bundle and structured report.
+7. **Task intelligence:** bounded mission planning, waypoint/inspection proposals, risk-aware task sequencing and human escalation.
+8. **Safety supervision:** independent limits, permissions, fault monitoring, stop/safe-hold, emergency stop and human-approved recovery.
 
-## Mobility requirements — proposed
+These are target capabilities. Each must be classified as proposed, implemented, tested, simulated, measured or validated with supporting evidence.
 
-Sentinel is a quadruped with four articulated legs, not a wheeled base. Candidate engineering work includes gait planning, foot placement, state estimation, balance control, slip detection, payload and power budgeting, safe hold and supervised recovery. “All-terrain” is an engineering ambition, not a guarantee of unrestricted movement.
+## 4. Operating envelope and exclusions
 
-Cliffs, deep water, unstable structures, hazardous atmospheres, inaccessible gaps, extreme slopes and any environment outside the validated operating envelope are no-go conditions. RGB, depth and LiDAR do not certify breathable air or detect every hazardous gas. Entry into a confined or potentially hazardous area requires site-authorised procedures and suitable calibrated instruments where the risk assessment requires them.
+Initial research should focus on controlled, low-speed, supervised operation on defined surfaces. Candidate terrain categories include paved floors, compacted paths, gravel, grass, soil, moderate slopes, low steps and selected uneven ground. Acceptance limits for grade, step height, roughness, water exposure, payload, speed, endurance and temperature must be measured before use.
 
-## Sensor and compute direction
+No-go until separately engineered and validated: deep water, cliffs, unstable structures, fire, explosive atmospheres, hazardous gases, extreme slopes, inaccessible gaps, unknown confined spaces and any site outside the approved envelope. RGB/depth/LiDAR cannot certify air quality or structural integrity.
 
-Candidate components may include RGB cameras, depth sensing, IMU, joint encoders, foot-contact sensing, optional LiDAR, edge AI compute, battery management and environmental protection. Final selection depends on a documented mission, verified compatibility, origin/licence evidence, power and thermal budgets, safety assessment and supplier validation. No component purchase is authorised by this brief.
+Out of scope: narcotics/substance screening, X-ray or chemical identification, autonomous enforcement, weaponisation, pursuit, restraint, forced entry, biometric identification and unrestricted covert surveillance. Historical screening artifacts are not product features.
 
-## Evidence and validation gates
+## 5. User experience
 
-- **Gate 1 — requirements:** define mission, operating envelope, hazards, operator workflow and measurable acceptance criteria.
-- **Gate 2 — software:** implement schemas, perception interfaces, uncertainty, provenance, reports and deterministic tests.
-- **Gate 3 — simulation:** evaluate locomotion and inspection scenarios in a reproducible simulator; simulation is not physical validation.
-- **Gate 4 — bench prototype:** validate sensors, compute, power, communications and emergency-stop interfaces on a controlled bench.
-- **Gate 5 — supervised physical trials:** conduct risk-assessed trials in bounded environments with human oversight and recorded failure cases.
-- **Gate 6 — release readiness:** independent safety, reliability, privacy, maintainability and procurement review.
+The operator defines the mission, permitted area, route constraints, observation checklist and abort conditions. Sentinel provides a live status view, map/terrain context when supported, obstacle and robot-state indicators, event notifications, uncertainty, evidence capture and a post-mission report. The operator remains responsible for authorising consequential actions.
 
-Report software tests, simulated results, bench tests and physical trials separately. Do not publish performance metrics without reproducible evidence, dataset/scenario definitions and limitations.
+## 6. Technical architecture
 
-## Legacy scope boundary
+Sensor inputs → validation/provenance → perception and spatial intelligence → terrain and robot WorldState → mission/inspection reasoning → independent safety supervisor → human review and bounded action proposal → evidence, logs and reports.
 
-Older repository files may still contain the former “Multimodal Narcotics Screening AI” name, screening workflows, chemical-sensor references, or screening-specific code and artwork. These are historical software artifacts from an earlier project direction; they are not the current Sentinel product definition, do not establish chemical-identification capability, and must not be presented as Sentinel features. See [Sentinel scope migration and legacy artifact register](SENTINEL_SCOPE_MIGRATION.md). Existing history is retained; this scope correction does not authorise bulk deletion.
+Reuse PUI89 Shared AI Core contracts: Observation, WorldState, ActionProposal and FailureReport. Include source/time/quality/calibration metadata, uncertainty, explicit unknown/conflict states and fail-safe behaviour.
 
-## Cost and procurement
+## 7. Development gates
 
-Any prototype cost range is a preliminary, high-uncertainty planning allowance, not a verified bill of materials or supplier quote. Commercial/custom quadruped platform, actuators, locomotion control, battery/power, perception sensors, edge compute and controlled integration must be separately scoped. Thermal or calibrated atmosphere instruments are mission-specific options. No purchase or supplier commitment is authorised.
+- **G1 Requirements:** mission profiles, hazards, operating envelope, sensor requirements and acceptance criteria.
+- **G2 Software foundation:** schemas, perception adapters, world state, evidence and deterministic negative tests.
+- **G3 Simulation:** repeatable terrain, gait, obstacle, localisation and fault scenarios; report simulation separately.
+- **G4 Bench:** selected sensors, compute, power, communications and safety interfaces tested without physical locomotion.
+- **G5 Prototype:** controlled locomotion, stability, foot contact, payload, endurance and emergency-stop tests.
+- **G6 Field validation:** supervised, permitted and risk-assessed site trials with reproducible evidence.
+- **G7 Release review:** independent safety, reliability, privacy, maintenance, regulatory and procurement assessment.
+
+## 8. Evidence and maturity
+
+Do not inherit the former screening workflow's 45% readiness score, datasets, precision/recall or tests as evidence for this quadruped. Create a new evidence ledger and baseline. Passing software tests does not validate physical mobility; simulation does not validate real terrain; a sensor listed in a document is not proof of purchase, integration or calibration.
+
+## 9. Procurement boundary
+
+Candidate hardware must be evaluated for exact manufacturer, model/part number, country of manufacture and origin evidence, technical compatibility, supplier, dated indicative price, lead time, warranty and serviceability. Prefer verifiable non-Chinese-origin options where suitable. This brief authorises no purchase, installation or paid service.
