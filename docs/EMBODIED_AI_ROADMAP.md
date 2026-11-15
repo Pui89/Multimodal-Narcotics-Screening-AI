@@ -16,41 +16,35 @@ This roadmap is a selection guide, not a claim that every listed project is inst
 ## Prioritised roadmap
 
 ### P0 — Robot harnesses for coding agents
-
 - Add repeatable commands for linting, unit tests, schema checks, and local reports.
 - Keep agent permissions narrow: inspect and propose first; require explicit review before hardware control, network actions, or destructive operations.
 - Record tool calls, failures, retries, and evidence links where relevant.
 - Avoid a new agent framework until the existing Python and GitHub workflows show a concrete gap.
 
 ### P1 — Robot operating systems, MCP and device standards
-
 - Treat ROS 2 as a future integration path where a project actually needs robot middleware.
 - Use MCP/device interfaces only when they solve a real interoperability need; validate input schemas and permissions.
 - Keep robot commands behind a mock/simulation adapter by default. Do not allow a language model to send unrestricted actuator commands.
 
 ### P2 — Reasoning models and vision-language-action models
-
 - Begin with the current lightweight perception pipeline and deterministic task logic.
 - Evaluate candidate open/local models only after checking licence, download size, VRAM/RAM, and CPU fallback.
 - Measure latency, memory use, task success, uncertainty and failure cases; do not rely on a demo video as a benchmark.
 - Keep model-based suggestions separate from safety-critical control.
 
 ### P3 — World models and simulation evaluators
-
 - Start with a small set of scripted, repeatable scenarios.
 - Add simulation only when a question requires physics, navigation, manipulation, or sensor interaction that unit tests cannot cover.
 - Pin scenario configurations and record simulator version, seed, assets and limitations.
 - Do not introduce multiple heavyweight simulators at once.
 
 ### P4 — Benchmarks, safety and benchmark integrity
-
 - Reuse the project's evaluation helper for consistent pass/fail/blocked records.
 - Include negative cases, edge cases, blocked scenarios, safety violations, and regression tests.
 - Keep evaluation data separate from training data; split by source/tree/session or other leakage-relevant group, not only by random image.
 - Report sample counts and uncertainty. Never invent metrics or omit failed/blocked runs from a report.
 
 ### P5 — Perception and datasets
-
 - Track source URL, author, licence, retrieval date, hash, annotation version, reviewer, and review status for each external dataset asset.
 - Run image/label geometry checks and detect duplicate or near-duplicate samples where feasible.
 - Do not train on an item whose source/licence or annotation review is unresolved.
@@ -59,7 +53,6 @@ This roadmap is a selection guide, not a claim that every listed project is inst
 ## Project-specific application
 
 ### Coconut Harvest AI — priority 1
-
 1. Finish image-source and licence review, annotation geometry review, and leakage-safe splits before training.
 2. Add maturity-class coverage checks and separate measured palm-height labels from unverified appearance-based estimates.
 3. Build a small local baseline and report precision/recall or mAP only when labels and evaluation split are ready.
@@ -67,25 +60,31 @@ This roadmap is a selection guide, not a claim that every listed project is inst
 5. Preserve the distinction between conceptual design, software prototype, simulation and validated physical harvesting.
 
 ### Extreme Flood Rescue AI — priority 2
-
 1. Define scenario records for water depth, current, visibility, debris, communication loss, and victim state.
 2. Start with scripted perception/navigation tests and safe fallback logic; label simulated conditions explicitly.
 3. Treat ground robot, boat and drone as separate platforms with capability limits, not as one robot that can safely operate at every depth.
 4. Add coordination and degraded-communications tests before complex multi-agent simulation.
 5. Report detection, navigation, time-to-assist and safety outcomes only when a reproducible evaluator exists.
 
-### Multimodal Narcotics Screening AI — priority 3
+### PUI89 Sentinel — All-Terrain Inspection Robot Dog — priority 3
+1. Define a bounded inspection mission and operating envelope before selecting hardware or locomotion algorithms.
+2. Build the software-first perception and task contracts: RGB/depth scene quality, obstacle/free-space cues, terrain traversability, visible asset observations, change/anomaly cues, localisation confidence, sensor health, provenance and uncertainty.
+3. Specify quadruped state and mobility interfaces for joint state, IMU, foot contact, gait state, slip/stumble/fall-risk cues, safe hold and supervised recovery. Do not claim these are implemented or validated.
+4. Create repeatable simulation scenarios for flat ground, gravel/grass, slopes, steps, thresholds, narrow passages, low light, sensor dropout, communication loss and emergency stop. Record simulator, assets, seed and limits.
+5. Keep confined-space and hazardous-environment inspection gated by site permission, risk assessment, suitable calibrated instruments where needed, and a verified exit route.
+6. Progress through simulate → validate → bench prototype → supervised physical test. Do not equate simulation with real-world terrain capability.
 
-1. Record which sensor modalities are genuinely available; do not imply chemical detection from RGB images alone.
-2. Add missing-modality, noisy-input, disagreement and low-confidence test cases.
-3. Require abstention/escalation to an authorised human reviewer when evidence is uncertain or modalities conflict.
-4. Evaluate false positives and false negatives per class and modality, using lawful, documented datasets.
-5. Keep screening support distinct from a definitive accusation or enforcement decision.
+### PUI89 AI HOME and AI NOMAD — separate platforms
+- Keep indoor HOME and outdoor NOMAD as separate four-wheel product configurations with their own payload, environment and safety requirements.
+- Reuse shared perception, world-state, task-proposal, failure-report and safe-hold contracts where applicable.
+- Do not transfer Sentinel quadruped mobility claims to either wheeled product.
+
+### PUI89 AI Robot Car and AI Step-Through Scooter — separate mobility products
+- Keep AI advisory features separate from vehicle control. No autonomous throttle, steering or braking is authorised by this roadmap.
+- Validate road-obstacle, flood-context, collision-warning and battery/thermal-risk features independently before making claims.
 
 ## Tool adoption checklist
-
 Before adding any item from the Awesome Embodied Agents list, document:
-
 - Purpose and the project question it answers.
 - Licence for code, models, datasets, robot assets and example scenes.
 - Minimum supported Python/OS and local hardware requirements.
@@ -94,5 +93,4 @@ Before adding any item from the Awesome Embodied Agents list, document:
 - A rollback path and any safety or privacy implications.
 
 ## Current status
-
 This file is a roadmap only. Listing a tool or scenario does not mean it has been installed, executed, benchmarked, or validated. Keep implementation status and test evidence in separate, dated records.
