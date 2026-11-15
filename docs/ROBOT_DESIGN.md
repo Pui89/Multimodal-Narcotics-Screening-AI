@@ -1,46 +1,27 @@
-# Multimodal Narcotics Screening AI — Low-Cost Screening Station Concept
+# PUI89 Sentinel — Quadruped Exploration Robot Design Direction
 
 ## Design goal
 
-Create a human-supervised screening workstation that organizes authorized image or sensor evidence and highlights cases requiring further review. The safest low-cost first version is a **stationary software prototype**, not an autonomous enforcement robot.
+Develop a compact, robust four-legged robot for supervised exploration, environmental awareness and inspection across selected terrain and facilities. “Explore Anywhere” is the long-term design ambition, not a guarantee of unrestricted operation.
 
 ## Concept architecture
 
-1. **Input:** use lawful, authorized sample images or synthetic data. Do not collect personal data or real evidence without authorization.
-2. **Local workstation:** run a local Python application on an existing computer.
-3. **Image handling:** use OpenCV for image quality checks, cropping, and basic visual inspection. Use PyTorch or another locally run model only for tasks supported by validated data.
-4. **Screening output:** use neutral labels such as POSSIBLE MATCH, NO MATCH IN THIS MODEL'S SCOPE, or UNKNOWN / INSUFFICIENT EVIDENCE.
-5. **Operator interface:** show source, timestamp, uncertainty, and review notes. Preserve an audit log without exposing sensitive details.
-6. **Voice output:** read neutral status messages only when appropriate. Avoid speaking confidential case details in public.
-7. **Physical automation:** no robotic arm, physical handling, chemical testing, or enforcement action is needed for the initial prototype. Any future sensor or scanner must be lawfully acquired, validated, and operated by qualified personnel.
+1. **Quadruped chassis:** four articulated legs, protected joints and a central payload/compute bay. Joint count, dimensions, mass and payload remain TBD.
+2. **Perception:** forward RGB and depth/stereo cameras; optional 360-degree LiDAR after range, power and cost review.
+3. **Body state:** IMU, joint encoders and foot-contact sensing for attitude, gait and contact awareness.
+4. **Mission sensors:** optional thermal, audio or calibrated environmental sensors only when a defined use case requires them.
+5. **Edge compute:** local CPU-first processing with optional accelerator support; exact board and power budget TBD.
+6. **Operator interface:** mission definition, map/terrain context, live status, uncertainty, evidence and emergency-stop/abort status.
+7. **Independent safety:** hardware emergency stop, watchdog, safe torque/power handling and independent low-level control before physical movement.
 
-## Important scientific limitation
+## AI functions
 
-Ordinary RGB photographs cannot reliably establish a substance's chemical identity. A visual resemblance is not confirmation that an item contains methamphetamine, heroin, cannabis, or another substance. Chemical identification requires appropriate validated analytical methods and qualified review. The AI should not identify a person, infer guilt, or make an enforcement decision.
+Scene understanding and object/asset observations; terrain geometry and traversability estimation; obstacle/free-space and dynamic-obstacle awareness; mapping/localisation confidence; quadruped state and foot-contact monitoring; inspection checklists, visible anomaly/change detection and evidence reporting; bounded waypoint, safe-stop and retreat proposals.
 
-## Free-first software
+## Engineering constraints
 
-- Python, OpenCV, and PyTorch for local experimentation.
-- Jupyter or local scripts for evaluation.
-- Kokoro-82M for English voice experiments; SakThai TTS for experimental Thai voice output.
-- GitHub for code and documentation.
+Evaluate stability, centre of gravity, joint torque, foot-ground interaction, actuator thermal limits, battery safety, payload, ingress protection, repairability and total cost before hardware selection. Use non-Chinese-origin components where technically suitable and require origin evidence. No BOM or procurement decision is approved here.
 
-Free software does not mean scanners, laboratory instruments, calibration materials, or qualified testing are free. Do not add paid hosted inference APIs; use synthetic or properly authorized sample data in the first stage.
+## Exclusions
 
-## Staged prototype plan
-
-- [ ] Stage 1: build a local image-review UI using synthetic or authorized data.
-- [ ] Stage 2: test image-quality checks and UNKNOWN handling.
-- [ ] Stage 3: evaluate any supported model on a documented, representative held-out dataset.
-- [ ] Stage 4: report false positives, false negatives, and limits; avoid claims of chemical confirmation from photographs.
-- [ ] Stage 5: request independent scientific, privacy, legal, and operational review before any real deployment.
-
-## Safety, privacy, and governance checks
-
-- Human review is required before consequential action.
-- Do not use image-only outputs as proof of chemical identity or wrongdoing.
-- Do not identify or track people unless a lawful, necessary, specifically reviewed use case exists.
-- Limit access, minimize retention, and protect sensitive evidence.
-- Log model version, input source, uncertainty, and reviewer decision where lawful.
-
-**Status:** stationary screening-software concept only. No validated narcotics detector or autonomous enforcement capability is claimed.
+No narcotics screening, X-ray, chemical identification, enforcement, weapons, pursuit, restraint, biometric identification, drone or aerial capability. No claim of prototype or validated locomotion.
