@@ -86,9 +86,21 @@ Vision; Audio; Multimodal; Robotics; Action & Reaction; Safety & Control. Their 
 
 Simulation results are not physical validation. A successful test on one surface or configuration does not establish all-terrain capability.
 
-## 10. Preliminary prototype cost
+## 10. Prototype cost and procurement status
 
-**Planning estimate: ฿1,225,000–฿2,990,000 for one engineering prototype.** This is a high-uncertainty estimate, not a supplier quote, verified BOM, fixed budget or purchase approval. It assumes a custom quadruped platform, actuators, mobility control, battery/power, core perception sensors, edge compute and integration/testing. It excludes salaries, facilities, VAT, duty, freight, certification, tooling, mass production and maintenance. Specialist thermal or atmosphere instruments may add cost. Final cost requires a defined mass/payload envelope, supplier-verified BOM and written quotations.
+**Prototype budget: Not yet established.** No verified bill of materials, supplier quotation or approved prototype budget is currently available. Previous public planning ranges and component-level allowances are withdrawn from this requirements baseline because they were not supported by a traceable, supplier-verified BOM and current written quotations.
+
+A defensible estimate requires, at minimum:
+
+- Defined mission, operating envelope, target dimensions, mass and payload.
+- Joint count, actuator torque/speed/duty-cycle requirements and mechanical design.
+- Battery capacity, runtime, peak power, thermal and charging requirements.
+- Selected sensor and edge-compute specifications with compatibility evidence.
+- Exact manufacturer, model/part number, country of manufacture and origin evidence.
+- Supplier identity, dated written quotation, currency, taxes, freight, lead time and warranty.
+- Integration, test-facility, safety-review and contingency allowances.
+
+Do not infer a cost from concept images, generic component ranges or another robot's retail price. Keep any future internal estimate clearly labelled as preliminary until the BOM and quotations are independently checked. This section does not authorise procurement.
 
 ## 11. Approval gates
 
