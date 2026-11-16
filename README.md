@@ -124,6 +124,20 @@ Current status is **concept / requirements definition** for the physical robot. 
 
 **PUI89 | Intelligent Systems. Verifiable Decisions. Safer Outcomes.**
 
+## Operator Interaction Intelligence — PUI89 Sentinel
+
+Sentinel uses the shared PUI89 interaction architecture for supervised operator communication:
+
+- Receive spoken inspection instructions and support push-to-talk operator commands.
+- Convert speech to text and provide concise spoken status, warning and task-completion reports.
+- Explain a detected object, visible condition or sensor event by referring to the recorded evidence, timestamp, modality and uncertainty.
+- Ask the operator to clarify ambiguous instructions and confirm consequential task changes.
+- Support human review, correction, override and escalation.
+
+**Sentinel-specific decision boundary:** interaction models may help communicate screening or inspection observations, but they must not independently identify a person, accuse someone of wrongdoing, declare a substance to be narcotics, or make a final screening or enforcement decision. All consequential findings require authorised human review and appropriate independent evidence.
+
+**Maturity:** proposed operator-interface configuration only. No interaction model, microphone, speaker or voice pipeline is claimed as installed, integrated or validated.
+
 ## World-Class Engineering Standard v1.0
 
 This product follows the [PUI89 World-Class Engineering Standard v1.0](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_WORLD_CLASS_ENGINEERING_STANDARD_V1.0.md), alongside the [PUI89 Simple, Safe & Professional Engineering Standard](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_SIMPLE_SAFE_PROFESSIONAL_STANDARD.md). The shared standard defines requirements traceability, Shared AI Core contracts, PTI evaluation, simulation, safety, hardware provenance, cost engineering, verification and release gates. Product capabilities remain subject to their stated evidence and validation boundaries; this reference does not imply that a gate has been passed.
