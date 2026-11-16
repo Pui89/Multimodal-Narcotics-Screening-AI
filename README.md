@@ -136,6 +136,19 @@ Sentinel uses the shared PUI89 interaction architecture for supervised operator 
 
 **Sentinel-specific decision boundary:** interaction models may help communicate screening or inspection observations, but they must not independently identify a person, accuse someone of wrongdoing, declare a substance to be narcotics, or make a final screening or enforcement decision. All consequential findings require authorised human review and appropriate independent evidence.
 
+**Recommended model candidates for Sentinel (not approved or integrated):**
+
+| Model/tool | Role in Sentinel | Status |
+|---|---|---|
+| [openai/whisper-small](https://huggingface.co/openai/whisper-small) | Operator speech-to-text for push-to-talk inspection instructions; evaluate noisy field conditions | PENDING_REVIEW |
+| [microsoft/Phi-4-mini-instruct](https://huggingface.co/microsoft/Phi-4-mini-instruct) | Optional operator dialogue, clarification and report phrasing; higher-resource candidate | PENDING_REVIEW |
+| [hexgrad/Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) | English spoken status and warning reports; Thai TTS is not established | PENDING_REVIEW |
+| [qualcomm/YamNet](https://huggingface.co/qualcomm/YamNet) | Selected environmental audio-event labels, subject to sensor and false-alarm testing | PENDING_REVIEW |
+| [Silero VAD](https://github.com/snakers4/silero-vad) | Speech-segment detection for operator communication | PENDING_REVIEW |
+| [HuggingFaceTB/SmolVLM2-500M-Video-Instruct](https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct) | Optional bounded visual descriptions to assist human review; never a screening verdict | PENDING_REVIEW |
+
+No candidate may identify a person, determine that a substance is narcotics, accuse anyone, or issue a final screening/enforcement decision. Do not add openWakeWord's included pretrained weights at this stage because their CC BY-NC-SA 4.0 terms require separate review.
+
 **Maturity:** proposed operator-interface configuration only. No interaction model, microphone, speaker or voice pipeline is claimed as installed, integrated or validated.
 
 ## World-Class Engineering Standard v1.0
