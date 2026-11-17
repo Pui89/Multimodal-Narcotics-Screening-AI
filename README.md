@@ -1,5 +1,9 @@
 # PUI89 Sentinel — All-Terrain Exploration & Inspection Robot
 
+![PUI89 Sentinel quadruped all-terrain inspection robot concept](docs/images/pui89-sentinel-quadruped-inspection-v3.svg)
+
+*Concept illustration only. It is not evidence of a built, tested or validated robot.*
+
 ## Product at a glance
 
 **Product direction:** A supervised four-legged quadruped platform for exploration and inspection.
@@ -22,10 +26,6 @@
 **Mission:** Supervised inspection, situational awareness and evidence capture in authorised industrial, infrastructure, logistics and selected outdoor environments.  
 **Relationship to NOMAD:** Sentinel uses four articulated legs; PUI89 NOMAD is a separate four-wheel mobile assistant.  
 **Development status:** Product concept and engineering requirements. No physical Sentinel prototype, field capability or sensor integration is claimed.
-
-![PUI89 Sentinel quadruped all-terrain inspection robot concept](docs/images/pui89-sentinel-quadruped-inspection-v3.svg)
-
-*Concept illustration only. It is not evidence of a built, tested or validated robot.*
 
 ## Product direction
 
