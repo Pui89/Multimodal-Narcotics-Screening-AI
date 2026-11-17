@@ -169,7 +169,7 @@ This diagram follows the [PUI89 Technical Visual Standard v1.0](https://github.c
 
 **PUI89 Sentinel — All-Terrain Exploration & Inspection Robot**
 
-Founder-approved sequencing: define the first supervised inspection mission, target site/environment, operating envelope, hazards, human roles and measurable acceptance criteria before selecting hardware. Current physical status remains concept/requirements unless separate bench or field evidence is linked. This is not a narcotics-screening product.
+Founder-approved sequencing: define the first supervised inspection mission, target site/environment, operating envelope, hazards, human roles and measurable acceptance criteria before selecting hardware. Current physical status remains concept/requirements unless separate bench or field evidence is linked.
 
 **ข้อกำหนดภาษาไทย**
 
