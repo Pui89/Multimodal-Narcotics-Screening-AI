@@ -164,3 +164,15 @@ This product follows the [PUI89 World-Class Engineering Standard v1.0](https://g
 *Proposed quadruped inspection architecture. No physical Sentinel prototype, gait capability, sensor integration or field validation is claimed.*
 
 This diagram follows the [PUI89 Technical Visual Standard v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/PUI89_TECHNICAL_VISUAL_STANDARD_V1.0.md). It explains the proposed product-specific AI workflow and does not imply unverified implementation or physical capability.
+
+## Portfolio consistency and founder-approved requirements
+
+**PUI89 Sentinel — All-Terrain Exploration & Inspection Robot**
+
+Founder-approved sequencing: define the first supervised inspection mission, target site/environment, operating envelope, hazards, human roles and measurable acceptance criteria before selecting hardware. Current physical status remains concept/requirements unless separate bench or field evidence is linked. This is not a narcotics-screening product.
+
+**ข้อกำหนดภาษาไทย**
+
+ลำดับที่ผู้ก่อตั้งอนุมัติ: กำหนดภารกิจตรวจสอบแบบมีมนุษย์กำกับ พื้นที่และสภาพแวดล้อม ขอบเขตการทำงาน อันตราย บทบาทมนุษย์ และเกณฑ์ยอมรับที่วัดผลได้ ก่อนเลือกฮาร์ดแวร์ สถานะทางกายภาพยังเป็นแนวคิด/ข้อกำหนด เว้นแต่มีหลักฐาน bench หรือ field แยกต่างหาก
+
+**Portfolio boundary:** PUI89 has exactly six active products. Shared AI Core is infrastructure, not a product. Extreme Flood Rescue AI is inactive as a standalone product; preserve historical records but do not present it as an active product.
