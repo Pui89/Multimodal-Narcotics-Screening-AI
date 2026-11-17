@@ -1,5 +1,22 @@
 # PUI89 Sentinel — All-Terrain Exploration & Inspection Robot
 
+## Product at a glance
+
+**Product direction:** A supervised four-legged quadruped platform for exploration and inspection.
+
+**User value:** Give authorised operators a way to observe and document difficult-to-access industrial, infrastructure, logistics and selected outdoor environments while keeping decisions under human supervision.
+
+**Key capabilities and design priorities:** Quadruped mobility research; environment and terrain observation; sensor evidence capture; inspection reporting; operator-supervised task execution and safety boundaries.
+
+**Current development stage:** Concept and engineering requirements definition.
+
+**Portfolio readiness baseline:** **45%** — last recorded baseline dated **7 November 2026**. This is a historical, evidence-based portfolio readiness snapshot, not a live progress feed or a claim of physical product completion. Refresh it only from the dated PUI89 portfolio register.
+
+**Evidence boundary:** No physical prototype, integrated sensor suite, all-terrain performance or field deployment is claimed.
+
+**Project links:** [English website](https://pui89.github.io/sentinel.html) · [PUI89 portfolio](https://pui89.github.io/)  
+
+---
 **Official project name:** PUI89 Sentinel — All-Terrain Exploration & Inspection Robot  
 **Product identity:** Four-legged quadruped mobile inspection robot  
 **Mission:** Supervised inspection, situational awareness and evidence capture in authorised industrial, infrastructure, logistics and selected outdoor environments.  
