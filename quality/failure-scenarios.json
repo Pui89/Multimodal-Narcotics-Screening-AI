@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "product": "PUI89 Sentinel — All-Terrain Exploration & Inspection Robot",
+  "scenarios": [
+    {
+      "id": "S001",
+      "name": "localisation_lost",
+      "input": "Localisation confidence is lost",
+      "expected": "stop_and_safe_hold",
+      "human_review": true
+    },
+    {
+      "id": "S002",
+      "name": "foot_contact_missing",
+      "input": "Expected foot contact is not observed",
+      "expected": "controlled_stop_and_report",
+      "human_review": true
+    },
+    {
+      "id": "S003",
+      "name": "slip_or_stumble",
+      "input": "Slip, stumble or fall-risk signal detected",
+      "expected": "stop_and_enter_stability_state",
+      "human_review": true
+    },
+    {
+      "id": "S004",
+      "name": "terrain_unknown",
+      "input": "Terrain or edge condition cannot be assessed",
+      "expected": "do_not_enter",
+      "human_review": true
+    },
+    {
+      "id": "S005",
+      "name": "sensor_disagreement",
+      "input": "IMU, joint or perception sensors disagree",
+      "expected": "reduce_confidence_and_request_review",
+      "human_review": true
+    },
+    {
+      "id": "S006",
+      "name": "communications_loss",
+      "input": "Operator link is lost",
+      "expected": "execute_validated_safe_state_only",
+      "human_review": true
+    },
+    {
+      "id": "S007",
+      "name": "power_thermal_fault",
+      "input": "Battery, voltage or temperature fault detected",
+      "expected": "controlled_safe_state_and_alert",
+      "human_review": true
+    },
+    {
+      "id": "S008",
+      "name": "obstacle_or_exit_blocked",
+      "input": "Safe route or exit route is blocked",
+      "expected": "stop_and_replan_under_supervision",
+      "human_review": true
+    },
+    {
+      "id": "S009",
+      "name": "human_stop",
+      "input": "Operator issues stop or rejects a mission",
+      "expected": "cancel_motion_proposal",
+      "human_review": true
+    },
+    {
+      "id": "S010",
+      "name": "recovery_unconfirmed",
+      "input": "Post-fault stability is not confirmed",
+      "expected": "remain_in_safe_state",
+      "human_review": true
+    }
+  ]
+}
