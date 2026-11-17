@@ -29,7 +29,7 @@
 
 ## Product direction
 
-PUI89 Sentinel is being repositioned as a general-purpose **All-Terrain Exploration & Inspection Robot**, a general-purpose inspection platform; it does not include drug detection, X-ray payloads or chemical-identification functions. The product is intended to help authorised operators inspect environments, assets and visible conditions, collect traceable sensor evidence and report findings for human review.
+PUI89 Sentinel is a general-purpose **All-Terrain Exploration & Inspection Robot**: a four-legged quadruped for supervised inspection, situational awareness and traceable evidence capture. Its **General Multimodal Intelligence** combines authorised visual, audio, text, map, spatial and time-series sensor evidence with provenance, quality checks and uncertainty handling. This is general-purpose inspection intelligence—not a narcotics-screening product. Sentinel does not include narcotics detection, X-ray screening payloads or chemical-identification functions in its current product scope. The robot reports observations and bounded proposals for authorised human review.
 
 ### Target operating contexts
 
