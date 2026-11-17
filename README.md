@@ -12,9 +12,9 @@
 
 **Key capabilities and design priorities:** Quadruped mobility research; environment and terrain observation; sensor evidence capture; inspection reporting; operator-supervised task execution and safety boundaries.
 
-**Current development stage:** Concept and engineering requirements definition.
+**Evidence maturity:** **Specified** — product concept and engineering requirements are documented. The first supervised inspection mission and operating envelope remain to be selected; no physical prototype is established.
 
-**Portfolio readiness baseline:** **45%** — last recorded baseline dated **7 November 2026**. This is a historical, evidence-based portfolio readiness snapshot, not a live progress feed or a claim of physical product completion. Refresh it only from the dated PUI89 portfolio register.
+**Evidence reviewed:** 17 November 2026. See the [shared PUI89 development record](https://pui89.github.io/) for current evidence, limitations and the next milestone.
 
 **Evidence boundary:** No physical prototype, integrated sensor suite, all-terrain performance or field deployment is claimed.
 
@@ -180,7 +180,7 @@ This product follows the [PUI89 World-Class Engineering Standard v1.0](https://g
 
 *Proposed quadruped inspection architecture. No physical Sentinel prototype, gait capability, sensor integration or field validation is claimed.*
 
-This diagram follows the [public PUI89 technical architecture overview](https://pui89.github.io/ai-core.htmlPUI89_TECHNICAL_VISUAL_STANDARD_V1.0.md). It explains the proposed product-specific AI workflow and does not imply unverified implementation or physical capability.
+This diagram follows the [public PUI89 technical architecture overview](https://pui89.github.io/ai-core.html). It explains the proposed product-specific AI workflow and does not imply unverified implementation or physical capability.
 
 ## Portfolio consistency and founder-approved requirements
 
