@@ -79,9 +79,15 @@ This roadmap is a selection guide, not a claim that every listed project is inst
 - Reuse shared perception, world-state, task-proposal, failure-report and safe-hold contracts where applicable.
 - Do not transfer Sentinel quadruped mobility claims to either wheeled product.
 
-### PUI89 AI Robot Car and AI Step-Through Scooter — separate mobility products
-- Keep AI advisory features separate from vehicle control. No autonomous throttle, steering or braking is authorised by this roadmap.
-- Validate road-obstacle, flood-context, collision-warning and battery/thermal-risk features independently before making claims.
+### PUI89 AI Global SUV — independent passenger-vehicle project
+- Develop SUV-specific road-scene, vehicle-context, passenger, thermal and driver-advisory requirements. Keep all outputs advisory; no autonomous steering, throttle or braking is authorised.
+- Validate SUV scenarios and vehicle-specific hazards against the SUV repository's own evidence gates.
+
+### PUI89 AI Step-Through Scooter — independent two-wheel rider project
+- Develop rider ergonomics, two-wheel stability context, road-surface, traction, braking-awareness and scooter-specific battery/thermal requirements. Keep all outputs advisory; no autonomous steering, throttle or braking is authorised.
+- Validate rider and scooter scenarios independently against the Scooter repository's own evidence gates.
+
+These are separate product projects and repositories. Shared AI Core contracts are reusable interfaces only; they do not combine the product engineering or validation tracks.
 
 ## Tool adoption checklist
 Before adding any item from the Awesome Embodied Agents list, document:
