@@ -1,5 +1,7 @@
 # PUI89 Sentinel — All-Terrain Exploration & Inspection Robot Engineering Requirements
 
+> The filename retains a former internal working title for link compatibility. The official product name is **PUI89 Sentinel — All-Terrain Exploration & Inspection Robot**.
+
 **Revision:** 0.2  
 **Status:** Concept and requirements definition only  
 **Product form:** Four-legged quadruped quadruped inspection robot; no wheels  
