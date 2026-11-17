@@ -1,14 +1,16 @@
-# PUI89 Sentinel — All-Terrain Inspection Robot Dog Engineering Requirements
+# PUI89 Sentinel — All-Terrain Exploration & Inspection Robot Engineering Requirements
+
+> The filename retains a former internal working title for link compatibility. The official product name is **PUI89 Sentinel — All-Terrain Exploration & Inspection Robot**.
 
 **Revision:** 0.2  
 **Status:** Concept and requirements definition only  
-**Product form:** Four-legged quadruped robot dog; no wheels  
+**Product form:** Four-legged quadruped quadruped inspection robot; no wheels  
 **Mission:** General industrial, infrastructure, logistics, port and selected outdoor inspection  
 **Procurement / build approval:** Not authorised by this document
 
 ## 1. Product identity and boundary
 
-Sentinel is a general-purpose mobile inspection robot dog. It is not a narcotics-screening product and this baseline does not include an X-ray payload or dedicated narcotics-detection subsystem. PUI89 NOMAD is a separate four-wheel mobile assistant. Sentinel's four articulated legs are intended for selected terrain and access challenges that may be unsuitable for wheeled platforms.
+Sentinel is a general-purpose mobile inspection quadruped inspection robot. It is not a narcotics-screening product and this baseline does not include an X-ray payload or dedicated narcotics-detection subsystem. PUI89 NOMAD is a separate four-wheel mobile assistant. Sentinel's four articulated legs are intended for selected terrain and access challenges that may be unsuitable for wheeled platforms.
 
 This is an engineering target, not a built or validated robot.
 

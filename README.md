@@ -1,14 +1,31 @@
 # PUI89 Sentinel — All-Terrain Exploration & Inspection Robot
 
+![PUI89 Sentinel quadruped all-terrain inspection robot concept](docs/images/pui89-sentinel-quadruped-inspection-v3.svg)
+
+*Concept illustration only. It is not evidence of a built, tested or validated robot.*
+
+## Product at a glance
+
+**Product direction:** A supervised four-legged quadruped platform for exploration and inspection.
+
+**User value:** Give authorised operators a way to observe and document difficult-to-access industrial, infrastructure, logistics and selected outdoor environments while keeping decisions under human supervision.
+
+**Key capabilities and design priorities:** Quadruped mobility research; environment and terrain observation; sensor evidence capture; inspection reporting; operator-supervised task execution and safety boundaries.
+
+**Current development stage:** Concept and engineering requirements definition.
+
+**Portfolio readiness baseline:** **45%** — last recorded baseline dated **7 November 2026**. This is a historical, evidence-based portfolio readiness snapshot, not a live progress feed or a claim of physical product completion. Refresh it only from the dated PUI89 portfolio register.
+
+**Evidence boundary:** No physical prototype, integrated sensor suite, all-terrain performance or field deployment is claimed.
+
+**Project links:** [English website](https://pui89.github.io/sentinel.html) · [PUI89 portfolio](https://pui89.github.io/)  
+
+---
 **Official project name:** PUI89 Sentinel — All-Terrain Exploration & Inspection Robot  
 **Product identity:** Four-legged quadruped mobile inspection robot  
 **Mission:** Supervised inspection, situational awareness and evidence capture in authorised industrial, infrastructure, logistics and selected outdoor environments.  
 **Relationship to NOMAD:** Sentinel uses four articulated legs; PUI89 NOMAD is a separate four-wheel mobile assistant.  
 **Development status:** Product concept and engineering requirements. No physical Sentinel prototype, field capability or sensor integration is claimed.
-
-![PUI89 Sentinel quadruped robot-dog concept](docs/images/pui89-sentinel-quadruped-inspection-v3.svg)
-
-*Concept illustration only. It is not evidence of a built, tested or validated robot.*
 
 ## Product direction
 
@@ -113,7 +130,7 @@ Current status is **concept / requirements definition** for the physical robot. 
 
 ## Engineering requirements
 
-- [All-Terrain Inspection Robot Dog requirements v0.2](docs/SENTINEL_ALL_TERRAIN_INSPECTION_ROBOT_DOG_REQUIREMENTS_V0.2.md)
+- [All-Terrain Exploration & Inspection Robot engineering requirements v0.2](docs/SENTINEL_ALL_TERRAIN_INSPECTION_ROBOT_DOG_REQUIREMENTS_V0.2.md)
 
 ## Project links
 
@@ -163,4 +180,16 @@ This product follows the [PUI89 World-Class Engineering Standard v1.0](https://g
 
 *Proposed quadruped inspection architecture. No physical Sentinel prototype, gait capability, sensor integration or field validation is claimed.*
 
-This diagram follows the [PUI89 Technical Visual Standard v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/PUI89_TECHNICAL_VISUAL_STANDARD_V1.0.md). It explains the proposed product-specific AI workflow and does not imply unverified implementation or physical capability.
+This diagram follows the [public PUI89 technical architecture overview](https://pui89.github.io/ai-core.htmlPUI89_TECHNICAL_VISUAL_STANDARD_V1.0.md). It explains the proposed product-specific AI workflow and does not imply unverified implementation or physical capability.
+
+## Portfolio consistency and founder-approved requirements
+
+**PUI89 Sentinel — All-Terrain Exploration & Inspection Robot**
+
+Founder-approved sequencing: define the first supervised inspection mission, target site/environment, operating envelope, hazards, human roles and measurable acceptance criteria before selecting hardware. Current physical status remains concept/requirements unless separate bench or field evidence is linked.
+
+**ข้อกำหนดภาษาไทย**
+
+ลำดับที่ผู้ก่อตั้งอนุมัติ: กำหนดภารกิจตรวจสอบแบบมีมนุษย์กำกับ พื้นที่และสภาพแวดล้อม ขอบเขตการทำงาน อันตราย บทบาทมนุษย์ และเกณฑ์ยอมรับที่วัดผลได้ ก่อนเลือกฮาร์ดแวร์ สถานะทางกายภาพยังเป็นแนวคิด/ข้อกำหนด เว้นแต่มีหลักฐาน bench หรือ field แยกต่างหาก
+
+**Portfolio boundary:** PUI89 has exactly six active products. Shared AI Core is infrastructure, not a product. Extreme Flood Rescue AI is inactive as a standalone product; preserve historical records but do not present it as an active product.
