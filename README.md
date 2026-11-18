@@ -1,5 +1,21 @@
 # PUI89 Sentinel — All-Terrain Exploration & Inspection Robot
 
+## Product and AI system update — 18 November 2026
+
+**Public product summary (EN):** PUI89 Sentinel is a four-legged, dog-shaped, ground-based exploration and inspection robot concept. It is intended for supervised reconnaissance in factories, industrial infrastructure, selected rough outdoor areas, disaster sites and difficult-access spaces after site clearance.
+
+**เทคโนโลยีและประโยชน์ (TH):** หุ่นยนต์สี่ขาคล้ายสุนัขสำหรับสำรวจและตรวจสอบพื้นที่ที่คนเข้าถึงยากหรือมีความเสี่ยง ใช้กล้องและเซนเซอร์ที่เหมาะสมเพื่อสังเกตพื้นที่ ทำแผนที่ ประเมินพื้นผิว ตรวจจับสิ่งกีดขวาง/ความผิดปกติ และส่งข้อมูลให้เจ้าหน้าที่พิจารณา
+
+**AI technology direction:** computer vision; optional depth and LiDAR; sensor fusion; SLAM and 3D mapping; IMU, joint-state and foot-contact estimation; terrain perception; quadruped gait/motion control; anomaly cues; edge processing; telemetry and operator alerts. Thermal or calibrated atmosphere instruments are mission-specific options, not assumed standard payloads.
+
+**Who it serves:** industrial operators, infrastructure and facility teams, warehouses, inspection providers, researchers and authorised emergency-response organisations.
+
+**Safety boundary:** “All-terrain” describes an engineering ambition, not guaranteed access. No physical prototype, integrated sensor suite, validated gait, field deployment or all-terrain performance is claimed. Hazardous-atmosphere entry cannot be approved by RGB/depth/LiDAR alone. AI outputs are observations or bounded proposals; human operators retain authority. Sentinel is not a narcotics-screening robot.
+
+**Project website:** [English](https://pui89.github.io/sentinel.html) · [ภาษาไทย](https://pui89.github.io/sentinel-th.html) · [PUI89 portfolio](https://pui89.github.io/)
+
+---
+
 ![PUI89 Sentinel quadruped all-terrain inspection robot concept](docs/images/pui89-sentinel-quadruped-inspection-v3.svg)
 
 *Concept illustration only. It is not evidence of a built, tested or validated robot.*
