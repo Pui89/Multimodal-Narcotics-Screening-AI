@@ -10,7 +10,7 @@
 
 **Who it serves:** industrial operators, infrastructure and facility teams, warehouses, inspection providers, researchers and authorised emergency-response organisations.
 
-**Safety boundary:** “All-terrain” describes an engineering ambition, not guaranteed access. No physical prototype, integrated sensor suite, validated gait, field deployment or all-terrain performance is claimed. Hazardous-atmosphere entry cannot be approved by RGB/depth/LiDAR alone. AI outputs are observations or bounded proposals; human operators retain authority. Sentinel is not a narcotics-screening robot.
+**Safety boundary:** “All-terrain” describes an engineering ambition, not guaranteed access. No physical prototype, integrated sensor suite, validated gait, field deployment or all-terrain performance is claimed. Hazardous-atmosphere entry cannot be approved by RGB/depth/LiDAR alone. AI outputs are observations or bounded proposals; human operators retain authority. Sentinel is not an enforcement or screening robot.
 
 **Project website:** [English](https://pui89.github.io/sentinel.html) · [ภาษาไทย](https://pui89.github.io/sentinel-th.html) · [PUI89 portfolio](https://pui89.github.io/)
 
@@ -45,7 +45,7 @@
 
 ## Product direction
 
-PUI89 Sentinel is a general-purpose **All-Terrain Exploration & Inspection Robot**: a four-legged quadruped for supervised inspection, situational awareness and traceable evidence capture. Its **General Multimodal Intelligence** combines authorised visual, audio, text, map, spatial and time-series sensor evidence with provenance, quality checks and uncertainty handling. This is general-purpose inspection intelligence—not a narcotics-screening product. Sentinel does not include narcotics detection, X-ray screening payloads or chemical-identification functions in its current product scope. The robot reports observations and bounded proposals for authorised human review.
+PUI89 Sentinel is a general-purpose **All-Terrain Exploration & Inspection Robot**: a four-legged quadruped for supervised inspection, situational awareness and traceable evidence capture. Its **General Multimodal Intelligence** combines authorised visual, audio, text, map, spatial and time-series sensor evidence with provenance, quality checks and uncertainty handling. This is general-purpose inspection intelligence—not a screening or enforcement product. Sentinel does not include narcotics detection, X-ray screening payloads or chemical-identification functions in its current product scope. The robot reports observations and bounded proposals for authorised human review.
 
 ### Target operating contexts
 
