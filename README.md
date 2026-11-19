@@ -227,3 +227,26 @@ PUI89 Sentinel follows the PUI89 shared design direction: make everyday life eas
 - **Animal awareness (where validated):** observe relevant pets and wildlife, maintain distance, avoid collisions, show uncertainty and alert a human. Never chase, touch, capture or disturb animals; species or venom identification is not claimed without dedicated validation.
 
 **Shared specification:** [PUI89 Everyday Intelligence & Multi-Perception Standard v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/interaction/PUI89_EVERYDAY_INTELLIGENCE_MPI_STANDARD_V1.0.md). These are design requirements, not claims that displays, sensors, offline operation, animal recognition or physical functions are already implemented or validated.
+
+
+## Local Access, Controls & On-Device Information
+
+**No single point of access. No mandatory smartphone. No remote-only operation.**
+
+The product must remain usable for its essential intended functions if a remote is lost, a phone is unavailable, an app is not installed, or internet/cloud connectivity is lost. The primary interface must fit the product; it does not have to be a button on the robot.
+
+- Provide a clear **primary local control** integrated into the robot, operator station or installation, as appropriate.
+- Provide an **independent fallback** that does not rely on the same remote, phone, app, wireless link or cloud service.
+- Put essential status, instructions and warnings on a display or indicators physically associated with the product or its normal operator station.
+- Remotes and mobile apps are optional convenience/secondary interfaces, never the only way to operate, receive critical alerts or safely stop the system.
+- If control or communication is lost, enter a defined safe state and provide a documented local recovery path. Never bypass safety interlocks.
+- Show concise plain-language information: Ready/Not ready, current task, what was detected and confidence, warning and next action, power/health, human-confirmation requests, and completion/fault history.
+- Use Thai/English where implemented, large readable text, clear symbols and optional audio. Do not rely on sound or colour alone.
+
+**Product-specific interface direction**
+- Primary: on-robot physical controls and accessible local interaction. Fallback: local physical stop/control independent of phone or remote. Direct information: built-in display, lights and audio.
+- Example: “Possible animal detected near the doorway. Please check from a safe distance. Identification not confirmed.”
+
+These are design requirements and message examples, not claims that the display, controls, sensors or detection capability are already installed or validated.
+
+**Shared standard:** [PUI89 Everyday Intelligence & Multi-Perception Standard v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/interaction/PUI89_EVERYDAY_INTELLIGENCE_MPI_STANDARD_V1.0.md).
