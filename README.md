@@ -336,3 +336,11 @@ Each record should include, where available: unique incident ID; local date/time
 **ขอบเขตหลักฐานเฉพาะผลิตภัณฑ์:** Terrain/route observations, obstacles, environmental anomalies, localisation/sensor faults, mission-state changes and operator interventions. Records help reconstruct what the robot observed and why it entered safe hold.
 
 **สถานะหลักฐาน:** ข้อกำหนดการออกแบบเท่านั้น การบันทึกภาพ การจัดเก็บ การค้นหาตามวัน/เดือน การเล่นเสียงย้อนหลัง การรักษาหลักฐาน ความเป็นส่วนตัว และการกู้คืนยังเป็น **Unknown / Not Tested** จนกว่าจะพัฒนาและทดสอบกับผลิตภัณฑ์จริง
+
+## PUI89 Easy Direct Control Standard v1.0 — Proposed
+
+This product follows the shared [PUI89 Easy Direct Control Standard](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_EASY_DIRECT_CONTROL_STANDARD_V1.0.md). Controls must be reachable and understandable without a smartphone or application, with an operator-facing display and clear physical feedback.
+
+**Proposed product controls:** POWER; START / STOP mission; MODE selection for supervised inspection, area exploration and return-to-start where navigation capability is implemented; on-device STATUS and ALERT display; and a physically accessible emergency-stop control. A separate operator station may supplement, but never replace, safe local controls.
+
+**Operating boundary:** no autonomous mission, return-to-start, gait or emergency-stop performance is claimed until implemented and validated. Remote/application connectivity is optional; local safe-stop behaviour must not depend on network availability.
