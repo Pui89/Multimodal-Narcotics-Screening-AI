@@ -1,12 +1,12 @@
 {
   "profile_version": "0.1.0",
-  "project_id": "multimodal-narcotics-screening-ai",
-  "project_name": "PUI89 Sentinel Screening",
+  "project_id": "sentinel-all-terrain-inspection-robot",
+  "project_name": "PUI89 Sentinel — All-Terrain Exploration & Inspection Robot",
   "integration_status": "profile_added_runtime_integration_pending",
   "shared_core": {
     "repository": "Pui89/PUI89-Shared-AI-Core",
     "pull_request": "https://github.com/Pui89/PUI89-Shared-AI-Core/pull/26",
-    "release_status": "draft_not_merged"
+    "release_status": "merged"
   },
   "intended_use": "Optional geometry context for inspection positioning and scene documentation only.",
   "recommended_modalities": [
@@ -16,13 +16,13 @@
   ],
   "planned_spatial_tasks": [
     "Scene layout and inspection-position context",
-    "Geometry evidence kept separate from substance-related evidence",
+    "Geometry evidence kept separate from non-spatial sensor and mission evidence",
     "Human-review workflow references"
   ],
   "limitations_and_safety_boundaries": [
-    "LiDAR/depth geometry cannot identify narcotics or infer chemical composition.",
-    "No substance classification from spatial data; no enforcement action.",
-    "Chemical/X-ray modalities require lawful, validated equipment and separately verified evidence."
+    "Geometry and spatial perception cannot determine chemical composition or certify atmospheric safety.",
+    "Do not enter confined or potentially hazardous areas based on RGB, depth or LiDAR alone; use site-authorised procedures and calibrated instruments when required by the risk assessment.",
+    "Inspection observations are advisory and require human review."
   ],
   "common_gates": [
     "usable evidence quality",
@@ -33,6 +33,6 @@
     "human review required",
     "execution_authorized=false"
   ],
-  "evidence_status": "No real sensor integration, substance detection performance, field validation or certification claimed.",
+  "evidence_status": "No real sensor integration, locomotion performance, field validation or certification claimed.",
   "cost_policy": "standard-library-first; no paid APIs, cloud GPU, model downloads or hardware purchases"
 }
