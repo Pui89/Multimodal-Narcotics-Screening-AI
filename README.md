@@ -307,3 +307,32 @@ These are design requirements and message examples, not claims that the display,
 เก็บคำเตือนที่ยังทำงานและประวัติเหตุการณ์พร้อมเวลาไว้ในระบบภายใน รองรับภาษาไทยและอังกฤษตามความสามารถของส่วนติดต่อ คำเตือนสำคัญควรทำงานได้เมื่ออินเทอร์เน็ตหรือคลาวด์ขัดข้องเท่าที่เทคโนโลยีรองรับ การแจ้งเตือนผ่านมือถือเป็นเพียงช่องทางเสริม ต้องรายงานเซนเซอร์ถูกบัง ข้อมูลล้าสมัย การสื่อสารขาดหาย และความขัดข้อง พร้อมกำหนดการตอบสนองที่ปลอดภัยและห้ามเริ่มการทำงานเสี่ยงต่อโดยอัตโนมัติ ผู้ใช้ต้องรับทราบ ตรวจสอบ หยุดหรือพักระบบ และกู้คืนจากส่วนควบคุมในพื้นที่ได้ ห้ามแนะนำให้ข้ามระบบป้องกัน
 
 **Evidence status:** design requirement only; no display, alert hardware, offline behaviour or safety performance is claimed as implemented or validated. Conformance remains **Unknown / Not Tested** until traceable evidence exists.
+
+
+### Incident Evidence, Image Recall & User-Requested Review
+
+When an abnormal condition is detected, create a traceable incident record locally. Where a suitable camera or image sensor is actually available, save the relevant captured image(s) on protected product storage. Do not imply an image exists if none was captured; preserve the original image and link it to the incident.
+
+Each record should include, where available: unique incident ID; local date and exact time with time zone; product/subsystem and location or zone; severity; concise event title and plain-language summary; full alert text and spoken-alert message; source sensor; confidence/uncertainty and data-quality state; captured image(s); and acknowledgement, review and resolution history. Clearly label missing images, unavailable sensors, uncertain timestamps and incomplete records.
+
+**User-controlled history:** provide a local **READ / VIEW HISTORY** control on the product display or appropriate console. Browse year → month → day; open a summary; press to read the full alert; view saved images; replay the voice alert where supported; and navigate earlier/later incidents. Show event date/time and incident ID beside every image. Filters by severity, subsystem and unresolved/resolved state are desirable.
+
+**Local preservation:** history must be reviewable without a phone, app, cloud or internet. Warn when storage is nearing capacity. Never silently overwrite or automatically delete important incident evidence to make room. Define a user-visible retention/capacity policy and user-controlled export/recovery before implementation. Protect records against accidental alteration and restrict access appropriately; do not claim tamper-proof storage unless verified.
+
+**Product-specific evidence scope:** Harvest assessment, fruit/bunch visibility, maturity uncertainty, machine readiness and guarded-work-zone events. A maturity estimate is decision support only and never authorises cutting or machine motion.
+
+**Evidence status:** design requirement only. Image capture, local storage, date-based search, voice replay, preservation, privacy controls and recovery remain **Unknown / Not Tested** until implemented and verified on the actual product.
+
+### ภาษาไทย — หลักฐานเหตุการณ์และภาพย้อนหลัง
+
+เมื่อระบบตรวจพบความผิดปกติ ให้สร้างบันทึกเหตุการณ์ที่ตรวจสอบย้อนกลับได้ไว้ภายในผลิตภัณฑ์ หากมีกล้องหรือเซนเซอร์ภาพที่เหมาะสมและใช้งานได้จริง ให้บันทึกภาพที่เกี่ยวข้องไว้ในพื้นที่จัดเก็บภายในที่ได้รับการป้องกัน ห้ามกล่าวอ้างว่ามีภาพหลักฐานหากไม่มีการบันทึกภาพจริง และต้องเชื่อมโยงภาพต้นฉบับกับเหตุการณ์นั้น
+
+ข้อมูลควรประกอบด้วยเท่าที่มี: รหัสเหตุการณ์; วันที่และเวลาท้องถิ่นพร้อมเขตเวลา; ผลิตภัณฑ์/ระบบย่อยและตำแหน่ง; ระดับความรุนแรง; หัวข้อและสรุปที่เข้าใจง่าย; ข้อความแจ้งเตือนฉบับเต็มและข้อความเสียง; เซนเซอร์ต้นทาง; ความเชื่อมั่น/ความไม่แน่นอนและคุณภาพข้อมูล; ภาพที่บันทึก; ประวัติการรับทราบ ตรวจสอบ และแก้ไข หากไม่มีภาพ เซนเซอร์ไม่พร้อม เวลาไม่แน่นอน หรือข้อมูลไม่ครบ ต้องแสดงสถานะให้ชัดเจน
+
+**ผู้ใช้เรียกดูเองได้:** มีคำสั่ง **READ / VIEW HISTORY** บนหน้าจอผลิตภัณฑ์หรือคอนโซลที่เหมาะสม เลือกดู ปี → เดือน → วัน เปิดสรุป กดอ่านข้อความเต็ม ดูภาพ เล่นเสียงแจ้งเตือนซ้ำเมื่อรองรับ และเลื่อนไปยังเหตุการณ์ก่อนหน้าหรือถัดไป ทุกภาพต้องแสดงวันที่ เวลา และรหัสเหตุการณ์ ควรกรองตามระดับความรุนแรง ระบบย่อย และสถานะเหตุการณ์ได้
+
+**การเก็บรักษาภายใน:** ต้องเรียกดูประวัติได้โดยไม่ใช้โทรศัพท์ แอป คลาวด์ หรืออินเทอร์เน็ต แจ้งเตือนเมื่อพื้นที่ใกล้เต็ม ห้ามเขียนทับหรือลบหลักฐานสำคัญโดยอัตโนมัติ ต้องกำหนดนโยบายระยะเวลาเก็บรักษา/พื้นที่จัดเก็บที่ผู้ใช้มองเห็นได้ และวิธีส่งออกหรือกู้คืนที่ผู้ใช้ควบคุมได้ก่อนนำไปใช้ ป้องกันการแก้ไขโดยไม่ตั้งใจและจำกัดสิทธิ์อย่างเหมาะสม ห้ามกล่าวอ้างว่าป้องกันการแก้ไขได้สมบูรณ์หากยังไม่ผ่านการตรวจสอบ
+
+**ขอบเขตหลักฐานเฉพาะผลิตภัณฑ์:** Harvest assessment, fruit/bunch visibility, maturity uncertainty, machine readiness and guarded-work-zone events. A maturity estimate is decision support only and never authorises cutting or machine motion.
+
+**สถานะหลักฐาน:** เป็นข้อกำหนดการออกแบบเท่านั้น การบันทึกภาพ การจัดเก็บ การค้นหาตามวัน/เดือน การเล่นเสียงย้อนหลัง การรักษาหลักฐาน ความเป็นส่วนตัว และการกู้คืนยังเป็น **Unknown / Not Tested** จนกว่าจะพัฒนาและทดสอบกับผลิตภัณฑ์จริง
