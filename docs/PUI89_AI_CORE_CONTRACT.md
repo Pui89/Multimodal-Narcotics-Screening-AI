@@ -61,7 +61,8 @@ At minimum, regression tests should cover:
 - **Extreme Flood Rescue AI:** water/environment uncertainty, victim-location confidence, communication degradation, and simulation-only depth scenarios.
 - **PUI89 Sentinel quadruped:** obstacle/free-space observations, terrain traversability, localisation/motion-state confidence, foot-contact and slip/stumble cues, inspection evidence, safe hold and supervised recovery.
 - **PUI89 AI HOME / AI NOMAD:** indoor/outdoor wheeled navigation, obstacle clearance, payload limits, human interaction and environment-specific safe-stop behaviour.
-- **PUI89 AI Robot Car / AI Step-Through Scooter:** road context, obstacle and hazard warnings, battery/thermal state and advisory-only interaction; no autonomous vehicle control is authorised by this contract.
+- **PUI89 AI Global SUV:** medium-size passenger-vehicle road context, obstacle and hazard warnings, vehicle/battery/thermal state and human-driver advisory interaction. This is a separate four-wheel product project.
+- **PUI89 AI Step-Through Scooter:** two-wheel rider/road context, obstacle and hazard warnings, scooter/battery/thermal state and rider advisory interaction. This is a separate product project with its own requirements and validation. No autonomous steering, throttle or braking is authorised for either product by this contract.
 
 ## 7. Release gate
 
