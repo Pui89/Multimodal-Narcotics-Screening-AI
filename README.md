@@ -101,3 +101,10 @@ Current maturity labels follow the [PUI89 Portfolio Alignment Register](https://
 - Narcotics detection, X-ray screening, chemical identification and enforcement are outside the current Sentinel scope.
 
 **Capacity evidence status:** Quadruped design direction documented; all physical and operational capacities remain TBD / not validated until supported by test evidence.
+
+
+## Physical & Multimodal Sensor Privacy
+
+PUI89 adopts the [Physical & Multimodal Sensor Privacy Standard v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/privacy/PUI89_PHYSICAL_MULTIMODAL_SENSOR_PRIVACY_STANDARD_V1.0.md) as a shared engineering requirement. Every installed inspection camera requires a manual physical cover; every microphone requires a hardware disconnect. Spatial scans, maps and inspection evidence are local by default. Disabling required perception restricts or stops the supervised mission.
+
+**Evidence status:** requirements/specification only. No product-level hardware implementation or verification is claimed by this README section.
