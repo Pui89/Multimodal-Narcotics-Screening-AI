@@ -47,3 +47,57 @@ PUI89 Sentinel is a **four-legged ground robot** intended for human-supervised i
 Cross-product architecture, evidence contracts, safety, privacy, security, recovery, device interaction and localization requirements are maintained in the [PUI89 Shared AI Core](https://github.com/Pui89/PUI89-Shared-AI-Core). Sentinel-specific mobility, inspection payloads and mission risks remain defined and validated separately.
 
 Current maturity labels follow the [PUI89 Portfolio Alignment Register](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_PORTFOLIO_ALIGNMENT_REGISTER_2026-11-18.md) and [Evidence-Based Development Maturity Standard](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_DEVELOPMENT_STAGE_STANDARD.md).
+
+## Robot Capabilities & Functional Capacity
+
+**Scope boundary:** PUI89 Sentinel is currently defined as a human-supervised, four-legged quadruped for exploration, situational awareness and inspection evidence capture in authorised environments. It is not the historical narcotics/X-ray screening concept; narcotics detection, X-ray screening, chemical identification and enforcement are explicitly outside the current product scope.
+
+### 1. Physical capacity
+- Four-legged quadruped ground robot; physical prototype and integrated hardware are not established.
+- Define dimensions, complete mass, payload, leg reach, foot geometry, centre of gravity, structural limits and recovery/handling points after the first inspection mission is selected.
+- Payload and sensor mounting capacity: **TBD**; no carrying rating is claimed.
+
+### 2. Mobility capacity
+- Quadruped locomotion and traversal of selected terrain are engineering objectives, not validated capabilities.
+- Define gait modes, speed, slope, step/obstacle height, ground clearance, surface friction, stability margins, endurance and recovery behaviour for the chosen mission.
+- Do not interpret “all-terrain” as access to every surface or hazardous area.
+- **Validated terrain envelope and mobility performance:** not established.
+
+### 3. Perception capacity
+- Candidate perception includes authorised camera, audio, spatial/depth, mapping and selected environmental observations appropriate to the inspection mission.
+- Support scene understanding, obstacle/terrain cues, anomaly observations, spatial context and traceable inspection evidence.
+- Fuse observations with timestamps, source provenance, sensor-health status, confidence and uncertainty.
+- Treat missing, stale, conflicting or out-of-distribution observations as unknown and request operator review.
+- RGB, depth or LiDAR observations alone cannot establish that a hazardous atmosphere is safe to enter.
+- Detection ranges, coverage, localisation accuracy and environmental limits remain TBD.
+
+### 4. Computing capacity
+- Define onboard compute, memory, storage, latency and thermal budgets after mission and sensor selection.
+- Prefer local processing for inspection data; document model provenance, version, resource use and failure behaviour.
+- **Processor, RAM, storage and measured inference performance:** TBD.
+
+### 5. Power capacity
+- Define battery chemistry, usable energy, peak leg-actuator power, mission runtime, charging, thermal limits and safe low-battery recovery.
+- **Battery capacity, runtime and charging time:** TBD.
+
+### 6. Communication capacity
+- Define operator control/telemetry link, range, latency, local data storage, approved remote access and loss-of-link behaviour for the selected site.
+- The robot must enter a mission-appropriate safe state on communication loss; no unapproved cloud or remote access is assumed.
+- **Protocols, range and link reliability:** TBD.
+
+### 7. Safety capacity
+- Require supervised missions, pre-mission site/hazard review, emergency stop, safe gait/actuator state, fall detection/recovery strategy and manual recovery procedures before field trials.
+- Do not enter a hazardous atmosphere based solely on robot perception; require appropriate certified instruments and site procedures.
+- No autonomous enforcement, pursuit, confrontation or unsupervised entry into dangerous areas is claimed.
+
+### 8. Maintenance capacity
+- Plan inspection and replacement for legs, joints, actuators, feet, fasteners, batteries, connectors and sensor mounts.
+- Include actuator diagnostics, joint/IMU calibration, sensor cleaning, mechanical wear checks and traceable maintenance history.
+- **Service intervals and validated repair procedures:** TBD.
+
+### 9. Operating limits
+- Current status is requirements/specification; no physical prototype, integrated sensor suite, validated gait, terrain traversal or field deployment is established.
+- Actual payload, terrain, slope, speed, endurance, weather resistance and sensor performance remain TBD.
+- Narcotics detection, X-ray screening, chemical identification and enforcement are outside the current Sentinel scope.
+
+**Capacity evidence status:** Quadruped design direction documented; all physical and operational capacities remain TBD / not validated until supported by test evidence.
