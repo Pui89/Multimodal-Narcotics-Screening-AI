@@ -48,6 +48,12 @@ Cross-product architecture, evidence contracts, safety, privacy, security, recov
 
 Current maturity labels follow the [PUI89 Portfolio Alignment Register](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_PORTFOLIO_ALIGNMENT_REGISTER_2026-11-18.md) and [Evidence-Based Development Maturity Standard](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_DEVELOPMENT_STAGE_STANDARD.md).
 
+## AI Model & Intelligence profile
+
+**Candidate capability profile:** Object Detection, Image Segmentation, Object Tracking, SLAM, Sensor Fusion and Anomaly Detection for supervised quadruped inspection; Predictive Models for condition/risk trends; VLM/LLM for evidence-linked, human-reviewed inspection summaries. No autonomous gait or actuator authority is implied.
+
+All nine shared capability families and their definitions, evaluation requirements, provenance/uncertainty rules and safety boundaries are maintained in the [PUI89 Shared AI Core Model Intelligence Framework](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/architecture/PUI89_MODEL_INTELLIGENCE_FRAMEWORK_V1.0.md). This product profile is a **candidate engineering allocation**, not evidence of model installation, runtime integration, benchmark results, field validation or certified performance. Select and enable each capability only after product-specific requirements, approved data, compute/energy budgets and verification gates are satisfied.
+
 ## Robot Capabilities & Functional Capacity
 
 **Scope boundary:** PUI89 Sentinel is currently defined as a human-supervised, four-legged quadruped for exploration, situational awareness and inspection evidence capture in authorised environments. It is not the historical narcotics/X-ray screening concept; narcotics detection, X-ray screening, chemical identification and enforcement are explicitly outside the current product scope.
