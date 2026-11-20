@@ -32,6 +32,58 @@ Start with the user, then apply engineering to build products that provide pract
 
 ## Product at a glance
 
+
+## Latest Product Capability Baseline — 18 November 2026
+
+**Capability lifecycle:** Perceive → Understand → Predict → Decide → Act. The following is the product-specific target capability map. Shared AI Core provides reusable foundations; each product selects sensors and functions appropriate to its mission.
+
+### Perception and sensory intelligence
+
+- RGB vision for people, objects, equipment, signs, surface conditions and visible anomalies.
+
+- Optional depth, LiDAR, thermal, acoustic, gas/atmosphere and environmental instruments selected per mission and hazard assessment.
+
+- Spatial mapping, localisation, terrain/obstacle perception, vibration and structural-change observation where calibrated.
+
+### Understanding, prediction and decision support
+
+- Multimodal scene/context assessment with source provenance, timestamps, sensor health, uncertainty and disagreement handling.
+
+- Inspection workflows, change-over-time comparison, anomaly triage, route-risk context and traceable evidence reports.
+
+- Predictive maintenance indicators only where asset-specific baselines and validated time-series evidence exist.
+
+- Mission rehearsal through simulation/digital-twin methods before supervised field tasks.
+
+### Mobility, interaction and reliability
+
+- Quadruped mobility research: gait, foot contact, slip/stumble cues, balance state, safe hold and supervised recovery.
+
+- Operator interaction, alerts and bounded task proposals; human operator retains mission authority.
+
+- Edge-compute budgeting, health monitoring, fault reporting and graceful degradation.
+
+### ภาษาไทย — ความสามารถและแนวทางพัฒนา
+
+- วิเคราะห์ภาพ RGB เพื่อรับรู้บุคคล วัตถุ เครื่องจักร ป้าย สภาพพื้นผิว และความผิดปกติที่มองเห็น
+
+- รองรับ Depth, LiDAR, Thermal, เสียง ก๊าซ/บรรยากาศ และเซนเซอร์สิ่งแวดล้อมตามภารกิจและการประเมินอันตราย
+
+- ทำแผนที่ ระบุตำแหน่ง ตรวจจับสิ่งกีดขวาง สภาพพื้นผิว การสั่น และการเปลี่ยนแปลงโครงสร้างเมื่อผ่านการปรับเทียบ
+
+- รวมข้อมูลหลายเซนเซอร์พร้อมที่มา เวลา สุขภาพเซนเซอร์ ความไม่แน่นอน และความขัดแย้งของข้อมูล
+
+- เปรียบเทียบผลตรวจตามเวลา จัดลำดับความผิดปกติ วิเคราะห์บริบทความเสี่ยง และสร้างรายงานหลักฐาน
+
+- วิจัยตัวบ่งชี้การบำรุงรักษาเชิงคาดการณ์เมื่อมีข้อมูลพื้นฐานเฉพาะอุปกรณ์และหลักฐานตามเวลา
+
+- จำลองภารกิจก่อนปฏิบัติงานจริง พร้อมศึกษาการเดินสี่ขา การทรงตัว การลื่น และการหยุดอย่างปลอดภัย
+
+- สนับสนุนเจ้าหน้าที่ด้วยการแจ้งเตือนและข้อเสนอที่มีขอบเขต โดยมนุษย์ยังคงควบคุมภารกิจ
+
+**Evidence boundary / ขอบเขตหลักฐาน:** Sentinel remains a four-legged inspection concept. Sensor payloads, gait, mapping, hazardous-area operation and field performance are not established as integrated or validated. RGB/depth/LiDAR cannot certify a safe atmosphere. “All-terrain” is an ambition, not a guarantee. / Sentinel ยังเป็นแนวคิดหุ่นยนต์ตรวจสอบแบบสี่ขา ยังไม่มีการยืนยันการติดตั้งเซนเซอร์ การเดิน การทำแผนที่ การทำงานในพื้นที่อันตราย หรือสมรรถนะภาคสนาม และคำว่า All-terrain ไม่ใช่การรับประกัน
+
+
 **Product direction:** A supervised four-legged quadruped platform for exploration and inspection.
 
 **User value:** Give authorised operators a way to observe and document difficult-to-access industrial, infrastructure, logistics and selected outdoor environments while keeping decisions under human supervision.
