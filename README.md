@@ -20,7 +20,7 @@ Start with the user, then apply engineering to build products that provide pract
 
 **Who it serves:** industrial operators, infrastructure and facility teams, warehouses, inspection providers, researchers and authorised emergency-response organisations.
 
-**Safety boundary:** “All-terrain” describes an engineering ambition, not guaranteed access. No physical prototype, integrated sensor suite, validated gait, field deployment or all-terrain performance is claimed. Hazardous-atmosphere entry cannot be approved by RGB/depth/LiDAR alone. AI outputs are observations or bounded proposals; human operators retain authority. Sentinel is not an enforcement or screening robot.
+**Safety boundary:** “All-terrain” describes an engineering ambition, not guaranteed access. No physical prototype, integrated sensor suite, validated gait, field deployment or all-terrain performance is claimed. Hazardous-atmosphere entry cannot be approved by RGB/depth/LiDAR alone. AI outputs are observations or bounded proposals; human operators retain authority. Sentinel is an inspection and situational-awareness platform, not an enforcement, search, detention or coercive-action system.
 
 **Project website:** [English](https://pui89.github.io/sentinel.html) · [ภาษาไทย](https://pui89.github.io/sentinel-th.html) · [PUI89 portfolio](https://pui89.github.io/)
 
@@ -55,7 +55,7 @@ Start with the user, then apply engineering to build products that provide pract
 
 ## Product direction
 
-PUI89 Sentinel is a general-purpose **All-Terrain Exploration & Inspection Robot**: a four-legged quadruped for supervised inspection, situational awareness and traceable evidence capture. Its **General Multimodal Intelligence** combines authorised visual, audio, text, map, spatial and time-series sensor evidence with provenance, quality checks and uncertainty handling. This is general-purpose inspection intelligence—not a screening or enforcement product. Sentinel does not include narcotics detection, X-ray screening payloads or chemical-identification functions in its current product scope. The robot reports observations and bounded proposals for authorised human review.
+PUI89 Sentinel is a general-purpose **All-Terrain Exploration & Inspection Robot**: a four-legged quadruped for supervised inspection, situational awareness and traceable evidence capture. Its **General Multimodal Intelligence** combines authorised visual, audio, text, map, spatial and time-series sensor evidence with provenance, quality checks and uncertainty handling. This is general-purpose inspection intelligence for authorised environments. The current Sentinel scope excludes narcotics detection, X-ray payloads and chemical-identification functions. The robot reports observations and bounded proposals for authorised human review.
 
 ### Target operating contexts
 
@@ -178,7 +178,7 @@ Sentinel uses the shared PUI89 interaction architecture for supervised operator 
 - Ask the operator to clarify ambiguous instructions and confirm consequential task changes.
 - Support human review, correction, override and escalation.
 
-**Sentinel-specific decision boundary:** interaction models may help communicate screening or inspection observations, but they must not independently identify a person, accuse someone of wrongdoing, declare a substance to be narcotics, or make a final screening or enforcement decision. All consequential findings require authorised human review and appropriate independent evidence.
+**Sentinel-specific decision boundary:** interaction models may help communicate inspection observations, but they must not independently identify a person, accuse someone of wrongdoing or make consequential operational decisions. All consequential findings require authorised human review and appropriate independent evidence.
 
 **Recommended model candidates for Sentinel (not approved or integrated):**
 
@@ -189,9 +189,9 @@ Sentinel uses the shared PUI89 interaction architecture for supervised operator 
 | [hexgrad/Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) | English spoken status and warning reports; Thai TTS is not established | PENDING_REVIEW |
 | [qualcomm/YamNet](https://huggingface.co/qualcomm/YamNet) | Selected environmental audio-event labels, subject to sensor and false-alarm testing | PENDING_REVIEW |
 | [Silero VAD](https://github.com/snakers4/silero-vad) | Speech-segment detection for operator communication | PENDING_REVIEW |
-| [HuggingFaceTB/SmolVLM2-500M-Video-Instruct](https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct) | Optional bounded visual descriptions to assist human review; never a screening verdict | PENDING_REVIEW |
+| [HuggingFaceTB/SmolVLM2-500M-Video-Instruct](https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct) | Optional bounded visual descriptions to assist human review; never an operational verdict | PENDING_REVIEW |
 
-No candidate may identify a person, determine that a substance is narcotics, accuse anyone, or issue a final screening/enforcement decision. Do not add openWakeWord's included pretrained weights at this stage because their CC BY-NC-SA 4.0 terms require separate review.
+No candidate may identify a person, accuse anyone or make consequential operational decisions; authorised human review remains required. Do not add openWakeWord's included pretrained weights at this stage because their CC BY-NC-SA 4.0 terms require separate review.
 
 **Maturity:** proposed operator-interface configuration only. No interaction model, microphone, speaker or voice pipeline is claimed as installed, integrated or validated.
 
