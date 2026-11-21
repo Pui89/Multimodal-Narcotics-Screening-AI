@@ -33,9 +33,6 @@ This catalogue prioritises tools that can be used at $0 without a required subsc
 ### Coconut Harvest AI
 Use local Python tests and small, reproducible image experiments. Track dataset source, licence, hash, annotation review, split assignment, and test metrics. Treat 0–30 m as a design challenge, not verified robot reach. Do not claim field performance until measured on a suitable, documented test set.
 
-### Extreme Flood Rescue AI
-Prefer local simulation and deterministic scenario tests. Clearly label simulated results. Water depths of 1–6 m are scenario targets, not verified operating limits. Never describe the concept as operationally rescue-ready without independent safety and field validation.
-
 ### Multimodal Narcotics Screening AI
 Use synthetic or explicitly authorised test data. Document reference methods, false positives/negatives, uncertainty, and abstention. A model confidence score or ordinary image alone does not establish chemical identity. Keep a qualified human reviewer in the loop.
 
