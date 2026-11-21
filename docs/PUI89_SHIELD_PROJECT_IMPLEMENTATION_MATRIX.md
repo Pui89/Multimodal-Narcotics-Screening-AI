@@ -1,6 +1,6 @@
 # PUI89 SHIELD Project Implementation Matrix
 
-**Status legend:** `POLICY_DEFINED` means requirements are documented; `SOFTWARE_REFERENCE` means dependency-free reference logic and tests exist on this development branch; `NOT_CREATED` means the project repository is not present in the connected Pui89 account. None of these statuses establishes physical validation.
+**Status legend:** `POLICY_DEFINED` means requirements are documented; `SOFTWARE_REFERENCE` means dependency-free reference logic and tests exist on this development branch; `Existing repository; SHIELD scope defined` means the repository exists and its project-specific policy scope is documented. None of these statuses establishes physical validation.
 
 ## Shared requirements for all projects
 
