@@ -45,6 +45,7 @@ PUI89 Sentinel is a **four-legged ground robot** intended for human-supervised i
 - [Validation matrix](docs/VALIDATION_MATRIX.md)
 - [Sentinel quadruped concept and scope](docs/PUI89_SENTINEL_ROBOT_CONCEPT.md)
 - [All-terrain quadruped requirements](docs/SENTINEL_ALL_TERRAIN_INSPECTION_ROBOT_DOG_REQUIREMENTS_V0.2.md)
+- [Lightweight-to-balanced engineering baseline v0.1](docs/SENTINEL_LIGHTWEIGHT_BALANCED_ENGINEERING_BASELINE_V0.1.md)
 - [Historical scope migration register](docs/SENTINEL_SCOPE_MIGRATION.md)
 
 ## Shared PUI89 engineering
