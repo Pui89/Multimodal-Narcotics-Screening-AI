@@ -126,3 +126,12 @@ PUI89 adopts the [Physical & Multimodal Sensor Privacy Standard v1.0](https://gi
 PUI89 adopts the [Long-Life Battery & Energy Intelligence Standard v1.0](https://github.com/Pui89/PUI89-Shared-AI-Core/blob/main/docs/energy/PUI89_LONG_LIFE_BATTERY_ENERGY_INTELLIGENCE_STANDARD_V1.0.md) as a shared engineering requirement. Prioritise locomotion, perception, mapping, communication and inspection-payload efficiency. Validate mission runtime across terrain and payload, including a safe stop/return reserve.
 
 Battery runtime, chemistry, capacity, cycle life, charging performance and safety compliance remain **TBD until designed and evidenced**. No unverified runtime or battery-life claim is made. The design must include an energy budget, independent BMS protections, thermal/electrical safety, service strategy and representative runtime validation.
+
+
+## Offline Independence & Connectivity Resilience
+
+**The product must work without the app. Safety must work without connectivity.** Basic supported local operation, local status and safety controls must not require a smartphone, app, Wi-Fi, internet or cloud. The printed Quick Start and Safety Guide is supplied with the unit; the complete manual must be readable offline. QR and short URL are optional supplements. On link loss, remote commands are disabled and the product follows its own hazard-based safe state. See the [PUI89 Offline Independence & Connectivity Resilience Standard v1.0](https://github.com/Pui89/Pui89.github.io/blob/main/docs/PUI89_OFFLINE_INDEPENDENCE_CONNECTIVITY_RESILIENCE_STANDARD_V1.0.md) and the [product manual/Remote Companion specification](docs/PRODUCT_MANUAL_AND_REMOTE_COMPANION_STANDARD_V1.md).
+
+**Product-specific offline baseline:** Physical local operator controls, local stop/emergency stop, local status/fault indication and safe shutdown. A supervised inspection task may continue only if the approved mission risk assessment, onboard sensing and local operator control permit it. On remote-link loss, use the validated mission-specific response (controlled stop, hold, or a verified safe-point procedure); do not assume return-to-home is always safe. No unattended hazardous movement or remote safety override.
+
+These are development requirements, not claims of implemented, tested or validated capability.
