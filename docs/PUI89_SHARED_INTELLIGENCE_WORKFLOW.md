@@ -16,7 +16,6 @@ Common evidence-first workflow for all four existing PUI89 applications. This st
 
 ## Project-specific interpretation
 - Coconut Harvest AI: maturity and harvest observations, tree and worker safety, collection plan.
-- Flood Rescue AI: water and terrain state, people/animals/obstacles, route and mission risk.
 - Multimodal Narcotics Screening AI: approved sensor evidence, anomaly review, privacy and human decision authority.
 - Homeguard AI Nomad: indoor environment state, hazard observations, navigation and user-approved assistance.
 
