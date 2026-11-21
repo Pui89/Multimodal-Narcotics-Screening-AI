@@ -1,5 +1,8 @@
 # PUI89 Sentinel — All-Terrain Exploration & Inspection Robot
 
+[English](README.md) · [ภาษาไทย](README.th.md)
+
+
 **A supervised four-legged quadruped for exploration, situational awareness and inspection evidence capture.**
 
 [English project page](https://pui89.github.io/sentinel.html) · [ภาษาไทย](https://pui89.github.io/sentinel-th.html) · [PUI89 portfolio](https://pui89.github.io/)
