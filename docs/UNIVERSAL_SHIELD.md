@@ -8,11 +8,11 @@ Protect people, animals, assets, data, and project integrity through evidence-le
 
 ## Six-project scope
 1. Coconut Harvest AI — agricultural perception and harvesting-robot concept.
-2. Flood Rescue AI — flood/disaster rescue-robot concept.
-3. Multimodal Narcotics Screening AI — multimodal screening decision-support and robotic concept.
-4. Homeguard AI Nomad — home/environment monitoring platform and future robot concept.
-5. AI Car — vehicle intelligence and driver-assistance research.
-6. AI Motorcycle — rider-focused vehicle intelligence research.
+2. PUI89 Sentinel — four-legged quadruped for supervised all-terrain exploration and inspection.
+3. PUI89 AI HOME — indoor four-wheel home-awareness and assistance robot.
+4. PUI89 AI NOMAD — compact dog-inspired four-wheel mobile assistant with a handle.
+5. PUI89 AI Global SUV — human-driver vehicle concept with advisory AI.
+6. PUI89 AI Step-Through Scooter — rider-first two-wheel step-through scooter concept.
 
 ## 1. Physical safety and environmental protection
 Maintain a hazard register for people/animal exposure, pinch/crush/cut/impact, entanglement, falls, collision, instability, environmental exposure, maintenance, transport, and foreseeable misuse. Define the operating domain, exclusions, safe states, emergency-stop/isolation concept, and human authority before implementation. Use simulation and non-actuating prototypes first. Document ingress, dust, vibration, shock, impact, corrosion, UV, temperature, humidity, and structural-load requirements as applicable. Controlled engineering tests are required before claiming physical protection or operational capability.
@@ -51,18 +51,8 @@ Report known/verified, unknown/unobservable, changes, failures/near misses/unsup
 
 ## 11. Project-specific hazard extensions
 - **Coconut Harvest AI:** falling coconuts/tools, cutting/pinch zones, worker/animal exclusion, height/reach limits, tree/branch uncertainty, dropped-load containment.
-- **Flood Rescue AI:** current, depth, debris, entrapment, capsizing, tether/anchor failure, battery isolation in water, rescuer exposure, communications loss, safe withdrawal. Depth/current capability requires measured evidence.
-- **Multimodal Screening AI:** false positives/negatives, modality disagreement, calibration, dataset bias/provenance, chain of custody, privacy, human review, no autonomous enforcement.
-- **Homeguard AI Nomad:** electrical/fire/water/mold and structural-warning uncertainty, false alarms, privacy, offline operation, safe charging, emergency escalation.
-- **AI Car:** collision exposure, vulnerable road users, vehicle electrical/thermal hazards, occupant privacy, degraded sensing, no direct steering/throttle/brake control.
-- **AI Motorcycle:** rider vulnerability, two-wheel stability/traction context, road-surface contamination, weather/visibility, distraction minimization, no direct steering/throttle/brake control.
-
-## 12. Implementation gates
-1. **Specify:** requirement, operating domain, hazards, authority boundary, cost review.
-2. **Design:** contracts, evidence path, failure modes, safety gate, recovery.
-3. **Implement:** minimal dependencies, secure defaults, documentation.
-4. **Test:** automated negative/regression tests and benchmark protocol.
-5. **Review:** evidence, limitations, privacy/security, human oversight.
-6. **Release:** status label, change log, rollback/recovery path, no unapproved cost.
-
-**PUI89 SHIELD principle:** prevent harm, detect uncertainty early, warn clearly, preserve human authority, recover safely, and prove every claim with evidence.
+- **PUI89 Sentinel:** quadruped stability, foot-contact/slip/stumble, terrain traversability, falls, sensor calibration, environmental exposure, communications loss and supervised recovery.
+- **PUI89 AI HOME:** smoke/heat/fire, water leaks, electrical anomalies, falls, pinch points, privacy, network loss and safe charging.
+- **PUI89 AI NOMAD:** wheeled stability, obstacle/curb clearance, wet-ground traction, payload limits, weather exposure, privacy and human interaction.
+- **PUI89 AI Global SUV:** collision exposure, vulnerable road users, braking/steering faults, vehicle electrical/thermal hazards, occupant privacy, degraded sensing and driver override.
+- **PUI89 AI Step-Through Scooter:** rider falls, lean/balance and traction, braking, road users, blind spots, battery/thermal events, sensor faults and rider override.
