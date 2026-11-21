@@ -100,7 +100,7 @@ class ShieldContractTests(unittest.TestCase):
                         "PUI89 AI HOME", "PUI89 AI NOMAD",
                         "PUI89 AI Global SUV", "PUI89 AI Step-Through Scooter"):
             self.assertIn(project, matrix)
-        self.assertIn("Repository not found / not created", matrix)
+        self.assertIn("Existing repository; SHIELD scope defined", matrix)
 
 
 if __name__ == "__main__":
