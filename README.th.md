@@ -61,6 +61,7 @@ PUI89 Sentinel เป็นหุ่นยนต์ภาคพื้นดิ�
 
 ## 12. เอกสารและลิงก์โครงการ
 
+- [พิมพ์เขียวระบบฉบับสมบูรณ์ (Complete System Blueprint)](docs/COMPLETE_SYSTEM_BLUEPRINT.md)
 - [แนวคิดและขอบเขต Sentinel](docs/PUI89_SENTINEL_ROBOT_CONCEPT.md)
 - [ข้อกำหนดหุ่นยนต์ตรวจสอบแบบสี่ขา](docs/SENTINEL_ALL_TERRAIN_INSPECTION_ROBOT_DOG_REQUIREMENTS_V0.2.md)
 - [ทะเบียนการเปลี่ยนขอบเขตงานในอดีต](docs/SENTINEL_SCOPE_MIGRATION.md)
