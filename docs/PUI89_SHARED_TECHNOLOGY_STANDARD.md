@@ -62,7 +62,7 @@ Pin and review action versions; use least-privilege workflow permissions; never 
 - NVIDIA Isaac Lab: framework published under BSD-3-Clause; check hardware and Isaac Sim/Omniverse terms separately. https://developer.nvidia.com/isaac/lab
 - NVIDIA Isaac Sim: NVIDIA describes free/open-source Apache-2.0 availability while documenting additional software/materials terms and separate paid redistribution/cloud costs. No cloud services or paid redistribution. https://developer.nvidia.com/isaac/sim
 
-Do not install heavy simulators on constrained machines. Keep robot/car/motorcycle interfaces in mock or simulation mode. No direct hardware actuation, road/rescue deployment or safety-critical control from an unvalidated AI model.
+Do not install heavy simulators on constrained machines. Keep robot/car/motorcycle interfaces in mock or simulation mode. No direct hardware actuation, vehicle operation or safety-critical control from an unvalidated AI model.
 
 ## 7. Shared PUI89 AI Core contracts
 Reuse one versioned design rather than incompatible project-specific duplicates:
@@ -77,11 +77,11 @@ Cross-cutting capabilities: Evidence Integrity; provenance; uncertainty propagat
 | Project | Priority applications |
 |---|---|
 | Coconut Harvest AI | Multimodal perception; maturity classification; uncertainty-aware detection; arm/gripper simulation; worker/animal safety; orchard robustness; predictive maintenance. |
-| Flood Rescue AI | Multisensor world-state; water/current/terrain simulation; resilient navigation; communications-loss handling; stability modelling; human-authorized proposals only. |
-| Multimodal Screening AI | RGB/approved sensor fusion; provenance/calibration; uncertainty and human review; false-positive/negative benchmarks; privacy/audit trail; no autonomous enforcement. |
-| Homeguard AI Nomad | Heat/water/humidity/smoke/electrical/structural sensor fusion; anomaly/change detection; explainable alerts; offline-first; privacy and false-alarm controls. |
-| PUI89 AI Robot Car | Perception, world-state, agent planning, simulation, predictive maintenance, cybersecurity and human override; no unvalidated road deployment. |
-| PUI89 AI Robot Motorcycle | Rider-centric perception, stability/hazard simulation, fault detection, battery/electrical protection and human override; no unvalidated road deployment. |
+| PUI89 Sentinel | Quadruped terrain inspection; obstacle/traversability assessment; multimodal evidence capture; localisation and foot-contact uncertainty; supervised recovery. |
+| PUI89 AI HOME | Indoor sensor fusion; home-condition awareness; explainable alerts; offline-first operation; privacy and false-alarm controls. |
+| PUI89 AI NOMAD | Supervised wheeled mobility; obstacle and wet-ground awareness; user assistance; environmental context; privacy and safe-stop behaviour. |
+| PUI89 AI Global SUV | Road-scene perception; driver-facing hazard awareness; predictive maintenance; cybersecurity; human driver override; advisory flood/road-water warnings. |
+| PUI89 AI Step-Through Scooter | Rider-facing road and obstacle awareness; surface/weather context; battery/thermal alerts; maintenance; rider override; advisory flood/road-water warnings. |
 
 ## 9. Evidence and release gates
 Documentation is not proof of implementation. For each capability record code/config path, test/benchmark and version, command/environment, expected/actual result, evidence/log reference, limitations, unresolved risks, reviewer and date.
