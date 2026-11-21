@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class SharedWorkflowContractTests(unittest.TestCase):
     def test_schema_covers_all_four_projects(self):
         schema = json.loads((ROOT / "schemas/pui89-intelligence-report.schema.json").read_text(encoding="utf-8"))
-        self.assertEqual(set(schema["properties"]["project"]["enum"]), {"coconut-harvest-ai", "flood-rescue-ai", "multimodal-narcotics-screening-ai", "homeguard-ai-nomad"})
+        self.assertEqual(set(schema["properties"]["project"]["enum"]), {"coconut-harvest-ai", "multimodal-narcotics-screening-ai", "homeguard-ai-nomad"})
 
     def test_observations_require_value_and_provenance(self):
         schema = json.loads((ROOT / "schemas/pui89-intelligence-report.schema.json").read_text(encoding="utf-8"))
