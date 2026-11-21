@@ -19,7 +19,6 @@ Prefer the newest **stable and supported** version that works with the project's
 
 ## Project-specific use
 - Coconut Harvest AI: image provenance and label checks, maturity/localization contracts, uncertainty-aware harvest proposals; cutting stays disabled until validated safety gates exist.
-- Extreme Flood Rescue AI: deterministic world-state and sensor-failure tests, stale/conflicting input handling, communication-loss safe-hold; 15 m is a simulation target only.
 - Multimodal Narcotics Screening AI: modality provenance/calibration, missing-sensor and abstention tests, false-positive/false-negative evaluation, human review; chemical detection remains conceptual until validated.
 
 ## Cost and safety boundary
