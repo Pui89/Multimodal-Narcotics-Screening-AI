@@ -2,7 +2,7 @@
 
 **Status:** shared engineering contract for software and simulation tests; not a certification or claim of field readiness.
 
-This contract defines reusable interfaces across the seven PUI89 products. Each product retains domain-specific perception, task logic, hardware boundaries and validation requirements. Shared AI Core is a foundation, not an eighth product.
+This contract defines reusable interfaces across the six active PUI89 products. Each product retains domain-specific perception, task logic, hardware boundaries and validation requirements. Shared AI Core is a foundation, not an eighth product.
 
 ## 1. Core records
 
@@ -40,7 +40,7 @@ Do not silently coerce strings such as "false", integers such as 1, or null valu
 
 - Shared interfaces generate observations and bounded proposals; they do not independently authorise hardware actuation.
 - High-impact, safety-critical or uncertain actions require the appropriate human approval and independent hardware safeguards.
-- A simulation scenario passing is not evidence of real-world safety, accuracy, rescue capability, harvest capability, terrain mobility or vehicle performance.
+- A simulation scenario passing is not evidence of real-world safety, accuracy, mission capability, harvest capability, terrain mobility or vehicle performance.
 - AI must not make enforcement decisions, accuse individuals or bypass a product's operator and safety procedures.
 
 ## 5. Reproducible scenario reports
@@ -58,7 +58,6 @@ At minimum, regression tests should cover:
 ## 6. Product-specific extensions
 
 - **Coconut Harvest AI:** maturity-stage uncertainty, cutting/capture hazards, drop zone, and worker/animal separation.
-- **Extreme Flood Rescue AI:** water/environment uncertainty, victim-location confidence, communication degradation, and simulation-only depth scenarios.
 - **PUI89 Sentinel quadruped:** obstacle/free-space observations, terrain traversability, localisation/motion-state confidence, foot-contact and slip/stumble cues, inspection evidence, safe hold and supervised recovery.
 - **PUI89 AI HOME / AI NOMAD:** indoor/outdoor wheeled navigation, obstacle clearance, payload limits, human interaction and environment-specific safe-stop behaviour.
 - **PUI89 AI Robot Car / AI Step-Through Scooter:** road context, obstacle and hazard warnings, battery/thermal state and advisory-only interaction; no autonomous vehicle control is authorised by this contract.

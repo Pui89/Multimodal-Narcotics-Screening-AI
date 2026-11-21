@@ -22,7 +22,6 @@
     "project": {
       "enum": [
         "coconut-harvest-ai",
-        "flood-rescue-ai",
         "multimodal-narcotics-screening-ai",
         "homeguard-ai-nomad"
       ]

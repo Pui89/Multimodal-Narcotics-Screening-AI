@@ -59,13 +59,6 @@ This roadmap is a selection guide, not a claim that every listed project is inst
 4. Add task-level simulation later for reach, approach, cut, catch and post-harvest verification. The 0–30 m reach remains a design target unless independently tested.
 5. Preserve the distinction between conceptual design, software prototype, simulation and validated physical harvesting.
 
-### Extreme Flood Rescue AI — priority 2
-1. Define scenario records for water depth, current, visibility, debris, communication loss, and victim state.
-2. Start with scripted perception/navigation tests and safe fallback logic; label simulated conditions explicitly.
-3. Treat ground robot, boat and drone as separate platforms with capability limits, not as one robot that can safely operate at every depth.
-4. Add coordination and degraded-communications tests before complex multi-agent simulation.
-5. Report detection, navigation, time-to-assist and safety outcomes only when a reproducible evaluator exists.
-
 ### PUI89 Sentinel — All-Terrain Inspection Robot Dog — priority 3
 1. Define a bounded inspection mission and operating envelope before selecting hardware or locomotion algorithms.
 2. Build the software-first perception and task contracts: RGB/depth scene quality, obstacle/free-space cues, terrain traversability, visible asset observations, change/anomaly cues, localisation confidence, sensor health, provenance and uncertainty.
