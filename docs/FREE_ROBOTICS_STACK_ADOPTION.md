@@ -25,7 +25,6 @@ Sources: [ROS 2 Lyrical announcement](https://discourse.openrobotics.org/t/ros-2
 | ROS 2 Jazzy | Middleware and message interfaces between robot components | Open-source; no software licence fee. Jazzy is an LTS release with published support to May 2029 and Ubuntu 24.04 is a Tier 1 platform. Check individual packages and dependencies. | Preferred integration target after Phase 1 passes. |
 | Nav2 | Mobile robot navigation: localisation, path planning, obstacle-aware behaviours | Open-source, but the repository contains Apache-2.0, BSD-3-Clause and LGPL components; check each package manifest for commercial distribution. | Use for ground/mobile robots only when a simulator is ready. |
 | Gazebo Harmonic | Physics and sensor simulation | Open source; gz-sim is Apache-2.0, though components/plugins can have their own licences. Harmonic is the documented pairing for ROS 2 Jazzy on Ubuntu 24.04. | Add first as the future simulation backend; not yet installed. |
-| ArduPilot SITL | Simulated autopilot for supported Copter, Plane, Rover and Sub vehicle classes | Free software under GPLv3 or later. Distribution/modified-firmware obligations matter for a future commercial product. | Flood project only, after a simulator is working and the licence obligations are understood. |
 | PX4 SITL | Alternative simulated autopilot, especially drone-focused development | BSD-3-Clause; more permissive code licence. Do not install alongside ArduPilot initially. | Alternative to evaluate if flight simulation becomes the priority; choose one autopilot first. |
 | SmolVLM-256M-Instruct | Small vision-language model candidate for image-description/question-answering experiments | Publisher model card shows Apache-2.0. The main model.safetensors file is 513 MB, while the full repository listing is about 3.54 GB because it includes additional artifacts. | Optional experiment only, after resource preflight and manual licence review; no download is done here. |
 
@@ -49,13 +48,7 @@ Licences and file sizes can change; re-check the specific versions/components be
 - Not needed yet: drone autopilot, multiple autopilots, real motor/arm commands, or physical 30 m reach claims.
 - Optional VLM: use SmolVLM for descriptions of a rights-cleared image; compare outputs against human-reviewed labels. It is not a coconut detector or maturity classifier by itself.
 
-### 2. Extreme Flood Rescue AI
-- Now: scenario matrix for people/animals as targets, changing simulated water depth, hazards, stale sensors, communication loss and safe recovery.
-- Next software integration: ROS 2 + Gazebo for simulated robot/sensor interfaces. Nav2 for an appropriate ground/amphibious rover simulation. Only then choose one simulated autopilot: ArduPilot SITL if its GPLv3 obligations suit the intended product, or PX4 SITL for a drone-focused BSD-3-Clause route.
-- Vehicle families to model: multirotor reconnaissance aircraft; fixed-wing/VTOL only if a long-range mission justifies the complexity; unmanned surface boat; ground/amphibious rover. A submersible is a separately engineered future concept, not a feature to assume from a generic autopilot.
-- Evidence limit: a 0–15 m scenario parameter is not real-world vehicle depth, buoyancy, waterproofing, current handling or rescue capacity.
-
-### 3. Multimodal Narcotics Screening AI
+### 2. Multimodal Narcotics Screening AI
 - Now: mock sensor topics, input validity checks, UNKNOWN on missing/conflicting/low-confidence signals, audit records and human-review routing.
 - Next software integration: ROS 2 + Gazebo + Nav2 for a simulated indoor inspection robot. Use mock camera/other sensor feeds first; only add X-ray or chemical-sensor interfaces when lawfully obtained, technically valid data and evaluation protocols exist.
 - Not needed: flight or boat autopilot for routine indoor screening.
